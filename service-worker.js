@@ -21,10 +21,10 @@ const APP_SHELL = [
   './',
   'index.html',
   'manifest.json',
-  'images/icon-192.png',
-  'images/icon-512.png',
-  'images/icon-512-maskable.png',
-  'images/apple-touch-icon.png'
+  'icons/icon-192.png',
+  'icons/icon-512.png',
+  'icons/icon-512-maskable.png',
+  'icons/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', (event) => {
