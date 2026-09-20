@@ -1,0 +1,2888 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 2 · El Fin del Antiguo Régimen — Archivo de Fuentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --measure: 860px;
+    --text-size: 16px;
+    --paper: #f1e9d8;
+    --paper-2: #eee1c4;
+    --paper-edge: #ddc99a;
+    --ink: #2a2118;
+    --ink-soft: #5c4f3f;
+    --wax: #8c2f39;
+    --wax-dark: #6b1f27;
+    --green: #3f5b44;
+    --gold: #a9812e;
+    --line: #c9b98f;
+    --hl-yellow: #f3d34a;
+    --hl-green: #a8cba0;
+    --hl-pink: #e8a9b8;
+    --shadow: 0 10px 30px -12px rgba(42,33,24,.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #fbf6e8 0%, transparent 60%),
+      radial-gradient(1200px 700px at 100% 10%, #e9dcbd 0%, transparent 55%),
+      #e5d8b8;
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    transition:background .25s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  button, .doc-item, .idx-item, .note-item, .swatch{ touch-action:manipulation; }
+  .ui{font-family:'Inter',sans-serif;}
+
+  /* ================= DARK MODE ================= */
+  body.dark{
+    --paper: #2a2118;
+    --paper-2: #241d15;
+    --paper-edge: #4a3c2b;
+    --ink: #f1e9d8;
+    --ink-soft: #c9b98f;
+    --line: #4a3c2b;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #2f261a 0%, transparent 60%),
+      radial-gradient(1200px 700px at 100% 10%, #241d15 0%, transparent 55%),
+      #1b150f;
+  }
+  body.dark .panel::before{border-color:rgba(255,255,255,.08);}
+  body.dark .hint{background:rgba(255,255,255,.07);}
+  body.dark .note-item{background:rgba(255,255,255,.07);}
+  body.dark .note-item:hover{background:rgba(255,255,255,.15);}
+  body.dark mark.hl{mix-blend-mode:normal;color:#1a1409;}
+  body.dark .note-popup{background:#2a2118;border-color:#4a3c2b;}
+  body.dark .note-popup textarea{background:#241d15;color:#f1e9d8;border-color:#4a3c2b;}
+  body.dark #cancelNote{background:#3a2f22;color:#e8dcc0;}
+
+  .app-shell{display:flex;min-height:100vh;}
+
+  /* ================= SIDEBAR ================= */
+  .sidenav{
+    width:272px;flex:0 0 272px;
+    background:linear-gradient(180deg,#241c14,#1b150f);
+    color:#f1e9d8;
+    padding:26px 20px 22px;
+    display:flex;flex-direction:column;gap:24px;
+    position:sticky;top:0;height:100vh;overflow-y:auto;
+    border-right:1px solid #3a2f22;
+  }
+  .sidenav-brand{display:flex;align-items:center;gap:11px;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:7px;flex:0 0 34px;
+    background:var(--wax);
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+  }
+  .brand-text{flex:1;min-width:0;}
+  .brand-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;line-height:1.2;}
+  .brand-sub{font-family:'Inter',sans-serif;font-size:10.5px;color:#c9b98f;opacity:.8;margin-top:2px;}
+  .home-link{
+    flex:0 0 auto;width:30px;height:30px;border-radius:7px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.06);color:#f1e9d8;text-decoration:none;font-size:14px;
+    transition:background .15s ease;
+  }
+  .home-link:hover{background:rgba(255,255,255,.16);}
+
+  .unit-label{
+    font-family:'Inter',sans-serif;font-size:10.5px;color:#c9b98f;opacity:.75;
+    line-height:1.4;padding-bottom:2px;border-bottom:1px solid #3a2f22;
+  }
+  .unit-label b{color:#e8dcc0;}
+
+  .nav-label{
+    font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:#c9b98f;opacity:.72;display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .count-badge{
+    background:var(--wax);color:#fff;border-radius:10px;padding:1px 7px;font-size:10px;font-weight:700;
+  }
+
+  .doc-list{display:flex;flex-direction:column;gap:6px;max-height:290px;overflow-y:auto;padding-right:2px;}
+  .doc-item{
+    display:flex;align-items:center;gap:10px;width:100%;
+    background:transparent;border:1px solid transparent;
+    border-radius:7px;padding:9px 10px;cursor:pointer;text-align:left;color:#f1e9d8;
+    font-family:'Inter',sans-serif;
+  }
+  .doc-item:hover{background:rgba(255,255,255,.06);}
+  .doc-item.active{background:rgba(169,129,46,.18);border-color:rgba(169,129,46,.4);}
+  .doc-num{font-size:10px;font-weight:700;color:var(--gold);}
+  .doc-info{display:flex;flex-direction:column;min-width:0;}
+  .doc-name{font-size:12.5px;font-weight:600;line-height:1.3;}
+  .doc-year{font-size:10.5px;color:#c9b98f;opacity:.7;}
+  .doc-item.ghost{opacity:.4;cursor:default;}
+  .doc-item.ghost:hover{background:transparent;}
+
+  .doc-item-wrap{display:flex;align-items:center;gap:4px;}
+  .doc-item-wrap .doc-item{flex:1;min-width:0;}
+  .doc-item.custom{border-left:2px solid var(--gold);}
+  .doc-edit{
+    flex:0 0 auto;background:transparent;border:none;color:#8d8172;
+    font-size:12px;cursor:pointer;padding:8px 8px;border-radius:4px;
+  }
+  .doc-edit:hover{color:var(--gold);background:rgba(255,255,255,.08);}
+  .doc-del{
+    flex:0 0 auto;background:transparent;border:none;color:#8d8172;
+    font-size:12px;cursor:pointer;padding:8px 10px;border-radius:4px;
+  }
+  .doc-del:hover{color:var(--wax);background:rgba(255,255,255,.08);}
+
+  .add-doc-btn{
+    width:100%;margin-top:2px;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    background:transparent;border:1px dashed #4a3c2b;color:#c9b98f;
+    padding:9px 10px;border-radius:7px;cursor:pointer;text-align:center;
+  }
+  .add-doc-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  .doc-io-row{display:flex;gap:6px;margin-top:2px;}
+  .doc-io-btn{
+    flex:1;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+    background:transparent;border:1px solid #4a3c2b;color:#c9b98f;
+    padding:7px 8px;border-radius:6px;cursor:pointer;text-align:center;
+  }
+  .doc-io-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  /* ---------- Add-document modal ---------- */
+  .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:90;}
+  .modal-backdrop:not([hidden]){display:block;}
+  .add-doc-modal{
+    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+    z-index:91;width:min(560px, 92vw);max-height:88vh;overflow-y:auto;
+    background:var(--paper);border-radius:8px;box-shadow:0 24px 60px -12px rgba(0,0,0,.5);
+    border:1px solid var(--paper-edge);
+  }
+  .modal-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 20px;border-bottom:1px solid var(--line);
+  }
+  .modal-head h3{font-family:'Playfair Display',serif;font-size:19px;margin:0;color:var(--ink);}
+  .modal-close{background:transparent;border:none;font-size:15px;color:var(--ink-soft);cursor:pointer;}
+  .modal-close:hover{color:var(--wax);}
+  .modal-body{padding:18px 20px;display:flex;flex-direction:column;gap:12px;}
+  .modal-hint{
+    font-size:11.5px;color:var(--ink-soft);background:rgba(0,0,0,.04);
+    padding:8px 10px;border-radius:6px;line-height:1.5;margin:0;
+  }
+  body.dark .modal-hint{background:rgba(255,255,255,.06);}
+  .field-label{font-size:11px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;display:block;}
+  .add-doc-modal input[type="text"], .add-doc-modal textarea, .add-doc-modal input[type="file"]{
+    width:100%;font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);
+    border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:rgba(255,255,255,.5);
+  }
+  body.dark .add-doc-modal input[type="text"], body.dark .add-doc-modal textarea{background:rgba(255,255,255,.06);}
+  .add-doc-modal textarea{resize:vertical;font-family:'Source Serif 4',serif;line-height:1.5;}
+  .field-row{display:flex;gap:12px;}
+  .field-row.two-col > div{flex:1;min-width:0;}
+  .type-toggle{font-size:12.5px;color:var(--ink);gap:20px;}
+  .type-toggle label{display:flex;align-items:center;gap:6px;cursor:pointer;}
+
+  .ta-toolbar{display:flex;gap:4px;margin-bottom:5px;}
+  .ta-btn{
+    width:30px;height:28px;border:1px solid var(--line);background:rgba(255,255,255,.5);
+    border-radius:5px;cursor:pointer;font-family:'Source Serif 4',serif;font-size:13px;color:var(--ink);
+  }
+  .ta-btn:hover{border-color:var(--wax);color:var(--wax);}
+  body.dark .ta-btn{background:rgba(255,255,255,.06);}
+  .ta-btn.wide{width:auto;padding:0 9px;white-space:nowrap;}
+  .modal-actions{
+    display:flex;justify-content:flex-end;gap:8px;
+    padding:14px 20px;border-top:1px solid var(--line);
+  }
+  .modal-actions button{
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;
+    border:none;border-radius:6px;padding:9px 16px;cursor:pointer;
+  }
+  #addDocCancel{background:transparent;border:1px solid var(--line);color:var(--ink-soft);}
+  #addDocSave{background:var(--wax);color:#fff;}
+
+  .color-legend{display:flex;flex-direction:column;gap:7px;}
+  .legend-item{
+    display:flex;align-items:center;gap:8px;
+    font-family:'Inter',sans-serif;font-size:11.5px;color:#e8dcc0;
+  }
+  .legend-item .dot{width:9px;height:9px;border-radius:50%;flex:0 0 9px;}
+  .legend-item .dot.hl-yellow{background:var(--hl-yellow);}
+  .legend-item .dot.hl-green{background:var(--hl-green);}
+  .legend-item .dot.hl-pink{background:var(--hl-pink);}
+
+  .notes-index{display:flex;flex-direction:column;gap:10px;flex:1;min-height:0;}
+  .notes-search{
+    width:100%;
+    background:rgba(255,255,255,.06);border:1px solid #3a2f22;border-radius:6px;
+    color:#f1e9d8;font-family:'Inter',sans-serif;font-size:12px;
+    padding:7px 9px;
+  }
+  .notes-search::placeholder{color:#8d8172;}
+  .notes-index-list{overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding-right:2px;min-height:40px;}
+  .idx-item{
+    display:flex;gap:8px;align-items:flex-start;
+    background:rgba(255,255,255,.04);border-radius:6px;padding:7px 8px;cursor:pointer;
+  }
+  .idx-item:hover{background:rgba(255,255,255,.09);}
+  .idx-item.flash{background:rgba(169,129,46,.35);}
+  .idx-dot{width:9px;height:9px;border-radius:50%;margin-top:4px;flex:0 0 9px;}
+  .idx-dot.hl-yellow{background:var(--hl-yellow);}
+  .idx-dot.hl-green{background:var(--hl-green);}
+  .idx-dot.hl-pink{background:var(--hl-pink);}
+  .idx-body{flex:1;min-width:0;}
+  .idx-meta{font-family:'Inter',sans-serif;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:#c9b98f;opacity:.75;margin-bottom:2px;}
+  .idx-text{font-family:'Inter',sans-serif;font-size:12px;line-height:1.4;color:#f1e9d8;word-wrap:break-word;}
+  .idx-del{font-size:12px;color:#8d8172;opacity:.6;flex:0 0 auto;padding:4px 6px;}
+  .idx-del:hover{opacity:1;color:var(--wax);}
+  .idx-empty{font-family:'Inter',sans-serif;font-size:11.5px;color:#8d8172;font-style:italic;line-height:1.5;}
+
+  .export-btn{
+    font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;
+    background:transparent;border:1px solid #4a3c2b;color:#e8dcc0;
+    border-radius:6px;padding:8px;cursor:pointer;
+  }
+  .export-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  .sidenav.drawer{
+    position:fixed;left:0;top:0;height:100vh;
+    transform:translateX(-105%);
+    transition:transform .28s ease;
+    z-index:70;
+    box-shadow:0 0 40px rgba(0,0,0,.4);
+  }
+  .sidenav.drawer.open{transform:translateX(0);}
+
+  .hamburger{
+    display:none;
+    position:fixed;top:16px;left:16px;z-index:71;
+    width:42px;height:42px;border-radius:9px;background:#241c14;color:#f1e9d8;
+    align-items:center;justify-content:center;border:none;cursor:pointer;font-size:17px;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+  }
+  .hamburger.show{display:flex;}
+
+  .backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:65;}
+  .backdrop.show{display:block;}
+
+  /* ---------- Top-right control cluster ---------- */
+  .top-controls{
+    position:fixed;top:16px;right:16px;z-index:71;
+    display:flex;align-items:center;gap:8px;
+  }
+  .icon-btn{
+    font-family:'Inter',sans-serif;font-size:15px;
+    background:#241c14;color:#f1e9d8;border:none;border-radius:50%;
+    width:38px;height:38px;flex:0 0 38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+    transition:background .15s ease;
+  }
+  .icon-btn:hover{background:#332619;}
+  .icon-btn[aria-pressed="true"]{background:var(--gold);color:#241c14;}
+
+  .font-size-group{
+    display:flex;background:#241c14;border-radius:20px;overflow:hidden;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+  }
+  .font-size-group button{
+    width:32px;height:38px;border:none;background:transparent;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:11.5px;cursor:pointer;
+  }
+  .font-size-group button:hover{background:rgba(255,255,255,.14);}
+  .font-size-group button + button{border-left:1px solid rgba(255,255,255,.15);}
+
+  .present-toggle{
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;
+    background:#241c14;color:#f1e9d8;border:none;border-radius:20px;
+    padding:9px 16px 9px 14px;cursor:pointer;letter-spacing:.02em;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+    display:flex;align-items:center;gap:7px;
+    transition:background .15s ease;
+  }
+  .present-toggle:hover{background:#332619;}
+  body.presentation .present-toggle{background:var(--wax);}
+  @media (max-width:720px){ .present-toggle .label{display:none;} .present-toggle{padding:9px;border-radius:50%;width:38px;height:38px;} }
+  @media (max-width:520px){ .top-controls{gap:6px;} .icon-btn, .font-size-group button{width:34px;} }
+
+  /* ---------- Search-in-text bar ---------- */
+  .search-bar{
+    position:fixed;top:62px;right:16px;z-index:71;
+    background:#241c14;border-radius:10px;padding:6px 8px 6px 12px;
+    display:flex;align-items:center;gap:7px;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,.4);
+  }
+  .search-bar input{
+    background:transparent;border:none;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-size:12.5px;width:150px;outline:none;
+  }
+  .search-bar input::placeholder{color:#8d8172;}
+  .search-count{font-family:'Inter',sans-serif;font-size:11px;color:#c9b98f;white-space:nowrap;}
+  .search-bar button{
+    width:26px;height:26px;border:none;border-radius:6px;background:transparent;
+    color:#f1e9d8;cursor:pointer;font-size:12px;
+  }
+  .search-bar button:hover{background:rgba(255,255,255,.14);}
+  @media (max-width:520px){ .search-bar input{width:100px;} }
+
+  .search-hit{background:#ffd23f;color:#1a1409;border-radius:2px;}
+  .search-hit.active{background:var(--wax);color:#fff;}
+
+  /* ================= CONTENT AREA ================= */
+  .content-area{flex:1 1 auto;min-width:0;padding-bottom:70px;}
+
+  header.masthead{
+    max-width:var(--measure);
+    margin:0 auto;
+    padding:38px 24px 18px;
+    transition:max-width .3s ease, padding .3s ease;
+  }
+  @media (max-width:1100px){ header.masthead{padding-top:76px;} }
+  body.presentation header.masthead{padding-top:70px;}
+
+  /* ================= PROJECTION MODE ================= */
+  body.presentation .hint,
+  body.presentation .subtitle,
+  body.presentation .folio{display:none;}
+  body.presentation h1.title{font-size:clamp(30px,3.6vw,46px);margin-top:0;}
+  body.presentation main.dossier{max-width:none;width:50%;}
+  body.presentation main.dossier.split{width:66%;}
+  /* On smaller screens (tablets) there's less room to spare than on a projector,
+     so the same "narrow reading column" would waste too much space — widen it
+     progressively as the viewport shrinks. */
+  @media (max-width:1400px){
+    body.presentation main.dossier{width:76%;}
+    body.presentation main.dossier.split{width:90%;}
+  }
+  @media (max-width:1100px){
+    body.presentation main.dossier{width:92%;}
+    body.presentation main.dossier.split{width:96%;}
+  }
+  body.presentation footer.controls{max-width:none;padding:0 32px;}
+  body.presentation .panel{transform:none;}
+  body.presentation .margin-col{display:none;}
+  body.presentation{--text-size:19px;}
+  body.presentation .text-col{line-height:1.9;}
+  body.presentation .panel-head{padding:26px 32px 16px;}
+  body.presentation .panel-head h2{font-size:25px;}
+  body.presentation .panel-body{padding:26px 32px 34px;}
+  @media (max-width:880px){
+    body.presentation{--text-size:17px;}
+    body.presentation .text-col{line-height:1.8;}
+  }
+
+  .folio{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--wax);
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .folio::before{content:"";width:22px;height:1px;background:var(--wax);display:inline-block;}
+  h1.title{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,42px);
+    margin:8px 0 6px;
+    line-height:1.08;
+  }
+  .subtitle{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:640px;
+    line-height:1.5;
+  }
+  .hint{
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    padding:9px 14px;
+    background:rgba(255,255,255,.35);
+    border:1px dashed var(--line);
+    border-radius:8px;
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    line-height:1.5;
+  }
+  .hint b{color:var(--ink);}
+
+  /* ---------- Dossier layout ---------- */
+  main.dossier{
+    max-width:var(--measure);
+    width:100%;
+    margin:26px auto 0;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    transition:max-width .3s ease, width .3s ease;
+  }
+  main.dossier.split{
+    max-width:none;
+    width:80%;
+    grid-template-columns:1fr 1fr;
+    align-items:start;
+  }
+  @media (max-width:880px){
+    main.dossier.split{width:100%;grid-template-columns:1fr;}
+  }
+
+  .panel{
+    background:var(--paper);
+    border-radius:3px;
+    box-shadow:var(--shadow);
+    position:relative;
+    padding:0;
+    transform:rotate(-.35deg);
+    border:1px solid var(--paper-edge);
+  }
+  .panel.analisis-panel{
+    background:var(--paper-2);
+    transform:rotate(.3deg);
+  }
+  .panel::before{
+    content:"";
+    position:absolute;inset:8px;
+    border:1px solid rgba(42,33,24,.08);
+    pointer-events:none;
+  }
+  .panel-head{
+    padding:22px 26px 14px;
+    border-bottom:1px solid var(--line);
+  }
+  .panel-head-row{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+  }
+  .hide-analysis-btn{
+    font-family:'Inter',sans-serif;
+    font-size:11px;font-weight:700;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:5px 11px;
+    border-radius:20px;
+    cursor:pointer;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .hide-analysis-btn:hover{border-color:var(--wax);color:var(--wax);}
+  .edit-doc-btn{
+    font-family:'Inter',sans-serif;
+    font-size:11px;font-weight:700;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:5px 11px;
+    border-radius:20px;
+    cursor:pointer;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .edit-doc-btn:hover{border-color:var(--gold);color:var(--gold);}
+  .tag{
+    font-family:'Inter',sans-serif;
+    font-size:10.5px;
+    letter-spacing:.12em;
+    font-weight:700;
+    color:#fff;
+    background:var(--wax);
+    padding:3px 9px;
+    border-radius:2px;
+  }
+  .tag.tag-alt{background:var(--green);}
+  .panel-head h2{
+    font-family:'Playfair Display',serif;
+    font-size:21px;
+    margin:10px 0 0;
+    line-height:1.25;
+  }
+  .panel-body{
+    display:flex;
+    gap:14px;
+    padding:20px 22px 26px;
+    align-items:flex-start;
+  }
+  .analisis-panel .panel-body{flex-direction:row-reverse;}
+  @media (max-width:640px){
+    .panel-body, .analisis-panel .panel-body{flex-direction:column;}
+  }
+
+  .text-col{
+    flex:1 1 auto;
+    min-width:0;
+    font-size:var(--text-size);
+    line-height:1.75;
+    color:var(--ink);
+    transition:font-size .15s ease;
+  }
+  .text-col p{
+    margin:0 0 14px;
+    text-align:justify;
+    text-align-last:left;
+    hyphens:auto;
+    -webkit-hyphens:auto;
+    -ms-hyphens:auto;
+  }
+  .text-col p:first-child::first-letter{
+    font-family:'Playfair Display',serif;
+    font-size:2.5em;
+    float:left;
+    line-height:.85;
+    padding-right:6px;
+    color:var(--wax);
+    font-weight:700;
+  }
+  .text-col b, .text-col strong{color:var(--ink);}
+  .text-col .lead-in{font-weight:600;}
+  .text-col ul{margin:0 0 14px;padding-left:22px;}
+  .text-col ul ul{margin:6px 0 0;padding-left:20px;}
+  .text-col li{margin-bottom:8px;text-align:left;}
+  .text-col li:last-child{margin-bottom:0;}
+
+  /* ---------- Image-source documents (paintings) ---------- */
+  .image-card{display:flex;flex-direction:column;gap:14px;}
+  .image-frame{
+    border:1px solid var(--paper-edge);
+    background:rgba(0,0,0,.03);
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:inset 0 0 0 6px var(--paper);
+  }
+  .image-frame img{display:block;width:100%;height:auto;}
+  .image-placeholder{padding:36px 24px;text-align:center;font-family:'Inter',sans-serif;}
+  .image-placeholder-icon{font-size:34px;margin-bottom:10px;opacity:.5;}
+  .image-placeholder-text{font-size:12.5px;color:var(--ink-soft);line-height:1.6;max-width:340px;margin:0 auto 10px;}
+  .image-placeholder-path{
+    display:inline-block;background:rgba(0,0,0,.06);padding:4px 10px;border-radius:4px;
+    font-size:11.5px;color:var(--ink);
+  }
+  body.dark .image-placeholder-path{background:rgba(255,255,255,.08);}
+  .image-caption{border-top:1px solid var(--line);padding-top:12px;}
+  .image-title{font-family:'Playfair Display',serif;font-size:16.5px;margin:0 0 6px;line-height:1.3;}
+  .image-meta{font-family:'Inter',sans-serif;font-size:12px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  .margin-col{
+    flex:0 0 168px;
+    max-width:168px;
+    position:sticky;
+    top:16px;
+  }
+  @media (max-width:640px){
+    .margin-col{position:static;max-width:none;flex:1 1 auto;}
+  }
+  .margin-col .margin-title{
+    font-family:'Inter',sans-serif;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+    opacity:.75;
+  }
+  .margin-empty{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    color:var(--ink-soft);
+    opacity:.55;
+    font-style:italic;
+    line-height:1.5;
+  }
+  .note-item{
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    line-height:1.5;
+    background:rgba(255,255,255,.55);
+    border-left:3px solid var(--gold);
+    border-radius:0 4px 4px 0;
+    padding:8px 10px;
+    margin-bottom:10px;
+    cursor:pointer;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .note-item:hover{background:rgba(255,255,255,.85);transform:translateX(2px);}
+  .note-item.flash{background:#fff6cf;}
+  .note-item .num{
+    display:inline-block;
+    font-weight:700;
+    color:var(--wax);
+    margin-right:5px;
+  }
+  .note-item .del{
+    float:right;
+    color:var(--ink-soft);
+    font-size:11px;
+    opacity:.5;
+  }
+  .note-item .del:hover{opacity:1;color:var(--wax);}
+
+  /* highlight marks */
+  mark.hl{
+    background:var(--hl-yellow);
+    padding:.03em .05em;
+    border-radius:2px;
+    cursor:pointer;
+    mix-blend-mode:multiply;
+    box-decoration-break:clone;
+  }
+  mark.hl-green{background:var(--hl-green);}
+  mark.hl-pink{background:var(--hl-pink);}
+  mark.hl.flash{outline:2px solid var(--wax);outline-offset:1px;}
+  sup.note-marker{
+    font-family:'Inter',sans-serif;
+    color:#fff;
+    background:var(--wax);
+    border-radius:50%;
+    width:18px;height:18px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:10px;font-weight:700;
+    cursor:pointer;
+    margin-left:1px;
+    line-height:1;
+  }
+
+  /* ---------- Seal / reveal button ---------- */
+  .seal-wrap{
+    display:flex;
+    justify-content:center;
+    margin:4px 0;
+  }
+  main.dossier.split .seal-wrap{display:none;}
+  .seal-btn{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.04em;
+    color:#f7ecd8;
+    background:radial-gradient(circle at 35% 30%, var(--wax) 0%, var(--wax-dark) 70%);
+    border:none;
+    width:104px;height:104px;
+    border-radius:50%;
+    box-shadow:0 8px 18px -6px rgba(107,31,39,.55), inset 0 0 0 3px rgba(247,236,216,.15);
+    cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:4px;
+    transition:transform .15s ease;
+    position:relative;
+  }
+  .seal-btn:hover{transform:scale(1.04);}
+  .seal-btn:active{transform:scale(.96);}
+  .seal-btn .seal-icon{font-size:20px;}
+  .seal-btn.opened{
+    background:radial-gradient(circle at 35% 30%, var(--green) 0%, #2c4030 70%);
+  }
+
+  /* ---------- Floating selection toolbar ---------- */
+  .hl-toolbar, .note-popup, .mark-menu{position:absolute;z-index:80;}
+  .hl-toolbar{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:#241c14;
+    padding:6px 8px;
+    border-radius:8px;
+    box-shadow:0 8px 20px -6px rgba(0,0,0,.45);
+  }
+  .hl-toolbar button{border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+  .swatch{
+    width:20px;height:20px;
+    border-radius:50%;
+    padding:0;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);
+  }
+  .swatch.yellow{background:var(--hl-yellow);}
+  .swatch.green{background:var(--hl-green);}
+  .swatch.pink{background:var(--hl-pink);}
+  .toolbar-divider{width:1px;height:18px;background:rgba(255,255,255,.2);}
+  .hl-toolbar .txt-btn{
+    background:transparent;color:#f1e9d8;font-size:12px;font-weight:600;
+    padding:4px 8px;border-radius:5px;
+  }
+  .hl-toolbar .txt-btn:hover{background:rgba(255,255,255,.12);}
+
+  /* ---------- Note popup ---------- */
+  .note-popup{
+    width:240px;
+    background:#fffdf6;
+    border:1px solid var(--line);
+    border-radius:8px;
+    box-shadow:0 12px 26px -8px rgba(0,0,0,.35);
+    padding:10px;
+  }
+  .note-popup-title{
+    font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+    color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;
+    margin-bottom:6px;
+  }
+  .note-popup textarea{
+    width:100%;
+    min-height:64px;
+    resize:vertical;
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:7px;
+    color:var(--ink);
+  }
+  .note-popup .note-actions{
+    display:flex;justify-content:flex-end;gap:6px;margin-top:8px;
+  }
+  .note-popup button{
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;font-weight:600;
+    border:none;border-radius:5px;
+    padding:6px 10px;cursor:pointer;
+  }
+  #saveNote{background:var(--wax);color:#fff;}
+  #cancelNote{background:#eee2c9;color:var(--ink-soft);}
+
+  /* ---------- Mark context menu ---------- */
+  .mark-menu{
+    background:#241c14;border-radius:8px;
+    box-shadow:0 8px 20px -6px rgba(0,0,0,.45);
+    overflow:hidden;
+    min-width:180px;
+  }
+  .mark-menu .menu-colors{display:flex;gap:7px;padding:9px 12px 7px;}
+  .mark-menu .menu-colors button{
+    width:18px;height:18px;border-radius:50%;padding:0;border:none;cursor:pointer;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);
+  }
+  .menu-divider{height:1px;background:rgba(255,255,255,.14);margin:2px 0;}
+  .mark-menu button.menu-action{
+    display:block;width:100%;
+    background:transparent;border:none;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    padding:9px 14px;text-align:left;cursor:pointer;
+  }
+  .mark-menu button.menu-action:hover{background:rgba(255,255,255,.12);}
+  .mark-menu button.menu-action.danger:hover{color:#f4a3a3;}
+
+  /* ---------- Footer controls ---------- */
+  footer.controls{
+    max-width:var(--measure);margin:30px auto 0;padding:0 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    font-family:'Inter',sans-serif;flex-wrap:wrap;gap:10px;
+  }
+  .footer-actions{display:flex;gap:8px;flex-wrap:wrap;}
+  .footer-btn{
+    font-size:12px;font-weight:600;color:var(--ink-soft);
+    background:transparent;border:1px solid var(--line);
+    padding:8px 14px;border-radius:6px;cursor:pointer;
+  }
+  .footer-btn:hover{border-color:var(--wax);color:var(--wax);}
+  .status{font-size:11.5px;color:var(--ink-soft);opacity:.75;}
+
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger" aria-label="Abrir menú">☰</button>
+
+<div class="top-controls">
+  <button class="icon-btn ui" id="searchToggle" title="Buscar en el texto" aria-label="Buscar en el texto">🔍</button>
+  <div class="font-size-group">
+    <button id="fontMinus" class="ui" title="Reducir letra" aria-label="Reducir letra">A−</button>
+    <button id="fontPlus" class="ui" title="Aumentar letra" aria-label="Aumentar letra">A+</button>
+  </div>
+  <button class="icon-btn ui" id="darkToggle" title="Modo oscuro" aria-pressed="false" aria-label="Modo oscuro">🌙</button>
+  <button class="present-toggle ui" id="presentToggle" aria-pressed="false">
+    <span class="icon">🖥</span><span class="label">Modo proyección</span>
+  </button>
+</div>
+
+<div class="search-bar ui" id="searchBar" hidden>
+  <input type="text" id="searchInput" placeholder="Buscar en el texto…" autocomplete="off">
+  <span class="search-count" id="searchCount">0/0</span>
+  <button id="searchPrev" title="Anterior">↑</button>
+  <button id="searchNext" title="Siguiente">↓</button>
+  <button id="searchClose" title="Cerrar">✕</button>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+
+<div class="app-shell">
+
+  <aside class="sidenav" id="sidenav">
+    <div class="sidenav-brand">
+      <div class="brand-mark">⚑</div>
+      <div class="brand-text">
+        <div class="brand-title">Archivo de Fuentes</div>
+        <div class="brand-sub">Historia de España</div>
+      </div>
+      <a class="home-link" href="index.html" title="Volver al inicio">🏠</a>
+    </div>
+
+    <div class="unit-label"><b>Unidad 2</b> · El Fin del Antiguo Régimen y la Revolución Liberal (1808–1833)</div>
+
+    <nav class="doc-list" id="docList">
+      <div class="nav-label">Documentos</div>
+    </nav>
+
+    <div class="color-legend">
+      <div class="nav-label">Significado de los colores</div>
+      <div class="legend-item"><span class="dot hl-yellow"></span>Dato clave</div>
+      <div class="legend-item"><span class="dot hl-green"></span>Contexto</div>
+      <div class="legend-item"><span class="dot hl-pink"></span>Duda / pregunta</div>
+    </div>
+
+    <div class="notes-index">
+      <div class="nav-label">Notas <span class="count-badge" id="notesCount">0</span></div>
+      <input type="text" id="notesFilter" class="notes-search" placeholder="Buscar en tus notas…">
+      <div class="notes-index-list" id="notesIndexList">
+        <div class="idx-empty">Todavía no has creado notas.</div>
+      </div>
+      <div class="doc-io-row">
+        <button class="export-btn" id="exportNotes" title="Descarga tus notas y subrayados de esta unidad en un .json">⬇ Exportar notas</button>
+        <button class="export-btn" id="importNotesBtn" title="Carga un .json de notas y subrayados exportado desde otro ordenador">⬆ Importar notas</button>
+      </div>
+      <input type="file" id="importNotesInput" accept=".json,application/json" hidden>
+    </div>
+  </aside>
+
+  <div class="content-area">
+
+    <header class="masthead">
+      <div class="folio">Unidad 2 · 1808–1833</div>
+      <h1 class="title">El Fin del Antiguo Régimen y la Revolución Liberal</h1>
+      <p class="subtitle">Selecciona un documento en el menú lateral para trabajar con su fuente y su análisis en paralelo.</p>
+      <div class="hint">✎ &nbsp;<b>Selecciona un fragmento</b> para subrayarlo o anclar una nota — atajos: <b>1</b>/<b>2</b>/<b>3</b> para color, <b>N</b> para nota. Haz clic en un subrayado ya creado para editarlo, cambiar su color o eliminarlo.</div>
+    </header>
+
+    <main class="dossier" id="dossier">
+
+      <section class="panel fuente-panel">
+        <div class="panel-head">
+          <div class="panel-head-row">
+            <span class="tag">Fuente primaria</span>
+            <button class="edit-doc-btn ui" id="editDocBtn" title="Editar este documento">✎ Editar</button>
+          </div>
+          <h2>—</h2>
+        </div>
+        <div class="panel-body">
+          <div class="text-col selectable" id="text-fuente" data-panel="fuente"></div>
+          <div class="margin-col" id="margin-fuente">
+            <div class="margin-title">Notas</div>
+            <div class="margin-empty">Aún no hay notas en este documento.</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="seal-wrap">
+        <button id="revealBtn" class="seal-btn" aria-expanded="false">
+          <span class="seal-icon">🖋</span>
+          <span class="seal-label">Revelar<br>análisis</span>
+        </button>
+      </div>
+
+      <section class="panel analisis-panel" id="analisisPanel" hidden>
+        <div class="panel-head">
+          <div class="panel-head-row">
+            <span class="tag tag-alt">Comentario</span>
+            <button class="hide-analysis-btn ui" id="hideAnalysisBtn" title="Ocultar análisis">✕ Ocultar análisis</button>
+          </div>
+          <h2>—</h2>
+        </div>
+        <div class="panel-body">
+          <div class="margin-col" id="margin-analisis">
+            <div class="margin-title">Notas</div>
+            <div class="margin-empty">Aún no hay notas en este documento.</div>
+          </div>
+          <div class="text-col selectable" id="text-analisis" data-panel="analisis"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="controls">
+      <div class="footer-actions">
+        <button id="undoBtn" class="footer-btn ui" title="Deshacer (Ctrl+Z)">↶ Deshacer</button>
+        <button id="resetBtn" class="footer-btn ui">Restablecer este documento</button>
+      </div>
+      <span class="status" id="statusMsg"></span>
+    </footer>
+
+  </div>
+</div>
+
+<!-- floating UI -->
+<div class="hl-toolbar" id="hlToolbar" hidden>
+  <button class="swatch yellow" data-color="yellow" title="Dato clave (1)"></button>
+  <button class="swatch green" data-color="green" title="Contexto (2)"></button>
+  <button class="swatch pink" data-color="pink" title="Duda / pregunta (3)"></button>
+  <div class="toolbar-divider"></div>
+  <button class="txt-btn" id="noteBtn" title="Añadir nota (N)">✎ Nota</button>
+</div>
+
+<div class="note-popup" id="notePopup" hidden>
+  <div class="note-popup-title" id="notePopupTitle">Nueva nota</div>
+  <textarea id="noteInput" placeholder="Escribe tu nota…"></textarea>
+  <div class="note-actions">
+    <button id="cancelNote">Cancelar</button>
+    <button id="saveNote">Guardar</button>
+  </div>
+</div>
+
+<div class="mark-menu" id="markMenu" hidden></div>
+
+<div class="modal-backdrop" id="addDocBackdrop" hidden></div>
+<div class="add-doc-modal ui" id="addDocModal" hidden>
+  <div class="modal-head">
+    <h3>Añadir documento</h3>
+    <button class="modal-close" id="addDocClose" title="Cerrar">✕</button>
+  </div>
+  <div class="modal-body">
+    <p class="modal-hint">Se guarda solo en este navegador — no se añade al archivo HTML. Usa "Exportar todo" para poder llevarte esto a otro equipo, o pídeme que lo incorpore de forma permanente.</p>
+
+    <div class="field-row type-toggle">
+      <label><input type="radio" name="docType" value="text" checked> Documento de texto</label>
+      <label><input type="radio" name="docType" value="image"> Documento con imagen (cuadro/foto)</label>
+    </div>
+
+    <label class="field-label" for="addNavTitle">Título para el menú</label>
+    <input type="text" id="addNavTitle" placeholder="Ej. Carta de un diputado a su familia">
+
+    <div class="field-row two-col">
+      <div>
+        <label class="field-label" for="addYear">Año</label>
+        <input type="text" id="addYear" placeholder="Ej. 1821">
+      </div>
+      <div>
+        <label class="field-label" for="addTag">Etiqueta</label>
+        <input type="text" id="addTag" placeholder="Fuente primaria" value="Fuente primaria">
+      </div>
+    </div>
+
+    <label class="field-label" for="addTitle">Título completo del documento</label>
+    <input type="text" id="addTitle" placeholder="(si lo dejas vacío, se usa el título del menú)">
+
+    <div id="addTextFields">
+      <label class="field-label" for="addFuenteText">Texto de la fuente</label>
+      <div class="ta-toolbar" data-target="addFuenteText">
+        <button type="button" class="ta-btn" data-wrap="strong" title="Negrita"><strong>B</strong></button>
+        <button type="button" class="ta-btn" data-wrap="em" title="Cursiva"><em>I</em></button>
+        <button type="button" class="ta-btn" data-wrap="small" title="Texto pequeño (para citas/referencias)">Aa</button>
+      </div>
+      <textarea id="addFuenteText" rows="5" placeholder="Pega aquí el texto de la fuente. Separa los párrafos dejando una línea en blanco entre ellos."></textarea>
+    </div>
+
+    <div id="addImageFields" hidden>
+      <label class="field-label" for="addImageInput" id="addImageLabel">Imagen (jpg/png)</label>
+      <input type="file" id="addImageInput" accept="image/*">
+      <div class="field-row two-col">
+        <div>
+          <label class="field-label" for="addArtist">Autor</label>
+          <input type="text" id="addArtist" placeholder="Ej. Vicente López">
+        </div>
+        <div>
+          <label class="field-label" for="addPaintYear">Año de la obra</label>
+          <input type="text" id="addPaintYear" placeholder="Ej. pintado en 1826">
+        </div>
+      </div>
+      <div class="field-row two-col">
+        <div>
+          <label class="field-label" for="addTechnique">Técnica</label>
+          <input type="text" id="addTechnique" placeholder="Ej. Óleo sobre lienzo">
+        </div>
+        <div>
+          <label class="field-label" for="addLocation">Ubicación</label>
+          <input type="text" id="addLocation" placeholder="Ej. Museo del Prado, Madrid">
+        </div>
+      </div>
+    </div>
+
+    <label class="field-label" for="addAnalisisText">Texto del análisis</label>
+    <div class="ta-toolbar" data-target="addAnalisisText">
+      <button type="button" class="ta-btn" data-wrap="strong" title="Negrita"><strong>B</strong></button>
+      <button type="button" class="ta-btn" data-wrap="em" title="Cursiva"><em>I</em></button>
+      <button type="button" class="ta-btn" data-wrap="small" title="Texto pequeño (para citas/referencias)">Aa</button>
+      <button type="button" class="ta-btn wide" data-wrap="bullet" title="Viñeta: aplica o quita el guion inicial de la línea">• Viñeta</button>
+      <button type="button" class="ta-btn wide" data-wrap="subbullet" title="Subviñeta: sangra la línea un nivel">◦ Subviñeta</button>
+    </div>
+    <textarea id="addAnalisisText" rows="6" placeholder="Naturaleza y tipo de fuente, idea principal, contexto…"></textarea>
+    <p class="modal-hint">Selecciona texto y pulsa B / I / Aa para darle formato — o escribe las etiquetas HTML directamente (&lt;strong&gt;, &lt;em&gt;). Dos párrafos se separan con una línea en blanco. Para una lista, sitúa el cursor en la línea (o selecciona varias) y pulsa • Viñeta; usa ◦ Subviñeta para sangrarla un nivel. Pulsar el mismo botón otra vez la quita.</p>
+  </div>
+  <div class="modal-actions">
+    <button id="addDocCancel">Cancelar</button>
+    <button id="addDocSave">Guardar documento</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ---- Respaldo local de window.storage -----------------------------------
+     Esta aplicacion se diseno para funcionar dentro de un entorno que
+     proporciona una API window.storage (get/set/delete). Cuando la pagina
+     se abre directamente en un navegador normal -como archivo descargado,
+     adjunto de correo, o alojada en un servidor web cualquiera- esa API no
+     existe, y hasta ahora eso hacia que CADA nota, subrayado y edicion se
+     descartara en silencio al recargar, y que una importacion de .json solo
+     restaurase las notas (que se guardan en memoria) pero nunca los
+     subrayados del texto (que solo se guardaban a traves de window.storage).
+     Este parche implementa la misma API usando localStorage del propio
+     navegador siempre que la real no este presente, para que todo persista
+     con normalidad en este navegador. ------------------------------------ */
+  if (typeof window.storage === 'undefined') {
+    window.storage = {
+      get: function(key){
+        try{
+          var raw = window.localStorage.getItem('archivo-fuentes:' + key);
+          return Promise.resolve(raw === null ? null : { value: raw });
+        }catch(e){ return Promise.resolve(null); }
+      },
+      set: function(key, value){
+        try{ window.localStorage.setItem('archivo-fuentes:' + key, value); }catch(e){}
+        return Promise.resolve();
+      },
+      delete: function(key){
+        try{ window.localStorage.removeItem('archivo-fuentes:' + key); }catch(e){}
+        return Promise.resolve();
+      }
+    };
+  }
+  /* ======================================================================
+     DOCUMENT DATA
+     Add a new unit document by appending an object here. num/year are
+     display-only; id must be unique within this unit (used as the storage
+     key and DOM lookup key).
+  ====================================================================== */
+  const DOCS = [
+    {
+      id: 'fontainebleau',
+      num: '01',
+      year: '1807',
+      navTitle: 'Tratado de Fontainebleau',
+      tag: 'Fuente primaria',
+      title: 'Tratado de Fontainebleau, 27 de octubre de 1807',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Tratado de Fontainebleau',
+      fuenteHTML: `
+        <p><span class="lead-in">Art. 1.º</span> La provincia de Entre Duero y Miño con la ciudad de Oporto se dará en toda propiedad y soberanía a S.M. el rey de Etruria con el título de Rey de la Lusitania Septentrional.</p>
+        <p><span class="lead-in">Art. 2.º</span> La provincia de Alentejo y el reino de los Algarbes, se darán en toda propiedad y soberanía al Príncipe de la Paz, para que las disfrute con el título de Príncipe de los Algarbes.</p>
+        <p><em>Convención secreta anexa</em></p>
+        <p><span class="lead-in">Art. I.</span> Un cuerpo de tropas imperiales francesas de veinte y cinco mil hombres de infantería, y de tres mil hombres de caballería entrará en España y marchará en derechura a Lisboa: se reunirá a este cuerpo otro de ocho mil hombres de infantería y de tres mil de caballería de tropas españolas con treinta piezas de artillería.</p>
+        <p><span class="lead-in">Art. II.</span> Al mismo tiempo una división de tropas españolas de diez mil hombres tomará posesión de la provincia de Entre‑Miño y Duero y de la ciudad de Oporto; y otra división de seis mil hombres, compuesta igualmente de tropas españolas tomará posesión de la provincia de Alentejo y del reino de los Algarbes.</p>
+        <p><span class="lead-in">Art. III.</span> Las tropas francesas serán alimentadas y mantenidas por la España, y sus sueldos pagados por la Francia durante todo el tiempo de su tránsito por España.</p>
+        <p>[...] <span class="lead-in">Art. VI.</span> Un nuevo cuerpo de cuarenta mil hombres de tropas francesas se reunirán en Bayona, a más tardar el 20 de noviembre próximo […]. Este nuevo cuerpo no entrará sin embargo en España, hasta que las dos Altas Potencias contratantes se hayan puesto de acuerdo a este efecto.</p>
+        <p>[...] Hecho en Fontainebleau, a 27 de octubre de 1807. Duroc‑Izquierdo.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Cfr. Fernando Díaz‑Plaja, <em>La Historia de España en sus documentos. El siglo XIX</em>, Madrid, Cátedra, 1983, pp. 28‑29.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Se trata de una fuente primaria y pública (un tratado internacional). De naturaleza jurídico‑diplomática y militar.</p>
+        <p><strong>Idea principal.</strong> El acuerdo formal mediante el cual la Corona española permite el tránsito de las tropas imperiales francesas por su territorio peninsular con el objetivo de invadir y repartirse Portugal.</p>
+        <p><strong>Ideas secundarias.</strong> El tratado establece de forma expresa el teórico respeto a la integridad del territorio español (incluidas sus ricas colonias americanas) frente a cualquier injerencia, algo que Napoleón traicionaría inmediatamente.</p>
+        <p><strong>Contexto en España.</strong> A finales de 1807, la política exterior española estaba dirigida por Manuel Godoy, el omnipotente "valido" de Carlos IV. España, sometida a los dictados de Francia desde hacía años, firmó este tratado que permitió a los ejércitos franceses cruzar los Pirineos. Sin embargo, las tropas napoleónicas comenzaron a ocupar posiciones estratégicas en ciudades españolas, actuando más como un ejército de ocupación que como aliados. Esta invasión encubierta generó un inmenso malestar social que fue canalizado por la camarilla del príncipe heredero (el futuro Fernando VII) contra Godoy, desembocando en el histórico Motín de Aranjuez de marzo de 1808, que forzó la abdicación de Carlos IV y desencadenó la gran crisis de la monarquía hispánica.</p>
+        <p><strong>Contexto europeo.</strong> Napoleón Bonaparte se encontraba en el cénit de su Imperio. Su gran enemigo era Gran Bretaña, a la cual intentaba asfixiar económicamente mediante el "Bloqueo Continental". Como Portugal (aliado histórico británico) se negaba a acatar dicho bloqueo, Napoleón decidió invadirlo y desmembrarlo, utilizando a España como plataforma estratégica obligatoria.</p>
+      `
+    },
+    {
+      id: 'carta-carlos-iv',
+      num: '02',
+      year: '1808',
+      navTitle: 'Carta de Carlos IV a Napoleón',
+      tag: 'Fuente primaria',
+      title: 'Carta de Carlos IV a Napoleón sobre los sucesos de Aranjuez, marzo de 1808',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de la Carta de Carlos IV a Napoleón',
+      fuenteHTML: `
+        <p>Señor mi hermano: V. M. sabrá sin duda con pena los sucesos de Aranjuez y sus resultas, y no verá con indiferencia a un Rey que, forzado a renunciar la Corona, acude a ponerse en los brazos de un grande monarca, aliado suyo, subordinándose totalmente a la disposición del único que puede darle su felicidad, la de toda su familia y la de sus vasallos.</p>
+        <p>Yo no he renunciado en favor de mi hijo sino por la fuerza de las circunstancias, cuando el estruendo de las armas y los clamores de una guardia sublevada me hacían conocer bastante la necesidad de escoger la vida o la muerte, pues esta última se hubiera seguido después de la de la Reina.</p>
+        <p>Yo fui forzado a renunciar; pero asegurado ahora con plena confianza en la magnanimidad y el genio del grande hombre que siempre ha mostrado ser amigo mío, yo he tomado la resolución de conformarme con todo lo que este mismo grande hombre quiera disponer de nosotros y de mi suerte, la de la Reina y la del Príncipe de la Paz.</p>
+        <p>Dirijo a V. M. I. una protesta contra los sucesos de Aranjuez y contra mi abdicación. Me entrego y enteramente confío en el corazón y amistad de V. M. con lo cual ruego a Dios que os conserve en su santa y digna guardia. De V. M. I y R. su muy afecto hermano y amigo. Carlos.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Conde de Toreno, <em>Historia del levantamiento, guerra y revolución de España</em>.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y privada (epistolar), aunque de inmensa trascendencia política.</p>
+        <p><strong>Idea principal.</strong> La denuncia por parte de Carlos IV de que su abdicación en favor de su hijo Fernando VII durante el Motín de Aranjuez fue arrancada mediante la coacción y la violencia, declarándola por tanto nula.</p>
+        <p><strong>Ideas secundarias.</strong> El rey depuesto apela a la "magnanimidad" de Napoleón como árbitro supremo, poniéndose a su entera disposición y entregándole de facto el destino de la monarquía española para recuperar su trono.</p>
+        <p><strong>Contexto en España.</strong> Entre el 17 y el 19 de marzo de 1808, una revuelta palaciega y popular orquestada por el "partido fernandino" (alta nobleza y clero contrarios a Godoy) asaltó el Palacio de Aranjuez. Carlos IV, aterrorizado, destituyó a Godoy y abdicó en su hijo Fernando VII. Sin embargo, arrepentido de su cobardía, escribió secretamente esta carta a Napoleón pidiendo auxilio. Esta misiva es la prueba palpable de la extrema debilidad, corrupción y descomposición moral de la monarquía borbónica del Antiguo Régimen. Ambos monarcas, padre e hijo, se disputaban el trono español no ante sus súbditos, sino mendigando el favor del emperador extranjero.</p>
+        <p><strong>Contexto europeo.</strong> Napoleón, que ya despreciaba a la familia real española por sus intrigas, vio en esta carta la excusa jurídica perfecta. Al constatar que los propios Borbones le entregaban el arbitraje de sus disputas, decidió convocar a ambos en territorio francés (Bayona) para aniquilar la dinastía e integrar a España en su constelación de "Estados vasallos" europeos.</p>
+      `
+    },
+    {
+      id: 'abdicaciones-bayona',
+      num: '03',
+      year: '1808',
+      navTitle: 'Las abdicaciones de Bayona',
+      tag: 'Fuente primaria',
+      title: 'Las abdicaciones de Bayona, mayo de 1808',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de las abdicaciones de Bayona',
+      fuenteHTML: `
+        <p><strong>Fernando VII a Carlos IV:</strong> "Mi venerado padre y señor: Para dar a Vuestra Majestad una prueba de mi amor, de mi obediencia y de mi sumisión, y para acceder a los deseos que Vuestra Majestad me ha manifestado reiteradas veces, renuncio mi corona en favor de Vuestra Majestad, deseando que Vuestra Majestad pueda gozarla por muchos años. Recomiendo a Vuestra Majestad las personas que me han servido desde el 19 de marzo."</p>
+        <p><strong>Carlos IV a Napoleón:</strong> "Su Majestad el rey Carlos, que no ha tenido en toda su vida otra mira que la felicidad de sus vasallos, constante en la idea de que todos los actos de un soberano deben únicamente dirigirse a este fin [...] ha resuelto ceder, como cede por el presente, todos sus derechos al trono de España y de las Indias a Su Majestad el emperador Napoleón, como el único que, en el estado a que han llegado las cosas, puede restablecer el orden; entendiéndose que dicha cesión sólo ha de tener efecto para hacer gozar a sus vasallos de las condiciones siguientes:</p>
+        <p>1.º La integridad del reino será mantenida: el príncipe que el emperador Napoleón juzgue debe colocar en el trono de España será independiente y los límites de la España no sufrirán alteración alguna.</p>
+        <p>2.º La religión católica, apostólica y romana será la única en España. No se tolerará en su territorio religión alguna reformada y mucho menos infiel, según el uso establecido actualmente."</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública. De naturaleza estrictamente jurídico-política internacional.</p>
+        <p><strong>Idea principal.</strong> La renuncia formal, total y definitiva de la familia real española a la soberanía nacional en favor de Napoleón.</p>
+        <p><strong>Ideas secundarias.</strong> Napoleón, actuando como dueño absoluto, transfiere inmediatamente esos derechos dinásticos a su hermano, José Bonaparte, forzando así un cambio de dinastía teóricamente "legal" pero en la práctica ilegítimo.</p>
+        <p><strong>Contexto en España.</strong> Con las tropas francesas ocupando Madrid, Napoleón atrajo a la familia real a la ciudad fronteriza francesa de Bayona en mayo de 1808. Allí, bajo coacción psicológica y militar, obligó a Fernando VII a devolver la corona a su padre Carlos IV, quien previamente ya se la había cedido a Napoleón. Simultáneamente, el 2 de mayo de 1808, el pueblo de Madrid, alertado por la salida de los últimos infantes hacia Francia, se levantó heroicamente en armas contra los ocupantes, siendo masacrado brutalmente. La noticia de estas ignominiosas abdicaciones, unida a la sangre derramada en Madrid, provocó un estallido insurreccional por toda la Península, dando inicio a la cruenta Guerra de la Independencia (1808-1814). Ante el vacío de poder dejado por unos reyes indignos, el pueblo español asumió por primera vez la "soberanía nacional", creando Juntas Provinciales para organizar la resistencia y gobernar en nombre del rey cautivo.</p>
+        <p><strong>Contexto europeo.</strong> Estas abdicaciones responden al patrón imperial napoleónico: derrocar a las viejas dinastías absolutistas europeas (como los Borbones) para instaurar "monarquías hermanas" gobernadas por miembros de la familia Bonaparte (como ocurrió en Nápoles u Holanda), imponiendo reformas ilustradas burguesas como el "Estatuto de Bayona".</p>
+      `
+    },
+    {
+      id: 'fusilamientos-3-mayo',
+      num: '04',
+      year: '1808',
+      navTitle: 'Los fusilamientos del 3 de mayo',
+      tag: 'Fuente artística',
+      title: 'Los fusilamientos del 3 de mayo',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de Los fusilamientos del 3 de mayo',
+      type: 'image',
+      artist: 'Francisco de Goya',
+      paintYear: 'pintado en 1814',
+      technique: 'Óleo sobre lienzo, 268 × 347 cm',
+      location: 'Museo del Prado, Madrid',
+      imageSrc: 'images/fusilamientos-3-mayo.jpg',
+      imageNote: 'Obra de dominio público. Descárgala del Museo del Prado o de Wikimedia Commons, guárdala como images/fusilamientos-3-mayo.jpg junto a este HTML, y añade su ruta en la variable imageSrc de este documento dentro del código.',
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente de naturaleza artística, histórico-política y social. Por su formato, es una imagen (un cuadro al óleo sobre lienzo). Atendiendo a su origen, es una fuente primaria e histórica, ya que, aunque la escena fue pintada por Francisco de Goya en 1814 (seis años después de los hechos), se realizó por encargo directo de la Regencia liberal para dejar constancia de los sucesos que habían dado inicio a la Guerra de la Independencia. Es un documento de carácter público, con una evidente finalidad propagandística, conmemorativa y de exaltación del patriotismo español frente al invasor extranjero.</p>
+        <p><strong>Idea principal.</strong> Plasmar la brutal y despiadada represión militar ejercida por el ejército napoleónico contra el pueblo de Madrid en la madrugada del 3 de mayo de 1808, como castigo y escarmiento tras el levantamiento antifrancés del día anterior.</p>
+        <p><strong>Ideas secundarias.</strong> La deshumanización de los verdugos: a la derecha, el pelotón de fusilamiento francés aparece de espaldas al espectador, ocultando sus rostros, formando una masa anónima y mecánica que ejecuta sin piedad las órdenes del mariscal Joaquín Murat. El heroísmo y el martirio del pueblo: a la izquierda, los patriotas madrileños se agrupan iluminados por un farol en la noche; destaca la figura central del hombre de camisa blanca, que afronta a sus verdugos con los brazos abiertos en cruz, evocando el martirio cristiano. La transversalidad social de la represión: entre los condenados se reconoce a gente del pueblo llano e incluso a un religioso, Francisco Gallego Dávila, sacristán del Convento de la Encarnación, el único sacerdote fusilado aquel día en Madrid por orden directa de Murat.</p>
+        <p><strong>Contexto europeo.</strong> Estos fusilamientos son consecuencia directa de la política expansionista napoleónica. Napoleón y el gobierno de Carlos IV habían firmado a finales de 1807 el Tratado de Fontainebleau, un acuerdo que autorizaba el paso de las tropas francesas por territorio español con el pretexto de invadir Portugal y repartirse su territorio.</p>
+        <p><strong>Contexto en España.</strong> La entrada del ejército francés se convirtió en una ocupación militar encubierta que coincidió con el colapso de la monarquía española: el motín de Aranjuez (marzo de 1808) forzó la abdicación de Carlos IV en su hijo Fernando VII, y Napoleón aprovechó esta crisis dinástica para atraer a ambos a Bayona y forzar su renuncia al trono en favor de José I Bonaparte. Ante la salida de los últimos miembros de la familia real hacia Francia el 2 de mayo de 1808, el pueblo de Madrid estalló en un motín espontáneo contra las fuerzas de ocupación. El mariscal Murat aplastó la insurrección y, para aterrorizar a la población, desató la salvaje represión que Goya muestra en el lienzo: cientos de madrileños fueron detenidos y ejecutados sumariamente durante la noche y la madrugada del 3 de mayo. La noticia de esta masacre, junto a las abdicaciones de la familia real, provocó el levantamiento generalizado de las provincias y la formación de Juntas que asumieron la soberanía nacional, dando inicio a la Guerra de la Independencia (1808-1814).</p>
+      `
+    },
+    {
+      id: 'constitucion-1812',
+      num: '05',
+      year: '1812',
+      navTitle: 'La Constitución de 1812',
+      tag: 'Fuente primaria',
+      title: 'La Constitución de Cádiz, 19 de marzo de 1812',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de la Constitución de 1812',
+      fuenteHTML: `
+        <p>Las Cortes Generales y Extraordinarias de la Nación española, decretan la siguiente Constitución [...]:</p>
+        <p><span class="lead-in">Art. 1º.</span> La Nación española es la reunión de todos los españoles de ambos hemisferios.</p>
+        <p><span class="lead-in">Art. 2º.</span> La Nación española es libre e independiente, y no es ni puede ser patrimonio de ninguna persona o familia.</p>
+        <p><span class="lead-in">Art. 3º.</span> La soberanía reside esencialmente en la Nación, y, por lo mismo, pertenece a esta exclusivamente el derecho de establecer sus leyes fundamentales.</p>
+        <p><span class="lead-in">Art. 4º.</span> La Nación está obligada a conservar y proteger las leyes sabias y justas, la libertad civil, la propiedad y los demás derechos legítimos de todos los individuos que la componen. [...]</p>
+        <p><span class="lead-in">Art. 8º.</span> También está obligado todo español, sin distinción alguna, a contribuir en proporción a sus haberes para los gastos del Estado. [...]</p>
+        <p><span class="lead-in">Art. 12º.</span> La religión de la Nación española es y será perpetuamente la católica, apostólica, única y verdadera. La Nación la protege por leyes sabias y justas, y prohíbe el ejercicio de cualquier otra.</p>
+        <p><span class="lead-in">Art. 13º.</span> El objeto del Gobierno es la felicidad de la Nación, puesto que el fin último de toda sociedad política no es otro que el bienestar de los individuos que la componen.</p>
+        <p><span class="lead-in">Art. 14º.</span> El gobierno de la Nación española es una monarquía moderada hereditaria.</p>
+        <p><span class="lead-in">Art. 15º.</span> La potestad de hacer las leyes reside en las Cortes con el rey.</p>
+        <p><span class="lead-in">Art. 16º.</span> La potestad de hacer ejecutar las leyes reside en el rey.</p>
+        <p><span class="lead-in">Art. 17º.</span> La potestad de aplicar las leyes en causas civiles y criminales reside en los tribunales establecidos por la ley.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública. Su naturaleza es jurídico-política, al ser la primera Carta Magna o Ley Fundamental de la historia de España.</p>
+        <p><strong>Idea principal.</strong> La plasmación jurídica del desmantelamiento del Antiguo Régimen y la creación de un nuevo Estado liberal y representativo en España.</p>
+        <p><strong>Ideas secundarias.</strong> Proclama de forma rotunda el principio de "soberanía nacional" (el poder reside en la nación, no en el rey por derecho divino). Establece la estricta separación de poderes, garantizando libertades civiles, y reconoce a los habitantes de las colonias americanas como ciudadanos españoles de pleno derecho ("de ambos hemisferios"). Sin embargo, como concesión a los sectores conservadores, declara la catolicidad exclusiva del Estado.</p>
+        <p><strong>Contexto en España.</strong> Durante la Guerra de la Independencia, las diversas Juntas Locales y Provinciales cedieron su poder a una Junta Suprema Central que, incapaz de frenar el avance francés, se refugió en la inexpugnable ciudad de Cádiz y convocó Cortes Generales en 1810. Allí, en una ciudad sitiada y bullente de comercio y burguesía, los diputados liberales lograron imponerse a los absolutistas. La promulgación de "La Pepa" en 1812 representó el primer y más brillante intento de revolución liberal burguesa en España. Trató de modernizar el país suprimiendo la Inquisición, aboliendo los gremios e introduciendo la igualdad jurídica. Aunque su aplicación práctica fue escasa por el contexto bélico, se convirtió en el gran mito y bandera de las libertades para todos los progresistas del siglo XIX.</p>
+        <p><strong>Contexto europeo.</strong> La Constitución gaditana bebía de las fuentes de la Revolución Francesa de 1789 (Declaración de Derechos) y de la Revolución Americana, pero se adaptó a la tradición hispana apelando a las antiguas leyes fundamentales de la monarquía (como justificaba Martínez Marina) para legitimar el cambio. Su impacto exterior fue inmenso, sirviendo de modelo directo para las futuras constituciones de Portugal (1822), Piamonte y las nacientes repúblicas latinoamericanas.</p>
+      `
+    },
+    {
+      id: 'decreto-senorios',
+      num: '06',
+      year: '1811',
+      navTitle: 'Abolición de los señoríos',
+      tag: 'Fuente primaria',
+      title: 'Decreto de abolición de los señoríos jurisdiccionales, 6 de agosto de 1811',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del decreto de abolición de los señoríos',
+      fuenteHTML: `
+        <p>Deseando las cortes generales y extraordinarias, remover los obstáculos que hayan podido oponerse al buen régimen, aumento de población y prosperidad de la monarquía española, decretan:</p>
+        <p><span class="lead-in">I.</span> Desde ahora quedan incorporados á la nación todos los señoríos jurisdiccionales de cualquiera clase y condición que sean. […]</p>
+        <p><span class="lead-in">IV.</span> Quedan abolidos los dictados de vasallo y vasallaje, y las prestaciones así reales como personales que deban su origen a título jurisdiccional [...]</p>
+        <p><span class="lead-in">V.</span> Los señoríos territoriales y solariegos quedan desde ahora en la clase de los demás derechos de propiedad particular, si no son de aquellos que por su naturaleza deban incorporarse á la nación, ó de los en que no se hayan cumplido las condiciones con que se concedieron, lo que resultará de los títulos de adquisición.</p>
+        <p><span class="lead-in">XIV.</span> En adelante nadie podrá llamarse señor de vasallos, ejercer jurisdicción, nombrar jueces, ni usar de los privilegios y derechos comprendidos en este decreto; y el que lo hiciere perderá el derecho al reintegro en los casos que quedan indicados.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Decreto de 6 de agosto de 1811, Cádiz.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Decreto legislativo de las Cortes de Cádiz). De naturaleza jurídica, social y económica.</p>
+        <p><strong>Idea principal.</strong> La demolición del entramado jurídico-feudal que sometía a los campesinos al dominio arbitrario de la nobleza y la Iglesia.</p>
+        <p><strong>Ideas secundarias.</strong> Al abolir los "señoríos jurisdiccionales", los nobles perdían su derecho a nombrar alcaldes y jueces o a cobrar impuestos de vasallaje. Sin embargo, el decreto era ambiguo: permitía que los antiguos señoríos "territoriales" se transformaran en propiedades privadas plenas de corte capitalista.</p>
+        <p><strong>Contexto en España.</strong> Este decreto fue la medida económico-social más trascendental de las Cortes de Cádiz. En el Antiguo Régimen, más de la mitad de los pueblos y tierras de España no dependían del rey (realengo), sino de señores nobles o eclesiásticos que ejercían como dueños absolutos de la vida local. La burguesía liberal gaditana, defensora a ultranza de la "propiedad privada" libre y capitalista, necesitaba liquidar esta estructura tardofeudal. La abolición igualó a todos los españoles ante la ley civil y penal estatal. Sin embargo, la nobleza logró maniobrar astutamente en los tribunales en años posteriores para retener la propiedad de las tierras, lo que empobreció a cientos de miles de campesinos que perdieron sus derechos de uso tradicional, incubando un grave problema agrario (la "Cuestión Agraria") que estallaría a finales del siglo.</p>
+        <p><strong>Contexto europeo.</strong> España seguía con retraso la senda abierta por la Revolución Francesa, concretamente la abolición de los derechos feudales de la famosa noche del 4 de agosto de 1789 por parte de la Asamblea Constituyente francesa. Era el triunfo del modelo del individualismo posesivo liberal sobre el colectivismo estamental.</p>
+      `
+    },
+    {
+      id: 'manifiesto-persas',
+      num: '07',
+      year: '1814',
+      navTitle: 'El Manifiesto de los Persas',
+      tag: 'Fuente primaria',
+      title: 'El Manifiesto de los Persas, 12 de abril de 1814',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Manifiesto de los Persas',
+      fuenteHTML: `
+        <p>[...] Del número de los españoles que se complacen al ver restituido a V.M. al trono de sus mayores, son los que firman esta reverente exposición, con el carácter de representantes de España. Más como en ausencia de V.M. se ha mudado el sistema que regía al momento de verificarse aquélla, y nos hallamos al frente de la Nación en un Congreso que decreta lo contrario de los que sentimos [...]</p>
+        <p>El (remedio) que debemos pedir, trasladando al papel nuestros votos y el de nuestras provincias, es con arreglo a las leyes, fueros, uso y costumbres de España. Ojalá no hubiese materia harto cumplida para que V.M. repita al Reino el Decreto que dictó en Bayona (ordenando la convocatoria de Cortes), y manifieste (según la indicada ley de Partida) la necesidad de remediar lo actuado en Cádiz, que a este fin se proceda a celebrar Cortes con la solemnidad y en la forma que se celebraron las antiguas; que entre tanto se mantenga ilesa la Constitución española observada por tantos siglos, y las leyes y fueros que a su virtud se acordaron; que se suspendan los efectos de la Constitución y Decretos dictados en Cádiz, y que las nuevas Cortes tomen en consideración su nulidad, su injusticia y sus inconvenientes [...].</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Manifiesto llamado "de los Persas" presentado al rey Fernando VII por sesenta y nueve diputados de las Cortes (12 de abril de 1814).</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Manifiesto político). De naturaleza política e ideológica.</p>
+        <p><strong>Idea principal.</strong> La exhortación formal y documentada dirigida al rey Fernando VII para que derogue inmediatamente la Constitución de 1812 y la obra legislativa liberal de Cádiz.</p>
+        <p><strong>Ideas secundarias.</strong> Sus firmantes ("los serviles", como los llamaban los liberales) justifican la monarquía absoluta como obra de la razón y de la ley divina. Rechazan de plano cualquier concepto de soberanía nacional y condenan el proceso revolucionario vivido en ausencia del rey como un estado de anarquía destructiva.</p>
+        <p><strong>Contexto en España.</strong> En la primavera de 1814, tras la derrota napoleónica, Fernando VII "el Deseado" regresó a España. Los liberales esperaban que jurara la Constitución en Madrid, pero el rey se desvió hacia Valencia, tanteando sus apoyos militares (general Elío). Allí recibió este Manifiesto de los Persas, redactado por los diputados absolutistas más reaccionarios. Este documento dotó al rey del pretexto político y la cobertura ideológica que necesitaba para dar un auténtico golpe de Estado institucional contra sus propios súbditos. Apoyándose en el ejército, en el clero tradicionalista y en la pasividad de un campesinado analfabeto al que la Constitución no había sacado del hambre, Fernando VII decidió desatar una brutal represión contra los liberales.</p>
+        <p><strong>Contexto europeo.</strong> Este manifiesto está en perfecta y total sintonía con las directrices de la Restauración absolutista que las potencias vencedoras de Napoleón (Rusia, Austria, Prusia) estaban diseñando en el Congreso de Viena (1814-1815). Suponía la readopción continental del principio del "Legitimismo" dinástico y de la Alianza entre el Trono y el Altar, aplastando los brotes revolucionarios.</p>
+      `
+    },
+    {
+      id: 'decreto-valencia',
+      num: '08',
+      year: '1814',
+      navTitle: 'Decreto de Valencia',
+      tag: 'Fuente primaria',
+      title: 'Decreto de restauración del absolutismo, Valencia, 4 de mayo de 1814',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Decreto de Valencia',
+      fuenteHTML: `
+        <p>[...] quedó todo a disposición de las Cortes, las cuales en el mismo día de su instalación (24 de septiembre de 1810) y por principio de sus actos, me despojaron de la soberanía poco antes reconocida por los mismos diputados, atribuyéndola a la Nación para apropiársela así ellos mismos, y dar a ésta, después de tal usurpación, las leyes que quisieron [...]</p>
+        <p>[...] declaro, que mi real ánimo es no solamente no jurar ni acceder a dicha Constitución, ni a Decreto alguno de las Cortes generales y extraordinarias y de las ordinarias actualmente abiertas: a saber, los que sean depresivos de los derechos y prerrogativas de mi real soberanía establecidas por la Constitución y las leyes en que de largo tiempo la Nación ha vivido, sino el de declarar aquella Constitución y aquellos Decretos nulos y de ningún valor ni efecto, ahora ni en tiempo alguno, como si no hubiesen pasado jamás tales actos [...]</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Decreto, Valencia, 4 de mayo de 1814.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Real Decreto). De naturaleza jurídico-política e intensamente coercitiva.</p>
+        <p><strong>Idea principal.</strong> La aniquilación jurídica y total del régimen constitucional nacido en 1812 y la reimplantación de la monarquía absoluta de derecho divino.</p>
+        <p><strong>Ideas secundarias.</strong> Fernando VII declara "nulos y de ningún valor ni efecto" la Carta Magna y los decretos de Cádiz. Paralelamente, se instaura un régimen de terror policial, creando comisiones de vigilancia y depurando la administración, persiguiendo implacablemente tanto a los liberales ("doceañistas") como a los afrancesados.</p>
+        <p><strong>Contexto en España.</strong> Este decreto inauguró el Sexenio Absolutista (1814-1820). España experimentó un salto atrás en el tiempo: se restauró el oneroso régimen señorial, la Inquisición, los privilegios fiscales de la Mesta y los mayorazgos de la nobleza. La represión forzó al exilio (hacia Londres y París) a la élite intelectual y política de la nación (el primer gran exilio español contemporáneo). Sin embargo, la monarquía fernandina se mostró profundamente ineficaz: la Hacienda estaba quebrada por la guerra peninsular y cortada la vital llegada de plata de las colonias americanas, que iniciaban su guerra de independencia. Ante el cierre de la vía parlamentaria, la burguesía y la joven oficialidad del ejército recurrieron de forma constante al pronunciamiento militar como única vía para derrocar el absolutismo. Desde 1814 hasta 1820, valientes conspiraciones lideradas por militares liberales (Espoz y Mina, Porlier en Galicia, Lacy en Cataluña) fracasaron y sus líderes fueron ahorcados o fusilados sin piedad por el monarca.</p>
+        <p><strong>Contexto europeo.</strong> El absolutismo opresivo de Fernando VII era bien visto por la "Santa Alianza", coalición militar conservadora forjada en Viena para intervenir militarmente en cualquier país europeo donde la "infección revolucionaria" liberal amenazara a una monarquía.</p>
+      `
+    },
+    {
+      id: 'manifiesto-fernando-vii-1820',
+      num: '09',
+      year: '1820',
+      navTitle: 'Fernando VII acata la Constitución',
+      tag: 'Fuente primaria',
+      title: 'Manifiesto del rey acatando la Constitución tras el triunfo de Riego, 10 de marzo de 1820',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Manifiesto de 1820',
+      fuenteHTML: `
+        <p>Españoles: Cuando vuestros heroicos esfuerzos lograron poner término al cautiverio en que me retuvo la más inaudita perfidia, todo cuanto vi y escuché, apenas pisé el suelo patrio, se reunió para persuadirme de que la nación deseaba ver resucitada su anterior forma de gobierno; […]. Pero mientras yo meditaba maduramente con la solicitud propia de mi paternal corazón las variaciones de nuestro régimen fundamental, que parecían más adaptables al carácter nacional y al estado presente de las diversas porciones de la monarquía española, así como más análogas a la organización de los pueblos ilustrados, me habéis hecho entender vuestro anhelo de que se restableciese aquella Constitución que entre el estruendo de armas hostiles fue promulgada en Cádiz el año 1812, al propio tiempo que con asombro del mundo combatíais por la libertad de la patria.</p>
+        <p>He oído vuestros votos, y cual tierno padre he condescendido a lo que mis hijos reputan conducente a su felicidad. He jurado esa Constitución por la cual suspirabais, y seré siempre su más firme apoyo. Ya he tomado las medidas oportunas para la propia convocatoria de las Cortes. En ellas, habiendo reunido a vuestros representantes, me gozaré de concurrir a la grande obra de la prosperidad nacional. […] Marchemos francamente, y Yo el primero, por la senda constitucional; y mostrando a la Europa un modelo de sabiduría, orden y perfecta moderación.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Gaceta Extraordinaria de Madrid, 12 de marzo de 1820.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Discurso o Manifiesto Real a la Nación). De naturaleza política y propagandística.</p>
+        <p><strong>Idea principal.</strong> La claudicación pública y humillante del rey absolutista Fernando VII, viéndose obligado a jurar y aceptar la odiada Constitución liberal de 1812 para salvar su trono ante el avance irrefrenable de la revolución.</p>
+        <p><strong>Ideas secundarias.</strong> El rey disfraza su rendición como un acto de supuesta "paternidad" y bondad hacia sus súbditos, utilizando la célebre frase hipócrita ("marchemos francamente..."). Su acatamiento permitió reabrir el experimento liberal en España.</p>
+        <p><strong>Contexto en España.</strong> El 1 de enero de 1820, el teniente coronel Rafael del Riego se pronunció en Cabezas de San Juan (Sevilla) al frente de las tropas destinadas a embarcar hacia América para reprimir a los independentistas. Tras semanas de dura travesía por Andalucía, el alzamiento encontró eco repentino en diversas capitanías provinciales. Acorralado, Fernando VII firmó este manifiesto, inaugurando el Trienio Liberal (1820-1823). Rápidamente se restauró la vasta obra legislativa de Cádiz: abolición de la Inquisición y de los señoríos, libertad de imprenta y reactivación de la fundamental Milicia Nacional. Sin embargo, el liberalismo sufrió su primera gran fractura interna: los doceañistas o moderados chocaron violentamente con los veinteañistas o exaltados. El rey utilizó de forma traicionera su derecho de veto constitucional para bloquear las leyes y conspiró permanentemente en la sombra con las potencias absolutistas extranjeras para que invadieran España.</p>
+        <p><strong>Contexto europeo.</strong> La revolución española de 1820 fue el epicentro sismológico de Europa. El éxito de Riego inspiró inmediatamente una "oleada revolucionaria" de levantamientos militares liberales y nacionalistas en el Piamonte, Nápoles, Portugal (Revolución de Oporto) y Grecia, atemorizando enormemente al Imperio Austrohúngaro y al sistema de la Restauración continental.</p>
+      `
+    },
+    {
+      id: 'final-trienio',
+      num: '10',
+      year: '1823',
+      navTitle: 'El final del Trienio',
+      tag: 'Fuente primaria',
+      title: 'El Congreso de Verona y la invasión de los Cien Mil Hijos de San Luis, 1822-1823',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del final del Trienio Liberal',
+      fuenteHTML: `
+        <p>La Europa entera, conociendo profundamente mi cautiverio y el de toda mi Real Familia, la mísera situación de mis vasallos fieles y leales, y las máximas perniciosas que profusamente esparcían a toda costa los agentes Españoles por todas partes, determinaron poner fin a un estado de cosas que era el escándalo universal, que caminaba a trastornar todos los Tronos y todas las instituciones antiguas cambiándolas en la irreligión y en la inmoralidad […].</p>
+        <p>Sentado ya otra vez en el trono de S. Fernando por la mano sabía y justa del Omnipotente, por las generosas resoluciones de mis poderosos Aliados […] he venido a declarar lo siguiente: Primero: Son nulos y de ningún valor todos los actos del gobierno llamado constitucional (de cualquier clase y condición que sean) que ha dominado a mis pueblos desde el día 7 de marzo de 1820 hasta hoy, día 1º de octubre de 1823, declarando, como declaro, que en toda esta época he carecido de libertad, obligado a sancionar las leyes y a expedir las órdenes, decretos y reglamentos que contra mi voluntad se meditaban y expedían por el mismo gobierno.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Gaceta Extraordinaria de Madrid, 7 de octubre de 1823.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente secundaria (o primaria, si nos remitimos a los protocolos del tratado diplomático). De naturaleza político-militar internacional.</p>
+        <p><strong>Idea principal.</strong> La orden formal de las potencias de la Santa Alianza para intervenir por la fuerza de las armas en el territorio soberano español y aplastar el régimen del Trienio Liberal.</p>
+        <p><strong>Ideas secundarias.</strong> Evidencia que la soberanía nacional española fue aniquilada por una fuerza exterior reaccionaria a petición del propio rey Fernando VII, confirmando el internacionalismo tanto del absolutismo como del propio liberalismo.</p>
+        <p><strong>Contexto en España.</strong> Para finales de 1822, la inestabilidad en España era altísima. Los absolutistas puros o "realistas" habían creado guerrillas rurales reaccionarias e instaurado una "Regencia" absolutista paralela en la Seu d'Urgell. El rey Fernando VII boicoteaba al gobierno exaltado de Evaristo San Miguel. Ante las secretas súplicas del rey, la Cuádruple Alianza se reunió en Verona (octubre de 1822) y encomendó a la monarquía francesa de Luis XVIII la invasión de España. En abril de 1823, el duque de Angulema penetró en la península al mando de casi 100.000 soldados franceses (Los Cien Mil Hijos de San Luis). A diferencia de lo ocurrido en 1808, el pueblo campesino, desencantado con la incapacidad de los liberales para resolver sus problemas materiales, no opuso gran resistencia. El gobierno huyó a Cádiz, donde capituló finalmente en septiembre. Fernando VII recuperó sus poderes ilimitados, dando comienzo a la siniestra y vengativa Década Ominosa (1823-1833). La represión fue dantesca: el propio Riego, Mariana Pineda y Torrijos serían ejecutados brutalmente.</p>
+        <p><strong>Contexto europeo.</strong> Con esta invasión, el sistema intervencionista de Metternich y la "Santa Alianza" demostraron su aparente triunfo en Europa Occidental. La Francia restaurada lograba un éxito militar de prestigio, ahogando a sangre y fuego el experimento constitucional progresista que amenazaba el orden conservador del continente.</p>
+      `
+    },
+    {
+      id: 'fusilamiento-torrijos',
+      num: '11',
+      year: '1831',
+      navTitle: 'Fusilamiento de Torrijos',
+      tag: 'Fuente artística',
+      title: 'Fusilamiento de Torrijos y sus compañeros',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Fusilamiento de Torrijos',
+      type: 'image',
+      artist: 'Antonio Gisbert',
+      paintYear: 'pintado en 1888',
+      technique: 'Óleo sobre lienzo, 390 × 601 cm',
+      location: 'Museo del Prado, Madrid',
+      imageSrc: 'images/fusilamiento-torrijos.jpg',
+      imageNote: 'Obra de dominio público. Descárgala del Museo del Prado o de Wikimedia Commons, guárdala como images/fusilamiento-torrijos.jpg junto a este HTML, y añade su ruta en la variable imageSrc de este documento dentro del código.',
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente de naturaleza artística, histórico-política y social. Por su formato, es una imagen: un inmenso cuadro al óleo pintado por Antonio Gisbert en 1888. Presenta una doble vertiente: es una fuente secundaria respecto a los hechos que narra, ya que el fusilamiento ocurrió en 1831, más de cincuenta años antes de que se pintara el lienzo; pero es una fuente primaria e historiográfica para entender la mentalidad de la época de la Restauración, momento en el que los gobiernos liberales impulsaron la creación de obras de arte para formular una identidad patria y ensalzar a los héroes que lucharon contra el absolutismo.</p>
+        <p><strong>Idea principal.</strong> Plasmar la brutal represión del absolutismo de Fernando VII, mostrando el momento exacto previo a la ejecución del general liberal José María Torrijos y sus compañeros en las playas de Málaga en 1831, tras haber intentado sublevar al pueblo contra el rey.</p>
+        <p><strong>Ideas secundarias.</strong> La dignidad ante la muerte: a diferencia de Los fusilamientos del 3 de mayo de Goya, aquí no hay un estallido descontrolado de terror; los condenados, cogidos de las manos, afrontan su fatal destino con serenidad y entereza moral, destacando la figura central de Torrijos, erguido y mirando al frente. La crueldad de la represión: en el suelo yacen los cuerpos sin vida de los compañeros ya fusilados, mientras algunos son vendados y un fraile les ofrece los últimos auxilios espirituales. La transversalidad del sacrificio liberal: la indumentaria de los personajes refleja que en este pronunciamiento participaron hombres de distinta extracción social.</p>
+        <p><strong>Contexto europeo.</strong> Tras 1814 y el Congreso de Viena, las potencias vencedoras impulsaron la Restauración del absolutismo en toda Europa, creando la Santa Alianza para aplastar cualquier brote de revolución liberal. No obstante, el liberalismo y el nacionalismo no desaparecieron, provocando oleadas revolucionarias en 1820 y 1830 en países como Francia, Bélgica o los territorios italianos.</p>
+        <p><strong>Contexto en España.</strong> Tras el Trienio Liberal (1820-1823), la Santa Alianza intervino enviando a los Cien Mil Hijos de San Luis, que restauraron a Fernando VII como monarca absoluto. Se inició así la Década Ominosa, con una feroz persecución contra los liberales; entre 15.000 y 20.000 personas tuvieron que exiliarse. Desde el extranjero, estos exiliados conspiraban para acabar con el absolutismo. El general Torrijos desembarcó en la costa de Málaga en diciembre de 1831 creyendo contar con apoyos en el interior, pero fue víctima de una traición, siendo capturado junto a sus hombres y fusilado sin juicio previo por orden directa del rey. Su fracaso, junto con la ejecución ese mismo año de Mariana Pineda, demostró la enorme dificultad de derrocar al absolutismo por la vía del pronunciamiento; ambos se convirtieron en grandes mártires del protoliberalismo español. Cincuenta años después, el Estado liberal de la Restauración necesitaba imágenes sobre el pasado español para legitimar el presente, y este cuadro de Gisbert cumplió esa función.</p>
+      `
+    },
+    {
+      id: 'pragmatica-sancion',
+      num: '12',
+      year: '1832',
+      navTitle: 'Derogación de la Pragmática Sanción',
+      tag: 'Fuente primaria',
+      title: 'La Pragmática Sanción y la abolición de la Ley Sálica, 31 de diciembre de 1832',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de la Pragmática Sanción',
+      fuenteHTML: `
+        <p>Sorprendido mi real ánimo en los momentos de agonía a que me condujo la grave enfermedad de que me ha salvado prodigiosamente la Divina misericordia, firmé un Decreto (18 de septiembre de 1832) derogando la Pragmática Sanción de 29 de marzo de 1829, decretada por mi augusto padre a petición de las Cortes de 1789 para establecer la sucesión regular en la Corona de España […] Ni como rey pudiera yo destruir las leyes fundamentales del Reino, cuyo restablecimiento había publicado, ni como padre pudiera con voluntad libre despojar de tan augustos y legítimos derechos a mi descendencia […]</p>
+        <p>Declaro solemnemente de plena voluntad y propio movimiento, que el Decreto firmado en las angustias de mi enfermedad, fue arrancado de mí por sorpresa: que fue un efecto de los falsos terrores con que sobrecogieron mi ánimo; y que es nulo y de ningún valor, siendo opuesto a las leyes fundamentales de la Monarquía y a las obligaciones que, como rey y como padre, debo a mi augusta descendencia.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Declaración del rey Fernando VII leída ante las autoridades del Reino, convocadas para ello, sobre la sucesión de la Corona (31 de diciembre de 1832).</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Ley Real). Su naturaleza es jurídico-sucesoria y de extrema gravedad política.</p>
+        <p><strong>Idea principal.</strong> La derogación legal de la "Ley Sálica" (introducida a principios del siglo XVIII por el primer Borbón, Felipe V) que impedía reinar a las mujeres, permitiendo ahora a la hija de Fernando VII heredar la Corona de España.</p>
+        <p><strong>Ideas secundarias.</strong> Al habilitar a la recién nacida princesa Isabel (futura Isabel II), se privaba inmediata y fulminantemente de sus derechos dinásticos al hermano del rey, el infante Carlos María Isidro, histórico aglutinador de la ultraderecha absolutista española.</p>
+        <p><strong>Contexto en España.</strong> En 1829, un envejecido y enfermo Fernando VII contrajo matrimonio con su sobrina, María Cristina de Borbón-Dos Sicilias. Ante el embarazo de la reina, el monarca desempolvó y publicó en 1830 esta Pragmática Sanción (aprobada en secreto en 1789 por Carlos IV pero nunca promulgada). Esta medida desató un auténtico seísmo. A lo largo de la Década Ominosa, el sector más reaccionario y clerical del país había perdido la paciencia con las tímidas reformas técnicas de Fernando VII y se había agrupado fanáticamente en torno al infante don Carlos. Cuando en el otoño de 1832 el rey enfermó gravemente, los carlistas intentaron un golpe palaciego (Sucesos de La Granja) forzando al moribundo rey a anular la Pragmática; pero tras recuperarse, Fernando anuló la derogación y reafirmó a su hija Isabel. Al morir el monarca en 1833, don Carlos se negó a reconocer a su sobrina, y sus partidarios se levantaron en armas, estallando la I Guerra Carlista. La viuda regente, María Cristina, amenazada por los carlistas, no tuvo más remedio que buscar el apoyo de los exiliados liberales, firmando paradójicamente con ello la defunción definitiva del Antiguo Régimen en España.</p>
+        <p><strong>Contexto europeo.</strong> Mientras en Europa Occidental, especialmente en Francia (la Revolución de Julio de 1830), el régimen absolutista caía derrocado por masas burguesas y obreras en las barricadas, en España la apertura al liberalismo vino irónicamente precipitada "desde arriba" por una disputa dinástica forzada, introduciendo al país en la definitiva construcción del Estado liberal en los años treinta.</p>
+      `
+    }
+  ];
+
+  const UNIT_KEY = 'unidad2';
+  function storageKey(docId, part){ return UNIT_KEY + ':' + docId + ':' + part; }
+
+  const dossier = document.getElementById('dossier');
+  const revealBtn = document.getElementById('revealBtn');
+  const hideAnalysisBtn = document.getElementById('hideAnalysisBtn');
+  const editDocBtn = document.getElementById('editDocBtn');
+  const analisisPanel = document.getElementById('analisisPanel');
+  const hlToolbar = document.getElementById('hlToolbar');
+  const notePopup = document.getElementById('notePopup');
+  const notePopupTitle = document.getElementById('notePopupTitle');
+  const noteInput = document.getElementById('noteInput');
+  const markMenu = document.getElementById('markMenu');
+  const statusMsg = document.getElementById('statusMsg');
+  const resetBtn = document.getElementById('resetBtn');
+  const notesCountEl = document.getElementById('notesCount');
+  const notesIndexList = document.getElementById('notesIndexList');
+  const notesFilterInput = document.getElementById('notesFilter');
+  const exportBtn = document.getElementById('exportNotes');
+  const sidenav = document.getElementById('sidenav');
+  const hamburger = document.getElementById('hamburger');
+  const backdrop = document.getElementById('backdrop');
+  const presentToggle = document.getElementById('presentToggle');
+  const darkToggle = document.getElementById('darkToggle');
+  const fontMinus = document.getElementById('fontMinus');
+  const fontPlus = document.getElementById('fontPlus');
+  const undoBtn = document.getElementById('undoBtn');
+  const searchToggle = document.getElementById('searchToggle');
+  const searchBar = document.getElementById('searchBar');
+  const searchInput = document.getElementById('searchInput');
+  const searchCount = document.getElementById('searchCount');
+  const searchPrev = document.getElementById('searchPrev');
+  const searchNext = document.getElementById('searchNext');
+  const searchClose = document.getElementById('searchClose');
+  const docListEl = document.getElementById('docList');
+  const textFuenteEl = document.getElementById('text-fuente');
+  const textAnalisisEl = document.getElementById('text-analisis');
+
+  const COLOR_HEX = { yellow:'#f3d34a', green:'#a8cba0', pink:'#e8a9b8' };
+  const COLOR_LABEL = { yellow:'Dato clave', green:'Contexto', pink:'Duda/pregunta' };
+
+  function escapeHtml(str){
+    return str.replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+  function truncate(str, n){ return str.length > n ? str.slice(0,n).trim() + '…' : str; }
+
+  function buildImageCardHTML(doc){
+    const frameInner = doc.imageSrc
+      ? '<img src="'+doc.imageSrc+'" alt="'+escapeHtml(doc.title)+'">'
+      : '<div class="image-placeholder">' +
+          '<div class="image-placeholder-icon">🖼</div>' +
+          '<p class="image-placeholder-text">'+escapeHtml(doc.imageNote||'')+'</p>' +
+          '<code class="image-placeholder-path">images/'+doc.id+'.jpg</code>' +
+        '</div>';
+    return '<div class="image-card">' +
+      '<div class="image-frame">'+frameInner+'</div>' +
+      '<div class="image-caption">' +
+        '<p class="image-title">'+escapeHtml(doc.title)+'</p>' +
+        '<p class="image-meta">'+escapeHtml(doc.artist||'')+' · '+escapeHtml(doc.paintYear||'')+'<br>'+escapeHtml(doc.technique||'')+'<br>'+escapeHtml(doc.location||'')+'</p>' +
+      '</div>' +
+    '</div>';
+  }
+
+  /* ---- per-document state, keyed by doc id ---- */
+  const ORIGINAL = {};        // { [id]: {fuente, analisis} } pristine content
+  const notesByDoc = {};      // { [id]: [ {id,panel,number,text,color,created} ] }
+  const counterByDoc = {};    // { [id]: number }
+  const undoStackByDoc = {};  // { [id]: [snapshot,...] }
+  let customDocs = [];        // documents added from within the app (browser-local only)
+  let deletedDefaultDocs = []; // ids of built-in (PDF) documents removed from the menu
+
+  function registerDoc(d){
+    ORIGINAL[d.id] = { fuente: d.type==='image' ? buildImageCardHTML(d) : d.fuenteHTML, analisis: d.analisisHTML };
+    if(!notesByDoc[d.id]) notesByDoc[d.id] = [];
+    if(counterByDoc[d.id] === undefined) counterByDoc[d.id] = 0;
+    if(!undoStackByDoc[d.id]) undoStackByDoc[d.id] = [];
+  }
+  DOCS.forEach(registerDoc);
+
+  function allDocs(){ return DOCS.filter(d=>!deletedDefaultDocs.includes(d.id)).concat(customDocs); }
+
+  let activeDocId = null;
+  let notes = [];      // pointer into notesByDoc[activeDocId]
+  let counter = 0;      // mirror of counterByDoc[activeDocId]
+  let undoStack = [];   // pointer into undoStackByDoc[activeDocId]
+
+  let pendingRange = null;
+  let pendingMarkForNote = null;
+  let editingNoteId = null;
+  let activeMarkForMenu = null;
+
+  const hasStorage = typeof window.storage !== 'undefined';
+
+  function getDoc(id){ return DOCS.find(d=>d.id===id) || customDocs.find(d=>d.id===id); }
+
+  function setStatus(msg){
+    statusMsg.textContent = msg || '';
+    if(msg){ setTimeout(()=>{ if(statusMsg.textContent === msg) statusMsg.textContent=''; }, 2200); }
+  }
+
+  /* ================= Persistence (per active document) ================= */
+  async function persist(){
+    if(!hasStorage || !activeDocId) return;
+    clearSearchHighlights();
+    try{
+      await window.storage.set(storageKey(activeDocId,'fuente'), textFuenteEl.innerHTML, false);
+      await window.storage.set(storageKey(activeDocId,'analisis'), textAnalisisEl.innerHTML, false);
+      await window.storage.set(storageKey(activeDocId,'notes'), JSON.stringify(notes), false);
+      await window.storage.set(storageKey(activeDocId,'counter'), String(counter), false);
+      setStatus('Guardado');
+    }catch(e){ /* storage optional */ }
+  }
+
+  async function loadDocumentContent(id){
+    const orig = ORIGINAL[id];
+    let fuenteHTML = orig.fuente;
+    let analisisHTML = orig.analisis;
+    if(hasStorage){
+      try{
+        const f = await window.storage.get(storageKey(id,'fuente'), false);
+        const a = await window.storage.get(storageKey(id,'analisis'), false);
+        const n = await window.storage.get(storageKey(id,'notes'), false);
+        const c = await window.storage.get(storageKey(id,'counter'), false);
+        if(f && f.value) fuenteHTML = f.value;
+        if(a && a.value) analisisHTML = a.value;
+        if(n && n.value) notesByDoc[id] = JSON.parse(n.value);
+        if(c && c.value) counterByDoc[id] = parseInt(c.value,10) || 0;
+      }catch(e){ /* no saved state for this document yet */ }
+    }
+    textFuenteEl.innerHTML = fuenteHTML;
+    textAnalisisEl.innerHTML = analisisHTML;
+  }
+
+  /* ================= Document switching ================= */
+  function buildDocList(){
+    docListEl.innerHTML = '<div class="nav-label">Documentos</div>' +
+      allDocs().map(d =>
+        '<div class="doc-item-wrap">' +
+          '<button class="doc-item'+(d.custom?' custom':'')+'" data-doc="'+d.id+'">' +
+            '<span class="doc-num">'+d.num+'</span>' +
+            '<span class="doc-info"><span class="doc-name">'+escapeHtml(d.navTitle)+'</span><span class="doc-year">'+escapeHtml(d.year||'')+(d.custom?' · personal':'')+'</span></span>' +
+          '</button>' +
+          '<button class="doc-edit" data-edit-doc="'+d.id+'" title="Editar documento">✎</button>' +
+          '<button class="doc-del" data-del-doc="'+d.id+'" title="Eliminar documento">✕</button>' +
+        '</div>'
+      ).join('') +
+      '<button class="add-doc-btn ui" id="addDocBtn">+ Añadir documento</button>' +
+      '<div class="doc-io-row">' +
+        '<button class="doc-io-btn ui" id="exportDocsBtn" title="Descarga TODO (documentos, subrayados y notas) en un .json">⬇ Exportar todo</button>' +
+        '<button class="doc-io-btn ui" id="importDocsBtn" title="Carga un .json exportado desde otro navegador">⬆ Importar</button>' +
+      '</div>' +
+      '<button class="add-doc-btn ui" id="exportHtmlBtn" title="Descarga una copia HTML independiente con tu estado actual ya incluido">⬇ Copia HTML completa</button>' +
+      '<input type="file" id="importDocsInput" accept=".json,application/json" hidden>';
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(btn=>{
+      btn.addEventListener('click', ()=> switchDocument(btn.dataset.doc));
+    });
+    docListEl.querySelectorAll('.doc-edit').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); const doc = getDoc(btn.dataset.editDoc); if(doc) openEditDocForm(doc); });
+    });
+    docListEl.querySelectorAll('.doc-del').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); deleteDoc(btn.dataset.delDoc); });
+    });
+    document.getElementById('addDocBtn').addEventListener('click', openAddDocForm);
+    document.getElementById('exportDocsBtn').addEventListener('click', exportFullState);
+    document.getElementById('importDocsBtn').addEventListener('click', ()=> document.getElementById('importDocsInput').click());
+    document.getElementById('importDocsInput').addEventListener('change', importFullState);
+    document.getElementById('exportHtmlBtn').addEventListener('click', exportFullHtmlCopy);
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(b=>b.classList.toggle('active', b.dataset.doc===activeDocId));
+    publishDocCount();
+  }
+
+  /* Writes this unit's current document count to a storage key that
+     index.html (hosted on the same origin, e.g. GitHub Pages) reads when it
+     loads, so the "N documentos" label on the home page reflects documents
+     you add, edit or remove here without having to edit index.html by hand.
+     Best-effort: if storage isn't available the home page simply keeps
+     showing whatever was last published, or its built-in default count. */
+  async function publishDocCount(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(UNIT_KEY + ':doc-count', String(allDocs().length), false); }catch(e){}
+  }
+
+  async function switchDocument(id){
+    if(id === activeDocId) { if(sidenav.classList.contains('drawer')) closeSidenav(); return; }
+    hideToolbar(); hideNotePopup(); hideMarkMenu();
+    if(!searchBar.hidden) closeSearch();
+
+    activeDocId = id;
+    undoStack = undoStackByDoc[id];
+
+    const doc = getDoc(id);
+    document.querySelector('.fuente-panel .tag').textContent = doc.tag;
+    document.querySelector('.fuente-panel h2').textContent = doc.title;
+    document.querySelector('.analisis-panel .tag').textContent = doc.analisisTag;
+    document.querySelector('.analisis-panel h2').textContent = doc.analisisTitle;
+
+    const marginFuenteEl = document.getElementById('margin-fuente');
+    if(doc.type === 'image'){
+      textFuenteEl.classList.remove('selectable');
+      marginFuenteEl.style.display = 'none';
+    }else{
+      textFuenteEl.classList.add('selectable');
+      marginFuenteEl.style.display = '';
+    }
+
+    await loadDocumentContent(id);
+    /* Re-point AFTER loading: loadDocumentContent() may have just replaced
+       notesByDoc[id]/counterByDoc[id] with fresh data read from storage, and
+       "notes"/"counter" must reference that same, current array/value from
+       here on. Capturing them earlier (before the load) left "notes" pointed
+       at a now-stale array while notesByDoc[id] moved on to a new one -
+       every later add/edit/delete touched the stale copy while the sidebar
+       index (which always reads notesByDoc directly) kept showing the old
+       one, so deletions looked like they silently did nothing. */
+    notes = notesByDoc[id];
+    counter = counterByDoc[id];
+    renderMargins();
+    renderNotesIndex();
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(b=>b.classList.toggle('active', b.dataset.doc===id));
+    if(sidenav.classList.contains('drawer')) closeSidenav();
+  }
+
+  /* ================= Undo ================= */
+  function pushUndo(){
+    undoStack.push({
+      fuente: textFuenteEl.innerHTML,
+      analisis: textAnalisisEl.innerHTML,
+      notes: JSON.stringify(notes),
+      counter
+    });
+    if(undoStack.length > 15) undoStack.shift();
+  }
+  function undoLast(){
+    if(undoStack.length === 0){ setStatus('Nada que deshacer'); return; }
+    const snap = undoStack.pop();
+    textFuenteEl.innerHTML = snap.fuente;
+    textAnalisisEl.innerHTML = snap.analisis;
+    notes = JSON.parse(snap.notes);
+    notesByDoc[activeDocId] = notes;
+    counter = snap.counter;
+    counterByDoc[activeDocId] = counter;
+    renderMargins();
+    renderNotesIndex();
+    persist();
+    setStatus('Deshecho');
+  }
+
+  /* ================= UI prefs (dark mode) — shared across the whole unit ================= */
+  const UI_KEY_DARK = 'ui:dark-mode';
+  async function loadUIPrefs(){
+    if(!hasStorage) return;
+    try{
+      const d = await window.storage.get(UI_KEY_DARK, false);
+      if(d && d.value === '1'){
+        document.body.classList.add('dark');
+        darkToggle.textContent = '☀️';
+        darkToggle.setAttribute('aria-pressed','true');
+      }
+    }catch(e){ /* no saved preference yet */ }
+  }
+
+  /* ================= Sidebar / drawer mode ================= */
+  let presentationMode = false;
+
+  function updateDrawerMode(){
+    const shouldDrawer = presentationMode || window.innerWidth < 1100;
+    sidenav.classList.toggle('drawer', shouldDrawer);
+    hamburger.classList.toggle('show', shouldDrawer);
+    if(!shouldDrawer){
+      sidenav.classList.remove('open');
+      backdrop.classList.remove('show');
+    }
+  }
+  function openSidenav(){ sidenav.classList.add('open'); backdrop.classList.add('show'); }
+  function closeSidenav(){ sidenav.classList.remove('open'); backdrop.classList.remove('show'); }
+  hamburger.addEventListener('click', ()=> sidenav.classList.contains('open') ? closeSidenav() : openSidenav());
+  backdrop.addEventListener('click', closeSidenav);
+  window.addEventListener('resize', updateDrawerMode);
+
+  presentToggle.addEventListener('click', ()=>{
+    presentationMode = !presentationMode;
+    document.body.classList.toggle('presentation', presentationMode);
+    presentToggle.setAttribute('aria-pressed', String(presentationMode));
+    presentToggle.querySelector('.icon').textContent = presentationMode ? '✕' : '🖥';
+    presentToggle.querySelector('.label').textContent = presentationMode ? 'Salir de proyección' : 'Modo proyección';
+    updateDrawerMode();
+    if(presentationMode){ hideToolbar(); hideNotePopup(); hideMarkMenu(); closeSidenav(); closeSearch(); }
+  });
+
+  darkToggle.addEventListener('click', async ()=>{
+    const isDark = document.body.classList.toggle('dark');
+    darkToggle.textContent = isDark ? '☀️' : '🌙';
+    darkToggle.setAttribute('aria-pressed', String(isDark));
+    if(hasStorage){
+      try{ await window.storage.set(UI_KEY_DARK, isDark ? '1' : '0', false); }catch(e){}
+    }
+  });
+
+  function getCurrentTextSizePx(){
+    return parseFloat(getComputedStyle(document.querySelector('.text-col')).fontSize) || 16;
+  }
+  function adjustTextSize(delta){
+    const next = Math.min(28, Math.max(13, Math.round(getCurrentTextSizePx() + delta)));
+    document.body.style.setProperty('--text-size', next + 'px');
+  }
+  fontMinus.addEventListener('click', ()=>adjustTextSize(-1));
+  fontPlus.addEventListener('click', ()=>adjustTextSize(1));
+
+  undoBtn.addEventListener('click', undoLast);
+  notesFilterInput.addEventListener('input', renderNotesIndex);
+
+  /* ---- Export / import NOTES + HIGHLIGHTS only (all documents of this
+     unit), as a portable .json — lighter than "Exportar todo": it does not
+     carry personal documents you added or edits to the built-in text, only
+     your notes and your underlined/highlighted passages. Export here,
+     import on any other computer running this same HTML file. ---- */
+  async function exportNotesAndHighlights(){
+    setStatus('Generando…');
+    const payload = {
+      unit: UNIT_KEY, kind: 'notes-and-highlights', exportedAt: new Date().toISOString(),
+      perDoc: {}
+    };
+    for(const d of allDocs()){
+      let fuente = null, analisis = null;
+      if(d.id === activeDocId){
+        fuente = textFuenteEl.innerHTML;
+        analisis = textAnalisisEl.innerHTML;
+      }else if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      const docNotes = notesByDoc[d.id] || [];
+      if(!docNotes.length && !fuente && !analisis) continue;
+      payload.perDoc[d.id] = {
+        docTitle: d.navTitle,
+        fuenteHTML: fuente, analisisHTML: analisis,
+        notes: docNotes, counter: counterByDoc[d.id] || 0
+      };
+    }
+    if(Object.keys(payload.perDoc).length === 0){ setStatus('No hay notas ni subrayados para exportar'); return; }
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'notas-subrayados-' + UNIT_KEY + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Exportado');
+  }
+  exportBtn.addEventListener('click', exportNotesAndHighlights);
+
+  async function importNotesAndHighlights(e){
+    const file = e.target.files[0];
+    if(!file) return;
+    try{
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      if(!payload || typeof payload.perDoc !== 'object') throw new Error('el archivo no tiene el formato esperado');
+
+      let restoredCount = 0;
+      const skipped = [];
+      for(const id of Object.keys(payload.perDoc)){
+        const entry = payload.perDoc[id];
+        const doc = getDoc(id);
+        if(!doc){ skipped.push(entry.docTitle || id); continue; }
+
+        const importedNotes = (entry.notes || []).map(n => Object.assign({}, n, { docId: id }));
+        notesByDoc[id] = importedNotes;
+        counterByDoc[id] = entry.counter || 0;
+
+        if(hasStorage){
+          try{
+            if(entry.fuenteHTML != null) await window.storage.set(storageKey(id,'fuente'), entry.fuenteHTML, false);
+            if(entry.analisisHTML != null) await window.storage.set(storageKey(id,'analisis'), entry.analisisHTML, false);
+            await window.storage.set(storageKey(id,'notes'), JSON.stringify(importedNotes), false);
+            await window.storage.set(storageKey(id,'counter'), String(counterByDoc[id]), false);
+          }catch(err){}
+        }
+        restoredCount++;
+      }
+
+      await refreshActiveDocument();
+      renderNotesIndex();
+      setStatus(restoredCount + ' documento(s) con notas y subrayados restaurados');
+      if(skipped.length){
+        alert('Se importaron las notas y subrayados de ' + restoredCount + ' documento(s) de esta unidad.\n\nEstos documentos del archivo no existen aquí, así que se omitieron:\n' + skipped.join('\n'));
+      }
+    }catch(err){
+      alert('No se pudo importar el archivo: ' + err.message);
+    }
+    e.target.value = '';
+  }
+  const importNotesBtn = document.getElementById('importNotesBtn');
+  const importNotesInput = document.getElementById('importNotesInput');
+  importNotesBtn.addEventListener('click', ()=> importNotesInput.click());
+  importNotesInput.addEventListener('change', importNotesAndHighlights);
+
+  /* ================= Search inside the text ================= */
+  let searchMatches = [];
+  let searchIndex = -1;
+
+  function openSearch(){ searchBar.hidden = false; searchToggle.setAttribute('aria-pressed','true'); searchInput.focus(); }
+  function closeSearch(){
+    searchBar.hidden = true;
+    searchToggle.setAttribute('aria-pressed','false');
+    clearSearchHighlights();
+    searchInput.value = '';
+    searchMatches = []; searchIndex = -1;
+    updateSearchCount();
+  }
+  searchToggle.addEventListener('click', ()=> searchBar.hidden ? openSearch() : closeSearch());
+  searchClose.addEventListener('click', closeSearch);
+
+  function escapeRegex(str){ return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  function clearSearchHighlights(){
+    document.querySelectorAll('.search-hit').forEach(span=>{
+      const parent = span.parentNode;
+      if(!parent) return;
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    });
+  }
+
+  function highlightTextNodes(root, regex){
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const textNodes = [];
+    let n;
+    while(n = walker.nextNode()) textNodes.push(n);
+    textNodes.forEach(node=>{
+      const text = node.nodeValue;
+      regex.lastIndex = 0;
+      if(!regex.test(text)) return;
+      regex.lastIndex = 0;
+      const frag = document.createDocumentFragment();
+      let lastIndex = 0, m;
+      while((m = regex.exec(text))){
+        if(m.index > lastIndex) frag.appendChild(document.createTextNode(text.slice(lastIndex, m.index)));
+        const span = document.createElement('span');
+        span.className = 'search-hit';
+        span.textContent = m[0];
+        frag.appendChild(span);
+        lastIndex = m.index + m[0].length;
+        if(m[0].length === 0) regex.lastIndex++;
+      }
+      if(lastIndex < text.length) frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  function updateSearchCount(){
+    const total = searchMatches.length;
+    searchCount.textContent = total ? (searchIndex+1) + '/' + total : '0/0';
+  }
+  function focusMatch(i){
+    if(!searchMatches.length) return;
+    searchMatches.forEach(el=>el.classList.remove('active'));
+    searchIndex = ((i % searchMatches.length) + searchMatches.length) % searchMatches.length;
+    const el = searchMatches[searchIndex];
+    el.classList.add('active');
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+    updateSearchCount();
+  }
+  function performSearch(){
+    clearSearchHighlights();
+    const term = searchInput.value.trim();
+    if(!term){ searchMatches = []; searchIndex = -1; updateSearchCount(); return; }
+    const regex = new RegExp(escapeRegex(term), 'gi');
+    highlightTextNodes(textFuenteEl, regex);
+    highlightTextNodes(textAnalisisEl, regex);
+    searchMatches = Array.from(document.querySelectorAll('.search-hit'));
+    if(searchMatches.length){ focusMatch(0); } else { searchIndex = -1; updateSearchCount(); }
+  }
+  searchInput.addEventListener('input', performSearch);
+  searchInput.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter'){ e.preventDefault(); focusMatch(e.shiftKey ? searchIndex-1 : searchIndex+1); }
+  });
+  searchPrev.addEventListener('click', ()=>focusMatch(searchIndex-1));
+  searchNext.addEventListener('click', ()=>focusMatch(searchIndex+1));
+
+  /* ================= Reveal / hide analysis panel ================= */
+  function openAnalysis(){
+    analisisPanel.removeAttribute('hidden');
+    dossier.classList.add('split');
+    revealBtn.classList.add('opened');
+    revealBtn.querySelector('.seal-label').innerHTML = 'Ocultar<br>análisis';
+    revealBtn.setAttribute('aria-expanded','true');
+  }
+  function closeAnalysis(){
+    analisisPanel.setAttribute('hidden','');
+    dossier.classList.remove('split');
+    revealBtn.classList.remove('opened');
+    revealBtn.querySelector('.seal-label').innerHTML = 'Revelar<br>análisis';
+    revealBtn.setAttribute('aria-expanded','false');
+  }
+  revealBtn.addEventListener('click', ()=>{
+    if(analisisPanel.hasAttribute('hidden')) openAnalysis(); else closeAnalysis();
+  });
+  hideAnalysisBtn.addEventListener('click', closeAnalysis);
+
+  /* ================= Selection -> floating toolbar ================= */
+  document.addEventListener('mouseup', onSelectionMaybe);
+  document.addEventListener('touchend', onSelectionMaybe);
+
+  function onSelectionMaybe(e){
+    if(e.target.closest('.hl-toolbar, .note-popup, .mark-menu')) return;
+    setTimeout(()=>{
+      const sel = window.getSelection();
+      if(!sel || sel.isCollapsed || sel.rangeCount===0){ hideToolbar(); return; }
+      const range = sel.getRangeAt(0);
+      const container = range.commonAncestorContainer;
+      const el = container.nodeType===1 ? container : container.parentElement;
+      const panelEl = el ? el.closest('.selectable') : null;
+      if(!panelEl || range.toString().trim().length===0){ hideToolbar(); return; }
+      pendingRange = range.cloneRange();
+      hideMarkMenu();
+      hideNotePopup();
+      showFloating(hlToolbar, range.getBoundingClientRect());
+    }, 5);
+  }
+
+  function showFloating(node, rect){
+    node.hidden = false;
+    node.style.visibility = 'hidden';
+    const w = node.offsetWidth || 200;
+    let top = rect.bottom + window.scrollY + 10;
+    let left = rect.left + window.scrollX + rect.width/2;
+    left = Math.min(Math.max(left, w/2 + 8), window.scrollX + window.innerWidth - w/2 - 8);
+    node.style.top = top + 'px';
+    node.style.left = left + 'px';
+    node.style.transform = 'translateX(-50%)';
+    node.style.visibility = '';
+  }
+
+  function hideToolbar(){ hlToolbar.hidden = true; }
+  function hideNotePopup(){
+    notePopup.hidden = true;
+    noteInput.value = '';
+    pendingMarkForNote = null;
+    editingNoteId = null;
+  }
+  function hideMarkMenu(){ markMenu.hidden = true; activeMarkForMenu = null; }
+
+  function applyColorAndClose(color){
+    if(!pendingRange) return;
+    pushUndo();
+    applyHighlight(pendingRange, color);
+    window.getSelection().removeAllRanges();
+    pendingRange = null;
+    hideToolbar();
+    persist();
+  }
+  hlToolbar.querySelectorAll('.swatch').forEach(btn=>{
+    btn.addEventListener('click', ()=>applyColorAndClose(btn.dataset.color));
+  });
+
+  document.getElementById('noteBtn').addEventListener('click', ()=>{
+    if(!pendingRange) return;
+    notePopupTitle.textContent = 'Nueva nota';
+    showFloating(notePopup, pendingRange.getBoundingClientRect());
+    hlToolbar.hidden = true;
+    noteInput.value = '';
+    noteInput.focus();
+  });
+
+  document.getElementById('cancelNote').addEventListener('click', ()=>{
+    hideNotePopup();
+    window.getSelection().removeAllRanges();
+  });
+
+  document.getElementById('saveNote').addEventListener('click', async ()=>{
+    const text = noteInput.value.trim();
+    if(!text){ hideNotePopup(); return; }
+    pushUndo();
+
+    if(editingNoteId){
+      const note = notes.find(n=>n.id===editingNoteId);
+      if(note) note.text = text;
+    }else if(pendingMarkForNote){
+      counter += 1;
+      counterByDoc[activeDocId] = counter;
+      const id = 'n' + counter;
+      pendingMarkForNote.dataset.noteId = id;
+      const marker = document.createElement('sup');
+      marker.className = 'note-marker';
+      marker.textContent = counter;
+      marker.dataset.noteId = id;
+      pendingMarkForNote.after(marker);
+      const panel = pendingMarkForNote.closest('.selectable').dataset.panel;
+      const colorClass = [...pendingMarkForNote.classList].find(c=>c.indexOf('hl-')===0);
+      const color = colorClass ? colorClass.replace('hl-','') : 'yellow';
+      notes.push({ id, docId: activeDocId, panel, number: counter, text, color, created: Date.now() });
+    }else if(pendingRange){
+      const panel = getPanelFromRange(pendingRange);
+      const mark = applyHighlight(pendingRange, 'yellow');
+      counter += 1;
+      counterByDoc[activeDocId] = counter;
+      const id = 'n' + counter;
+      mark.dataset.noteId = id;
+      const marker = document.createElement('sup');
+      marker.className = 'note-marker';
+      marker.textContent = counter;
+      marker.dataset.noteId = id;
+      mark.after(marker);
+      notes.push({ id, docId: activeDocId, panel, number: counter, text, color:'yellow', created: Date.now() });
+    }
+
+    pendingRange = null;
+    renderMargins();
+    renderNotesIndex();
+    hideNotePopup();
+    window.getSelection().removeAllRanges();
+    await persist();
+  });
+
+  function getPanelFromRange(range){
+    const el = range.commonAncestorContainer.nodeType===1 ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
+    const panelEl = el.closest('.selectable');
+    return panelEl ? panelEl.dataset.panel : 'fuente';
+  }
+
+  function applyHighlight(range, color){
+    const mark = document.createElement('mark');
+    mark.className = 'hl hl-' + color;
+    try{
+      const content = range.extractContents();
+      mark.appendChild(content);
+      range.insertNode(mark);
+    }catch(e){ /* skip edge-case ranges silently */ }
+    return mark;
+  }
+
+  /* ================= Click on existing highlight ================= */
+  document.addEventListener('click', (e)=>{
+    const mark = e.target.closest('mark.hl');
+    const marker = e.target.closest('.note-marker');
+    if(marker){ goToNote(marker.dataset.noteId); return; }
+    if(mark){ openMarkMenu(mark); return; }
+    if(!e.target.closest('.mark-menu, .hl-toolbar, .note-popup')){
+      hideMarkMenu();
+    }
+  });
+
+  function openMarkMenu(mark){
+    activeMarkForMenu = mark;
+    const hasNote = !!mark.dataset.noteId;
+    markMenu.innerHTML =
+      '<div class="menu-colors">' +
+        '<button data-recolor="yellow" title="Dato clave" style="background:'+COLOR_HEX.yellow+'"></button>' +
+        '<button data-recolor="green" title="Contexto" style="background:'+COLOR_HEX.green+'"></button>' +
+        '<button data-recolor="pink" title="Duda / pregunta" style="background:'+COLOR_HEX.pink+'"></button>' +
+      '</div>' +
+      '<div class="menu-divider"></div>' +
+      '<button class="menu-action" data-action="'+(hasNote?'edit':'add')+'-note">'+(hasNote?'✎ Editar nota':'✎ Añadir nota')+'</button>' +
+      '<button class="menu-action danger" data-action="remove">'+(hasNote?'✕ Eliminar nota y subrayado':'✕ Quitar subrayado')+'</button>';
+    hlToolbar.hidden = true;
+    notePopup.hidden = true;
+    showFloating(markMenu, mark.getBoundingClientRect());
+  }
+
+  markMenu.addEventListener('click', (e)=>{
+    const recolor = e.target.closest('[data-recolor]');
+    const actionBtn = e.target.closest('[data-action]');
+    if(recolor && activeMarkForMenu){
+      pushUndo();
+      const color = recolor.dataset.recolor;
+      activeMarkForMenu.classList.remove('hl-yellow','hl-green','hl-pink');
+      activeMarkForMenu.classList.add('hl-' + color);
+      const id = activeMarkForMenu.dataset.noteId;
+      if(id){
+        const note = notes.find(n=>n.id===id);
+        if(note){ note.color = color; renderMargins(); renderNotesIndex(); }
+      }
+      hideMarkMenu();
+      persist();
+      return;
+    }
+    if(actionBtn){
+      const action = actionBtn.dataset.action;
+      const mark = activeMarkForMenu;
+      if(!mark) return;
+      if(action === 'add-note'){
+        pendingMarkForNote = mark;
+        notePopupTitle.textContent = 'Añadir nota';
+        noteInput.value = '';
+        hideMarkMenu();
+        showFloating(notePopup, mark.getBoundingClientRect());
+        noteInput.focus();
+      }else if(action === 'edit-note'){
+        const id = mark.dataset.noteId;
+        const note = notes.find(n=>n.id===id);
+        editingNoteId = id;
+        notePopupTitle.textContent = 'Editar nota';
+        noteInput.value = note ? note.text : '';
+        hideMarkMenu();
+        showFloating(notePopup, mark.getBoundingClientRect());
+        noteInput.focus();
+      }else if(action === 'remove'){
+        pushUndo();
+        removeMark(mark);
+        hideMarkMenu();
+      }
+    }
+  });
+
+  function removeMark(mark){
+    const noteId = mark.dataset.noteId;
+    const parent = mark.parentNode;
+    while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+    parent.removeChild(mark);
+    if(noteId){
+      const markerEl = document.querySelector('.note-marker[data-note-id="'+noteId+'"]');
+      if(markerEl) markerEl.remove();
+      const idx = notes.findIndex(n=>n.id===noteId);
+      if(idx !== -1) notes.splice(idx,1);
+      renderMargins();
+      renderNotesIndex();
+    }
+    persist();
+  }
+
+  /* ================= Margins (per document, current doc only) ================= */
+  function renderMargins(){
+    renderMarginFor('fuente');
+    renderMarginFor('analisis');
+  }
+  function renderMarginFor(panel){
+    const col = document.getElementById('margin-'+panel);
+    const title = '<div class="margin-title">Notas</div>';
+    const list = notes.filter(n=>n.panel===panel).sort((a,b)=>a.number-b.number);
+    if(list.length===0){
+      col.innerHTML = title + '<div class="margin-empty">Aún no hay notas en este documento.</div>';
+      return;
+    }
+    col.innerHTML = title + list.map(n=>
+      '<div class="note-item" data-note-id="'+n.id+'" style="border-left-color:'+ (COLOR_HEX[n.color]||COLOR_HEX.yellow) +'">' +
+        '<span class="num">'+n.number+'</span>'+escapeHtml(n.text)+
+        '<span class="del" data-del="'+n.id+'">✕</span>' +
+      '</div>'
+    ).join('');
+    col.querySelectorAll('.note-item').forEach(item=>{
+      item.addEventListener('click', (e)=>{
+        if(e.target.dataset.del){ removeNoteById(activeDocId, e.target.dataset.del); return; }
+        goToMark(activeDocId, item.dataset.noteId);
+      });
+    });
+  }
+
+  /* ================= Sidebar notes index (whole unit, all documents) ================= */
+  function renderNotesIndex(){
+    const all = [];
+    allDocs().forEach(d => (notesByDoc[d.id]||[]).forEach(n => all.push(n)));
+    notesCountEl.textContent = all.length;
+    const q = (notesFilterInput.value || '').toLowerCase().trim();
+    const list = all
+      .filter(n => !q || n.text.toLowerCase().indexOf(q) !== -1)
+      .sort((a,b)=>{
+        const ad = allDocs(), da = ad.findIndex(d=>d.id===a.docId), db = ad.findIndex(d=>d.id===b.docId);
+        return da === db ? a.number-b.number : da-db;
+      });
+    if(all.length===0){
+      notesIndexList.innerHTML = '<div class="idx-empty">Todavía no has creado notas.</div>';
+      return;
+    }
+    if(list.length===0){
+      notesIndexList.innerHTML = '<div class="idx-empty">Sin coincidencias.</div>';
+      return;
+    }
+    notesIndexList.innerHTML = list.map(n => {
+      const doc = getDoc(n.docId);
+      return '<div class="idx-item" data-doc-id="'+n.docId+'" data-note-id="'+n.id+'">' +
+        '<span class="idx-dot hl-'+n.color+'"></span>' +
+        '<div class="idx-body">' +
+          '<div class="idx-meta">'+escapeHtml(doc?doc.navTitle:'')+' · '+(n.panel==='fuente'?'Fuente':'Análisis')+' · #'+n.number+' · '+(COLOR_LABEL[n.color]||'')+'</div>' +
+          '<div class="idx-text">'+escapeHtml(truncate(n.text,90))+'</div>' +
+        '</div>' +
+        '<span class="idx-del" data-del="'+n.id+'">✕</span>' +
+      '</div>';
+    }).join('');
+    notesIndexList.querySelectorAll('.idx-item').forEach(item=>{
+      item.addEventListener('click', (e)=>{
+        const docId = item.dataset.docId, id = item.dataset.noteId;
+        if(e.target.dataset.del){ deleteNoteAnywhere(docId, id); return; }
+        goToMark(docId, id);
+      });
+    });
+  }
+
+  function removeNoteById(docId, id){
+    // only ever called while docId === activeDocId, so the mark is live in the DOM
+    pushUndo();
+    const mark = document.querySelector('mark.hl[data-note-id="'+id+'"]');
+    if(mark){
+      const parent = mark.parentNode;
+      while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+      parent.removeChild(mark);
+    }
+    const markerEl = document.querySelector('.note-marker[data-note-id="'+id+'"]');
+    if(markerEl) markerEl.remove();
+    const idx = notes.findIndex(n=>n.id===id);
+    if(idx !== -1) notes.splice(idx,1);
+    renderMargins();
+    renderNotesIndex();
+    persist();
+  }
+
+  async function deleteNoteAnywhere(docId, id){
+    if(docId !== activeDocId) await switchDocument(docId);
+    removeNoteById(docId, id);
+  }
+
+  /* ================= Navigation helpers ================= */
+  function flashEl(el, scroll){
+    if(!el) return;
+    if(scroll) el.scrollIntoView({behavior:'smooth', block:'center'});
+    el.classList.add('flash');
+    setTimeout(()=>el.classList.remove('flash'), 900);
+  }
+  async function goToMark(docId, id){
+    if(docId !== activeDocId) await switchDocument(docId);
+    flashEl(document.querySelector('mark.hl[data-note-id="'+id+'"]'), true);
+    flashEl(document.querySelector('.note-item[data-note-id="'+id+'"]'));
+    flashEl(document.querySelector('.idx-item[data-note-id="'+id+'"]'));
+  }
+  function goToNote(id){
+    flashEl(document.querySelector('.note-item[data-note-id="'+id+'"]'), true);
+    flashEl(document.querySelector('.idx-item[data-note-id="'+id+'"]'));
+  }
+
+  /* ================= Reset (current document only) ================= */
+  resetBtn.addEventListener('click', async ()=>{
+    const doc = getDoc(activeDocId);
+    if(!confirm('¿Restablecer los subrayados y notas de "'+doc.navTitle+'"?')) return;
+    pushUndo();
+    textFuenteEl.innerHTML = ORIGINAL[activeDocId].fuente;
+    textAnalisisEl.innerHTML = ORIGINAL[activeDocId].analisis;
+    notes.length = 0;
+    counter = 0;
+    counterByDoc[activeDocId] = 0;
+    renderMargins();
+    renderNotesIndex();
+    if(hasStorage){
+      try{
+        await window.storage.delete(storageKey(activeDocId,'fuente'), false);
+        await window.storage.delete(storageKey(activeDocId,'analisis'), false);
+        await window.storage.delete(storageKey(activeDocId,'notes'), false);
+        await window.storage.delete(storageKey(activeDocId,'counter'), false);
+      }catch(e){}
+    }
+    setStatus('Restablecido');
+  });
+
+  /* ================= Custom documents & document editing ================= */
+  const CUSTOM_DOCS_KEY = UNIT_KEY + ':custom-docs';
+  const DOC_OVERRIDES_KEY = UNIT_KEY + ':doc-overrides';
+  let docOverrides = {}; // { [builtInDocId]: {navTitle,year,tag,title,...} } — edits to the 12 built-in documents
+
+  async function persistCustomDocs(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(CUSTOM_DOCS_KEY, JSON.stringify(customDocs), false); }catch(e){}
+  }
+  async function loadCustomDocs(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(CUSTOM_DOCS_KEY, false);
+      if(r && r.value){
+        customDocs = JSON.parse(r.value);
+        customDocs.forEach(registerDoc);
+      }
+    }catch(e){ /* none saved yet */ }
+  }
+  async function persistDocOverrides(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(DOC_OVERRIDES_KEY, JSON.stringify(docOverrides), false); }catch(e){}
+  }
+  async function loadDocOverrides(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(DOC_OVERRIDES_KEY, false);
+      if(r && r.value){
+        docOverrides = JSON.parse(r.value);
+        Object.keys(docOverrides).forEach(id=>{
+          const doc = DOCS.find(d=>d.id===id);
+          if(doc) Object.assign(doc, docOverrides[id]);
+        });
+      }
+    }catch(e){ /* none saved yet */ }
+  }
+  const DELETED_DOCS_KEY = UNIT_KEY + ':deleted-docs';
+  async function persistDeletedDefaultDocs(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(DELETED_DOCS_KEY, JSON.stringify(deletedDefaultDocs), false); }catch(e){}
+  }
+  async function loadDeletedDefaultDocs(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(DELETED_DOCS_KEY, false);
+      if(r && r.value) deletedDefaultDocs = JSON.parse(r.value);
+    }catch(e){ /* none saved yet */ }
+  }
+
+  /* Plain text (with optional inline <strong>/<em>/<span> tags typed or inserted
+     via the toolbar) -> paragraphs. Deliberately NOT html-escaped, since the point
+     is to let the user's own formatting tags through. This is a personal, local
+     editing tool — there is no "other people's input" being rendered here. */
+  /* A block (separated from the rest by a blank line) becomes a bullet list
+     when at least one of its lines starts with "- " (or is indented with 2+
+     spaces before the "-", for a sub-bullet). Anything else is still a plain
+     <p> paragraph, exactly as before. */
+  function textToParagraphsRaw(text){
+    const clean = (text||'').trim();
+    if(!clean) return '<p></p>';
+    return clean.split(/\n{2,}/).map(block=>{
+      const lines = block.split('\n');
+      const isList = lines.some(l=>/^\s*-\s+/.test(l));
+      return isList ? bulletLinesToHTML(lines) : '<p>' + block.trim().replace(/\n/g,'<br>') + '</p>';
+    }).join('\n');
+  }
+  /* Turns "- top" / "  - sub" lines into a nested <ul><li> (one level of
+     sub-bullets, matching the toolbar's Viñeta/Subviñeta buttons). A line
+     with no marker is treated as a soft line-break continuing the previous
+     item, so accidental stray newlines don't create empty bullets. */
+  function bulletLinesToHTML(lines){
+    const items = [];
+    lines.forEach(line=>{
+      if(!line.trim()) return;
+      const sub = /^\s{2,}-\s+(.*)$/.exec(line);
+      const top = /^-\s+(.*)$/.exec(line);
+      if(sub && items.length){
+        items[items.length-1].subs.push(sub[1].trim());
+      }else if(top){
+        items.push({ text: top[1].trim(), subs: [] });
+      }else if(items.length){
+        const subs = items[items.length-1].subs;
+        if(subs.length) subs[subs.length-1] += '<br>' + line.trim();
+        else items[items.length-1].text += '<br>' + line.trim();
+      }else{
+        items.push({ text: line.trim(), subs: [] });
+      }
+    });
+    return '<ul>' + items.map(it=>
+      '<li>' + it.text + (it.subs.length ? '<ul>' + it.subs.map(s=>'<li>'+s+'</li>').join('') + '</ul>' : '') + '</li>'
+    ).join('') + '</ul>';
+  }
+  /* Reverse conversion, used to prefill the edit form from existing HTML.
+     Walks the top-level <p> and <ul> blocks in document order; <ul><li>
+     items become "- " lines and one level of nested <ul><li> becomes
+     "  - " lines — the same plain-text syntax the toolbar buttons write,
+     so a saved list can be re-opened and edited losslessly. */
+  function paragraphsToText(html){
+    if(!html) return '';
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    const topNodes = Array.from(div.childNodes).filter(n=> n.nodeType===1 || (n.nodeType===3 && n.textContent.trim()));
+    if(topNodes.length === 0) return div.innerHTML.replace(/<br\s*\/?>/gi,'\n');
+    const blocks = topNodes.map(node=>{
+      if(node.nodeType===3) return node.textContent.trim();
+      if(node.tagName==='UL') return listNodeToText(node);
+      return node.innerHTML.replace(/<br\s*\/?>/gi,'\n');
+    });
+    return blocks.join('\n\n');
+  }
+  function listNodeToText(ul){
+    const lines = [];
+    Array.from(ul.children).forEach(li=>{
+      if(li.tagName !== 'LI') return;
+      const clone = li.cloneNode(true);
+      const nestedUl = clone.querySelector('ul');
+      let nestedLis = [];
+      if(nestedUl){ nestedLis = Array.from(nestedUl.querySelectorAll('li')); nestedUl.remove(); }
+      lines.push('- ' + clone.innerHTML.replace(/<br\s*\/?>/gi,'\n').trim());
+      nestedLis.forEach(sub=> lines.push('  - ' + sub.innerHTML.replace(/<br\s*\/?>/gi,'\n').trim()));
+    });
+    return lines.join('\n');
+  }
+
+  function readAndCompressImage(file, maxDim, quality){
+    return new Promise((resolve, reject)=>{
+      const reader = new FileReader();
+      reader.onload = ()=>{
+        const img = new Image();
+        img.onload = ()=>{
+          let w = img.width, h = img.height;
+          if(Math.max(w,h) > maxDim){
+            const scale = maxDim / Math.max(w,h);
+            w = Math.round(w*scale); h = Math.round(h*scale);
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          resolve(canvas.toDataURL('image/jpeg', quality));
+        };
+        img.onerror = ()=>reject(new Error('No se pudo leer la imagen'));
+        img.src = reader.result;
+      };
+      reader.onerror = ()=>reject(new Error('No se pudo leer el archivo'));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /* ---- rich-text mini toolbar: wraps the current textarea selection in a tag ---- */
+  function wrapTextareaSelection(textarea, before, after){
+    const start = textarea.selectionStart, end = textarea.selectionEnd;
+    const value = textarea.value;
+    const selected = value.slice(start, end) || 'texto';
+    textarea.value = value.slice(0,start) + before + selected + after + value.slice(end);
+    const newStart = start + before.length;
+    textarea.focus();
+    textarea.setSelectionRange(newStart, newStart + selected.length);
+  }
+  /* Toggles a bullet marker ("- ", level 1) or a sub-bullet marker ("  - ",
+     level 2) on every line touched by the current selection — so selecting
+     several lines and clicking once turns all of them into a list in one go.
+     Clicking the same level again on an already-marked line removes it;
+     clicking the other level swaps it. textToParagraphsRaw() below turns
+     these plain-text markers into a real <ul>/<li> list on save. */
+  function toggleLineBullet(textarea, level){
+    const value = textarea.value;
+    const start = textarea.selectionStart, end = textarea.selectionEnd;
+    const lineStart = value.lastIndexOf('\n', start-1) + 1;
+    const nextBreak = value.indexOf('\n', end > start ? end - 1 : end);
+    const lineEnd = nextBreak === -1 ? value.length : nextBreak;
+    const segment = value.slice(lineStart, lineEnd);
+    const prefix = level===2 ? '  - ' : '- ';
+    const newLines = segment.split('\n').map(line=>{
+      const bare = line.replace(/^\s*-\s+/, '');
+      const isSameLevel = level===2 ? /^\s{2,}-\s+/.test(line) : (/^-\s+/.test(line) && !/^\s{2,}-\s+/.test(line));
+      return isSameLevel ? bare : prefix + bare;
+    });
+    const newSegment = newLines.join('\n');
+    textarea.value = value.slice(0,lineStart) + newSegment + value.slice(lineEnd);
+    textarea.focus();
+    textarea.setSelectionRange(lineStart, lineStart + newSegment.length);
+  }
+  document.querySelectorAll('.ta-toolbar').forEach(bar=>{
+    bar.querySelectorAll('.ta-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const ta = document.getElementById(bar.dataset.target);
+        const kind = btn.dataset.wrap;
+        if(kind==='bullet'){ toggleLineBullet(ta, 1); return; }
+        if(kind==='subbullet'){ toggleLineBullet(ta, 2); return; }
+        let before='', after='';
+        if(kind==='strong'){ before='<strong>'; after='</strong>'; }
+        else if(kind==='em'){ before='<em>'; after='</em>'; }
+        else if(kind==='small'){ before='<span style="font-size:13px;color:var(--ink-soft);">'; after='</span>'; }
+        wrapTextareaSelection(ta, before, after);
+      });
+    });
+  });
+
+  const addDocBackdrop = document.getElementById('addDocBackdrop');
+  const addDocModal = document.getElementById('addDocModal');
+  const addTextFields = document.getElementById('addTextFields');
+  const addImageFields = document.getElementById('addImageFields');
+  const addDocSaveBtn = document.getElementById('addDocSave');
+  const addDocModalTitle = addDocModal.querySelector('.modal-head h3');
+  const addImageLabel = document.getElementById('addImageLabel');
+  const typeToggleRow = addDocModal.querySelector('.type-toggle');
+  let editingDocId = null; // null = "add" mode; a doc id = "edit" mode
+
+  function openAddDocForm(){
+    addDocModal.hidden = false;
+    addDocBackdrop.hidden = false;
+    if(sidenav.classList.contains('drawer')) closeSidenav();
+  }
+  function closeAddDocForm(){
+    addDocModal.hidden = true;
+    addDocBackdrop.hidden = true;
+    editingDocId = null;
+    addDocModalTitle.textContent = 'Añadir documento';
+    addDocSaveBtn.textContent = 'Guardar documento';
+    typeToggleRow.hidden = false;
+    addImageLabel.textContent = 'Imagen (jpg/png)';
+    addDocModal.querySelectorAll('input[type=text], textarea').forEach(el=>el.value='');
+    document.getElementById('addImageInput').value = '';
+    document.getElementById('addTag').value = 'Fuente primaria';
+    addDocModal.querySelector('input[name=docType][value=text]').checked = true;
+    addTextFields.hidden = false;
+    addImageFields.hidden = true;
+  }
+  document.getElementById('addDocClose').addEventListener('click', closeAddDocForm);
+  document.getElementById('addDocCancel').addEventListener('click', closeAddDocForm);
+  addDocBackdrop.addEventListener('click', closeAddDocForm);
+
+  addDocModal.querySelectorAll('input[name=docType]').forEach(radio=>{
+    radio.addEventListener('change', ()=>{
+      const isImage = addDocModal.querySelector('input[name=docType]:checked').value === 'image';
+      addTextFields.hidden = isImage;
+      addImageFields.hidden = !isImage;
+    });
+  });
+
+  function openEditDocForm(doc){
+    editingDocId = doc.id;
+    addDocModalTitle.textContent = 'Editar documento';
+    addDocSaveBtn.textContent = 'Guardar cambios';
+    typeToggleRow.hidden = true;
+
+    document.getElementById('addNavTitle').value = doc.navTitle || '';
+    document.getElementById('addYear').value = doc.year || '';
+    document.getElementById('addTag').value = doc.tag || '';
+    document.getElementById('addTitle').value = doc.title || '';
+    document.getElementById('addAnalisisText').value = paragraphsToText(doc.analisisHTML);
+
+    const isImage = doc.type === 'image';
+    addTextFields.hidden = isImage;
+    addImageFields.hidden = !isImage;
+    if(isImage){
+      document.getElementById('addArtist').value = doc.artist || '';
+      document.getElementById('addPaintYear').value = doc.paintYear || '';
+      document.getElementById('addTechnique').value = doc.technique || '';
+      document.getElementById('addLocation').value = doc.location || '';
+      addImageLabel.textContent = 'Reemplazar imagen (opcional — déjalo vacío para conservar la actual)';
+    }else{
+      document.getElementById('addFuenteText').value = paragraphsToText(doc.fuenteHTML);
+    }
+    openAddDocForm();
+  }
+
+  editDocBtn.addEventListener('click', ()=>{
+    const doc = getDoc(activeDocId);
+    if(doc) openEditDocForm(doc);
+  });
+
+  /* Applies edited fields to a live doc object, refreshes the on-screen baseline,
+     and — since the underlying text changed — clears highlights/notes only for the
+     panel(s) whose content actually changed (a Ctrl+Z right after undoes this). */
+  function applyDocEdit(doc, updates){
+    const oldOriginal = ORIGINAL[doc.id] || { fuente:'', analisis:'' };
+    if(doc.id === activeDocId) pushUndo();
+    Object.assign(doc, updates);
+    const newOriginal = { fuente: doc.type==='image' ? buildImageCardHTML(doc) : doc.fuenteHTML, analisis: doc.analisisHTML };
+    const fuenteChanged = oldOriginal.fuente !== newOriginal.fuente;
+    const analisisChanged = oldOriginal.analisis !== newOriginal.analisis;
+    ORIGINAL[doc.id] = newOriginal;
+
+    if(doc.id === activeDocId){
+      document.querySelector('.fuente-panel .tag').textContent = doc.tag;
+      document.querySelector('.fuente-panel h2').textContent = doc.title;
+      document.querySelector('.analisis-panel .tag').textContent = doc.analisisTag;
+      document.querySelector('.analisis-panel h2').textContent = doc.analisisTitle;
+      if(fuenteChanged){
+        textFuenteEl.innerHTML = newOriginal.fuente;
+        for(let i=notes.length-1;i>=0;i--){ if(notes[i].panel==='fuente') notes.splice(i,1); }
+      }
+      if(analisisChanged){
+        textAnalisisEl.innerHTML = newOriginal.analisis;
+        for(let i=notes.length-1;i>=0;i--){ if(notes[i].panel==='analisis') notes.splice(i,1); }
+      }
+      renderMargins();
+      renderNotesIndex();
+      persist();
+    }
+  }
+
+  async function saveNewDoc(){
+    const type = addDocModal.querySelector('input[name=docType]:checked').value;
+    const navTitle = document.getElementById('addNavTitle').value.trim();
+    if(!navTitle){ alert('Ponle un título al documento.'); return; }
+    const year = document.getElementById('addYear').value.trim();
+    const tag = document.getElementById('addTag').value.trim() || 'Fuente primaria';
+    const title = document.getElementById('addTitle').value.trim() || navTitle;
+    const analisisText = document.getElementById('addAnalisisText').value.trim();
+
+    const id = 'custom-' + Date.now();
+    const num = String(allDocs().length + 1).padStart(2,'0');
+    const doc = {
+      id, num, year, navTitle, tag, title,
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de ' + navTitle,
+      analisisHTML: textToParagraphsRaw(analisisText),
+      custom: true
+    };
+
+    if(type === 'image'){
+      const file = document.getElementById('addImageInput').files[0];
+      if(!file){ alert('Selecciona una imagen.'); return; }
+      let dataUrl;
+      try{ dataUrl = await readAndCompressImage(file, 1400, 0.82); }
+      catch(e){ alert('No se pudo procesar la imagen.'); return; }
+      doc.type = 'image';
+      doc.imageSrc = dataUrl;
+      doc.artist = document.getElementById('addArtist').value.trim();
+      doc.paintYear = document.getElementById('addPaintYear').value.trim();
+      doc.technique = document.getElementById('addTechnique').value.trim();
+      doc.location = document.getElementById('addLocation').value.trim();
+    }else{
+      doc.fuenteHTML = textToParagraphsRaw(document.getElementById('addFuenteText').value);
+    }
+
+    customDocs.push(doc);
+    registerDoc(doc);
+    await persistCustomDocs();
+    buildDocList();
+    closeAddDocForm();
+    switchDocument(id);
+    setStatus('Documento añadido');
+  }
+
+  async function saveDocEdit(){
+    const doc = getDoc(editingDocId);
+    if(!doc){ closeAddDocForm(); return; }
+    const navTitle = document.getElementById('addNavTitle').value.trim();
+    if(!navTitle){ alert('Ponle un título al documento.'); return; }
+    const updates = {
+      navTitle,
+      year: document.getElementById('addYear').value.trim(),
+      tag: document.getElementById('addTag').value.trim() || 'Fuente primaria',
+      title: document.getElementById('addTitle').value.trim() || navTitle,
+      analisisHTML: textToParagraphsRaw(document.getElementById('addAnalisisText').value)
+    };
+    if(doc.type === 'image'){
+      const file = document.getElementById('addImageInput').files[0];
+      if(file){
+        try{ updates.imageSrc = await readAndCompressImage(file, 1400, 0.82); }
+        catch(e){ alert('No se pudo procesar la imagen.'); return; }
+      }
+      updates.artist = document.getElementById('addArtist').value.trim();
+      updates.paintYear = document.getElementById('addPaintYear').value.trim();
+      updates.technique = document.getElementById('addTechnique').value.trim();
+      updates.location = document.getElementById('addLocation').value.trim();
+    }else{
+      updates.fuenteHTML = textToParagraphsRaw(document.getElementById('addFuenteText').value);
+    }
+
+    applyDocEdit(doc, updates);
+
+    if(doc.custom){
+      await persistCustomDocs();
+    }else{
+      docOverrides[doc.id] = {
+        navTitle: doc.navTitle, year: doc.year, tag: doc.tag, title: doc.title,
+        analisisTag: doc.analisisTag, analisisTitle: doc.analisisTitle,
+        fuenteHTML: doc.fuenteHTML, analisisHTML: doc.analisisHTML,
+        artist: doc.artist, paintYear: doc.paintYear, technique: doc.technique,
+        location: doc.location, imageSrc: doc.imageSrc
+      };
+      await persistDocOverrides();
+    }
+    buildDocList();
+    closeAddDocForm();
+    setStatus('Documento actualizado');
+  }
+
+  addDocSaveBtn.addEventListener('click', ()=>{
+    if(editingDocId) saveDocEdit(); else saveNewDoc();
+  });
+
+  /* Deletes ANY document from the menu: a personal one is removed for good;
+     a built-in one (from the PDF) is hidden from now on via deletedDefaultDocs
+     — its original data stays in DOCS, so clearing this browser's storage, or
+     importing a full-state export from before the deletion, brings it back. */
+  async function deleteDoc(id){
+    const doc = getDoc(id);
+    if(!doc) return;
+    if(allDocs().length <= 1){ alert('No puedes eliminar el último documento que queda.'); return; }
+    const label = doc.custom ? 'personal' : 'del temario';
+    if(!confirm('¿Eliminar el documento '+label+' "'+doc.navTitle+'"? Se perderán sus subrayados y notas.')) return;
+
+    if(doc.custom){
+      customDocs = customDocs.filter(d=>d.id!==id);
+    }else if(!deletedDefaultDocs.includes(id)){
+      deletedDefaultDocs.push(id);
+    }
+    delete docOverrides[id];
+    delete ORIGINAL[id]; delete notesByDoc[id]; delete counterByDoc[id]; delete undoStackByDoc[id];
+    if(hasStorage){
+      try{
+        await window.storage.delete(storageKey(id,'fuente'), false);
+        await window.storage.delete(storageKey(id,'analisis'), false);
+        await window.storage.delete(storageKey(id,'notes'), false);
+        await window.storage.delete(storageKey(id,'counter'), false);
+      }catch(e){}
+    }
+    if(doc.custom){ await persistCustomDocs(); }
+    else{ await persistDeletedDefaultDocs(); await persistDocOverrides(); }
+    buildDocList();
+    if(activeDocId === id){
+      activeDocId = null;
+      await switchDocument(allDocs()[0].id);
+    }
+    renderNotesIndex();
+    setStatus('Documento eliminado');
+  }
+
+  /* ---- Export / import the FULL state (every document's text, highlights and
+     notes, plus your personal documents) as a portable .json — export here,
+     import there, on any browser/computer running this same HTML file. ---- */
+  async function exportFullState(){
+    setStatus('Generando…');
+    const payload = {
+      unit: UNIT_KEY, kind: 'full-state', exportedAt: new Date().toISOString(),
+      docOverrides: docOverrides, customDocs: customDocs, deletedDefaultDocs: deletedDefaultDocs, perDoc: {}
+    };
+    for(const d of allDocs()){
+      let fuente = null, analisis = null;
+      if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      payload.perDoc[d.id] = {
+        fuenteHTML: fuente, analisisHTML: analisis,
+        notes: notesByDoc[d.id] || [], counter: counterByDoc[d.id] || 0
+      };
+    }
+    const blob = new Blob([JSON.stringify(payload)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'estado-completo-' + UNIT_KEY + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Exportado');
+  }
+
+  async function refreshActiveDocument(){
+    const id = activeDocId;
+    activeDocId = null; // forces switchDocument to actually reload, not early-return
+    await switchDocument(id);
+  }
+
+  async function importFullState(e){
+    const file = e.target.files[0];
+    if(!file) return;
+    try{
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      if(!payload || typeof payload.perDoc !== 'object') throw new Error('el archivo no tiene el formato esperado');
+
+      if(payload.docOverrides){
+        Object.keys(payload.docOverrides).forEach(id=>{
+          const doc = DOCS.find(d=>d.id===id);
+          if(doc){ Object.assign(doc, payload.docOverrides[id]); docOverrides[id] = payload.docOverrides[id]; }
+        });
+        await persistDocOverrides();
+      }
+
+      if(Array.isArray(payload.deletedDefaultDocs)){
+        payload.deletedDefaultDocs.forEach(id=>{ if(!deletedDefaultDocs.includes(id)) deletedDefaultDocs.push(id); });
+        await persistDeletedDefaultDocs();
+      }
+
+      const idMap = {};
+      (payload.customDocs || []).forEach(src=>{
+        let newId = src.id;
+        const collides = DOCS.some(d=>d.id===newId) || customDocs.some(d=>d.id===newId);
+        if(collides) newId = 'custom-' + Date.now() + '-' + Math.random().toString(36).slice(2,7);
+        idMap[src.id] = newId;
+        const doc = Object.assign({}, src, { id:newId, num:String(allDocs().length+1).padStart(2,'0') });
+        customDocs.push(doc);
+        registerDoc(doc);
+      });
+      if((payload.customDocs||[]).length) await persistCustomDocs();
+
+      let restoredCount = 0;
+      for(const oldId of Object.keys(payload.perDoc)){
+        const targetId = idMap[oldId] || oldId;
+        if(!getDoc(targetId)) continue;
+        const entry = payload.perDoc[oldId];
+        const importedNotes = (entry.notes || []).map(n => Object.assign({}, n, { docId: targetId }));
+        notesByDoc[targetId] = importedNotes;
+        counterByDoc[targetId] = entry.counter || 0;
+        if(hasStorage){
+          try{
+            if(entry.fuenteHTML) await window.storage.set(storageKey(targetId,'fuente'), entry.fuenteHTML, false);
+            if(entry.analisisHTML) await window.storage.set(storageKey(targetId,'analisis'), entry.analisisHTML, false);
+            await window.storage.set(storageKey(targetId,'notes'), JSON.stringify(importedNotes), false);
+            await window.storage.set(storageKey(targetId,'counter'), String(counterByDoc[targetId]), false);
+          }catch(err){}
+        }
+        restoredCount++;
+      }
+
+      buildDocList();
+      await refreshActiveDocument();
+      renderNotesIndex();
+      setStatus(restoredCount + ' documento(s) restaurados');
+    }catch(err){
+      alert('No se pudo importar el archivo: ' + err.message);
+    }
+    e.target.value = '';
+  }
+
+  /* ---- Download a fully standalone copy of this app, with the current state
+     (highlights, notes, edits, added documents) baked in as the new starting
+     point. Works by taking this page's own live <script> source and appending
+     a small snapshot right before boot() runs. ---- */
+  function safeJsonForScript(obj){
+    return JSON.stringify(obj).replace(/<\/script/gi, '<\\/script');
+  }
+  async function inlineImageIfPossible(src){
+    if(!src || src.indexOf('data:') === 0) return src;
+    try{
+      const resp = await fetch(src);
+      if(!resp.ok) return src;
+      const blob = await resp.blob();
+      return await new Promise((resolve, reject)=>{
+        const reader = new FileReader();
+        reader.onload = ()=>resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }catch(e){
+      return src; // e.g. opened via file:// without a local server — keep the relative path
+    }
+  }
+  async function exportFullHtmlCopy(){
+    setStatus('Generando copia…');
+    async function buildSnapshotEntry(d){
+      let fuente = null, analisis = null;
+      if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      const merged = Object.assign({}, d);
+      delete merged.custom;
+      merged.analisisHTML = analisis || merged.analisisHTML;
+      if(merged.type === 'image') merged.imageSrc = await inlineImageIfPossible(merged.imageSrc);
+      else merged.fuenteHTML = fuente || merged.fuenteHTML;
+      return merged;
+    }
+
+    const snapshotDocs = [];
+    for(const d of DOCS){
+      if(deletedDefaultDocs.includes(d.id)) continue;
+      const base = Object.assign({}, d, docOverrides[d.id] || {});
+      snapshotDocs.push(await buildSnapshotEntry(base));
+    }
+    for(const d of customDocs){
+      snapshotDocs.push(await buildSnapshotEntry(d));
+    }
+    snapshotDocs.forEach((d,i)=>{ d.num = String(i+1).padStart(2,'0'); });
+
+    const notesSnapshot = {}, counterSnapshot = {};
+    snapshotDocs.forEach(d=>{
+      notesSnapshot[d.id] = notesByDoc[d.id] || [];
+      counterSnapshot[d.id] = counterByDoc[d.id] || 0;
+    });
+
+    const originalScript = document.querySelector('script').textContent;
+    const bootCallIdx = originalScript.lastIndexOf('boot();');
+    if(bootCallIdx === -1){ alert('No se pudo generar la copia (no se encontró el punto de arranque).'); return; }
+
+    const overrideSnippet =
+      '\n  /* ---- snapshot baked in by "Copia HTML completa" ---- */\n' +
+      '  document.body.classList.remove("dark","presentation");\n' +
+      '  document.getElementById("addDocModal").hidden = true;\n' +
+      '  document.getElementById("addDocBackdrop").hidden = true;\n' +
+      '  document.getElementById("sidenav").classList.remove("open","drawer");\n' +
+      '  document.getElementById("backdrop").classList.remove("show");\n' +
+      '  DOCS.length = 0;\n' +
+      '  DOCS.push.apply(DOCS, ' + safeJsonForScript(snapshotDocs) + ');\n' +
+      '  customDocs = [];\n' +
+      '  docOverrides = {};\n' +
+      '  deletedDefaultDocs = [];\n' +
+      '  Object.keys(notesByDoc).forEach(function(k){ delete notesByDoc[k]; });\n' +
+      '  Object.assign(notesByDoc, ' + safeJsonForScript(notesSnapshot) + ');\n' +
+      '  Object.keys(counterByDoc).forEach(function(k){ delete counterByDoc[k]; });\n' +
+      '  Object.assign(counterByDoc, ' + safeJsonForScript(counterSnapshot) + ');\n\n  ';
+
+    const newScript = originalScript.slice(0, bootCallIdx) + overrideSnippet + originalScript.slice(bootCallIdx);
+
+    let fullHtml = document.documentElement.outerHTML;
+    const closeTag = '<' + '/script>';
+    const sOpen = fullHtml.indexOf('<script>');
+    const sClose = fullHtml.indexOf(closeTag, sOpen);
+    if(sOpen === -1 || sClose === -1){ alert('No se pudo generar la copia (no se encontró el script).'); return; }
+    fullHtml = fullHtml.slice(0, sOpen + '<script>'.length) + newScript + fullHtml.slice(sClose);
+    fullHtml = '<!DOCTYPE html>\n' + fullHtml;
+
+    const blob = new Blob([fullHtml], {type:'text/html;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = UNIT_KEY + '-copia-completa.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Copia HTML descargada');
+  }
+
+  /* ================= Keyboard shortcuts ================= */
+  document.addEventListener('keydown', (e)=>{
+    const tag = (e.target.tagName || '').toLowerCase();
+    const typing = tag === 'textarea' || tag === 'input';
+
+    if(e.key === 'Escape'){
+      hideToolbar(); hideNotePopup(); hideMarkMenu(); closeSidenav();
+      if(!searchBar.hidden) closeSearch();
+      if(!addDocModal.hidden) closeAddDocForm();
+      return;
+    }
+    if((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') && !typing){
+      e.preventDefault();
+      undoLast();
+      return;
+    }
+    if(typing) return;
+    if(!hlToolbar.hidden && pendingRange){
+      if(e.key === '1'){ applyColorAndClose('yellow'); }
+      else if(e.key === '2'){ applyColorAndClose('green'); }
+      else if(e.key === '3'){ applyColorAndClose('pink'); }
+      else if(e.key === 'n' || e.key === 'N'){ document.getElementById('noteBtn').click(); }
+    }
+  });
+  window.addEventListener('scroll', ()=>{ hideToolbar(); hideMarkMenu(); }, {passive:true});
+
+  /* ================= Boot ================= */
+  async function boot(){
+    await loadDocOverrides();
+    DOCS.forEach(registerDoc); // re-register so ORIGINAL reflects any saved edits
+    await loadCustomDocs();
+    await loadDeletedDefaultDocs();
+    buildDocList();
+    updateDrawerMode();
+    loadUIPrefs();
+    const firstDoc = allDocs()[0] || DOCS[0];
+    await switchDocument(firstDoc.id);
+  }
+  boot();
+})();
+</script>
+</body>
+</html>

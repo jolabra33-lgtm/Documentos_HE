@@ -1,0 +1,2844 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 9 · Golpe de Estado, Revolución y Guerra Civil — Archivo de Fuentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --measure: 860px;
+    --text-size: 16px;
+    --paper: #f1e9d8;
+    --paper-2: #eee1c4;
+    --paper-edge: #ddc99a;
+    --ink: #2a2118;
+    --ink-soft: #5c4f3f;
+    --wax: #8c2f39;
+    --wax-dark: #6b1f27;
+    --green: #3f5b44;
+    --gold: #a9812e;
+    --line: #c9b98f;
+    --hl-yellow: #f3d34a;
+    --hl-green: #a8cba0;
+    --hl-pink: #e8a9b8;
+    --shadow: 0 10px 30px -12px rgba(42,33,24,.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #fbf6e8 0%, transparent 60%),
+      radial-gradient(1200px 700px at 100% 10%, #e9dcbd 0%, transparent 55%),
+      #e5d8b8;
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    transition:background .25s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  button, .doc-item, .idx-item, .note-item, .swatch{ touch-action:manipulation; }
+  .ui{font-family:'Inter',sans-serif;}
+
+  /* ================= DARK MODE ================= */
+  body.dark{
+    --paper: #2a2118;
+    --paper-2: #241d15;
+    --paper-edge: #4a3c2b;
+    --ink: #f1e9d8;
+    --ink-soft: #c9b98f;
+    --line: #4a3c2b;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #2f261a 0%, transparent 60%),
+      radial-gradient(1200px 700px at 100% 10%, #241d15 0%, transparent 55%),
+      #1b150f;
+  }
+  body.dark .panel::before{border-color:rgba(255,255,255,.08);}
+  body.dark .hint{background:rgba(255,255,255,.07);}
+  body.dark .note-item{background:rgba(255,255,255,.07);}
+  body.dark .note-item:hover{background:rgba(255,255,255,.15);}
+  body.dark mark.hl{mix-blend-mode:normal;color:#1a1409;}
+  body.dark .note-popup{background:#2a2118;border-color:#4a3c2b;}
+  body.dark .note-popup textarea{background:#241d15;color:#f1e9d8;border-color:#4a3c2b;}
+  body.dark #cancelNote{background:#3a2f22;color:#e8dcc0;}
+
+  .app-shell{display:flex;min-height:100vh;}
+
+  /* ================= SIDEBAR ================= */
+  .sidenav{
+    width:272px;flex:0 0 272px;
+    background:linear-gradient(180deg,#241c14,#1b150f);
+    color:#f1e9d8;
+    padding:26px 20px 22px;
+    display:flex;flex-direction:column;gap:24px;
+    position:sticky;top:0;height:100vh;overflow-y:auto;
+    border-right:1px solid #3a2f22;
+  }
+  .sidenav-brand{display:flex;align-items:center;gap:11px;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:7px;flex:0 0 34px;
+    background:var(--wax);
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+  }
+  .brand-text{flex:1;min-width:0;}
+  .brand-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;line-height:1.2;}
+  .brand-sub{font-family:'Inter',sans-serif;font-size:10.5px;color:#c9b98f;opacity:.8;margin-top:2px;}
+  .home-link{
+    flex:0 0 auto;width:30px;height:30px;border-radius:7px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.06);color:#f1e9d8;text-decoration:none;font-size:14px;
+    transition:background .15s ease;
+  }
+  .home-link:hover{background:rgba(255,255,255,.16);}
+
+  .unit-label{
+    font-family:'Inter',sans-serif;font-size:10.5px;color:#c9b98f;opacity:.75;
+    line-height:1.4;padding-bottom:2px;border-bottom:1px solid #3a2f22;
+  }
+  .unit-label b{color:#e8dcc0;}
+
+  .nav-label{
+    font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:#c9b98f;opacity:.72;display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .count-badge{
+    background:var(--wax);color:#fff;border-radius:10px;padding:1px 7px;font-size:10px;font-weight:700;
+  }
+
+  .doc-list{display:flex;flex-direction:column;gap:6px;max-height:290px;overflow-y:auto;padding-right:2px;}
+  .doc-item{
+    display:flex;align-items:center;gap:10px;width:100%;
+    background:transparent;border:1px solid transparent;
+    border-radius:7px;padding:9px 10px;cursor:pointer;text-align:left;color:#f1e9d8;
+    font-family:'Inter',sans-serif;
+  }
+  .doc-item:hover{background:rgba(255,255,255,.06);}
+  .doc-item.active{background:rgba(169,129,46,.18);border-color:rgba(169,129,46,.4);}
+  .doc-num{font-size:10px;font-weight:700;color:var(--gold);}
+  .doc-info{display:flex;flex-direction:column;min-width:0;}
+  .doc-name{font-size:12.5px;font-weight:600;line-height:1.3;}
+  .doc-year{font-size:10.5px;color:#c9b98f;opacity:.7;}
+  .doc-item.ghost{opacity:.4;cursor:default;}
+  .doc-item.ghost:hover{background:transparent;}
+
+  .doc-item-wrap{display:flex;align-items:center;gap:4px;}
+  .doc-item-wrap .doc-item{flex:1;min-width:0;}
+  .doc-item.custom{border-left:2px solid var(--gold);}
+  .doc-edit{
+    flex:0 0 auto;background:transparent;border:none;color:#8d8172;
+    font-size:12px;cursor:pointer;padding:8px 8px;border-radius:4px;
+  }
+  .doc-edit:hover{color:var(--gold);background:rgba(255,255,255,.08);}
+  .doc-del{
+    flex:0 0 auto;background:transparent;border:none;color:#8d8172;
+    font-size:12px;cursor:pointer;padding:8px 10px;border-radius:4px;
+  }
+  .doc-del:hover{color:var(--wax);background:rgba(255,255,255,.08);}
+
+  .add-doc-btn{
+    width:100%;margin-top:2px;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    background:transparent;border:1px dashed #4a3c2b;color:#c9b98f;
+    padding:9px 10px;border-radius:7px;cursor:pointer;text-align:center;
+  }
+  .add-doc-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  .doc-io-row{display:flex;gap:6px;margin-top:2px;}
+  .doc-io-btn{
+    flex:1;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+    background:transparent;border:1px solid #4a3c2b;color:#c9b98f;
+    padding:7px 8px;border-radius:6px;cursor:pointer;text-align:center;
+  }
+  .doc-io-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  /* ---------- Add-document modal ---------- */
+  .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:90;}
+  .modal-backdrop:not([hidden]){display:block;}
+  .add-doc-modal{
+    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+    z-index:91;width:min(560px, 92vw);max-height:88vh;overflow-y:auto;
+    background:var(--paper);border-radius:8px;box-shadow:0 24px 60px -12px rgba(0,0,0,.5);
+    border:1px solid var(--paper-edge);
+  }
+  .modal-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 20px;border-bottom:1px solid var(--line);
+  }
+  .modal-head h3{font-family:'Playfair Display',serif;font-size:19px;margin:0;color:var(--ink);}
+  .modal-close{background:transparent;border:none;font-size:15px;color:var(--ink-soft);cursor:pointer;}
+  .modal-close:hover{color:var(--wax);}
+  .modal-body{padding:18px 20px;display:flex;flex-direction:column;gap:12px;}
+  .modal-hint{
+    font-size:11.5px;color:var(--ink-soft);background:rgba(0,0,0,.04);
+    padding:8px 10px;border-radius:6px;line-height:1.5;margin:0;
+  }
+  body.dark .modal-hint{background:rgba(255,255,255,.06);}
+  .field-label{font-size:11px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;display:block;}
+  .add-doc-modal input[type="text"], .add-doc-modal textarea, .add-doc-modal input[type="file"]{
+    width:100%;font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);
+    border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:rgba(255,255,255,.5);
+  }
+  body.dark .add-doc-modal input[type="text"], body.dark .add-doc-modal textarea{background:rgba(255,255,255,.06);}
+  .add-doc-modal textarea{resize:vertical;font-family:'Source Serif 4',serif;line-height:1.5;}
+  .field-row{display:flex;gap:12px;}
+  .field-row.two-col > div{flex:1;min-width:0;}
+  .type-toggle{font-size:12.5px;color:var(--ink);gap:20px;}
+  .type-toggle label{display:flex;align-items:center;gap:6px;cursor:pointer;}
+
+  .ta-toolbar{display:flex;gap:4px;margin-bottom:5px;}
+  .ta-btn{
+    width:30px;height:28px;border:1px solid var(--line);background:rgba(255,255,255,.5);
+    border-radius:5px;cursor:pointer;font-family:'Source Serif 4',serif;font-size:13px;color:var(--ink);
+  }
+  .ta-btn:hover{border-color:var(--wax);color:var(--wax);}
+  body.dark .ta-btn{background:rgba(255,255,255,.06);}
+  .ta-btn.wide{width:auto;padding:0 9px;white-space:nowrap;}
+  .modal-actions{
+    display:flex;justify-content:flex-end;gap:8px;
+    padding:14px 20px;border-top:1px solid var(--line);
+  }
+  .modal-actions button{
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;
+    border:none;border-radius:6px;padding:9px 16px;cursor:pointer;
+  }
+  #addDocCancel{background:transparent;border:1px solid var(--line);color:var(--ink-soft);}
+  #addDocSave{background:var(--wax);color:#fff;}
+
+  .color-legend{display:flex;flex-direction:column;gap:7px;}
+  .legend-item{
+    display:flex;align-items:center;gap:8px;
+    font-family:'Inter',sans-serif;font-size:11.5px;color:#e8dcc0;
+  }
+  .legend-item .dot{width:9px;height:9px;border-radius:50%;flex:0 0 9px;}
+  .legend-item .dot.hl-yellow{background:var(--hl-yellow);}
+  .legend-item .dot.hl-green{background:var(--hl-green);}
+  .legend-item .dot.hl-pink{background:var(--hl-pink);}
+
+  .notes-index{display:flex;flex-direction:column;gap:10px;flex:1;min-height:0;}
+  .notes-search{
+    width:100%;
+    background:rgba(255,255,255,.06);border:1px solid #3a2f22;border-radius:6px;
+    color:#f1e9d8;font-family:'Inter',sans-serif;font-size:12px;
+    padding:7px 9px;
+  }
+  .notes-search::placeholder{color:#8d8172;}
+  .notes-index-list{overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding-right:2px;min-height:40px;}
+  .idx-item{
+    display:flex;gap:8px;align-items:flex-start;
+    background:rgba(255,255,255,.04);border-radius:6px;padding:7px 8px;cursor:pointer;
+  }
+  .idx-item:hover{background:rgba(255,255,255,.09);}
+  .idx-item.flash{background:rgba(169,129,46,.35);}
+  .idx-dot{width:9px;height:9px;border-radius:50%;margin-top:4px;flex:0 0 9px;}
+  .idx-dot.hl-yellow{background:var(--hl-yellow);}
+  .idx-dot.hl-green{background:var(--hl-green);}
+  .idx-dot.hl-pink{background:var(--hl-pink);}
+  .idx-body{flex:1;min-width:0;}
+  .idx-meta{font-family:'Inter',sans-serif;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:#c9b98f;opacity:.75;margin-bottom:2px;}
+  .idx-text{font-family:'Inter',sans-serif;font-size:12px;line-height:1.4;color:#f1e9d8;word-wrap:break-word;}
+  .idx-del{font-size:12px;color:#8d8172;opacity:.6;flex:0 0 auto;padding:4px 6px;}
+  .idx-del:hover{opacity:1;color:var(--wax);}
+  .idx-empty{font-family:'Inter',sans-serif;font-size:11.5px;color:#8d8172;font-style:italic;line-height:1.5;}
+
+  .export-btn{
+    font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;
+    background:transparent;border:1px solid #4a3c2b;color:#e8dcc0;
+    border-radius:6px;padding:8px;cursor:pointer;
+  }
+  .export-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  .sidenav.drawer{
+    position:fixed;left:0;top:0;height:100vh;
+    transform:translateX(-105%);
+    transition:transform .28s ease;
+    z-index:70;
+    box-shadow:0 0 40px rgba(0,0,0,.4);
+  }
+  .sidenav.drawer.open{transform:translateX(0);}
+
+  .hamburger{
+    display:none;
+    position:fixed;top:16px;left:16px;z-index:71;
+    width:42px;height:42px;border-radius:9px;background:#241c14;color:#f1e9d8;
+    align-items:center;justify-content:center;border:none;cursor:pointer;font-size:17px;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+  }
+  .hamburger.show{display:flex;}
+
+  .backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:65;}
+  .backdrop.show{display:block;}
+
+  /* ---------- Top-right control cluster ---------- */
+  .top-controls{
+    position:fixed;top:16px;right:16px;z-index:71;
+    display:flex;align-items:center;gap:8px;
+  }
+  .icon-btn{
+    font-family:'Inter',sans-serif;font-size:15px;
+    background:#241c14;color:#f1e9d8;border:none;border-radius:50%;
+    width:38px;height:38px;flex:0 0 38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+    transition:background .15s ease;
+  }
+  .icon-btn:hover{background:#332619;}
+  .icon-btn[aria-pressed="true"]{background:var(--gold);color:#241c14;}
+
+  .font-size-group{
+    display:flex;background:#241c14;border-radius:20px;overflow:hidden;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+  }
+  .font-size-group button{
+    width:32px;height:38px;border:none;background:transparent;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:11.5px;cursor:pointer;
+  }
+  .font-size-group button:hover{background:rgba(255,255,255,.14);}
+  .font-size-group button + button{border-left:1px solid rgba(255,255,255,.15);}
+
+  .present-toggle{
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;
+    background:#241c14;color:#f1e9d8;border:none;border-radius:20px;
+    padding:9px 16px 9px 14px;cursor:pointer;letter-spacing:.02em;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+    display:flex;align-items:center;gap:7px;
+    transition:background .15s ease;
+  }
+  .present-toggle:hover{background:#332619;}
+  body.presentation .present-toggle{background:var(--wax);}
+  @media (max-width:720px){ .present-toggle .label{display:none;} .present-toggle{padding:9px;border-radius:50%;width:38px;height:38px;} }
+  @media (max-width:520px){ .top-controls{gap:6px;} .icon-btn, .font-size-group button{width:34px;} }
+
+  /* ---------- Search-in-text bar ---------- */
+  .search-bar{
+    position:fixed;top:62px;right:16px;z-index:71;
+    background:#241c14;border-radius:10px;padding:6px 8px 6px 12px;
+    display:flex;align-items:center;gap:7px;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,.4);
+  }
+  .search-bar input{
+    background:transparent;border:none;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-size:12.5px;width:150px;outline:none;
+  }
+  .search-bar input::placeholder{color:#8d8172;}
+  .search-count{font-family:'Inter',sans-serif;font-size:11px;color:#c9b98f;white-space:nowrap;}
+  .search-bar button{
+    width:26px;height:26px;border:none;border-radius:6px;background:transparent;
+    color:#f1e9d8;cursor:pointer;font-size:12px;
+  }
+  .search-bar button:hover{background:rgba(255,255,255,.14);}
+  @media (max-width:520px){ .search-bar input{width:100px;} }
+
+  .search-hit{background:#ffd23f;color:#1a1409;border-radius:2px;}
+  .search-hit.active{background:var(--wax);color:#fff;}
+
+  /* ================= CONTENT AREA ================= */
+  .content-area{flex:1 1 auto;min-width:0;padding-bottom:70px;}
+
+  header.masthead{
+    max-width:var(--measure);
+    margin:0 auto;
+    padding:38px 24px 18px;
+    transition:max-width .3s ease, padding .3s ease;
+  }
+  @media (max-width:1100px){ header.masthead{padding-top:76px;} }
+  body.presentation header.masthead{padding-top:70px;}
+
+  /* ================= PROJECTION MODE ================= */
+  body.presentation .hint,
+  body.presentation .subtitle,
+  body.presentation .folio{display:none;}
+  body.presentation h1.title{font-size:clamp(30px,3.6vw,46px);margin-top:0;}
+  body.presentation main.dossier{max-width:none;width:50%;}
+  body.presentation main.dossier.split{width:66%;}
+  /* On smaller screens (tablets) there's less room to spare than on a projector,
+     so the same "narrow reading column" would waste too much space — widen it
+     progressively as the viewport shrinks. */
+  @media (max-width:1400px){
+    body.presentation main.dossier{width:76%;}
+    body.presentation main.dossier.split{width:90%;}
+  }
+  @media (max-width:1100px){
+    body.presentation main.dossier{width:92%;}
+    body.presentation main.dossier.split{width:96%;}
+  }
+  body.presentation footer.controls{max-width:none;padding:0 32px;}
+  body.presentation .panel{transform:none;}
+  body.presentation .margin-col{display:none;}
+  body.presentation{--text-size:19px;}
+  body.presentation .text-col{line-height:1.9;}
+  body.presentation .panel-head{padding:26px 32px 16px;}
+  body.presentation .panel-head h2{font-size:25px;}
+  body.presentation .panel-body{padding:26px 32px 34px;}
+  @media (max-width:880px){
+    body.presentation{--text-size:17px;}
+    body.presentation .text-col{line-height:1.8;}
+  }
+
+  .folio{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--wax);
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .folio::before{content:"";width:22px;height:1px;background:var(--wax);display:inline-block;}
+  h1.title{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,42px);
+    margin:8px 0 6px;
+    line-height:1.08;
+  }
+  .subtitle{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:640px;
+    line-height:1.5;
+  }
+  .hint{
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    padding:9px 14px;
+    background:rgba(255,255,255,.35);
+    border:1px dashed var(--line);
+    border-radius:8px;
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    line-height:1.5;
+  }
+  .hint b{color:var(--ink);}
+
+  /* ---------- Dossier layout ---------- */
+  main.dossier{
+    max-width:var(--measure);
+    width:100%;
+    margin:26px auto 0;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    transition:max-width .3s ease, width .3s ease;
+  }
+  main.dossier.split{
+    max-width:none;
+    width:80%;
+    grid-template-columns:1fr 1fr;
+    align-items:start;
+  }
+  @media (max-width:880px){
+    main.dossier.split{width:100%;grid-template-columns:1fr;}
+  }
+
+  .panel{
+    background:var(--paper);
+    border-radius:3px;
+    box-shadow:var(--shadow);
+    position:relative;
+    padding:0;
+    transform:rotate(-.35deg);
+    border:1px solid var(--paper-edge);
+  }
+  .panel.analisis-panel{
+    background:var(--paper-2);
+    transform:rotate(.3deg);
+  }
+  .panel::before{
+    content:"";
+    position:absolute;inset:8px;
+    border:1px solid rgba(42,33,24,.08);
+    pointer-events:none;
+  }
+  .panel-head{
+    padding:22px 26px 14px;
+    border-bottom:1px solid var(--line);
+  }
+  .panel-head-row{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+  }
+  .hide-analysis-btn{
+    font-family:'Inter',sans-serif;
+    font-size:11px;font-weight:700;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:5px 11px;
+    border-radius:20px;
+    cursor:pointer;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .hide-analysis-btn:hover{border-color:var(--wax);color:var(--wax);}
+  .edit-doc-btn{
+    font-family:'Inter',sans-serif;
+    font-size:11px;font-weight:700;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:5px 11px;
+    border-radius:20px;
+    cursor:pointer;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .edit-doc-btn:hover{border-color:var(--gold);color:var(--gold);}
+  .tag{
+    font-family:'Inter',sans-serif;
+    font-size:10.5px;
+    letter-spacing:.12em;
+    font-weight:700;
+    color:#fff;
+    background:var(--wax);
+    padding:3px 9px;
+    border-radius:2px;
+  }
+  .tag.tag-alt{background:var(--green);}
+  .panel-head h2{
+    font-family:'Playfair Display',serif;
+    font-size:21px;
+    margin:10px 0 0;
+    line-height:1.25;
+  }
+  .panel-body{
+    display:flex;
+    gap:14px;
+    padding:20px 22px 26px;
+    align-items:flex-start;
+  }
+  .analisis-panel .panel-body{flex-direction:row-reverse;}
+  @media (max-width:640px){
+    .panel-body, .analisis-panel .panel-body{flex-direction:column;}
+  }
+
+  .text-col{
+    flex:1 1 auto;
+    min-width:0;
+    font-size:var(--text-size);
+    line-height:1.75;
+    color:var(--ink);
+    transition:font-size .15s ease;
+  }
+  .text-col p{
+    margin:0 0 14px;
+    text-align:justify;
+    text-align-last:left;
+    hyphens:auto;
+    -webkit-hyphens:auto;
+    -ms-hyphens:auto;
+  }
+  .text-col p:first-child::first-letter{
+    font-family:'Playfair Display',serif;
+    font-size:2.5em;
+    float:left;
+    line-height:.85;
+    padding-right:6px;
+    color:var(--wax);
+    font-weight:700;
+  }
+  .text-col b, .text-col strong{color:var(--ink);}
+  .text-col .lead-in{font-weight:600;}
+  .text-col ul{margin:0 0 14px;padding-left:22px;}
+  .text-col ul ul{margin:6px 0 0;padding-left:20px;}
+  .text-col li{margin-bottom:8px;text-align:left;}
+  .text-col li:last-child{margin-bottom:0;}
+
+  /* ---------- Image-source documents (paintings) ---------- */
+  .image-card{display:flex;flex-direction:column;gap:14px;}
+  .image-frame{
+    border:1px solid var(--paper-edge);
+    background:rgba(0,0,0,.03);
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:inset 0 0 0 6px var(--paper);
+  }
+  .image-frame img{display:block;width:100%;height:auto;}
+  .image-placeholder{padding:36px 24px;text-align:center;font-family:'Inter',sans-serif;}
+  .image-placeholder-icon{font-size:34px;margin-bottom:10px;opacity:.5;}
+  .image-placeholder-text{font-size:12.5px;color:var(--ink-soft);line-height:1.6;max-width:340px;margin:0 auto 10px;}
+  .image-placeholder-path{
+    display:inline-block;background:rgba(0,0,0,.06);padding:4px 10px;border-radius:4px;
+    font-size:11.5px;color:var(--ink);
+  }
+  body.dark .image-placeholder-path{background:rgba(255,255,255,.08);}
+  .image-caption{border-top:1px solid var(--line);padding-top:12px;}
+  .image-title{font-family:'Playfair Display',serif;font-size:16.5px;margin:0 0 6px;line-height:1.3;}
+  .image-meta{font-family:'Inter',sans-serif;font-size:12px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  .margin-col{
+    flex:0 0 168px;
+    max-width:168px;
+    position:sticky;
+    top:16px;
+  }
+  @media (max-width:640px){
+    .margin-col{position:static;max-width:none;flex:1 1 auto;}
+  }
+  .margin-col .margin-title{
+    font-family:'Inter',sans-serif;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+    opacity:.75;
+  }
+  .margin-empty{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    color:var(--ink-soft);
+    opacity:.55;
+    font-style:italic;
+    line-height:1.5;
+  }
+  .note-item{
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    line-height:1.5;
+    background:rgba(255,255,255,.55);
+    border-left:3px solid var(--gold);
+    border-radius:0 4px 4px 0;
+    padding:8px 10px;
+    margin-bottom:10px;
+    cursor:pointer;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .note-item:hover{background:rgba(255,255,255,.85);transform:translateX(2px);}
+  .note-item.flash{background:#fff6cf;}
+  .note-item .num{
+    display:inline-block;
+    font-weight:700;
+    color:var(--wax);
+    margin-right:5px;
+  }
+  .note-item .del{
+    float:right;
+    color:var(--ink-soft);
+    font-size:11px;
+    opacity:.5;
+  }
+  .note-item .del:hover{opacity:1;color:var(--wax);}
+
+  /* highlight marks */
+  mark.hl{
+    background:var(--hl-yellow);
+    padding:.03em .05em;
+    border-radius:2px;
+    cursor:pointer;
+    mix-blend-mode:multiply;
+    box-decoration-break:clone;
+  }
+  mark.hl-green{background:var(--hl-green);}
+  mark.hl-pink{background:var(--hl-pink);}
+  mark.hl.flash{outline:2px solid var(--wax);outline-offset:1px;}
+  sup.note-marker{
+    font-family:'Inter',sans-serif;
+    color:#fff;
+    background:var(--wax);
+    border-radius:50%;
+    width:18px;height:18px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:10px;font-weight:700;
+    cursor:pointer;
+    margin-left:1px;
+    line-height:1;
+  }
+
+  /* ---------- Seal / reveal button ---------- */
+  .seal-wrap{
+    display:flex;
+    justify-content:center;
+    margin:4px 0;
+  }
+  main.dossier.split .seal-wrap{display:none;}
+  .seal-btn{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.04em;
+    color:#f7ecd8;
+    background:radial-gradient(circle at 35% 30%, var(--wax) 0%, var(--wax-dark) 70%);
+    border:none;
+    width:104px;height:104px;
+    border-radius:50%;
+    box-shadow:0 8px 18px -6px rgba(107,31,39,.55), inset 0 0 0 3px rgba(247,236,216,.15);
+    cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:4px;
+    transition:transform .15s ease;
+    position:relative;
+  }
+  .seal-btn:hover{transform:scale(1.04);}
+  .seal-btn:active{transform:scale(.96);}
+  .seal-btn .seal-icon{font-size:20px;}
+  .seal-btn.opened{
+    background:radial-gradient(circle at 35% 30%, var(--green) 0%, #2c4030 70%);
+  }
+
+  /* ---------- Floating selection toolbar ---------- */
+  .hl-toolbar, .note-popup, .mark-menu{position:absolute;z-index:80;}
+  .hl-toolbar{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:#241c14;
+    padding:6px 8px;
+    border-radius:8px;
+    box-shadow:0 8px 20px -6px rgba(0,0,0,.45);
+  }
+  .hl-toolbar button{border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+  .swatch{
+    width:20px;height:20px;
+    border-radius:50%;
+    padding:0;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);
+  }
+  .swatch.yellow{background:var(--hl-yellow);}
+  .swatch.green{background:var(--hl-green);}
+  .swatch.pink{background:var(--hl-pink);}
+  .toolbar-divider{width:1px;height:18px;background:rgba(255,255,255,.2);}
+  .hl-toolbar .txt-btn{
+    background:transparent;color:#f1e9d8;font-size:12px;font-weight:600;
+    padding:4px 8px;border-radius:5px;
+  }
+  .hl-toolbar .txt-btn:hover{background:rgba(255,255,255,.12);}
+
+  /* ---------- Note popup ---------- */
+  .note-popup{
+    width:240px;
+    background:#fffdf6;
+    border:1px solid var(--line);
+    border-radius:8px;
+    box-shadow:0 12px 26px -8px rgba(0,0,0,.35);
+    padding:10px;
+  }
+  .note-popup-title{
+    font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+    color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;
+    margin-bottom:6px;
+  }
+  .note-popup textarea{
+    width:100%;
+    min-height:64px;
+    resize:vertical;
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:7px;
+    color:var(--ink);
+  }
+  .note-popup .note-actions{
+    display:flex;justify-content:flex-end;gap:6px;margin-top:8px;
+  }
+  .note-popup button{
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;font-weight:600;
+    border:none;border-radius:5px;
+    padding:6px 10px;cursor:pointer;
+  }
+  #saveNote{background:var(--wax);color:#fff;}
+  #cancelNote{background:#eee2c9;color:var(--ink-soft);}
+
+  /* ---------- Mark context menu ---------- */
+  .mark-menu{
+    background:#241c14;border-radius:8px;
+    box-shadow:0 8px 20px -6px rgba(0,0,0,.45);
+    overflow:hidden;
+    min-width:180px;
+  }
+  .mark-menu .menu-colors{display:flex;gap:7px;padding:9px 12px 7px;}
+  .mark-menu .menu-colors button{
+    width:18px;height:18px;border-radius:50%;padding:0;border:none;cursor:pointer;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);
+  }
+  .menu-divider{height:1px;background:rgba(255,255,255,.14);margin:2px 0;}
+  .mark-menu button.menu-action{
+    display:block;width:100%;
+    background:transparent;border:none;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    padding:9px 14px;text-align:left;cursor:pointer;
+  }
+  .mark-menu button.menu-action:hover{background:rgba(255,255,255,.12);}
+  .mark-menu button.menu-action.danger:hover{color:#f4a3a3;}
+
+  /* ---------- Footer controls ---------- */
+  footer.controls{
+    max-width:var(--measure);margin:30px auto 0;padding:0 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    font-family:'Inter',sans-serif;flex-wrap:wrap;gap:10px;
+  }
+  .footer-actions{display:flex;gap:8px;flex-wrap:wrap;}
+  .footer-btn{
+    font-size:12px;font-weight:600;color:var(--ink-soft);
+    background:transparent;border:1px solid var(--line);
+    padding:8px 14px;border-radius:6px;cursor:pointer;
+  }
+  .footer-btn:hover{border-color:var(--wax);color:var(--wax);}
+  .status{font-size:11.5px;color:var(--ink-soft);opacity:.75;}
+
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger" aria-label="Abrir menú">☰</button>
+
+<div class="top-controls">
+  <button class="icon-btn ui" id="searchToggle" title="Buscar en el texto" aria-label="Buscar en el texto">🔍</button>
+  <div class="font-size-group">
+    <button id="fontMinus" class="ui" title="Reducir letra" aria-label="Reducir letra">A−</button>
+    <button id="fontPlus" class="ui" title="Aumentar letra" aria-label="Aumentar letra">A+</button>
+  </div>
+  <button class="icon-btn ui" id="darkToggle" title="Modo oscuro" aria-pressed="false" aria-label="Modo oscuro">🌙</button>
+  <button class="present-toggle ui" id="presentToggle" aria-pressed="false">
+    <span class="icon">🖥</span><span class="label">Modo proyección</span>
+  </button>
+</div>
+
+<div class="search-bar ui" id="searchBar" hidden>
+  <input type="text" id="searchInput" placeholder="Buscar en el texto…" autocomplete="off">
+  <span class="search-count" id="searchCount">0/0</span>
+  <button id="searchPrev" title="Anterior">↑</button>
+  <button id="searchNext" title="Siguiente">↓</button>
+  <button id="searchClose" title="Cerrar">✕</button>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+
+<div class="app-shell">
+
+  <aside class="sidenav" id="sidenav">
+    <div class="sidenav-brand">
+      <div class="brand-mark">⚑</div>
+      <div class="brand-text">
+        <div class="brand-title">Archivo de Fuentes</div>
+        <div class="brand-sub">Historia de España</div>
+      </div>
+      <a class="home-link" href="index.html" title="Volver al inicio">🏠</a>
+    </div>
+
+    <div class="unit-label"><b>Unidad 9</b> · Golpe de Estado, Revolución y Guerra Civil (1936–1939)</div>
+
+    <nav class="doc-list" id="docList">
+      <div class="nav-label">Documentos</div>
+    </nav>
+
+    <div class="color-legend">
+      <div class="nav-label">Significado de los colores</div>
+      <div class="legend-item"><span class="dot hl-yellow"></span>Dato clave</div>
+      <div class="legend-item"><span class="dot hl-green"></span>Contexto</div>
+      <div class="legend-item"><span class="dot hl-pink"></span>Duda / pregunta</div>
+    </div>
+
+    <div class="notes-index">
+      <div class="nav-label">Notas <span class="count-badge" id="notesCount">0</span></div>
+      <input type="text" id="notesFilter" class="notes-search" placeholder="Buscar en tus notas…">
+      <div class="notes-index-list" id="notesIndexList">
+        <div class="idx-empty">Todavía no has creado notas.</div>
+      </div>
+      <div class="doc-io-row">
+        <button class="export-btn" id="exportNotes" title="Descarga tus notas y subrayados de esta unidad en un .json">⬇ Exportar notas</button>
+        <button class="export-btn" id="importNotesBtn" title="Carga un .json de notas y subrayados exportado desde otro ordenador">⬆ Importar notas</button>
+      </div>
+      <input type="file" id="importNotesInput" accept=".json,application/json" hidden>
+    </div>
+  </aside>
+
+  <div class="content-area">
+
+    <header class="masthead">
+      <div class="folio">Unidad 9 · 1936–1939</div>
+      <h1 class="title">Golpe de Estado, Revolución y Guerra Civil</h1>
+      <p class="subtitle">Selecciona un documento en el menú lateral para trabajar con su fuente y su análisis en paralelo.</p>
+      <div class="hint">✎ &nbsp;<b>Selecciona un fragmento</b> para subrayarlo o anclar una nota — atajos: <b>1</b>/<b>2</b>/<b>3</b> para color, <b>N</b> para nota. Haz clic en un subrayado ya creado para editarlo, cambiar su color o eliminarlo.</div>
+    </header>
+
+    <main class="dossier" id="dossier">
+
+      <section class="panel fuente-panel">
+        <div class="panel-head">
+          <div class="panel-head-row">
+            <span class="tag">Fuente primaria</span>
+            <button class="edit-doc-btn ui" id="editDocBtn" title="Editar este documento">✎ Editar</button>
+          </div>
+          <h2>—</h2>
+        </div>
+        <div class="panel-body">
+          <div class="text-col selectable" id="text-fuente" data-panel="fuente"></div>
+          <div class="margin-col" id="margin-fuente">
+            <div class="margin-title">Notas</div>
+            <div class="margin-empty">Aún no hay notas en este documento.</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="seal-wrap">
+        <button id="revealBtn" class="seal-btn" aria-expanded="false">
+          <span class="seal-icon">🖋</span>
+          <span class="seal-label">Revelar<br>análisis</span>
+        </button>
+      </div>
+
+      <section class="panel analisis-panel" id="analisisPanel" hidden>
+        <div class="panel-head">
+          <div class="panel-head-row">
+            <span class="tag tag-alt">Comentario</span>
+            <button class="hide-analysis-btn ui" id="hideAnalysisBtn" title="Ocultar análisis">✕ Ocultar análisis</button>
+          </div>
+          <h2>—</h2>
+        </div>
+        <div class="panel-body">
+          <div class="margin-col" id="margin-analisis">
+            <div class="margin-title">Notas</div>
+            <div class="margin-empty">Aún no hay notas en este documento.</div>
+          </div>
+          <div class="text-col selectable" id="text-analisis" data-panel="analisis"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="controls">
+      <div class="footer-actions">
+        <button id="undoBtn" class="footer-btn ui" title="Deshacer (Ctrl+Z)">↶ Deshacer</button>
+        <button id="resetBtn" class="footer-btn ui">Restablecer este documento</button>
+      </div>
+      <span class="status" id="statusMsg"></span>
+    </footer>
+
+  </div>
+</div>
+
+<!-- floating UI -->
+<div class="hl-toolbar" id="hlToolbar" hidden>
+  <button class="swatch yellow" data-color="yellow" title="Dato clave (1)"></button>
+  <button class="swatch green" data-color="green" title="Contexto (2)"></button>
+  <button class="swatch pink" data-color="pink" title="Duda / pregunta (3)"></button>
+  <div class="toolbar-divider"></div>
+  <button class="txt-btn" id="noteBtn" title="Añadir nota (N)">✎ Nota</button>
+</div>
+
+<div class="note-popup" id="notePopup" hidden>
+  <div class="note-popup-title" id="notePopupTitle">Nueva nota</div>
+  <textarea id="noteInput" placeholder="Escribe tu nota…"></textarea>
+  <div class="note-actions">
+    <button id="cancelNote">Cancelar</button>
+    <button id="saveNote">Guardar</button>
+  </div>
+</div>
+
+<div class="mark-menu" id="markMenu" hidden></div>
+
+<div class="modal-backdrop" id="addDocBackdrop" hidden></div>
+<div class="add-doc-modal ui" id="addDocModal" hidden>
+  <div class="modal-head">
+    <h3>Añadir documento</h3>
+    <button class="modal-close" id="addDocClose" title="Cerrar">✕</button>
+  </div>
+  <div class="modal-body">
+    <p class="modal-hint">Se guarda solo en este navegador — no se añade al archivo HTML. Usa "Exportar todo" para poder llevarte esto a otro equipo, o pídeme que lo incorpore de forma permanente.</p>
+
+    <div class="field-row type-toggle">
+      <label><input type="radio" name="docType" value="text" checked> Documento de texto</label>
+      <label><input type="radio" name="docType" value="image"> Documento con imagen (cuadro/foto)</label>
+    </div>
+
+    <label class="field-label" for="addNavTitle">Título para el menú</label>
+    <input type="text" id="addNavTitle" placeholder="Ej. Carta de un diputado a su familia">
+
+    <div class="field-row two-col">
+      <div>
+        <label class="field-label" for="addYear">Año</label>
+        <input type="text" id="addYear" placeholder="Ej. 1821">
+      </div>
+      <div>
+        <label class="field-label" for="addTag">Etiqueta</label>
+        <input type="text" id="addTag" placeholder="Fuente primaria" value="Fuente primaria">
+      </div>
+    </div>
+
+    <label class="field-label" for="addTitle">Título completo del documento</label>
+    <input type="text" id="addTitle" placeholder="(si lo dejas vacío, se usa el título del menú)">
+
+    <div id="addTextFields">
+      <label class="field-label" for="addFuenteText">Texto de la fuente</label>
+      <div class="ta-toolbar" data-target="addFuenteText">
+        <button type="button" class="ta-btn" data-wrap="strong" title="Negrita"><strong>B</strong></button>
+        <button type="button" class="ta-btn" data-wrap="em" title="Cursiva"><em>I</em></button>
+        <button type="button" class="ta-btn" data-wrap="small" title="Texto pequeño (para citas/referencias)">Aa</button>
+      </div>
+      <textarea id="addFuenteText" rows="5" placeholder="Pega aquí el texto de la fuente. Separa los párrafos dejando una línea en blanco entre ellos."></textarea>
+    </div>
+
+    <div id="addImageFields" hidden>
+      <label class="field-label" for="addImageInput" id="addImageLabel">Imagen (jpg/png)</label>
+      <input type="file" id="addImageInput" accept="image/*">
+      <div class="field-row two-col">
+        <div>
+          <label class="field-label" for="addArtist">Autor</label>
+          <input type="text" id="addArtist" placeholder="Ej. Vicente López">
+        </div>
+        <div>
+          <label class="field-label" for="addPaintYear">Año de la obra</label>
+          <input type="text" id="addPaintYear" placeholder="Ej. pintado en 1826">
+        </div>
+      </div>
+      <div class="field-row two-col">
+        <div>
+          <label class="field-label" for="addTechnique">Técnica</label>
+          <input type="text" id="addTechnique" placeholder="Ej. Óleo sobre lienzo">
+        </div>
+        <div>
+          <label class="field-label" for="addLocation">Ubicación</label>
+          <input type="text" id="addLocation" placeholder="Ej. Museo del Prado, Madrid">
+        </div>
+      </div>
+    </div>
+
+    <label class="field-label" for="addAnalisisText">Texto del análisis</label>
+    <div class="ta-toolbar" data-target="addAnalisisText">
+      <button type="button" class="ta-btn" data-wrap="strong" title="Negrita"><strong>B</strong></button>
+      <button type="button" class="ta-btn" data-wrap="em" title="Cursiva"><em>I</em></button>
+      <button type="button" class="ta-btn" data-wrap="small" title="Texto pequeño (para citas/referencias)">Aa</button>
+      <button type="button" class="ta-btn wide" data-wrap="bullet" title="Viñeta: aplica o quita el guion inicial de la línea">• Viñeta</button>
+      <button type="button" class="ta-btn wide" data-wrap="subbullet" title="Subviñeta: sangra la línea un nivel">◦ Subviñeta</button>
+    </div>
+    <textarea id="addAnalisisText" rows="6" placeholder="Naturaleza y tipo de fuente, idea principal, contexto…"></textarea>
+    <p class="modal-hint">Selecciona texto y pulsa B / I / Aa para darle formato — o escribe las etiquetas HTML directamente (&lt;strong&gt;, &lt;em&gt;). Dos párrafos se separan con una línea en blanco. Para una lista, sitúa el cursor en la línea (o selecciona varias) y pulsa • Viñeta; usa ◦ Subviñeta para sangrarla un nivel. Pulsar el mismo botón otra vez la quita.</p>
+  </div>
+  <div class="modal-actions">
+    <button id="addDocCancel">Cancelar</button>
+    <button id="addDocSave">Guardar documento</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ---- Respaldo local de window.storage -----------------------------------
+     Esta aplicacion se diseno para funcionar dentro de un entorno que
+     proporciona una API window.storage (get/set/delete). Cuando la pagina
+     se abre directamente en un navegador normal -como archivo descargado,
+     adjunto de correo, o alojada en un servidor web cualquiera- esa API no
+     existe, y hasta ahora eso hacia que CADA nota, subrayado y edicion se
+     descartara en silencio al recargar, y que una importacion de .json solo
+     restaurase las notas (que se guardan en memoria) pero nunca los
+     subrayados del texto (que solo se guardaban a traves de window.storage).
+     Este parche implementa la misma API usando localStorage del propio
+     navegador siempre que la real no este presente, para que todo persista
+     con normalidad en este navegador. ------------------------------------ */
+  if (typeof window.storage === 'undefined') {
+    window.storage = {
+      get: function(key){
+        try{
+          var raw = window.localStorage.getItem('archivo-fuentes:' + key);
+          return Promise.resolve(raw === null ? null : { value: raw });
+        }catch(e){ return Promise.resolve(null); }
+      },
+      set: function(key, value){
+        try{ window.localStorage.setItem('archivo-fuentes:' + key, value); }catch(e){}
+        return Promise.resolve();
+      },
+      delete: function(key){
+        try{ window.localStorage.removeItem('archivo-fuentes:' + key); }catch(e){}
+        return Promise.resolve();
+      }
+    };
+  }
+  /* ======================================================================
+     DOCUMENT DATA
+     Add a new unit document by appending an object here. num/year are
+     display-only; id must be unique within this unit (used as the storage
+     key and DOM lookup key).
+  ====================================================================== */
+  const DOCS = [
+    {
+      id: 'instrucciones-mola',
+      num: '01',
+      year: '1936',
+      navTitle: 'Instrucciones del general Mola',
+      tag: 'Fuente primaria',
+      title: 'Instrucciones reservadas del General Mola, 1936',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Instrucciones reservadas del General Mola para el Alzamiento (1936)',
+      fuenteHTML: `
+        <p>El movimiento ha de ser simultáneo en todas las guarniciones comprometidas; y, desde luego, de una gran violencia. Las vacilaciones no conducen más que al fracaso. (…) Proceder con la mayor energía, rapidez y orden. Vigilar la disciplina más rigurosa, empleando las medidas más severas (…). Se tendrá en cuenta que la acción ha de ser en extremo violenta, de modo que reduzca lo antes posible a un enemigo fuerte y bien organizado. Desde luego, serán encarcelados los dirigentes de los partidos políticos, sociedades y sindicatos desafectos al movimiento y se les aplicarán castigos ejemplares para estrangular los movimientos de rebeldía o huelga. (…) Conquistado el poder, se instaurará una dictadura militar que tenga por misión inmediata restablecer el orden público.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Instrucciones reservadas del General Mola, 1936.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria, de carácter inicialmente privado (instrucciones secretas) y de naturaleza político-militar.</p>
+        <p><strong>Idea principal.</strong> La planificación táctica y metodológica del golpe de Estado contra la Segunda República, delineando la necesidad de una actuación simultánea y fulminante.</p>
+        <p><strong>Ideas secundarias.</strong> El general Emilio Mola ("El Director" del alzamiento) insta a utilizar la máxima crueldad y una violencia extrema y ejemplarizante desde el primer minuto. Advierte de que cualquier titubeo supondría el fracaso, exigiendo la eliminación inmediata de cualquier foco de resistencia o disidencia, incluso dentro de las propias filas militares.</p>
+        <p><strong>Contexto en España.</strong> Tras la victoria electoral del Frente Popular en febrero de 1936, la polarización social y política en España alcanzó niveles inmanejables. Las masas obreras y campesinas, impacientes, iniciaron una oleada de huelgas y ocupaciones de fincas, mientras las milicias de extrema derecha (Falange Española) practicaban el terrorismo callejero ("estrategia de la tensión") para desestabilizar a la República. Ante el temor a una revolución marxista y a la pérdida de sus privilegios socioeconómicos (reforma agraria, laicismo), la oligarquía terrateniente, financiera e industrial pactó con los sectores más conservadores del Ejército, encargando al general Emilio Mola la planificación técnica de un golpe de Estado. Mola articuló una vasta conspiración (con generales como Franco, Sanjurjo y Goded) cuyo objetivo originario no era una guerra larga, sino la rápida instauración de una dictadura militar transitoria y de corte fascista para restablecer el "orden". El asesinato del líder ultraderechista José Calvo Sotelo el 13 de julio sirvió como pretexto final. Sin embargo, tal y como Mola temía, el golpe fracasó en los principales núcleos industriales y políticos (Madrid, Barcelona, Valencia, País Vasco, Asturias), debido tanto a la resistencia de las milicias populares como a la lealtad de una gran parte de las fuerzas de seguridad republicanas. Este fracaso táctico dividió al país en dos y precipitó una cruenta Guerra Civil.</p>
+        <p><strong>Contexto europeo.</strong> La conspiración militar española emulaba abiertamente los postulados de los regímenes fascistas totalitarios en auge, especialmente en la Italia de Mussolini y la Alemania de Hitler, que demostraban cómo las democracias liberales parlamentarias podían ser destruidas desde dentro mediante el uso orgánico de la violencia.</p>
+      `
+    },
+    {
+      id: 'bando-guerra-franco',
+      num: '02',
+      year: '1936',
+      navTitle: 'Bando de guerra de Franco',
+      tag: 'Fuente primaria',
+      title: 'Manifiesto de Francisco Franco Bahamonde, 25 de julio de 1936',
+      analisisTag: 'Comentario',
+      analisisTitle: 'El Bando de Guerra del General Franco (17-18 de julio de 1936)',
+      fuenteHTML: `
+        <p>Don Francisco Franco Bahamonde, General de División, jefe superior de las fuerzas militares de Marruecos y alto comisario, hago saber: una vez más el Ejército, unido a las demás fuerzas de la nación, se ha visto obligado a recoger el anhelo de la gran mayoría de los españoles que veían con amargura infinita desaparecer lo que a todos puede unirnos en un ideal común: España. Se trata de restablecer el imperio del orden dentro de la República, no solamente en su apariencia o signos exteriores, sino también en su misma esencia; para ello precisa obrar con justicia, que no repara en clases ni categorías sociales, a las que ni se halaga, ni se persigue, cesando de estar dividido el país en dos grupos: el de los que disfrutan del poder y el de los que eran atropellados en sus derechos, aun tratándose de leyes hechas por los mismos que las vulneraron; la conducta de cada uno guiará la conducta que con relación a él seguirá la autoridad, otro elemento desaparecido de nuestra nación, y que es indispensable en toda colectividad humana, tanto si es en un régimen democrático, como si es en un régimen soviético, en donde llegará a su máximo rigor. El restablecimiento de este principio de autoridad, olvidado en los últimos años, exige inexcusablemente que los castigos sean ejemplares, por la seriedad con que se impondrán y la rapidez con que se llevarán a cabo, sin titubeos ni vacilaciones.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Diario Oficial del Ministerio de la Guerra, Tetuán, 25 de julio de 1936.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (un bando militar o proclama). De naturaleza estrictamente político-militar y jurisdiccional.</p>
+        <p><strong>Idea principal.</strong> La asunción del poder absoluto mediante la declaración de la ley marcial (estado de guerra) por parte de las fuerzas armadas rebeldes, anulando la legalidad democrática republicana e imponiendo la autoridad militar suprema sobre todo el territorio y la población civil.</p>
+        <p><strong>Ideas secundarias.</strong> Franco justifica el golpe de Estado apelando de forma retórica a la "salvación de la Patria" ante el caos y la división (el "imperio del orden"). Además, amenaza veladamente a la izquierda, advirtiendo que los castigos serán "ejemplares" y "sin titubeos", institucionalizando desde el primer día la represión de Estado.</p>
+        <p><strong>Contexto en España.</strong> El 17 de julio de 1936 se inició el alzamiento en Melilla y el Protectorado de Marruecos. Al día siguiente, Francisco Franco voló desde Canarias a Tetuán para ponerse al frente del poderoso y curtido "Ejército de África" (compuesto por la Legión y los mercenarios Regulares marroquíes), publicando este bando de guerra. Desde allí, la sublevación se extendió a la Península de forma muy desigual. Los sublevados, autodenominados "nacionales", lograron triunfar rápidamente en la España interior más conservadora y agraria: Castilla y León, Galicia, Navarra (gracias al apoyo decisivo de los requetés carlistas), partes de Aragón y ciertas ciudades andaluzas controladas a sangre y fuego por Queipo de Llano, como Sevilla. A pesar del lenguaje aparentemente unitario del manifiesto, la base social y política que arropó a Franco era extremadamente heterogénea: reunía a militares golpistas, la oligarquía tradicional, la Iglesia, pequeños propietarios católicos, fascistas de la Falange (CEDA) y monárquicos carlistas y alfonsinos. Todos ellos, aunque tenían proyectos políticos incompatibles a largo plazo, estaban cementados por su fobia común: aniquilar la democracia, el laicismo, los estatutos de autonomía periféricos (considerados "separatistas") y exterminar físicamente a las fuerzas del movimiento obrero. El control que Franco ejercía sobre las mejores tropas de élite del país le facilitaría enormemente, meses después, erigirse en el líder supremo de todo este bando insurgente.</p>
+        <p><strong>Contexto europeo.</strong> Franco utilizó un lenguaje reaccionario afín a los nacionalismos autoritarios de la Europa de entreguerras. Su bando obtuvo desde los primeros compases el apoyo vital e inmediato de la Alemania nazi y la Italia fascista, sin el cual el Ejército de África jamás habría podido cruzar el Estrecho de Gibraltar (bloqueado por la marina republicana) hacia la Península.</p>
+      `
+    },
+    {
+      id: 'alzamiento-gobierno',
+      num: '03',
+      year: '1936',
+      navTitle: 'El alzamiento visto por el Gobierno',
+      tag: 'Fuente primaria',
+      title: 'El alzamiento visto por el Gobierno, 18 de julio de 1936',
+      analisisTag: 'Comentario',
+      analisisTitle: 'El colapso del Estado republicano (visión de Manuel Azaña)',
+      fuenteHTML: `
+        <p>Se ha frustrado un nuevo intento criminal contra la República. El Gobierno no ha querido dirigirse al país para conseguir conocimiento exacto de lo sucedido y poner en ejecución las medidas urgentes e inexorables para combatirlo. Una parte del Ejército que representa a España en Marruecos se ha levantado en armas contra la República, sublevándose contra la propia Patria y realizando un acto vergonzoso y criminal de rebeldía contra el poder legítimamente constituido. El Gobierno declara que el movimiento está exclusivamente circunscrito a determinadas ciudades de la zona del Protectorado. Y que nadie, absolutamente, se ha sumado en la Península a tan absurdo empeño. Por el contrario, los españoles han reaccionado de un modo unánime y con la más profunda indignación contra la tentativa reprobable y frustrada ya en su nacimiento.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Comunicado emitido por la radio, la mañana del 18 de julio de 1936.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria, de naturaleza política, historiográfica y memorística (escrita por el Presidente de la República, Manuel Azaña, reflexionando sobre los hechos).</p>
+        <p><strong>Idea principal.</strong> La dramática constatación de la disolución e impotencia absoluta del aparato del Estado republicano frente a dos graves amenazas simultáneas: el golpe militar fascista y el desbordamiento de la revolución proletaria y anarcosindicalista en su propia retaguardia.</p>
+        <p><strong>Ideas secundarias.</strong> Azaña identifica que la tragedia fundamental de la República es haber perdido el monopolio del poder y la autoridad ("no le obedecían"). El principal reto del gobierno consistía en intentar canalizar a esas milicias obreras, indisciplinadas e incontrolables, integrándolas en un Ejército regular bajo mando centralizado para poder tener opciones de ganar la guerra.</p>
+        <p><strong>Contexto en España.</strong> Tras la sublevación militar, el jefe de gobierno, Casares Quiroga, dimitió al verse sobrepasado. Su sucesor, José Giral, tomó la durísima y trágica decisión de entregar las armas de los arsenales públicos a las milicias de los partidos obreros (PCE, PSOE) y de los sindicatos (UGT, CNT). Aunque esta medida, junto con la lealtad de la mitad del Ejército y la Guardia Civil, salvó a la República del triunfo del golpe en las grandes ciudades (Madrid, Barcelona, Valencia), provocó automáticamente la desintegración del poder estatal burgués liberal republicano. En la España leal, el poder pasó a manos de infinitos Comités obreros locales y regionales. Estas milicias populares, caracterizadas por su inmenso entusiasmo antifascista pero con una total carencia de disciplina militar e instrucción técnica, frenaron el primer envite enemigo, pero demostraron ser completamente inútiles frente a las eficaces tropas regulares de Franco en campo abierto. Además, durante los primeros meses, la debilidad del Estado impidió frenar el salvaje "terror rojo": milicianos incontrolados incendiaron iglesias, expropiaron negocios y procedieron al asesinato sistemático de derechistas, clérigos, empresarios y terratenientes a través de sacas y "paseos" nocturnos (como la matanza de miles de presos en Paracuellos del Jarama en noviembre de 1936), hundiendo terriblemente el prestigio moral internacional de la República. La obsesión de los sucesivos gobiernos de Largo Caballero y Juan Negrín fue suprimir las milicias para forjar un poderoso Ejército Popular de la República, un proceso lento y lleno de tensiones.</p>
+        <p><strong>Contexto europeo.</strong> La situación rememoraba los caóticos escenarios europeos de posguerra en 1918 (como en la Revolución Rusa o los consejos obreros alemanes), donde el hundimiento del poder central burgués daba paso al surgimiento de un poder paralelo proletario armado y revolucionario, confirmando el pánico de las clases medias europeas hacia la insurrección comunista.</p>
+      `
+    },
+    {
+      id: 'colectivizaciones-cataluna',
+      num: '04',
+      year: '1936',
+      navTitle: 'Las colectivizaciones (Cataluña)',
+      tag: 'Fuente primaria',
+      title: 'Las colectivizaciones, 24 de octubre de 1936',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Las colectivizaciones y la revolución social (Cataluña)',
+      fuenteHTML: `
+        <p>La criminal sublevación militar del 19 de julio ha producido un trastorno extraordinario en la economía del país. El Consejo de la Generalidad tiene que atender a la reconstrucción de los daños que la traición de los que intentaban poner en nuestro país un régimen de fuerza ha causado a la industria y comercio de Cataluña. La reacción popular producida por aquella sublevación ha sido de una intensidad tal que ya ha provocado una profunda transformación económico-social, cuyos fundamentos se están cimentando ahora en Cataluña. La acumulación de riqueza en manos de un grupo de personas cada vez menor iba seguida de la acumulación de miseria en la clase trabajadora y por el hecho de que aquel grupo, por salvar sus privilegios, no dudara en provocar una guerra cruenta, la victoria del pueblo ha de equivaler a la muerte del capitalismo.</p>
+        <p>Ahora es, pues, necesario organizar la producción, orientándola en el sentido de que el único beneficiario sea la colectividad, el trabajador, al cual corresponderá la función directiva del nuevo orden social. Se impone la supresión del concepto de renta que no proceda del trabajo. El principio de la organización económico-social de la gran industria ha de ser la producción colectivizada. […]</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Diario Oficial de la Generalitat de Catalunya, 24 de octubre de 1936.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (bando o decreto emanado de los órganos revolucionarios / Generalitat). De naturaleza socioeconómica y política.</p>
+        <p><strong>Idea principal.</strong> La justificación ideológica de la vasta incautación y colectivización de tierras e industrias llevada a cabo por las masas obreras y campesinas, instaurando un nuevo modelo socioeconómico revolucionario en la retaguardia republicana.</p>
+        <p><strong>Ideas secundarias.</strong> Culpa de la guerra exclusivamente a la vieja oligarquía capitalista ("por salvar sus privilegios"). Se decreta de forma explícita que la resistencia militar contra el fascismo solo tiene sentido si va emparejada a la "muerte del capitalismo" y a la emancipación final del proletariado.</p>
+        <p><strong>Contexto en España.</strong> El texto refleja el extraordinario proceso de revolución social y económica que tuvo lugar en el bando gubernamental, muy especialmente en áreas de profunda raigambre anarcosindicalista (CNT-FAI), como Cataluña, Aragón, la Comunidad Valenciana, Castilla-La Mancha y el campo andaluz. Ante la huida masiva o el asesinato de los antiguos propietarios, terratenientes y empresarios (acusados de apoyar a Franco), los sindicatos incautaron las industrias, los transportes, los servicios públicos y, sobre todo, cientos de miles de hectáreas de latifundios agrícolas. En Aragón, se formó el Consejo de Aragón, donde los anarquistas impusieron el colectivismo forzoso, aboliendo la moneda y la propiedad privada. Sin embargo, este proceso revolucionario generó un cisma letal en la España leal. Los anarquistas y el partido marxista disidente del POUM defendían que "la guerra y la revolución eran inseparables" e idénticas. Por el contrario, los republicanos burgueses, el PSOE de Prieto y, de manera muy agresiva, el Partido Comunista de España (PCE) y el Partido Socialista Unificado de Cataluña (PSUC) en la órbita soviética, se opusieron a las colectivizaciones. Los comunistas defendían "ganar primero la guerra y respetar la pequeña propiedad" para atraerse a las clases medias y ganarse el apoyo diplomático de las democracias occidentales, una estrategia centralizadora que provocaría el hundimiento sangriento de la revolución anarquista a mediados de 1937.</p>
+        <p><strong>Contexto europeo.</strong> La colectivización masiva y autogestionada en España fue la experiencia de comunismo libertario más vasta vivida en la Europa del siglo XX. Despertó una inmensa solidaridad entre las clases obreras del mundo (plasmada en las Brigadas Internacionales), pero aterró profundamente a los gobiernos demócrata-liberales de Gran Bretaña y Francia, que aislaron internacionalmente a la República al considerar que ayudarla equivalía a fomentar la expansión del virus revolucionario y la destrucción de la propiedad privada burguesa.</p>
+      `
+    },
+    {
+      id: 'cartel-josep-renau',
+      num: '05',
+      year: '1937',
+      navTitle: 'Cartel de Josep Renau',
+      tag: 'Fuente artística',
+      title: 'Cartel de Josep Renau',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Cartel de Josep Renau (1937)',
+      type: 'image',
+      artist: 'Josep Renau',
+      paintYear: 'realizado en 1937',
+      technique: 'Cartel de propaganda (fotomontaje impreso)',
+      location: 'Colección de carteles de la Guerra Civil española',
+      imageSrc: 'images/cartel-josep-renau-1937.jpg',
+      imageNote: 'Cartel de propaganda republicana realizado por Josep Renau en 1937, con el lema "1808-1936 · De nuevo por nuestra independencia".',
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Nos encontramos ante una fuente de naturaleza política, social y artística. Por su formato, se trata de una imagen, concretamente un cartel de propaganda. Atendiendo a su origen, es una fuente primaria y directa, realizada en el año 1937, en plena Guerra Civil española. Su autor es el insigne cartelista y fotomontador valenciano Josep Renau, uno de los artistas más comprometidos con la causa republicana.</p>
+        <p>El documento presenta un carácter público y una evidente finalidad propagandística. Como todo cartel de guerra, su función principal era predisponer al público a favor del bando republicano, movilizar el espíritu de lucha, elevar la moral en la retaguardia y transmitir mensajes políticos capaces de llegar de un solo golpe de vista a todos los sectores de la población, independientemente de su nivel de alfabetización.</p>
+        <p><strong>Idea principal.</strong> Equiparar la lucha de la Segunda República en la Guerra Civil (1936) con la histórica Guerra de la Independencia contra la invasión napoleónica (1808), presentando el conflicto no como una guerra entre hermanos, sino como una guerra de liberación nacional contra un invasor extranjero fascista.</p>
+        <p><strong>Ideas secundarias.</strong> De esta premisa central derivan dos poderosas ideas: la conexión de fechas heroicas —el cartel destaca en grandes caracteres los años "1808" y "1936" junto al lema "DE NUEVO POR NUESTRA INDEPENDENCIA", estableciendo un paralelismo histórico entre el levantamiento de 1808 contra Napoleón y la necesidad de unirse de nuevo en 1936 frente a una nueva ocupación impuesta desde el exterior—; y la denuncia de la injerencia extranjera, señalando la presencia de tropas regulares italianas y material militar alemán combatiendo junto al general Franco, y exigiendo una España libre de intromisión y desmembración territorial.</p>
+        <p><strong>Contexto europeo.</strong> El conflicto español estalló en una Europa asolada por la crisis de las democracias liberales y el auge de los regímenes totalitarios y fascistas (la Alemania de Hitler y la Italia de Mussolini). La Guerra Civil se convirtió de inmediato en un conflicto internacionalizado, un "ensayo general" de la inminente Segunda Guerra Mundial. Las democracias occidentales (Gran Bretaña y Francia), temerosas de provocar un conflicto a escala global, impulsaron la hipócrita política del Comité de No Intervención, que en la práctica supuso abandonar a la República española a su suerte. Por el contrario, los sublevados de Franco recibieron rápidamente una ayuda militar masiva y descarada por parte de la Italia fascista (con decenas de miles de soldados del Corpo Truppe Volontarie) y de la Alemania nazi (con la letal Legión Cóndor). Ante este aislamiento, la República solo pudo contar con el apoyo material de la Unión Soviética y la llegada de los voluntarios de las Brigadas Internacionales.</p>
+        <p><strong>Contexto en España.</strong> En el ámbito interno, el cartel es un reflejo de la estrategia de resistencia del gobierno republicano. Tras el fracaso parcial del golpe de Estado militar de julio de 1936, España quedó dividida en dos zonas y se desencadenó una guerra abierta. Mientras los sublevados justificaban su rebelión denominándola "Cruzada" para salvar a España del comunismo y el desorden, la República tuvo que organizar apresuradamente a las milicias obreras y sindicales, y posteriormente crear un Ejército Popular regular para defender la legalidad democrática. Es en este crítico esfuerzo de guerra donde entra en juego la movilización cultural y artística: durante la República, y sobre todo en la guerra, los intelectuales, poetas y artistas (como el propio Josep Renau, Pablo Picasso con su Guernica, Joan Miró o Antonio Machado) pusieron su talento al servicio del bando republicano para elevar la moral y agitar el sentimiento antifascista. El mensaje de Renau entronca directamente con la política oficial del gobierno presidido por el socialista Juan Negrín, quien resumiría los objetivos de guerra de la República en sus famosos "Trece Puntos"; el primero de ellos exigía precisamente asegurar la independencia absoluta y la integridad total de España, libre de toda injerencia extranjera. Históricamente, obras como esta demuestran cómo la República intentó ganar la batalla de la opinión pública, apelando al patriotismo más profundo de las clases populares (el mito del 2 de mayo de 1808) para resistir el embate de las tropas sublevadas y sus poderosos aliados fascistas extranjeros. A pesar del innegable valor artístico y de la eficaz maquinaria de propaganda republicana que ilustra este documento, la superioridad militar del bando franquista y la pasividad de las democracias europeas acabarían sellando la trágica derrota de la República en la primavera de 1939.</p>
+      `
+    },
+    {
+      id: 'comite-no-intervencion',
+      num: '06',
+      year: '1938',
+      navTitle: 'La República ante el Comité de No Intervención',
+      tag: 'Fuente secundaria',
+      title: 'La República ante el Comité de No Intervención, 5 de abril de 1938',
+      analisisTag: 'Comentario',
+      analisisTitle: 'La farsa de la no intervención y la ayuda internacional',
+      fuenteHTML: `
+        <p>Ante la situación militar cuya gravedad sería insensato desconocer, el gobierno de la república se cree obligado a dirigir su solemne llamamiento a la conciencia de los gobiernos de Francia y del Reino Unido, como iniciadores del acuerdo de no intervención, sobre la tremenda y peligrosa iniquidad de mantener en vigor dicho acuerdo cuando su violación abierta, confesada pública y cínicamente por los gobiernos de Alemania e Italia, a favor de los rebeldes, es cosa tan notoria que ningún hombre público, consciente de sus responsabilidades, se atreve ya a poner en duda. Y conviene recordar que estas violaciones no han consistido tan solo en abrir sus mercados a la adquisición de material de guerra por los rebeldes españoles, sino que a la vista del mundo entero y sin el menor escrúpulo, haciendo de ello gala y público motivo de vanagloria, Italia y Alemania no han cesado un instante desde que estalló la rebelión española de proveer a los rebeldes no solo con inmensas cantidades de material bélico de todas clases, sin otra medida que las exigencias de las operaciones militares, sino de considerables masas de combatientes y gran número de expertos, formando parte de los ejércitos de ambos países. De manera concreta e inmediata, el gobierno de la república está en condiciones de afirmar que las últimas victorias rebeldes en los frentes de Aragón han sido obtenidas gracias a los considerables refuerzos de hombres y material de guerra enviados recientemente a España por Italia y Alemania. El gobierno de la república no puede inferir a Francia e Inglaterra la ofensa de suponer que su iniciativa para llegar a un acuerdo de no intervención respondía única y exclusivamente a la finalidad egoísta de evitar que la rebelión española provocara una conflagración general en la que ellas mismas se vieran envueltas. Sin duda alguna, esa iniciativa se inspiraba igualmente en el propósito de asegurar al pueblo español la posibilidad de resolver sin intervenciones extranjeras el conflicto surgido en su propio seno como resultado de una profunda y dolorosa crisis interna.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Nota del gobierno español, 5 de abril de 1938.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente secundaria e historiográfica. De naturaleza político-diplomática y militar.</p>
+        <p><strong>Idea principal.</strong> La constatación del profundo e injusto impacto que tuvo la política diplomática europea sobre el curso de la Guerra Civil, favoreciendo objetivamente al bando franquista al negarle armas a un gobierno democrático legítimo.</p>
+        <p><strong>Ideas secundarias.</strong> Expone la inoperancia criminal del "Comité de No Intervención" impulsado por Francia y Gran Bretaña, que fue una completa "farsa": no logró impedir en ningún momento el inmenso envío de tropas regulares y armamento moderno (aviación, tanques) por parte de las potencias nazi-fascistas hacia los sublevados.</p>
+        <p><strong>Contexto en España.</strong> La dimensión internacional fue el factor que desequilibró y decidió finalmente la Guerra Civil. El bando sublevado nacional solicitó y obtuvo, desde la primera semana, una ayuda masiva, regular y a crédito de Adolf Hitler (la Legión Cóndor alemana, con 19.000 efectivos, 800 aviones y que perpetró atrocidades como el bombardeo de Guernica en 1937) y de Benito Mussolini (el Corpo Truppe Volontarie italiano, con más de 70.000 hombres), sumado al decisivo suministro de combustible estadounidense a través de multinacionales como Texaco. Ante esta avalancha, la República española acudió a las democracias de Francia e Inglaterra, pero estas, aterradas ante la posibilidad de provocar a Hitler y temerosas de la revolución anarquista española, cerraron sus fronteras promoviendo el cínico "Comité de No Intervención" de agosto de 1936. Asfixiado, el gobierno republicano presidido por Largo Caballero se vio obligado a comprar armas desesperadamente y a altos precios a la Unión Soviética de Stalin, pagándolas con las reservas de metales preciosos del Banco de España (el mítico "Oro de Moscú"). Aunque los blindados soviéticos, los cazas y la inmensa aportación moral de más de 35.000 voluntarios antifascistas extranjeros en las míticas Brigadas Internacionales fueron claves para salvar a Madrid del asalto franquista en noviembre de 1936, el flujo logístico ruso fue mucho menor, más irregular y condicionado políticamente que la aplastante y constante ayuda ítalo-germana a Franco.</p>
+        <p><strong>Contexto europeo.</strong> España se convirtió en el dramático campo de pruebas armamentístico e ideológico previo a la Segunda Guerra Mundial. La pasividad de las democracias de París y Londres evidenció su nefasta "política de apaciguamiento" frente al agresivo expansionismo de los dictadores fascistas, permitiendo el sacrificio de la democracia española para aplazar un conflicto global que acabaría estallando inevitablemente en 1939.</p>
+      `
+    },
+    {
+      id: 'decreto-unificacion',
+      num: '07',
+      year: '1937',
+      navTitle: 'Decreto de Unificación',
+      tag: 'Fuente primaria',
+      title: 'Decreto de Unificación, 19 de abril de 1937',
+      analisisTag: 'Comentario',
+      analisisTitle: 'El Decreto de Unificación de Franco (abril de 1937)',
+      fuenteHTML: `
+        <p>Una acción de gobierno eficiente (…) exige supeditar al destino común la acción individual y colectiva de todos los españoles (…). Esta unificación que exijo en el nombre de España y en el nombre sagrado de los que por ella cayeron -héroes y mártires- (…) no quiere decir ni conglomerado de fuerzas ni mera concentración gubernamental, ni unión pasajera (…). No cerramos el horizonte a la posibilidad de instaurar en la Nación el régimen secular que forjó su unidad y su grandeza histórica (…). Por todo lo expuesto, DISPONGO: Artículo Primero: Falange Española y Requetés, con sus actuales servicios y elementos, se integran, bajo Mi Jefatura, en una sola entidad política de carácter nacional que, de momento, se denominará Falange Española Tradicionalista y de las JONS.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Francisco Franco, Salamanca, 19 de abril de 1937.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria, pública. De naturaleza jurídico-política.</p>
+        <p><strong>Idea principal.</strong> La instauración por la fuerza de un sistema dictatorial de partido único en la zona sublevada, erradicando la pluralidad ideológica y fundando el armazón civil del "Nuevo Estado" franquista.</p>
+        <p><strong>Ideas secundarias.</strong> Establece la fusión obligatoria de las dos fuerzas políticas paramilitares hegemónicas del bando nacional: la fascista Falange Española y la ultracatólica monárquica Comunión Tradicionalista (los carlistas). Franco asume incondicionalmente la Jefatura Suprema del nuevo partido (el Movimiento Nacional), autoproclamándose "Caudillo" vitalicio de España.</p>
+        <p><strong>Contexto en España.</strong> Tras la muerte accidental en sendos accidentes de aviación del general Sanjurjo (líder previsto de la sublevación) y del general Mola ("el Director"), Franco quedó libre de competidores militares. Tras lograr el cruce de sus tropas y liberar el Alcázar de Toledo, sus compañeros de armas de la Junta de Defensa Nacional le nombraron "Generalísimo" y "Jefe del Gobierno del Estado español" en octubre de 1936, concentrando todos los poderes militares y ejecutivos. Sin embargo, Franco carecía de un instrumento político propio. En la retaguardia franquista, existía una sorda lucha por el poder entre las milicias de choque: los monárquicos carlistas (requetés) y los falangistas (cuyos "camisas viejas" habían perdido a su líder, José Antonio Primo de Rivera, fusilado en Alicante en noviembre de 1936). Para evitar la desunión que tanto lastraba al bando republicano, y asesorado por su cuñado Serrano Suñer, Franco impuso este Decreto de Unificación. Disolvió fulminantemente todas las organizaciones políticas previas (incluyendo la CEDA) y forzó la creación de Falange Española Tradicionalista y de las Juntas de Ofensiva Nacional Sindicalista (FET y de las JONS). El sector duro de Falange (Hedilla) fue encarcelado al oponerse. Franco consolidó así un poder absoluto y omnímodo, combinando el militarismo cuartelero, la parafernalia y demagogia social fascista y el tradicionalismo católico y terrateniente, dando a luz al opresivo régimen franquista antes incluso de terminar la guerra.</p>
+        <p><strong>Contexto europeo.</strong> Franco imitó el modelo de los totalitarismos europeos de derechas (el PNF de Mussolini y el NSDAP de Hitler), estructurando el Estado en torno al nacionalismo exacerbado, la sumisión sagrada y acrítica al Líder Carismático (Führer, Duce, Caudillo) y la represión a través de un partido único de masas.</p>
+      `
+    },
+    {
+      id: 'hechos-de-mayo',
+      num: '08',
+      year: '1937',
+      navTitle: 'Los hechos de mayo (Barcelona)',
+      tag: 'Fuente secundaria',
+      title: 'Los hechos de mayo, 1937',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Los sucesos de mayo en Barcelona (1937)',
+      fuenteHTML: `
+        <p>La contrarrevolución tiene un plan. (…) Etapas de este plan son los hechos sucedidos últimamente. (…) Desarme de los trabajadores en medio de la calle. Y ayer por la tarde, asalto armado al edificio de la Telefónica (…). Preparativos del ataque a fondo contra las conquistas de la revolución. Pero la respuesta proletaria no ha podido ser más contundente. Miles de trabajadores han salido a la calle con las armas bajo el brazo. Las fábricas, los talleres, los almacenes han parado la producción. Las barricadas de la libertad han vuelto a surgir en todos los lugares de la ciudad.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Resoluciones del Comité Ejecutivo del POUM, mayo de 1937.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente secundaria e historiográfica. De naturaleza política y social.</p>
+        <p><strong>Idea principal.</strong> El desarrollo de una sangrienta "guerra civil" en el seno del propio bando republicano, que enfrentó dos visiones ideológicas excluyentes sobre cómo afrontar el conflicto armado y revolucionario.</p>
+        <p><strong>Ideas secundarias.</strong> Expone el choque insalvable entre el comunismo estalinista del PCE/PSUC (apoyado por los republicanos burgueses y la Generalitat), que priorizaba centralizar el poder, recuperar las milicias y "ganar primero la guerra"; y el proyecto de la CNT anarquista y el partido marxista disidente POUM, que exigían compatibilizar la guerra con el avance radical de la "revolución social" de las colectivizaciones.</p>
+        <p><strong>Contexto en España.</strong> A lo largo de la guerra, el creciente peso militar de la ayuda y los "consejeros" soviéticos otorgó un poder inusitado e inmenso al Partido Comunista de España (PCE) dentro del gobierno republicano de Francisco Largo Caballero (el líder socialista de UGT). Los comunistas iniciaron una campaña para desmantelar las revoluciones locales, desarmar a los obreros y militarizar por completo la retaguardia para ganar la guerra al fascismo. La tensión saltó por los aires en Barcelona entre el 3 y el 7 de mayo de 1937, cuando las fuerzas de asalto de la Generalitat (apoyadas por el PCE-PSUC) intentaron arrebatar a la CNT anarquista el control del vital edificio de la Telefónica. La ciudad se llenó de barricadas en combates callejeros que dejaron medio millar de muertos. El Estado republicano dominó la insurrección con tropas traídas desde Valencia. Las consecuencias de los Sucesos de Mayo fueron cataclísmicas: los anarquistas perdieron todo el poder político, y el comunismo orquestó una purga brutal, ilegalizando y exterminando a los dirigentes del partido trotskista POUM (asesinato de Andreu Nin por agentes estalinistas). Largo Caballero, al negarse a someterse a los dictados de Moscú para suprimir al POUM, fue obligado a dimitir, dando paso a la presidencia del socialista Juan Negrín, quien se apoyó totalmente en el PCE para sostener la República.</p>
+        <p><strong>Contexto europeo.</strong> Los sangrientos episodios de Barcelona constituyeron la macabra exportación a la Península Ibérica de las grandes "Purgas Estalinistas" (los Procesos de Moscú), mediante las cuales la Internacional Comunista (Komintern) exterminaba a cualquier corriente del movimiento obrero internacional que osara oponerse a los dogmas emanados de Stalin y la URSS.</p>
+      `
+    },
+    {
+      id: 'trece-puntos-negrin',
+      num: '09',
+      year: '1938',
+      navTitle: 'Los Trece Puntos de Negrín',
+      tag: 'Fuente primaria',
+      title: 'Los Trece Puntos de Juan Negrín',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Los Trece Puntos del Gobierno de Juan Negrín (abril de 1938)',
+      fuenteHTML: `
+        <p><span class="lead-in">1.</span> Asegurar la independencia absoluta y la integridad total de España, una España totalmente libre de toda injerencia extranjera, sea cual sea su carácter y origen; con su territorio peninsular y sus posesiones intactas y a salvo de cualquier tentativa de desmembración, enajenación o hipoteca, conservando las zonas de protectorado asignadas a España por los convenios internacionales, mientras estos convenios no sean modificados con su intervención y asentimiento. Consciente de los deberes anejos a su tradición y a su historia, España estrechará con los demás países los vínculos que impone una común raíz del sentido universal que siempre ha caracterizado a nuestro pueblo.</p>
+        <p><span class="lead-in">2.</span> Liberación de nuestro territorio de las fuerzas militares extranjeras que lo han invadido, así como de aquellos elementos que han acudido a España desde julio de 1936 con el pretexto de una colaboración técnica que intervienen o intentan dominar en provecho propio la vida jurídica y económica española.</p>
+        <p><span class="lead-in">3.</span> Defensa de la República popular representada por un Estado vigoroso que se asiente sobre principios de pura democracia, que ejerza su acción a través de un Gobierno dotado de plena autoridad que confiera el voto ciudadano emitido por sufragio universal y sea el símbolo de un poder ejecutivo firme, dependiente en todo momento de las directrices y designios que marque el pueblo español.</p>
+        <p><span class="lead-in">4.</span> La estructura jurídica y social de la República será obra de la voluntad nacional libremente expresada mediante un plebiscito que tendrá lugar tan pronto termine la lucha, realizado con plenitud de garantías, sin restricciones ni limitaciones, y que asegure a cuantos en él tomen parte contra toda posible represalia.</p>
+        <p><span class="lead-in">5.</span> Respeto a las libertades regionales, sin menoscabo de la unidad española; protección y fomento del desarrollo de la personalidad y particularidad de los distintos pueblos que integran España, como la imponen un derecho y un hecho históricos que, lejos de significar una disgregación de la nación, constituyan la mejor soldadura entre los elementos que la integran.</p>
+        <p><span class="lead-in">6.</span> El Estado español garantizará la plenitud de los derechos al ciudadano en la vida civil y social, la libertad de conciencia, y asegura el libre ejercicio de las creencias y prácticas religiosas.</p>
+        <p><span class="lead-in">7.</span> El Estado garantizará la propiedad legal y legítima adquirida dentro de los límites que impongan el supremo interés nacional y la protección de los elementos productores. Sin merma de la iniciativa individual, impedirá la acumulación de riqueza que pueda producir la explotación del ciudadano y sojuzgue a la colectividad, desvirtuando la acción centralizadora del Estado en la vida económica y social. A este fin, cuidará del desarrollo de la pequeña propiedad, garantizará el patrimonio familiar y se estimularán todas las medidas que le lleven a un mejoramiento económico, moral y racial de las clases productoras. La propiedad y los intereses legítimos de los extranjeros serán respetados y se examinarán, con miras a las indemnizaciones que correspondan, los perjuicios inventariados causados en el curso de la guerra. Para el estudio de esos daños, el Gobierno de la República creó ya la Comisión de Reclamaciones Extranjeras.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Los Trece Puntos de Juan Negrín, abril de 1938 (se reproducen los siete primeros puntos; el documento original continúa hasta el punto 13).</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (declaración de principios del Gobierno). De naturaleza político-diplomática.</p>
+        <p><strong>Idea principal.</strong> Un programa político de trece condiciones, emitido por el presidente del Consejo de Ministros, el socialista Juan Negrín, sentando las bases imprescindibles para entablar negociaciones de paz que pusieran fin a la Guerra Civil.</p>
+        <p><strong>Ideas secundarias.</strong> Frente a la imagen radical previa, Negrín ofrecía a las democracias mundiales un perfil moderado y burgués: garantizaba la independencia nacional libre de injerencias extranjeras, la salvaguarda y el respeto a la propiedad privada, la celebración futura de un plebiscito libre para determinar la forma de Estado, y una amplia amnistía general para los enemigos, descartando represalias masivas.</p>
+        <p><strong>Contexto en España.</strong> En la primavera de 1938, el curso de la guerra era dramáticamente adverso para la legalidad republicana. Tras la caída del Frente Norte (Asturias, Cantabria y el País Vasco cayeron en 1937, pese al "Cinturón de Hierro"), Franco había lanzado una fulminante ofensiva en Aragón. En abril de 1938, las tropas "nacionales" alcanzaron la costa mediterránea en Vinaroz (Castellón), cortando el territorio republicano en dos y aislando a Cataluña del gobierno refugiado en Valencia y Madrid. El pesimismo cundía en el bando leal: los republicanos puros (Azaña), los anarquistas y parte del PSOE (Prieto) daban la guerra por perdida y querían una rendición pactada rápida. Negrín, en cambio, basaba toda su estrategia en el lema "Resistir es vencer". Apoyado por los blindados soviéticos y la organización militar de los comunistas, promulgó los "Trece Puntos" para atraer a los apaciguadores gobiernos de Francia e Inglaterra hacia un plan de paz, ofreciendo la retirada de todos los combatientes extranjeros. Franco, imbuido en su retórica de Cruzada y Victoria total, se negó en redondo a ninguna mediación política ("nada de abrazos de Vergara") y exigió, hasta el último día, la aniquilación y rendición incondicional de los vencidos. Para intentar presionar diplomáticamente y unir su territorio, Negrín ordenaría semanas después el gigantesco y suicida contraataque de la Batalla del Ebro (julio-noviembre de 1938), que terminaría por agotar las últimas reservas de la República.</p>
+        <p><strong>Contexto europeo.</strong> La estrategia de resistencia negrinista no era absurda; se cimentaba en la certeza de que la guerra en Europa contra Hitler iba a estallar en cuestión de meses. Su esperanza era que, al iniciarse la II Guerra Mundial, Francia y el Reino Unido tuvieran forzosamente que acudir en auxilio militar de la España republicana para frenar a las tropas nazi-fascistas de Franco. El trágico Pacto de Múnich (septiembre de 1938), donde las democracias se rindieron a Hitler entregándole Checoslovaquia, hundió esta última esperanza republicana.</p>
+      `
+    },
+    {
+      id: 'ley-responsabilidades-politicas',
+      num: '10',
+      year: '1939',
+      navTitle: 'Ley de Responsabilidades Políticas',
+      tag: 'Fuente primaria',
+      title: 'Ley de Responsabilidades Políticas, febrero de 1939',
+      analisisTag: 'Comentario',
+      analisisTitle: 'La Ley de Responsabilidades Políticas (febrero de 1939)',
+      fuenteHTML: `
+        <p>Próxima la total liberación de España, el Gobierno, consciente de los deberes que le incumben respecto a la reconstrucción espiritual y material de nuestra Patria, considera llegado el momento de dictar una Ley de Responsabilidades Políticas, que sirva para liquidar las culpas de este orden contraídas por quienes contribuyeron con actos u omisiones graves a forjar la subversión roja, a mantenerla viva durante más de dos años y a entorpecer el triunfo, providencial e históricamente ineludible, del Movimiento Nacional. […] La magnitud intencional y las consecuencias materiales de los agravios inferidos a España son tales, que impiden que el castigo y la reparación alcancen unas dimensiones proporcionadas, pues éstas repugnarían al hondo sentido de nuestra Revolución Nacional, que no quiere ni penar con crueldad, ni llevar la miseria a los hogares. […]</p>
+        <p><span class="lead-in">Artículo 1.º</span> Se declara la responsabilidad política de las personas, tanto jurídicas como físicas, que desde primero de octubre de 1934 y antes de dieciocho de julio de 1936, contribuyeron a crear o a agravar la subversión de todo orden de que se hizo víctima a España y de aquellas otras que, a partir de la segunda de dichas fechas, se hayan opuesto o se opongan al Movimiento Nacional con actos concretos o con pasividad grave.</p>
+        <p><span class="lead-in">Artículo 2.º</span> […] quedan fuera de la Ley todos los partidos y agrupaciones políticas y sociales que, desde la convocatoria de las elecciones celebradas en dieciséis de febrero de 1936, han integrado el llamado Frente Popular, así como los partidos y agrupaciones aliados y adheridos a éste por el solo hecho de serlo, las organizaciones separatistas y todas aquellas que se hayan opuesto al triunfo del Movimiento Nacional. […]</p>
+        <p><span class="lead-in">Artículo 4.º</span> […] quedan incursos en responsabilidad política y sujetos a las sanciones que se les impongan en los procedimientos que contra ellos se sigan, las personas individuales que se hallen comprendidas en alguno de los casos o supuestos siguientes: a) Haber sido o ser condenado por la jurisdicción militar por alguno de los delitos de rebelión, adhesión, auxilio, provocación, inducción o excitación a la misma, o por los de traición en virtud de causa criminal seguida con motivo del Glorioso Movimiento Nacional. b) Haber desempeñado cargos directivos en los partidos, agrupaciones y asociaciones a que alcanza la declaración del artículo 2.º, así como haber ostentado la representación de los mismos en cualquier clase de Corporaciones y organismos, tanto públicos como privados. c) Haber figurado, a virtud de inscripción efectuada antes del dieciocho de julio de 1936, y mantenida hasta esta fecha, como afiliado de los partidos, agrupaciones y asociaciones a que se refiere el apartado anterior, excepción hecha de los simples afiliados a organismos sindicales. […]</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (emanada de la Jefatura del Estado franquista). De naturaleza jurídica, penal y represiva.</p>
+        <p><strong>Idea principal.</strong> La dotación de una abrumadora cobertura legal para aplicar una represión feroz, sistemática e institucionalizada contra el bando vencido, criminalizando retroactivamente la adscripción política y sindical en la España contemporánea.</p>
+        <p><strong>Ideas secundarias.</strong> Sanciona jurídica y económicamente a cualquier ciudadano español que, desde octubre de 1934 y de manera continuada desde las elecciones del Frente Popular de febrero de 1936, se hubiese opuesto al "Alzamiento Nacional" o hubiera pertenecido a la masonería, a partidos de izquierda, sindicatos o a fuerzas nacionalistas periféricas, sentando las bases del terror penal en la inminente posguerra.</p>
+        <p><strong>Contexto en España.</strong> Febrero de 1939 marcó la inexorable agonía de la España republicana. Tras la aplastante derrota en la batalla del Ebro, las tropas franquistas lanzaron una masiva ofensiva y ocuparon Cataluña (Barcelona cayó el 26 de enero). Medio millón de soldados, mujeres y niños cruzaron a pie los Pirineos, internándose en durísimos campos de concentración habilitados en las playas francesas, inaugurando un exilio republicano gigantesco, robando a España a toda su élite intelectual y científica. Paralelamente, el gobierno franquista de Burgos, con la guerra prácticamente ganada, promulgó la Ley de Responsabilidades Políticas. El objetivo de Franco no era solo ganar la guerra civil en el campo de batalla, sino exterminar sociológicamente cualquier disidencia, erradicando para siempre "el virus marxista, liberal y masón" de la sociedad española. Esta perversa ley invertía la legalidad: los militares sublevados que habían cometido traición al rebelarse contra la República juzgarían a partir de entonces por el delito de "rebelión militar" a quienes se habían mantenido leales al Estado legítimo. En marzo de 1939, el golpe de Estado interno en Madrid del coronel Casado derrocó al presidente Negrín en un intento estéril de negociar un pacto honorífico. Franco forzó la rendición incondicional, entrando en Madrid e instaurando en el "Nuevo Estado" una maquinaria procesal que ejecutó a casi 40.000 opositores políticos durante la cruel y hambrienta posguerra, llenando las cárceles de represaliados.</p>
+        <p><strong>Contexto europeo.</strong> La monstruosa dimensión represiva implementada por el franquismo se asemeja, en su brutalidad sistémica para purgar disidentes a través del marco estatal e inquisitorial, a la de las grandes dictaduras totalitarias de Europa oriental y central, dejando a España completamente marginada de la reconstrucción democrática e integradora europea que acontecería tras 1945.</p>
+      `
+    },
+    {
+      id: 'ultimo-parte-guerra',
+      num: '11',
+      year: '1939',
+      navTitle: 'Consecuencias demográficas / último parte',
+      tag: 'Fuente primaria',
+      title: 'Consecuencias demográficas de la Guerra Civil',
+      analisisTag: 'Comentario',
+      analisisTitle: 'El último parte de la Guerra Civil (1 de abril de 1939)',
+      fuenteHTML: `
+        <p>Tres años de enfrentamiento bélico no podían menos de producir consecuencias sociales de primera importancia. Para empezar, la guerra provocó una considerable disminución de la población.</p>
+        <p>Aunque no hay acuerdo en las cifras, parece demostrado que no se llegó al tan repetido "millón de muertos"; por el contrario, las estimaciones más precisas se sitúan entre los 300.000 (Ramón Salas Larrazábal) y los 500.000 o 600.000 a que se refieren otros autores (Hugh Thomas, Gabriel Jackson, Amando de Miguel). Pero a los muertos hay que añadir los encarcelados o recluidos en campos de concentración, y quienes marcharon a Francia, para pasar desde allí a otros países europeos y, sobre todo, latinoamericanos; en total, quizá llegaron a ser otro medio millón, con lo que a fin de cuentas se puede calcular que el país perdió en torno al millón de personas.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">M. Pérez Ledesma, <em>Estabilidad y conflicto social</em>, Madrid, 1992, p. 223.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria, pública y de naturaleza político-militar (comunicado oficial del Cuartel General de Burgos).</p>
+        <p><strong>Idea principal.</strong> La confirmación oficial y definitiva del final de las hostilidades y el triunfo absoluto de las fuerzas rebeldes ("nacionales") sobre las tropas democráticas republicanas.</p>
+        <p><strong>Ideas secundarias.</strong> Certifica que el "Ejército Rojo" (terminología estigmatizante usada por el fascismo franquista para referirse al Ejército Popular de la República) ha sido desarmado, cautivo y derrotado, consumando Franco la asunción dictatorial incontestada sobre todo el territorio peninsular.</p>
+        <p><strong>Contexto en España.</strong> Tras la caída del frente de Cataluña, la huida al exilio del presidente de la República (Manuel Azaña) y la implosión interna del bando republicano precipitada por el golpe del coronel Segismundo Casado y la rendición de la Junta de Defensa de Madrid en marzo de 1939, las tropas franquistas ocuparon las últimas capitales que se mantenían leales: Valencia, Almería, Alicante y Murcia. En el puerto de Alicante, miles de republicanos intentaron desesperadamente abordar buques que los salvaran de la represión, siendo capturados y encerrados en infames campos de concentración (como el de Albatera). El 1 de abril, desde la sede de su gobierno en Burgos, Franco emitió su conciso y lapidario parte final. El balance de aquellos casi tres años, tres mil días de trincheras y barbarie, fue apocalíptico para la nación: más de 300.000 muertos en los combates, decenas de miles asesinados en la represión ("sacas", ejecuciones clandestinas), devastación incalculable de la infraestructura industrial y agraria, hambre epidémica, el saqueo del oro nacional, medio millón de exiliados (gran parte de la brillante intelectualidad de la Edad de Plata de la ciencia y la cultura española, "la España peregrina") y la consolidación de una casta oligárquica, castrense y eclesiástica en el poder que desató la purga más inmensa de nuestro pasado. Se iniciaban cuarenta años de dolorosa, ultracatólica y autoritaria dictadura.</p>
+        <p><strong>Contexto europeo.</strong> Con esta victoria militar, Adolf Hitler y Benito Mussolini lograron asentar un sólido régimen amigo y profascista en la frontera sur de Francia y con un altísimo control estratégico sobre las rutas marítimas del Estrecho y el Atlántico. Cinco meses y un día después de este parte de victoria franquista, los tanques alemanes invadirían Polonia el 1 de septiembre de 1939, sumiendo al mundo en la conflagración militar más dantesca de la humanidad, en la que la recién desangrada y miserable España de Franco decidiría mantenerse "no beligerante" para sobrevivir.</p>
+      `
+    }
+  ];
+
+  const UNIT_KEY = 'unidad9';
+  function storageKey(docId, part){ return UNIT_KEY + ':' + docId + ':' + part; }
+
+  const dossier = document.getElementById('dossier');
+  const revealBtn = document.getElementById('revealBtn');
+  const hideAnalysisBtn = document.getElementById('hideAnalysisBtn');
+  const editDocBtn = document.getElementById('editDocBtn');
+  const analisisPanel = document.getElementById('analisisPanel');
+  const hlToolbar = document.getElementById('hlToolbar');
+  const notePopup = document.getElementById('notePopup');
+  const notePopupTitle = document.getElementById('notePopupTitle');
+  const noteInput = document.getElementById('noteInput');
+  const markMenu = document.getElementById('markMenu');
+  const statusMsg = document.getElementById('statusMsg');
+  const resetBtn = document.getElementById('resetBtn');
+  const notesCountEl = document.getElementById('notesCount');
+  const notesIndexList = document.getElementById('notesIndexList');
+  const notesFilterInput = document.getElementById('notesFilter');
+  const exportBtn = document.getElementById('exportNotes');
+  const sidenav = document.getElementById('sidenav');
+  const hamburger = document.getElementById('hamburger');
+  const backdrop = document.getElementById('backdrop');
+  const presentToggle = document.getElementById('presentToggle');
+  const darkToggle = document.getElementById('darkToggle');
+  const fontMinus = document.getElementById('fontMinus');
+  const fontPlus = document.getElementById('fontPlus');
+  const undoBtn = document.getElementById('undoBtn');
+  const searchToggle = document.getElementById('searchToggle');
+  const searchBar = document.getElementById('searchBar');
+  const searchInput = document.getElementById('searchInput');
+  const searchCount = document.getElementById('searchCount');
+  const searchPrev = document.getElementById('searchPrev');
+  const searchNext = document.getElementById('searchNext');
+  const searchClose = document.getElementById('searchClose');
+  const docListEl = document.getElementById('docList');
+  const textFuenteEl = document.getElementById('text-fuente');
+  const textAnalisisEl = document.getElementById('text-analisis');
+
+  const COLOR_HEX = { yellow:'#f3d34a', green:'#a8cba0', pink:'#e8a9b8' };
+  const COLOR_LABEL = { yellow:'Dato clave', green:'Contexto', pink:'Duda/pregunta' };
+
+  function escapeHtml(str){
+    return str.replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+  function truncate(str, n){ return str.length > n ? str.slice(0,n).trim() + '…' : str; }
+
+  function buildImageCardHTML(doc){
+    const frameInner = doc.imageSrc
+      ? '<img src="'+doc.imageSrc+'" alt="'+escapeHtml(doc.title)+'">'
+      : '<div class="image-placeholder">' +
+          '<div class="image-placeholder-icon">🖼</div>' +
+          '<p class="image-placeholder-text">'+escapeHtml(doc.imageNote||'')+'</p>' +
+          '<code class="image-placeholder-path">images/'+doc.id+'.jpg</code>' +
+        '</div>';
+    return '<div class="image-card">' +
+      '<div class="image-frame">'+frameInner+'</div>' +
+      '<div class="image-caption">' +
+        '<p class="image-title">'+escapeHtml(doc.title)+'</p>' +
+        '<p class="image-meta">'+escapeHtml(doc.artist||'')+' · '+escapeHtml(doc.paintYear||'')+'<br>'+escapeHtml(doc.technique||'')+'<br>'+escapeHtml(doc.location||'')+'</p>' +
+      '</div>' +
+    '</div>';
+  }
+
+  /* ---- per-document state, keyed by doc id ---- */
+  const ORIGINAL = {};        // { [id]: {fuente, analisis} } pristine content
+  const notesByDoc = {};      // { [id]: [ {id,panel,number,text,color,created} ] }
+  const counterByDoc = {};    // { [id]: number }
+  const undoStackByDoc = {};  // { [id]: [snapshot,...] }
+  let customDocs = [];        // documents added from within the app (browser-local only)
+  let deletedDefaultDocs = []; // ids of built-in (PDF) documents removed from the menu
+
+  function registerDoc(d){
+    ORIGINAL[d.id] = { fuente: d.type==='image' ? buildImageCardHTML(d) : d.fuenteHTML, analisis: d.analisisHTML };
+    if(!notesByDoc[d.id]) notesByDoc[d.id] = [];
+    if(counterByDoc[d.id] === undefined) counterByDoc[d.id] = 0;
+    if(!undoStackByDoc[d.id]) undoStackByDoc[d.id] = [];
+  }
+  DOCS.forEach(registerDoc);
+
+  function allDocs(){ return DOCS.filter(d=>!deletedDefaultDocs.includes(d.id)).concat(customDocs); }
+
+  let activeDocId = null;
+  let notes = [];      // pointer into notesByDoc[activeDocId]
+  let counter = 0;      // mirror of counterByDoc[activeDocId]
+  let undoStack = [];   // pointer into undoStackByDoc[activeDocId]
+
+  let pendingRange = null;
+  let pendingMarkForNote = null;
+  let editingNoteId = null;
+  let activeMarkForMenu = null;
+
+  const hasStorage = typeof window.storage !== 'undefined';
+
+  function getDoc(id){ return DOCS.find(d=>d.id===id) || customDocs.find(d=>d.id===id); }
+
+  function setStatus(msg){
+    statusMsg.textContent = msg || '';
+    if(msg){ setTimeout(()=>{ if(statusMsg.textContent === msg) statusMsg.textContent=''; }, 2200); }
+  }
+
+  /* ================= Persistence (per active document) ================= */
+  async function persist(){
+    if(!hasStorage || !activeDocId) return;
+    clearSearchHighlights();
+    try{
+      await window.storage.set(storageKey(activeDocId,'fuente'), textFuenteEl.innerHTML, false);
+      await window.storage.set(storageKey(activeDocId,'analisis'), textAnalisisEl.innerHTML, false);
+      await window.storage.set(storageKey(activeDocId,'notes'), JSON.stringify(notes), false);
+      await window.storage.set(storageKey(activeDocId,'counter'), String(counter), false);
+      setStatus('Guardado');
+    }catch(e){ /* storage optional */ }
+  }
+
+  async function loadDocumentContent(id){
+    const orig = ORIGINAL[id];
+    let fuenteHTML = orig.fuente;
+    let analisisHTML = orig.analisis;
+    if(hasStorage){
+      try{
+        const f = await window.storage.get(storageKey(id,'fuente'), false);
+        const a = await window.storage.get(storageKey(id,'analisis'), false);
+        const n = await window.storage.get(storageKey(id,'notes'), false);
+        const c = await window.storage.get(storageKey(id,'counter'), false);
+        if(f && f.value) fuenteHTML = f.value;
+        if(a && a.value) analisisHTML = a.value;
+        if(n && n.value) notesByDoc[id] = JSON.parse(n.value);
+        if(c && c.value) counterByDoc[id] = parseInt(c.value,10) || 0;
+      }catch(e){ /* no saved state for this document yet */ }
+    }
+    textFuenteEl.innerHTML = fuenteHTML;
+    textAnalisisEl.innerHTML = analisisHTML;
+  }
+
+  /* ================= Document switching ================= */
+  function buildDocList(){
+    docListEl.innerHTML = '<div class="nav-label">Documentos</div>' +
+      allDocs().map(d =>
+        '<div class="doc-item-wrap">' +
+          '<button class="doc-item'+(d.custom?' custom':'')+'" data-doc="'+d.id+'">' +
+            '<span class="doc-num">'+d.num+'</span>' +
+            '<span class="doc-info"><span class="doc-name">'+escapeHtml(d.navTitle)+'</span><span class="doc-year">'+escapeHtml(d.year||'')+(d.custom?' · personal':'')+'</span></span>' +
+          '</button>' +
+          '<button class="doc-edit" data-edit-doc="'+d.id+'" title="Editar documento">✎</button>' +
+          '<button class="doc-del" data-del-doc="'+d.id+'" title="Eliminar documento">✕</button>' +
+        '</div>'
+      ).join('') +
+      '<button class="add-doc-btn ui" id="addDocBtn">+ Añadir documento</button>' +
+      '<div class="doc-io-row">' +
+        '<button class="doc-io-btn ui" id="exportDocsBtn" title="Descarga TODO (documentos, subrayados y notas) en un .json">⬇ Exportar todo</button>' +
+        '<button class="doc-io-btn ui" id="importDocsBtn" title="Carga un .json exportado desde otro navegador">⬆ Importar</button>' +
+      '</div>' +
+      '<button class="add-doc-btn ui" id="exportHtmlBtn" title="Descarga una copia HTML independiente con tu estado actual ya incluido">⬇ Copia HTML completa</button>' +
+      '<input type="file" id="importDocsInput" accept=".json,application/json" hidden>';
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(btn=>{
+      btn.addEventListener('click', ()=> switchDocument(btn.dataset.doc));
+    });
+    docListEl.querySelectorAll('.doc-edit').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); const doc = getDoc(btn.dataset.editDoc); if(doc) openEditDocForm(doc); });
+    });
+    docListEl.querySelectorAll('.doc-del').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); deleteDoc(btn.dataset.delDoc); });
+    });
+    document.getElementById('addDocBtn').addEventListener('click', openAddDocForm);
+    document.getElementById('exportDocsBtn').addEventListener('click', exportFullState);
+    document.getElementById('importDocsBtn').addEventListener('click', ()=> document.getElementById('importDocsInput').click());
+    document.getElementById('importDocsInput').addEventListener('change', importFullState);
+    document.getElementById('exportHtmlBtn').addEventListener('click', exportFullHtmlCopy);
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(b=>b.classList.toggle('active', b.dataset.doc===activeDocId));
+    publishDocCount();
+  }
+
+  /* Writes this unit's current document count to a storage key that
+     index.html (hosted on the same origin, e.g. GitHub Pages) reads when it
+     loads, so the "N documentos" label on the home page reflects documents
+     you add, edit or remove here without having to edit index.html by hand.
+     Best-effort: if storage isn't available the home page simply keeps
+     showing whatever was last published, or its built-in default count. */
+  async function publishDocCount(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(UNIT_KEY + ':doc-count', String(allDocs().length), false); }catch(e){}
+  }
+
+  async function switchDocument(id){
+    if(id === activeDocId) { if(sidenav.classList.contains('drawer')) closeSidenav(); return; }
+    hideToolbar(); hideNotePopup(); hideMarkMenu();
+    if(!searchBar.hidden) closeSearch();
+
+    activeDocId = id;
+    undoStack = undoStackByDoc[id];
+
+    const doc = getDoc(id);
+    document.querySelector('.fuente-panel .tag').textContent = doc.tag;
+    document.querySelector('.fuente-panel h2').textContent = doc.title;
+    document.querySelector('.analisis-panel .tag').textContent = doc.analisisTag;
+    document.querySelector('.analisis-panel h2').textContent = doc.analisisTitle;
+
+    const marginFuenteEl = document.getElementById('margin-fuente');
+    if(doc.type === 'image'){
+      textFuenteEl.classList.remove('selectable');
+      marginFuenteEl.style.display = 'none';
+    }else{
+      textFuenteEl.classList.add('selectable');
+      marginFuenteEl.style.display = '';
+    }
+
+    await loadDocumentContent(id);
+    /* Re-point AFTER loading: loadDocumentContent() may have just replaced
+       notesByDoc[id]/counterByDoc[id] with fresh data read from storage, and
+       "notes"/"counter" must reference that same, current array/value from
+       here on. Capturing them earlier (before the load) left "notes" pointed
+       at a now-stale array while notesByDoc[id] moved on to a new one -
+       every later add/edit/delete touched the stale copy while the sidebar
+       index (which always reads notesByDoc directly) kept showing the old
+       one, so deletions looked like they silently did nothing. */
+    notes = notesByDoc[id];
+    counter = counterByDoc[id];
+    renderMargins();
+    renderNotesIndex();
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(b=>b.classList.toggle('active', b.dataset.doc===id));
+    if(sidenav.classList.contains('drawer')) closeSidenav();
+  }
+
+  /* ================= Undo ================= */
+  function pushUndo(){
+    undoStack.push({
+      fuente: textFuenteEl.innerHTML,
+      analisis: textAnalisisEl.innerHTML,
+      notes: JSON.stringify(notes),
+      counter
+    });
+    if(undoStack.length > 15) undoStack.shift();
+  }
+  function undoLast(){
+    if(undoStack.length === 0){ setStatus('Nada que deshacer'); return; }
+    const snap = undoStack.pop();
+    textFuenteEl.innerHTML = snap.fuente;
+    textAnalisisEl.innerHTML = snap.analisis;
+    notes = JSON.parse(snap.notes);
+    notesByDoc[activeDocId] = notes;
+    counter = snap.counter;
+    counterByDoc[activeDocId] = counter;
+    renderMargins();
+    renderNotesIndex();
+    persist();
+    setStatus('Deshecho');
+  }
+
+  /* ================= UI prefs (dark mode) — shared across the whole unit ================= */
+  const UI_KEY_DARK = 'ui:dark-mode';
+  async function loadUIPrefs(){
+    if(!hasStorage) return;
+    try{
+      const d = await window.storage.get(UI_KEY_DARK, false);
+      if(d && d.value === '1'){
+        document.body.classList.add('dark');
+        darkToggle.textContent = '☀️';
+        darkToggle.setAttribute('aria-pressed','true');
+      }
+    }catch(e){ /* no saved preference yet */ }
+  }
+
+  /* ================= Sidebar / drawer mode ================= */
+  let presentationMode = false;
+
+  function updateDrawerMode(){
+    const shouldDrawer = presentationMode || window.innerWidth < 1100;
+    sidenav.classList.toggle('drawer', shouldDrawer);
+    hamburger.classList.toggle('show', shouldDrawer);
+    if(!shouldDrawer){
+      sidenav.classList.remove('open');
+      backdrop.classList.remove('show');
+    }
+  }
+  function openSidenav(){ sidenav.classList.add('open'); backdrop.classList.add('show'); }
+  function closeSidenav(){ sidenav.classList.remove('open'); backdrop.classList.remove('show'); }
+  hamburger.addEventListener('click', ()=> sidenav.classList.contains('open') ? closeSidenav() : openSidenav());
+  backdrop.addEventListener('click', closeSidenav);
+  window.addEventListener('resize', updateDrawerMode);
+
+  presentToggle.addEventListener('click', ()=>{
+    presentationMode = !presentationMode;
+    document.body.classList.toggle('presentation', presentationMode);
+    presentToggle.setAttribute('aria-pressed', String(presentationMode));
+    presentToggle.querySelector('.icon').textContent = presentationMode ? '✕' : '🖥';
+    presentToggle.querySelector('.label').textContent = presentationMode ? 'Salir de proyección' : 'Modo proyección';
+    updateDrawerMode();
+    if(presentationMode){ hideToolbar(); hideNotePopup(); hideMarkMenu(); closeSidenav(); closeSearch(); }
+  });
+
+  darkToggle.addEventListener('click', async ()=>{
+    const isDark = document.body.classList.toggle('dark');
+    darkToggle.textContent = isDark ? '☀️' : '🌙';
+    darkToggle.setAttribute('aria-pressed', String(isDark));
+    if(hasStorage){
+      try{ await window.storage.set(UI_KEY_DARK, isDark ? '1' : '0', false); }catch(e){}
+    }
+  });
+
+  function getCurrentTextSizePx(){
+    return parseFloat(getComputedStyle(document.querySelector('.text-col')).fontSize) || 16;
+  }
+  function adjustTextSize(delta){
+    const next = Math.min(28, Math.max(13, Math.round(getCurrentTextSizePx() + delta)));
+    document.body.style.setProperty('--text-size', next + 'px');
+  }
+  fontMinus.addEventListener('click', ()=>adjustTextSize(-1));
+  fontPlus.addEventListener('click', ()=>adjustTextSize(1));
+
+  undoBtn.addEventListener('click', undoLast);
+  notesFilterInput.addEventListener('input', renderNotesIndex);
+
+  /* ---- Export / import NOTES + HIGHLIGHTS only (all documents of this
+     unit), as a portable .json — lighter than "Exportar todo": it does not
+     carry personal documents you added or edits to the built-in text, only
+     your notes and your underlined/highlighted passages. Export here,
+     import on any other computer running this same HTML file. ---- */
+  async function exportNotesAndHighlights(){
+    setStatus('Generando…');
+    const payload = {
+      unit: UNIT_KEY, kind: 'notes-and-highlights', exportedAt: new Date().toISOString(),
+      perDoc: {}
+    };
+    for(const d of allDocs()){
+      let fuente = null, analisis = null;
+      if(d.id === activeDocId){
+        fuente = textFuenteEl.innerHTML;
+        analisis = textAnalisisEl.innerHTML;
+      }else if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      const docNotes = notesByDoc[d.id] || [];
+      if(!docNotes.length && !fuente && !analisis) continue;
+      payload.perDoc[d.id] = {
+        docTitle: d.navTitle,
+        fuenteHTML: fuente, analisisHTML: analisis,
+        notes: docNotes, counter: counterByDoc[d.id] || 0
+      };
+    }
+    if(Object.keys(payload.perDoc).length === 0){ setStatus('No hay notas ni subrayados para exportar'); return; }
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'notas-subrayados-' + UNIT_KEY + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Exportado');
+  }
+  exportBtn.addEventListener('click', exportNotesAndHighlights);
+
+  async function importNotesAndHighlights(e){
+    const file = e.target.files[0];
+    if(!file) return;
+    try{
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      if(!payload || typeof payload.perDoc !== 'object') throw new Error('el archivo no tiene el formato esperado');
+
+      let restoredCount = 0;
+      const skipped = [];
+      for(const id of Object.keys(payload.perDoc)){
+        const entry = payload.perDoc[id];
+        const doc = getDoc(id);
+        if(!doc){ skipped.push(entry.docTitle || id); continue; }
+
+        const importedNotes = (entry.notes || []).map(n => Object.assign({}, n, { docId: id }));
+        notesByDoc[id] = importedNotes;
+        counterByDoc[id] = entry.counter || 0;
+
+        if(hasStorage){
+          try{
+            if(entry.fuenteHTML != null) await window.storage.set(storageKey(id,'fuente'), entry.fuenteHTML, false);
+            if(entry.analisisHTML != null) await window.storage.set(storageKey(id,'analisis'), entry.analisisHTML, false);
+            await window.storage.set(storageKey(id,'notes'), JSON.stringify(importedNotes), false);
+            await window.storage.set(storageKey(id,'counter'), String(counterByDoc[id]), false);
+          }catch(err){}
+        }
+        restoredCount++;
+      }
+
+      await refreshActiveDocument();
+      renderNotesIndex();
+      setStatus(restoredCount + ' documento(s) con notas y subrayados restaurados');
+      if(skipped.length){
+        alert('Se importaron las notas y subrayados de ' + restoredCount + ' documento(s) de esta unidad.\n\nEstos documentos del archivo no existen aquí, así que se omitieron:\n' + skipped.join('\n'));
+      }
+    }catch(err){
+      alert('No se pudo importar el archivo: ' + err.message);
+    }
+    e.target.value = '';
+  }
+  const importNotesBtn = document.getElementById('importNotesBtn');
+  const importNotesInput = document.getElementById('importNotesInput');
+  importNotesBtn.addEventListener('click', ()=> importNotesInput.click());
+  importNotesInput.addEventListener('change', importNotesAndHighlights);
+
+  /* ================= Search inside the text ================= */
+  let searchMatches = [];
+  let searchIndex = -1;
+
+  function openSearch(){ searchBar.hidden = false; searchToggle.setAttribute('aria-pressed','true'); searchInput.focus(); }
+  function closeSearch(){
+    searchBar.hidden = true;
+    searchToggle.setAttribute('aria-pressed','false');
+    clearSearchHighlights();
+    searchInput.value = '';
+    searchMatches = []; searchIndex = -1;
+    updateSearchCount();
+  }
+  searchToggle.addEventListener('click', ()=> searchBar.hidden ? openSearch() : closeSearch());
+  searchClose.addEventListener('click', closeSearch);
+
+  function escapeRegex(str){ return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  function clearSearchHighlights(){
+    document.querySelectorAll('.search-hit').forEach(span=>{
+      const parent = span.parentNode;
+      if(!parent) return;
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    });
+  }
+
+  function highlightTextNodes(root, regex){
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const textNodes = [];
+    let n;
+    while(n = walker.nextNode()) textNodes.push(n);
+    textNodes.forEach(node=>{
+      const text = node.nodeValue;
+      regex.lastIndex = 0;
+      if(!regex.test(text)) return;
+      regex.lastIndex = 0;
+      const frag = document.createDocumentFragment();
+      let lastIndex = 0, m;
+      while((m = regex.exec(text))){
+        if(m.index > lastIndex) frag.appendChild(document.createTextNode(text.slice(lastIndex, m.index)));
+        const span = document.createElement('span');
+        span.className = 'search-hit';
+        span.textContent = m[0];
+        frag.appendChild(span);
+        lastIndex = m.index + m[0].length;
+        if(m[0].length === 0) regex.lastIndex++;
+      }
+      if(lastIndex < text.length) frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  function updateSearchCount(){
+    const total = searchMatches.length;
+    searchCount.textContent = total ? (searchIndex+1) + '/' + total : '0/0';
+  }
+  function focusMatch(i){
+    if(!searchMatches.length) return;
+    searchMatches.forEach(el=>el.classList.remove('active'));
+    searchIndex = ((i % searchMatches.length) + searchMatches.length) % searchMatches.length;
+    const el = searchMatches[searchIndex];
+    el.classList.add('active');
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+    updateSearchCount();
+  }
+  function performSearch(){
+    clearSearchHighlights();
+    const term = searchInput.value.trim();
+    if(!term){ searchMatches = []; searchIndex = -1; updateSearchCount(); return; }
+    const regex = new RegExp(escapeRegex(term), 'gi');
+    highlightTextNodes(textFuenteEl, regex);
+    highlightTextNodes(textAnalisisEl, regex);
+    searchMatches = Array.from(document.querySelectorAll('.search-hit'));
+    if(searchMatches.length){ focusMatch(0); } else { searchIndex = -1; updateSearchCount(); }
+  }
+  searchInput.addEventListener('input', performSearch);
+  searchInput.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter'){ e.preventDefault(); focusMatch(e.shiftKey ? searchIndex-1 : searchIndex+1); }
+  });
+  searchPrev.addEventListener('click', ()=>focusMatch(searchIndex-1));
+  searchNext.addEventListener('click', ()=>focusMatch(searchIndex+1));
+
+  /* ================= Reveal / hide analysis panel ================= */
+  function openAnalysis(){
+    analisisPanel.removeAttribute('hidden');
+    dossier.classList.add('split');
+    revealBtn.classList.add('opened');
+    revealBtn.querySelector('.seal-label').innerHTML = 'Ocultar<br>análisis';
+    revealBtn.setAttribute('aria-expanded','true');
+  }
+  function closeAnalysis(){
+    analisisPanel.setAttribute('hidden','');
+    dossier.classList.remove('split');
+    revealBtn.classList.remove('opened');
+    revealBtn.querySelector('.seal-label').innerHTML = 'Revelar<br>análisis';
+    revealBtn.setAttribute('aria-expanded','false');
+  }
+  revealBtn.addEventListener('click', ()=>{
+    if(analisisPanel.hasAttribute('hidden')) openAnalysis(); else closeAnalysis();
+  });
+  hideAnalysisBtn.addEventListener('click', closeAnalysis);
+
+  /* ================= Selection -> floating toolbar ================= */
+  document.addEventListener('mouseup', onSelectionMaybe);
+  document.addEventListener('touchend', onSelectionMaybe);
+
+  function onSelectionMaybe(e){
+    if(e.target.closest('.hl-toolbar, .note-popup, .mark-menu')) return;
+    setTimeout(()=>{
+      const sel = window.getSelection();
+      if(!sel || sel.isCollapsed || sel.rangeCount===0){ hideToolbar(); return; }
+      const range = sel.getRangeAt(0);
+      const container = range.commonAncestorContainer;
+      const el = container.nodeType===1 ? container : container.parentElement;
+      const panelEl = el ? el.closest('.selectable') : null;
+      if(!panelEl || range.toString().trim().length===0){ hideToolbar(); return; }
+      pendingRange = range.cloneRange();
+      hideMarkMenu();
+      hideNotePopup();
+      showFloating(hlToolbar, range.getBoundingClientRect());
+    }, 5);
+  }
+
+  function showFloating(node, rect){
+    node.hidden = false;
+    node.style.visibility = 'hidden';
+    const w = node.offsetWidth || 200;
+    let top = rect.bottom + window.scrollY + 10;
+    let left = rect.left + window.scrollX + rect.width/2;
+    left = Math.min(Math.max(left, w/2 + 8), window.scrollX + window.innerWidth - w/2 - 8);
+    node.style.top = top + 'px';
+    node.style.left = left + 'px';
+    node.style.transform = 'translateX(-50%)';
+    node.style.visibility = '';
+  }
+
+  function hideToolbar(){ hlToolbar.hidden = true; }
+  function hideNotePopup(){
+    notePopup.hidden = true;
+    noteInput.value = '';
+    pendingMarkForNote = null;
+    editingNoteId = null;
+  }
+  function hideMarkMenu(){ markMenu.hidden = true; activeMarkForMenu = null; }
+
+  function applyColorAndClose(color){
+    if(!pendingRange) return;
+    pushUndo();
+    applyHighlight(pendingRange, color);
+    window.getSelection().removeAllRanges();
+    pendingRange = null;
+    hideToolbar();
+    persist();
+  }
+  hlToolbar.querySelectorAll('.swatch').forEach(btn=>{
+    btn.addEventListener('click', ()=>applyColorAndClose(btn.dataset.color));
+  });
+
+  document.getElementById('noteBtn').addEventListener('click', ()=>{
+    if(!pendingRange) return;
+    notePopupTitle.textContent = 'Nueva nota';
+    showFloating(notePopup, pendingRange.getBoundingClientRect());
+    hlToolbar.hidden = true;
+    noteInput.value = '';
+    noteInput.focus();
+  });
+
+  document.getElementById('cancelNote').addEventListener('click', ()=>{
+    hideNotePopup();
+    window.getSelection().removeAllRanges();
+  });
+
+  document.getElementById('saveNote').addEventListener('click', async ()=>{
+    const text = noteInput.value.trim();
+    if(!text){ hideNotePopup(); return; }
+    pushUndo();
+
+    if(editingNoteId){
+      const note = notes.find(n=>n.id===editingNoteId);
+      if(note) note.text = text;
+    }else if(pendingMarkForNote){
+      counter += 1;
+      counterByDoc[activeDocId] = counter;
+      const id = 'n' + counter;
+      pendingMarkForNote.dataset.noteId = id;
+      const marker = document.createElement('sup');
+      marker.className = 'note-marker';
+      marker.textContent = counter;
+      marker.dataset.noteId = id;
+      pendingMarkForNote.after(marker);
+      const panel = pendingMarkForNote.closest('.selectable').dataset.panel;
+      const colorClass = [...pendingMarkForNote.classList].find(c=>c.indexOf('hl-')===0);
+      const color = colorClass ? colorClass.replace('hl-','') : 'yellow';
+      notes.push({ id, docId: activeDocId, panel, number: counter, text, color, created: Date.now() });
+    }else if(pendingRange){
+      const panel = getPanelFromRange(pendingRange);
+      const mark = applyHighlight(pendingRange, 'yellow');
+      counter += 1;
+      counterByDoc[activeDocId] = counter;
+      const id = 'n' + counter;
+      mark.dataset.noteId = id;
+      const marker = document.createElement('sup');
+      marker.className = 'note-marker';
+      marker.textContent = counter;
+      marker.dataset.noteId = id;
+      mark.after(marker);
+      notes.push({ id, docId: activeDocId, panel, number: counter, text, color:'yellow', created: Date.now() });
+    }
+
+    pendingRange = null;
+    renderMargins();
+    renderNotesIndex();
+    hideNotePopup();
+    window.getSelection().removeAllRanges();
+    await persist();
+  });
+
+  function getPanelFromRange(range){
+    const el = range.commonAncestorContainer.nodeType===1 ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
+    const panelEl = el.closest('.selectable');
+    return panelEl ? panelEl.dataset.panel : 'fuente';
+  }
+
+  function applyHighlight(range, color){
+    const mark = document.createElement('mark');
+    mark.className = 'hl hl-' + color;
+    try{
+      const content = range.extractContents();
+      mark.appendChild(content);
+      range.insertNode(mark);
+    }catch(e){ /* skip edge-case ranges silently */ }
+    return mark;
+  }
+
+  /* ================= Click on existing highlight ================= */
+  document.addEventListener('click', (e)=>{
+    const mark = e.target.closest('mark.hl');
+    const marker = e.target.closest('.note-marker');
+    if(marker){ goToNote(marker.dataset.noteId); return; }
+    if(mark){ openMarkMenu(mark); return; }
+    if(!e.target.closest('.mark-menu, .hl-toolbar, .note-popup')){
+      hideMarkMenu();
+    }
+  });
+
+  function openMarkMenu(mark){
+    activeMarkForMenu = mark;
+    const hasNote = !!mark.dataset.noteId;
+    markMenu.innerHTML =
+      '<div class="menu-colors">' +
+        '<button data-recolor="yellow" title="Dato clave" style="background:'+COLOR_HEX.yellow+'"></button>' +
+        '<button data-recolor="green" title="Contexto" style="background:'+COLOR_HEX.green+'"></button>' +
+        '<button data-recolor="pink" title="Duda / pregunta" style="background:'+COLOR_HEX.pink+'"></button>' +
+      '</div>' +
+      '<div class="menu-divider"></div>' +
+      '<button class="menu-action" data-action="'+(hasNote?'edit':'add')+'-note">'+(hasNote?'✎ Editar nota':'✎ Añadir nota')+'</button>' +
+      '<button class="menu-action danger" data-action="remove">'+(hasNote?'✕ Eliminar nota y subrayado':'✕ Quitar subrayado')+'</button>';
+    hlToolbar.hidden = true;
+    notePopup.hidden = true;
+    showFloating(markMenu, mark.getBoundingClientRect());
+  }
+
+  markMenu.addEventListener('click', (e)=>{
+    const recolor = e.target.closest('[data-recolor]');
+    const actionBtn = e.target.closest('[data-action]');
+    if(recolor && activeMarkForMenu){
+      pushUndo();
+      const color = recolor.dataset.recolor;
+      activeMarkForMenu.classList.remove('hl-yellow','hl-green','hl-pink');
+      activeMarkForMenu.classList.add('hl-' + color);
+      const id = activeMarkForMenu.dataset.noteId;
+      if(id){
+        const note = notes.find(n=>n.id===id);
+        if(note){ note.color = color; renderMargins(); renderNotesIndex(); }
+      }
+      hideMarkMenu();
+      persist();
+      return;
+    }
+    if(actionBtn){
+      const action = actionBtn.dataset.action;
+      const mark = activeMarkForMenu;
+      if(!mark) return;
+      if(action === 'add-note'){
+        pendingMarkForNote = mark;
+        notePopupTitle.textContent = 'Añadir nota';
+        noteInput.value = '';
+        hideMarkMenu();
+        showFloating(notePopup, mark.getBoundingClientRect());
+        noteInput.focus();
+      }else if(action === 'edit-note'){
+        const id = mark.dataset.noteId;
+        const note = notes.find(n=>n.id===id);
+        editingNoteId = id;
+        notePopupTitle.textContent = 'Editar nota';
+        noteInput.value = note ? note.text : '';
+        hideMarkMenu();
+        showFloating(notePopup, mark.getBoundingClientRect());
+        noteInput.focus();
+      }else if(action === 'remove'){
+        pushUndo();
+        removeMark(mark);
+        hideMarkMenu();
+      }
+    }
+  });
+
+  function removeMark(mark){
+    const noteId = mark.dataset.noteId;
+    const parent = mark.parentNode;
+    while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+    parent.removeChild(mark);
+    if(noteId){
+      const markerEl = document.querySelector('.note-marker[data-note-id="'+noteId+'"]');
+      if(markerEl) markerEl.remove();
+      const idx = notes.findIndex(n=>n.id===noteId);
+      if(idx !== -1) notes.splice(idx,1);
+      renderMargins();
+      renderNotesIndex();
+    }
+    persist();
+  }
+
+  /* ================= Margins (per document, current doc only) ================= */
+  function renderMargins(){
+    renderMarginFor('fuente');
+    renderMarginFor('analisis');
+  }
+  function renderMarginFor(panel){
+    const col = document.getElementById('margin-'+panel);
+    const title = '<div class="margin-title">Notas</div>';
+    const list = notes.filter(n=>n.panel===panel).sort((a,b)=>a.number-b.number);
+    if(list.length===0){
+      col.innerHTML = title + '<div class="margin-empty">Aún no hay notas en este documento.</div>';
+      return;
+    }
+    col.innerHTML = title + list.map(n=>
+      '<div class="note-item" data-note-id="'+n.id+'" style="border-left-color:'+ (COLOR_HEX[n.color]||COLOR_HEX.yellow) +'">' +
+        '<span class="num">'+n.number+'</span>'+escapeHtml(n.text)+
+        '<span class="del" data-del="'+n.id+'">✕</span>' +
+      '</div>'
+    ).join('');
+    col.querySelectorAll('.note-item').forEach(item=>{
+      item.addEventListener('click', (e)=>{
+        if(e.target.dataset.del){ removeNoteById(activeDocId, e.target.dataset.del); return; }
+        goToMark(activeDocId, item.dataset.noteId);
+      });
+    });
+  }
+
+  /* ================= Sidebar notes index (whole unit, all documents) ================= */
+  function renderNotesIndex(){
+    const all = [];
+    allDocs().forEach(d => (notesByDoc[d.id]||[]).forEach(n => all.push(n)));
+    notesCountEl.textContent = all.length;
+    const q = (notesFilterInput.value || '').toLowerCase().trim();
+    const list = all
+      .filter(n => !q || n.text.toLowerCase().indexOf(q) !== -1)
+      .sort((a,b)=>{
+        const ad = allDocs(), da = ad.findIndex(d=>d.id===a.docId), db = ad.findIndex(d=>d.id===b.docId);
+        return da === db ? a.number-b.number : da-db;
+      });
+    if(all.length===0){
+      notesIndexList.innerHTML = '<div class="idx-empty">Todavía no has creado notas.</div>';
+      return;
+    }
+    if(list.length===0){
+      notesIndexList.innerHTML = '<div class="idx-empty">Sin coincidencias.</div>';
+      return;
+    }
+    notesIndexList.innerHTML = list.map(n => {
+      const doc = getDoc(n.docId);
+      return '<div class="idx-item" data-doc-id="'+n.docId+'" data-note-id="'+n.id+'">' +
+        '<span class="idx-dot hl-'+n.color+'"></span>' +
+        '<div class="idx-body">' +
+          '<div class="idx-meta">'+escapeHtml(doc?doc.navTitle:'')+' · '+(n.panel==='fuente'?'Fuente':'Análisis')+' · #'+n.number+' · '+(COLOR_LABEL[n.color]||'')+'</div>' +
+          '<div class="idx-text">'+escapeHtml(truncate(n.text,90))+'</div>' +
+        '</div>' +
+        '<span class="idx-del" data-del="'+n.id+'">✕</span>' +
+      '</div>';
+    }).join('');
+    notesIndexList.querySelectorAll('.idx-item').forEach(item=>{
+      item.addEventListener('click', (e)=>{
+        const docId = item.dataset.docId, id = item.dataset.noteId;
+        if(e.target.dataset.del){ deleteNoteAnywhere(docId, id); return; }
+        goToMark(docId, id);
+      });
+    });
+  }
+
+  function removeNoteById(docId, id){
+    // only ever called while docId === activeDocId, so the mark is live in the DOM
+    pushUndo();
+    const mark = document.querySelector('mark.hl[data-note-id="'+id+'"]');
+    if(mark){
+      const parent = mark.parentNode;
+      while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+      parent.removeChild(mark);
+    }
+    const markerEl = document.querySelector('.note-marker[data-note-id="'+id+'"]');
+    if(markerEl) markerEl.remove();
+    const idx = notes.findIndex(n=>n.id===id);
+    if(idx !== -1) notes.splice(idx,1);
+    renderMargins();
+    renderNotesIndex();
+    persist();
+  }
+
+  async function deleteNoteAnywhere(docId, id){
+    if(docId !== activeDocId) await switchDocument(docId);
+    removeNoteById(docId, id);
+  }
+
+  /* ================= Navigation helpers ================= */
+  function flashEl(el, scroll){
+    if(!el) return;
+    if(scroll) el.scrollIntoView({behavior:'smooth', block:'center'});
+    el.classList.add('flash');
+    setTimeout(()=>el.classList.remove('flash'), 900);
+  }
+  async function goToMark(docId, id){
+    if(docId !== activeDocId) await switchDocument(docId);
+    flashEl(document.querySelector('mark.hl[data-note-id="'+id+'"]'), true);
+    flashEl(document.querySelector('.note-item[data-note-id="'+id+'"]'));
+    flashEl(document.querySelector('.idx-item[data-note-id="'+id+'"]'));
+  }
+  function goToNote(id){
+    flashEl(document.querySelector('.note-item[data-note-id="'+id+'"]'), true);
+    flashEl(document.querySelector('.idx-item[data-note-id="'+id+'"]'));
+  }
+
+  /* ================= Reset (current document only) ================= */
+  resetBtn.addEventListener('click', async ()=>{
+    const doc = getDoc(activeDocId);
+    if(!confirm('¿Restablecer los subrayados y notas de "'+doc.navTitle+'"?')) return;
+    pushUndo();
+    textFuenteEl.innerHTML = ORIGINAL[activeDocId].fuente;
+    textAnalisisEl.innerHTML = ORIGINAL[activeDocId].analisis;
+    notes.length = 0;
+    counter = 0;
+    counterByDoc[activeDocId] = 0;
+    renderMargins();
+    renderNotesIndex();
+    if(hasStorage){
+      try{
+        await window.storage.delete(storageKey(activeDocId,'fuente'), false);
+        await window.storage.delete(storageKey(activeDocId,'analisis'), false);
+        await window.storage.delete(storageKey(activeDocId,'notes'), false);
+        await window.storage.delete(storageKey(activeDocId,'counter'), false);
+      }catch(e){}
+    }
+    setStatus('Restablecido');
+  });
+
+  /* ================= Custom documents & document editing ================= */
+  const CUSTOM_DOCS_KEY = UNIT_KEY + ':custom-docs';
+  const DOC_OVERRIDES_KEY = UNIT_KEY + ':doc-overrides';
+  let docOverrides = {}; // { [builtInDocId]: {navTitle,year,tag,title,...} } — edits to the 12 built-in documents
+
+  async function persistCustomDocs(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(CUSTOM_DOCS_KEY, JSON.stringify(customDocs), false); }catch(e){}
+  }
+  async function loadCustomDocs(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(CUSTOM_DOCS_KEY, false);
+      if(r && r.value){
+        customDocs = JSON.parse(r.value);
+        customDocs.forEach(registerDoc);
+      }
+    }catch(e){ /* none saved yet */ }
+  }
+  async function persistDocOverrides(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(DOC_OVERRIDES_KEY, JSON.stringify(docOverrides), false); }catch(e){}
+  }
+  async function loadDocOverrides(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(DOC_OVERRIDES_KEY, false);
+      if(r && r.value){
+        docOverrides = JSON.parse(r.value);
+        Object.keys(docOverrides).forEach(id=>{
+          const doc = DOCS.find(d=>d.id===id);
+          if(doc) Object.assign(doc, docOverrides[id]);
+        });
+      }
+    }catch(e){ /* none saved yet */ }
+  }
+  const DELETED_DOCS_KEY = UNIT_KEY + ':deleted-docs';
+  async function persistDeletedDefaultDocs(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(DELETED_DOCS_KEY, JSON.stringify(deletedDefaultDocs), false); }catch(e){}
+  }
+  async function loadDeletedDefaultDocs(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(DELETED_DOCS_KEY, false);
+      if(r && r.value) deletedDefaultDocs = JSON.parse(r.value);
+    }catch(e){ /* none saved yet */ }
+  }
+
+  /* Plain text (with optional inline <strong>/<em>/<span> tags typed or inserted
+     via the toolbar) -> paragraphs. Deliberately NOT html-escaped, since the point
+     is to let the user's own formatting tags through. This is a personal, local
+     editing tool — there is no "other people's input" being rendered here. */
+  /* A block (separated from the rest by a blank line) becomes a bullet list
+     when at least one of its lines starts with "- " (or is indented with 2+
+     spaces before the "-", for a sub-bullet). Anything else is still a plain
+     <p> paragraph, exactly as before. */
+  function textToParagraphsRaw(text){
+    const clean = (text||'').trim();
+    if(!clean) return '<p></p>';
+    return clean.split(/\n{2,}/).map(block=>{
+      const lines = block.split('\n');
+      const isList = lines.some(l=>/^\s*-\s+/.test(l));
+      return isList ? bulletLinesToHTML(lines) : '<p>' + block.trim().replace(/\n/g,'<br>') + '</p>';
+    }).join('\n');
+  }
+  /* Turns "- top" / "  - sub" lines into a nested <ul><li> (one level of
+     sub-bullets, matching the toolbar's Viñeta/Subviñeta buttons). A line
+     with no marker is treated as a soft line-break continuing the previous
+     item, so accidental stray newlines don't create empty bullets. */
+  function bulletLinesToHTML(lines){
+    const items = [];
+    lines.forEach(line=>{
+      if(!line.trim()) return;
+      const sub = /^\s{2,}-\s+(.*)$/.exec(line);
+      const top = /^-\s+(.*)$/.exec(line);
+      if(sub && items.length){
+        items[items.length-1].subs.push(sub[1].trim());
+      }else if(top){
+        items.push({ text: top[1].trim(), subs: [] });
+      }else if(items.length){
+        const subs = items[items.length-1].subs;
+        if(subs.length) subs[subs.length-1] += '<br>' + line.trim();
+        else items[items.length-1].text += '<br>' + line.trim();
+      }else{
+        items.push({ text: line.trim(), subs: [] });
+      }
+    });
+    return '<ul>' + items.map(it=>
+      '<li>' + it.text + (it.subs.length ? '<ul>' + it.subs.map(s=>'<li>'+s+'</li>').join('') + '</ul>' : '') + '</li>'
+    ).join('') + '</ul>';
+  }
+  /* Reverse conversion, used to prefill the edit form from existing HTML.
+     Walks the top-level <p> and <ul> blocks in document order; <ul><li>
+     items become "- " lines and one level of nested <ul><li> becomes
+     "  - " lines — the same plain-text syntax the toolbar buttons write,
+     so a saved list can be re-opened and edited losslessly. */
+  function paragraphsToText(html){
+    if(!html) return '';
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    const topNodes = Array.from(div.childNodes).filter(n=> n.nodeType===1 || (n.nodeType===3 && n.textContent.trim()));
+    if(topNodes.length === 0) return div.innerHTML.replace(/<br\s*\/?>/gi,'\n');
+    const blocks = topNodes.map(node=>{
+      if(node.nodeType===3) return node.textContent.trim();
+      if(node.tagName==='UL') return listNodeToText(node);
+      return node.innerHTML.replace(/<br\s*\/?>/gi,'\n');
+    });
+    return blocks.join('\n\n');
+  }
+  function listNodeToText(ul){
+    const lines = [];
+    Array.from(ul.children).forEach(li=>{
+      if(li.tagName !== 'LI') return;
+      const clone = li.cloneNode(true);
+      const nestedUl = clone.querySelector('ul');
+      let nestedLis = [];
+      if(nestedUl){ nestedLis = Array.from(nestedUl.querySelectorAll('li')); nestedUl.remove(); }
+      lines.push('- ' + clone.innerHTML.replace(/<br\s*\/?>/gi,'\n').trim());
+      nestedLis.forEach(sub=> lines.push('  - ' + sub.innerHTML.replace(/<br\s*\/?>/gi,'\n').trim()));
+    });
+    return lines.join('\n');
+  }
+
+  function readAndCompressImage(file, maxDim, quality){
+    return new Promise((resolve, reject)=>{
+      const reader = new FileReader();
+      reader.onload = ()=>{
+        const img = new Image();
+        img.onload = ()=>{
+          let w = img.width, h = img.height;
+          if(Math.max(w,h) > maxDim){
+            const scale = maxDim / Math.max(w,h);
+            w = Math.round(w*scale); h = Math.round(h*scale);
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          resolve(canvas.toDataURL('image/jpeg', quality));
+        };
+        img.onerror = ()=>reject(new Error('No se pudo leer la imagen'));
+        img.src = reader.result;
+      };
+      reader.onerror = ()=>reject(new Error('No se pudo leer el archivo'));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /* ---- rich-text mini toolbar: wraps the current textarea selection in a tag ---- */
+  function wrapTextareaSelection(textarea, before, after){
+    const start = textarea.selectionStart, end = textarea.selectionEnd;
+    const value = textarea.value;
+    const selected = value.slice(start, end) || 'texto';
+    textarea.value = value.slice(0,start) + before + selected + after + value.slice(end);
+    const newStart = start + before.length;
+    textarea.focus();
+    textarea.setSelectionRange(newStart, newStart + selected.length);
+  }
+  /* Toggles a bullet marker ("- ", level 1) or a sub-bullet marker ("  - ",
+     level 2) on every line touched by the current selection — so selecting
+     several lines and clicking once turns all of them into a list in one go.
+     Clicking the same level again on an already-marked line removes it;
+     clicking the other level swaps it. textToParagraphsRaw() below turns
+     these plain-text markers into a real <ul>/<li> list on save. */
+  function toggleLineBullet(textarea, level){
+    const value = textarea.value;
+    const start = textarea.selectionStart, end = textarea.selectionEnd;
+    const lineStart = value.lastIndexOf('\n', start-1) + 1;
+    const nextBreak = value.indexOf('\n', end > start ? end - 1 : end);
+    const lineEnd = nextBreak === -1 ? value.length : nextBreak;
+    const segment = value.slice(lineStart, lineEnd);
+    const prefix = level===2 ? '  - ' : '- ';
+    const newLines = segment.split('\n').map(line=>{
+      const bare = line.replace(/^\s*-\s+/, '');
+      const isSameLevel = level===2 ? /^\s{2,}-\s+/.test(line) : (/^-\s+/.test(line) && !/^\s{2,}-\s+/.test(line));
+      return isSameLevel ? bare : prefix + bare;
+    });
+    const newSegment = newLines.join('\n');
+    textarea.value = value.slice(0,lineStart) + newSegment + value.slice(lineEnd);
+    textarea.focus();
+    textarea.setSelectionRange(lineStart, lineStart + newSegment.length);
+  }
+  document.querySelectorAll('.ta-toolbar').forEach(bar=>{
+    bar.querySelectorAll('.ta-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const ta = document.getElementById(bar.dataset.target);
+        const kind = btn.dataset.wrap;
+        if(kind==='bullet'){ toggleLineBullet(ta, 1); return; }
+        if(kind==='subbullet'){ toggleLineBullet(ta, 2); return; }
+        let before='', after='';
+        if(kind==='strong'){ before='<strong>'; after='</strong>'; }
+        else if(kind==='em'){ before='<em>'; after='</em>'; }
+        else if(kind==='small'){ before='<span style="font-size:13px;color:var(--ink-soft);">'; after='</span>'; }
+        wrapTextareaSelection(ta, before, after);
+      });
+    });
+  });
+
+  const addDocBackdrop = document.getElementById('addDocBackdrop');
+  const addDocModal = document.getElementById('addDocModal');
+  const addTextFields = document.getElementById('addTextFields');
+  const addImageFields = document.getElementById('addImageFields');
+  const addDocSaveBtn = document.getElementById('addDocSave');
+  const addDocModalTitle = addDocModal.querySelector('.modal-head h3');
+  const addImageLabel = document.getElementById('addImageLabel');
+  const typeToggleRow = addDocModal.querySelector('.type-toggle');
+  let editingDocId = null; // null = "add" mode; a doc id = "edit" mode
+
+  function openAddDocForm(){
+    addDocModal.hidden = false;
+    addDocBackdrop.hidden = false;
+    if(sidenav.classList.contains('drawer')) closeSidenav();
+  }
+  function closeAddDocForm(){
+    addDocModal.hidden = true;
+    addDocBackdrop.hidden = true;
+    editingDocId = null;
+    addDocModalTitle.textContent = 'Añadir documento';
+    addDocSaveBtn.textContent = 'Guardar documento';
+    typeToggleRow.hidden = false;
+    addImageLabel.textContent = 'Imagen (jpg/png)';
+    addDocModal.querySelectorAll('input[type=text], textarea').forEach(el=>el.value='');
+    document.getElementById('addImageInput').value = '';
+    document.getElementById('addTag').value = 'Fuente primaria';
+    addDocModal.querySelector('input[name=docType][value=text]').checked = true;
+    addTextFields.hidden = false;
+    addImageFields.hidden = true;
+  }
+  document.getElementById('addDocClose').addEventListener('click', closeAddDocForm);
+  document.getElementById('addDocCancel').addEventListener('click', closeAddDocForm);
+  addDocBackdrop.addEventListener('click', closeAddDocForm);
+
+  addDocModal.querySelectorAll('input[name=docType]').forEach(radio=>{
+    radio.addEventListener('change', ()=>{
+      const isImage = addDocModal.querySelector('input[name=docType]:checked').value === 'image';
+      addTextFields.hidden = isImage;
+      addImageFields.hidden = !isImage;
+    });
+  });
+
+  function openEditDocForm(doc){
+    editingDocId = doc.id;
+    addDocModalTitle.textContent = 'Editar documento';
+    addDocSaveBtn.textContent = 'Guardar cambios';
+    typeToggleRow.hidden = true;
+
+    document.getElementById('addNavTitle').value = doc.navTitle || '';
+    document.getElementById('addYear').value = doc.year || '';
+    document.getElementById('addTag').value = doc.tag || '';
+    document.getElementById('addTitle').value = doc.title || '';
+    document.getElementById('addAnalisisText').value = paragraphsToText(doc.analisisHTML);
+
+    const isImage = doc.type === 'image';
+    addTextFields.hidden = isImage;
+    addImageFields.hidden = !isImage;
+    if(isImage){
+      document.getElementById('addArtist').value = doc.artist || '';
+      document.getElementById('addPaintYear').value = doc.paintYear || '';
+      document.getElementById('addTechnique').value = doc.technique || '';
+      document.getElementById('addLocation').value = doc.location || '';
+      addImageLabel.textContent = 'Reemplazar imagen (opcional — déjalo vacío para conservar la actual)';
+    }else{
+      document.getElementById('addFuenteText').value = paragraphsToText(doc.fuenteHTML);
+    }
+    openAddDocForm();
+  }
+
+  editDocBtn.addEventListener('click', ()=>{
+    const doc = getDoc(activeDocId);
+    if(doc) openEditDocForm(doc);
+  });
+
+  /* Applies edited fields to a live doc object, refreshes the on-screen baseline,
+     and — since the underlying text changed — clears highlights/notes only for the
+     panel(s) whose content actually changed (a Ctrl+Z right after undoes this). */
+  function applyDocEdit(doc, updates){
+    const oldOriginal = ORIGINAL[doc.id] || { fuente:'', analisis:'' };
+    if(doc.id === activeDocId) pushUndo();
+    Object.assign(doc, updates);
+    const newOriginal = { fuente: doc.type==='image' ? buildImageCardHTML(doc) : doc.fuenteHTML, analisis: doc.analisisHTML };
+    const fuenteChanged = oldOriginal.fuente !== newOriginal.fuente;
+    const analisisChanged = oldOriginal.analisis !== newOriginal.analisis;
+    ORIGINAL[doc.id] = newOriginal;
+
+    if(doc.id === activeDocId){
+      document.querySelector('.fuente-panel .tag').textContent = doc.tag;
+      document.querySelector('.fuente-panel h2').textContent = doc.title;
+      document.querySelector('.analisis-panel .tag').textContent = doc.analisisTag;
+      document.querySelector('.analisis-panel h2').textContent = doc.analisisTitle;
+      if(fuenteChanged){
+        textFuenteEl.innerHTML = newOriginal.fuente;
+        for(let i=notes.length-1;i>=0;i--){ if(notes[i].panel==='fuente') notes.splice(i,1); }
+      }
+      if(analisisChanged){
+        textAnalisisEl.innerHTML = newOriginal.analisis;
+        for(let i=notes.length-1;i>=0;i--){ if(notes[i].panel==='analisis') notes.splice(i,1); }
+      }
+      renderMargins();
+      renderNotesIndex();
+      persist();
+    }
+  }
+
+  async function saveNewDoc(){
+    const type = addDocModal.querySelector('input[name=docType]:checked').value;
+    const navTitle = document.getElementById('addNavTitle').value.trim();
+    if(!navTitle){ alert('Ponle un título al documento.'); return; }
+    const year = document.getElementById('addYear').value.trim();
+    const tag = document.getElementById('addTag').value.trim() || 'Fuente primaria';
+    const title = document.getElementById('addTitle').value.trim() || navTitle;
+    const analisisText = document.getElementById('addAnalisisText').value.trim();
+
+    const id = 'custom-' + Date.now();
+    const num = String(allDocs().length + 1).padStart(2,'0');
+    const doc = {
+      id, num, year, navTitle, tag, title,
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de ' + navTitle,
+      analisisHTML: textToParagraphsRaw(analisisText),
+      custom: true
+    };
+
+    if(type === 'image'){
+      const file = document.getElementById('addImageInput').files[0];
+      if(!file){ alert('Selecciona una imagen.'); return; }
+      let dataUrl;
+      try{ dataUrl = await readAndCompressImage(file, 1400, 0.82); }
+      catch(e){ alert('No se pudo procesar la imagen.'); return; }
+      doc.type = 'image';
+      doc.imageSrc = dataUrl;
+      doc.artist = document.getElementById('addArtist').value.trim();
+      doc.paintYear = document.getElementById('addPaintYear').value.trim();
+      doc.technique = document.getElementById('addTechnique').value.trim();
+      doc.location = document.getElementById('addLocation').value.trim();
+    }else{
+      doc.fuenteHTML = textToParagraphsRaw(document.getElementById('addFuenteText').value);
+    }
+
+    customDocs.push(doc);
+    registerDoc(doc);
+    await persistCustomDocs();
+    buildDocList();
+    closeAddDocForm();
+    switchDocument(id);
+    setStatus('Documento añadido');
+  }
+
+  async function saveDocEdit(){
+    const doc = getDoc(editingDocId);
+    if(!doc){ closeAddDocForm(); return; }
+    const navTitle = document.getElementById('addNavTitle').value.trim();
+    if(!navTitle){ alert('Ponle un título al documento.'); return; }
+    const updates = {
+      navTitle,
+      year: document.getElementById('addYear').value.trim(),
+      tag: document.getElementById('addTag').value.trim() || 'Fuente primaria',
+      title: document.getElementById('addTitle').value.trim() || navTitle,
+      analisisHTML: textToParagraphsRaw(document.getElementById('addAnalisisText').value)
+    };
+    if(doc.type === 'image'){
+      const file = document.getElementById('addImageInput').files[0];
+      if(file){
+        try{ updates.imageSrc = await readAndCompressImage(file, 1400, 0.82); }
+        catch(e){ alert('No se pudo procesar la imagen.'); return; }
+      }
+      updates.artist = document.getElementById('addArtist').value.trim();
+      updates.paintYear = document.getElementById('addPaintYear').value.trim();
+      updates.technique = document.getElementById('addTechnique').value.trim();
+      updates.location = document.getElementById('addLocation').value.trim();
+    }else{
+      updates.fuenteHTML = textToParagraphsRaw(document.getElementById('addFuenteText').value);
+    }
+
+    applyDocEdit(doc, updates);
+
+    if(doc.custom){
+      await persistCustomDocs();
+    }else{
+      docOverrides[doc.id] = {
+        navTitle: doc.navTitle, year: doc.year, tag: doc.tag, title: doc.title,
+        analisisTag: doc.analisisTag, analisisTitle: doc.analisisTitle,
+        fuenteHTML: doc.fuenteHTML, analisisHTML: doc.analisisHTML,
+        artist: doc.artist, paintYear: doc.paintYear, technique: doc.technique,
+        location: doc.location, imageSrc: doc.imageSrc
+      };
+      await persistDocOverrides();
+    }
+    buildDocList();
+    closeAddDocForm();
+    setStatus('Documento actualizado');
+  }
+
+  addDocSaveBtn.addEventListener('click', ()=>{
+    if(editingDocId) saveDocEdit(); else saveNewDoc();
+  });
+
+  /* Deletes ANY document from the menu: a personal one is removed for good;
+     a built-in one (from the PDF) is hidden from now on via deletedDefaultDocs
+     — its original data stays in DOCS, so clearing this browser's storage, or
+     importing a full-state export from before the deletion, brings it back. */
+  async function deleteDoc(id){
+    const doc = getDoc(id);
+    if(!doc) return;
+    if(allDocs().length <= 1){ alert('No puedes eliminar el último documento que queda.'); return; }
+    const label = doc.custom ? 'personal' : 'del temario';
+    if(!confirm('¿Eliminar el documento '+label+' "'+doc.navTitle+'"? Se perderán sus subrayados y notas.')) return;
+
+    if(doc.custom){
+      customDocs = customDocs.filter(d=>d.id!==id);
+    }else if(!deletedDefaultDocs.includes(id)){
+      deletedDefaultDocs.push(id);
+    }
+    delete docOverrides[id];
+    delete ORIGINAL[id]; delete notesByDoc[id]; delete counterByDoc[id]; delete undoStackByDoc[id];
+    if(hasStorage){
+      try{
+        await window.storage.delete(storageKey(id,'fuente'), false);
+        await window.storage.delete(storageKey(id,'analisis'), false);
+        await window.storage.delete(storageKey(id,'notes'), false);
+        await window.storage.delete(storageKey(id,'counter'), false);
+      }catch(e){}
+    }
+    if(doc.custom){ await persistCustomDocs(); }
+    else{ await persistDeletedDefaultDocs(); await persistDocOverrides(); }
+    buildDocList();
+    if(activeDocId === id){
+      activeDocId = null;
+      await switchDocument(allDocs()[0].id);
+    }
+    renderNotesIndex();
+    setStatus('Documento eliminado');
+  }
+
+  /* ---- Export / import the FULL state (every document's text, highlights and
+     notes, plus your personal documents) as a portable .json — export here,
+     import there, on any browser/computer running this same HTML file. ---- */
+  async function exportFullState(){
+    setStatus('Generando…');
+    const payload = {
+      unit: UNIT_KEY, kind: 'full-state', exportedAt: new Date().toISOString(),
+      docOverrides: docOverrides, customDocs: customDocs, deletedDefaultDocs: deletedDefaultDocs, perDoc: {}
+    };
+    for(const d of allDocs()){
+      let fuente = null, analisis = null;
+      if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      payload.perDoc[d.id] = {
+        fuenteHTML: fuente, analisisHTML: analisis,
+        notes: notesByDoc[d.id] || [], counter: counterByDoc[d.id] || 0
+      };
+    }
+    const blob = new Blob([JSON.stringify(payload)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'estado-completo-' + UNIT_KEY + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Exportado');
+  }
+
+  async function refreshActiveDocument(){
+    const id = activeDocId;
+    activeDocId = null; // forces switchDocument to actually reload, not early-return
+    await switchDocument(id);
+  }
+
+  async function importFullState(e){
+    const file = e.target.files[0];
+    if(!file) return;
+    try{
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      if(!payload || typeof payload.perDoc !== 'object') throw new Error('el archivo no tiene el formato esperado');
+
+      if(payload.docOverrides){
+        Object.keys(payload.docOverrides).forEach(id=>{
+          const doc = DOCS.find(d=>d.id===id);
+          if(doc){ Object.assign(doc, payload.docOverrides[id]); docOverrides[id] = payload.docOverrides[id]; }
+        });
+        await persistDocOverrides();
+      }
+
+      if(Array.isArray(payload.deletedDefaultDocs)){
+        payload.deletedDefaultDocs.forEach(id=>{ if(!deletedDefaultDocs.includes(id)) deletedDefaultDocs.push(id); });
+        await persistDeletedDefaultDocs();
+      }
+
+      const idMap = {};
+      (payload.customDocs || []).forEach(src=>{
+        let newId = src.id;
+        const collides = DOCS.some(d=>d.id===newId) || customDocs.some(d=>d.id===newId);
+        if(collides) newId = 'custom-' + Date.now() + '-' + Math.random().toString(36).slice(2,7);
+        idMap[src.id] = newId;
+        const doc = Object.assign({}, src, { id:newId, num:String(allDocs().length+1).padStart(2,'0') });
+        customDocs.push(doc);
+        registerDoc(doc);
+      });
+      if((payload.customDocs||[]).length) await persistCustomDocs();
+
+      let restoredCount = 0;
+      for(const oldId of Object.keys(payload.perDoc)){
+        const targetId = idMap[oldId] || oldId;
+        if(!getDoc(targetId)) continue;
+        const entry = payload.perDoc[oldId];
+        const importedNotes = (entry.notes || []).map(n => Object.assign({}, n, { docId: targetId }));
+        notesByDoc[targetId] = importedNotes;
+        counterByDoc[targetId] = entry.counter || 0;
+        if(hasStorage){
+          try{
+            if(entry.fuenteHTML) await window.storage.set(storageKey(targetId,'fuente'), entry.fuenteHTML, false);
+            if(entry.analisisHTML) await window.storage.set(storageKey(targetId,'analisis'), entry.analisisHTML, false);
+            await window.storage.set(storageKey(targetId,'notes'), JSON.stringify(importedNotes), false);
+            await window.storage.set(storageKey(targetId,'counter'), String(counterByDoc[targetId]), false);
+          }catch(err){}
+        }
+        restoredCount++;
+      }
+
+      buildDocList();
+      await refreshActiveDocument();
+      renderNotesIndex();
+      setStatus(restoredCount + ' documento(s) restaurados');
+    }catch(err){
+      alert('No se pudo importar el archivo: ' + err.message);
+    }
+    e.target.value = '';
+  }
+
+  /* ---- Download a fully standalone copy of this app, with the current state
+     (highlights, notes, edits, added documents) baked in as the new starting
+     point. Works by taking this page's own live <script> source and appending
+     a small snapshot right before boot() runs. ---- */
+  function safeJsonForScript(obj){
+    return JSON.stringify(obj).replace(/<\/script/gi, '<\\/script');
+  }
+  async function inlineImageIfPossible(src){
+    if(!src || src.indexOf('data:') === 0) return src;
+    try{
+      const resp = await fetch(src);
+      if(!resp.ok) return src;
+      const blob = await resp.blob();
+      return await new Promise((resolve, reject)=>{
+        const reader = new FileReader();
+        reader.onload = ()=>resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }catch(e){
+      return src; // e.g. opened via file:// without a local server — keep the relative path
+    }
+  }
+  async function exportFullHtmlCopy(){
+    setStatus('Generando copia…');
+    async function buildSnapshotEntry(d){
+      let fuente = null, analisis = null;
+      if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      const merged = Object.assign({}, d);
+      delete merged.custom;
+      merged.analisisHTML = analisis || merged.analisisHTML;
+      if(merged.type === 'image') merged.imageSrc = await inlineImageIfPossible(merged.imageSrc);
+      else merged.fuenteHTML = fuente || merged.fuenteHTML;
+      return merged;
+    }
+
+    const snapshotDocs = [];
+    for(const d of DOCS){
+      if(deletedDefaultDocs.includes(d.id)) continue;
+      const base = Object.assign({}, d, docOverrides[d.id] || {});
+      snapshotDocs.push(await buildSnapshotEntry(base));
+    }
+    for(const d of customDocs){
+      snapshotDocs.push(await buildSnapshotEntry(d));
+    }
+    snapshotDocs.forEach((d,i)=>{ d.num = String(i+1).padStart(2,'0'); });
+
+    const notesSnapshot = {}, counterSnapshot = {};
+    snapshotDocs.forEach(d=>{
+      notesSnapshot[d.id] = notesByDoc[d.id] || [];
+      counterSnapshot[d.id] = counterByDoc[d.id] || 0;
+    });
+
+    const originalScript = document.querySelector('script').textContent;
+    const bootCallIdx = originalScript.lastIndexOf('boot();');
+    if(bootCallIdx === -1){ alert('No se pudo generar la copia (no se encontró el punto de arranque).'); return; }
+
+    const overrideSnippet =
+      '\n  /* ---- snapshot baked in by "Copia HTML completa" ---- */\n' +
+      '  document.body.classList.remove("dark","presentation");\n' +
+      '  document.getElementById("addDocModal").hidden = true;\n' +
+      '  document.getElementById("addDocBackdrop").hidden = true;\n' +
+      '  document.getElementById("sidenav").classList.remove("open","drawer");\n' +
+      '  document.getElementById("backdrop").classList.remove("show");\n' +
+      '  DOCS.length = 0;\n' +
+      '  DOCS.push.apply(DOCS, ' + safeJsonForScript(snapshotDocs) + ');\n' +
+      '  customDocs = [];\n' +
+      '  docOverrides = {};\n' +
+      '  deletedDefaultDocs = [];\n' +
+      '  Object.keys(notesByDoc).forEach(function(k){ delete notesByDoc[k]; });\n' +
+      '  Object.assign(notesByDoc, ' + safeJsonForScript(notesSnapshot) + ');\n' +
+      '  Object.keys(counterByDoc).forEach(function(k){ delete counterByDoc[k]; });\n' +
+      '  Object.assign(counterByDoc, ' + safeJsonForScript(counterSnapshot) + ');\n\n  ';
+
+    const newScript = originalScript.slice(0, bootCallIdx) + overrideSnippet + originalScript.slice(bootCallIdx);
+
+    let fullHtml = document.documentElement.outerHTML;
+    const closeTag = '<' + '/script>';
+    const sOpen = fullHtml.indexOf('<script>');
+    const sClose = fullHtml.indexOf(closeTag, sOpen);
+    if(sOpen === -1 || sClose === -1){ alert('No se pudo generar la copia (no se encontró el script).'); return; }
+    fullHtml = fullHtml.slice(0, sOpen + '<script>'.length) + newScript + fullHtml.slice(sClose);
+    fullHtml = '<!DOCTYPE html>\n' + fullHtml;
+
+    const blob = new Blob([fullHtml], {type:'text/html;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = UNIT_KEY + '-copia-completa.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Copia HTML descargada');
+  }
+
+  /* ================= Keyboard shortcuts ================= */
+  document.addEventListener('keydown', (e)=>{
+    const tag = (e.target.tagName || '').toLowerCase();
+    const typing = tag === 'textarea' || tag === 'input';
+
+    if(e.key === 'Escape'){
+      hideToolbar(); hideNotePopup(); hideMarkMenu(); closeSidenav();
+      if(!searchBar.hidden) closeSearch();
+      if(!addDocModal.hidden) closeAddDocForm();
+      return;
+    }
+    if((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') && !typing){
+      e.preventDefault();
+      undoLast();
+      return;
+    }
+    if(typing) return;
+    if(!hlToolbar.hidden && pendingRange){
+      if(e.key === '1'){ applyColorAndClose('yellow'); }
+      else if(e.key === '2'){ applyColorAndClose('green'); }
+      else if(e.key === '3'){ applyColorAndClose('pink'); }
+      else if(e.key === 'n' || e.key === 'N'){ document.getElementById('noteBtn').click(); }
+    }
+  });
+  window.addEventListener('scroll', ()=>{ hideToolbar(); hideMarkMenu(); }, {passive:true});
+
+  /* ================= Boot ================= */
+  async function boot(){
+    await loadDocOverrides();
+    DOCS.forEach(registerDoc); // re-register so ORIGINAL reflects any saved edits
+    await loadCustomDocs();
+    await loadDeletedDefaultDocs();
+    buildDocList();
+    updateDrawerMode();
+    loadUIPrefs();
+    const firstDoc = allDocs()[0] || DOCS[0];
+    await switchDocument(firstDoc.id);
+  }
+  boot();
+})();
+</script>
+</body>
+</html>

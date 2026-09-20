@@ -1,0 +1,2876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unidad 10 · La Dictadura Franquista y la Posguerra — Archivo de Fuentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --measure: 860px;
+    --text-size: 16px;
+    --paper: #f1e9d8;
+    --paper-2: #eee1c4;
+    --paper-edge: #ddc99a;
+    --ink: #2a2118;
+    --ink-soft: #5c4f3f;
+    --wax: #8c2f39;
+    --wax-dark: #6b1f27;
+    --green: #3f5b44;
+    --gold: #a9812e;
+    --line: #c9b98f;
+    --hl-yellow: #f3d34a;
+    --hl-green: #a8cba0;
+    --hl-pink: #e8a9b8;
+    --shadow: 0 10px 30px -12px rgba(42,33,24,.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #fbf6e8 0%, transparent 60%),
+      radial-gradient(1200px 700px at 100% 10%, #e9dcbd 0%, transparent 55%),
+      #e5d8b8;
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    transition:background .25s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  button, .doc-item, .idx-item, .note-item, .swatch{ touch-action:manipulation; }
+  .ui{font-family:'Inter',sans-serif;}
+
+  /* ================= DARK MODE ================= */
+  body.dark{
+    --paper: #2a2118;
+    --paper-2: #241d15;
+    --paper-edge: #4a3c2b;
+    --ink: #f1e9d8;
+    --ink-soft: #c9b98f;
+    --line: #4a3c2b;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #2f261a 0%, transparent 60%),
+      radial-gradient(1200px 700px at 100% 10%, #241d15 0%, transparent 55%),
+      #1b150f;
+  }
+  body.dark .panel::before{border-color:rgba(255,255,255,.08);}
+  body.dark .hint{background:rgba(255,255,255,.07);}
+  body.dark .note-item{background:rgba(255,255,255,.07);}
+  body.dark .note-item:hover{background:rgba(255,255,255,.15);}
+  body.dark mark.hl{mix-blend-mode:normal;color:#1a1409;}
+  body.dark .note-popup{background:#2a2118;border-color:#4a3c2b;}
+  body.dark .note-popup textarea{background:#241d15;color:#f1e9d8;border-color:#4a3c2b;}
+  body.dark #cancelNote{background:#3a2f22;color:#e8dcc0;}
+
+  .app-shell{display:flex;min-height:100vh;}
+
+  /* ================= SIDEBAR ================= */
+  .sidenav{
+    width:272px;flex:0 0 272px;
+    background:linear-gradient(180deg,#241c14,#1b150f);
+    color:#f1e9d8;
+    padding:26px 20px 22px;
+    display:flex;flex-direction:column;gap:24px;
+    position:sticky;top:0;height:100vh;overflow-y:auto;
+    border-right:1px solid #3a2f22;
+  }
+  .sidenav-brand{display:flex;align-items:center;gap:11px;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:7px;flex:0 0 34px;
+    background:var(--wax);
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;
+  }
+  .brand-text{flex:1;min-width:0;}
+  .brand-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;line-height:1.2;}
+  .brand-sub{font-family:'Inter',sans-serif;font-size:10.5px;color:#c9b98f;opacity:.8;margin-top:2px;}
+  .home-link{
+    flex:0 0 auto;width:30px;height:30px;border-radius:7px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.06);color:#f1e9d8;text-decoration:none;font-size:14px;
+    transition:background .15s ease;
+  }
+  .home-link:hover{background:rgba(255,255,255,.16);}
+
+  .unit-label{
+    font-family:'Inter',sans-serif;font-size:10.5px;color:#c9b98f;opacity:.75;
+    line-height:1.4;padding-bottom:2px;border-bottom:1px solid #3a2f22;
+  }
+  .unit-label b{color:#e8dcc0;}
+
+  .nav-label{
+    font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:#c9b98f;opacity:.72;display:flex;align-items:center;justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .count-badge{
+    background:var(--wax);color:#fff;border-radius:10px;padding:1px 7px;font-size:10px;font-weight:700;
+  }
+
+  .doc-list{display:flex;flex-direction:column;gap:6px;max-height:290px;overflow-y:auto;padding-right:2px;}
+  .doc-item{
+    display:flex;align-items:center;gap:10px;width:100%;
+    background:transparent;border:1px solid transparent;
+    border-radius:7px;padding:9px 10px;cursor:pointer;text-align:left;color:#f1e9d8;
+    font-family:'Inter',sans-serif;
+  }
+  .doc-item:hover{background:rgba(255,255,255,.06);}
+  .doc-item.active{background:rgba(169,129,46,.18);border-color:rgba(169,129,46,.4);}
+  .doc-num{font-size:10px;font-weight:700;color:var(--gold);}
+  .doc-info{display:flex;flex-direction:column;min-width:0;}
+  .doc-name{font-size:12.5px;font-weight:600;line-height:1.3;}
+  .doc-year{font-size:10.5px;color:#c9b98f;opacity:.7;}
+  .doc-item.ghost{opacity:.4;cursor:default;}
+  .doc-item.ghost:hover{background:transparent;}
+
+  .doc-item-wrap{display:flex;align-items:center;gap:4px;}
+  .doc-item-wrap .doc-item{flex:1;min-width:0;}
+  .doc-item.custom{border-left:2px solid var(--gold);}
+  .doc-edit{
+    flex:0 0 auto;background:transparent;border:none;color:#8d8172;
+    font-size:12px;cursor:pointer;padding:8px 8px;border-radius:4px;
+  }
+  .doc-edit:hover{color:var(--gold);background:rgba(255,255,255,.08);}
+  .doc-del{
+    flex:0 0 auto;background:transparent;border:none;color:#8d8172;
+    font-size:12px;cursor:pointer;padding:8px 10px;border-radius:4px;
+  }
+  .doc-del:hover{color:var(--wax);background:rgba(255,255,255,.08);}
+
+  .add-doc-btn{
+    width:100%;margin-top:2px;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    background:transparent;border:1px dashed #4a3c2b;color:#c9b98f;
+    padding:9px 10px;border-radius:7px;cursor:pointer;text-align:center;
+  }
+  .add-doc-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  .doc-io-row{display:flex;gap:6px;margin-top:2px;}
+  .doc-io-btn{
+    flex:1;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+    background:transparent;border:1px solid #4a3c2b;color:#c9b98f;
+    padding:7px 8px;border-radius:6px;cursor:pointer;text-align:center;
+  }
+  .doc-io-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  /* ---------- Add-document modal ---------- */
+  .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:90;}
+  .modal-backdrop:not([hidden]){display:block;}
+  .add-doc-modal{
+    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+    z-index:91;width:min(560px, 92vw);max-height:88vh;overflow-y:auto;
+    background:var(--paper);border-radius:8px;box-shadow:0 24px 60px -12px rgba(0,0,0,.5);
+    border:1px solid var(--paper-edge);
+  }
+  .modal-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 20px;border-bottom:1px solid var(--line);
+  }
+  .modal-head h3{font-family:'Playfair Display',serif;font-size:19px;margin:0;color:var(--ink);}
+  .modal-close{background:transparent;border:none;font-size:15px;color:var(--ink-soft);cursor:pointer;}
+  .modal-close:hover{color:var(--wax);}
+  .modal-body{padding:18px 20px;display:flex;flex-direction:column;gap:12px;}
+  .modal-hint{
+    font-size:11.5px;color:var(--ink-soft);background:rgba(0,0,0,.04);
+    padding:8px 10px;border-radius:6px;line-height:1.5;margin:0;
+  }
+  body.dark .modal-hint{background:rgba(255,255,255,.06);}
+  .field-label{font-size:11px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;display:block;}
+  .add-doc-modal input[type="text"], .add-doc-modal textarea, .add-doc-modal input[type="file"]{
+    width:100%;font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);
+    border:1px solid var(--line);border-radius:6px;padding:8px 10px;background:rgba(255,255,255,.5);
+  }
+  body.dark .add-doc-modal input[type="text"], body.dark .add-doc-modal textarea{background:rgba(255,255,255,.06);}
+  .add-doc-modal textarea{resize:vertical;font-family:'Source Serif 4',serif;line-height:1.5;}
+  .field-row{display:flex;gap:12px;}
+  .field-row.two-col > div{flex:1;min-width:0;}
+  .type-toggle{font-size:12.5px;color:var(--ink);gap:20px;}
+  .type-toggle label{display:flex;align-items:center;gap:6px;cursor:pointer;}
+
+  .ta-toolbar{display:flex;gap:4px;margin-bottom:5px;}
+  .ta-btn{
+    width:30px;height:28px;border:1px solid var(--line);background:rgba(255,255,255,.5);
+    border-radius:5px;cursor:pointer;font-family:'Source Serif 4',serif;font-size:13px;color:var(--ink);
+  }
+  .ta-btn:hover{border-color:var(--wax);color:var(--wax);}
+  body.dark .ta-btn{background:rgba(255,255,255,.06);}
+  .ta-btn.wide{width:auto;padding:0 9px;white-space:nowrap;}
+  .modal-actions{
+    display:flex;justify-content:flex-end;gap:8px;
+    padding:14px 20px;border-top:1px solid var(--line);
+  }
+  .modal-actions button{
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;
+    border:none;border-radius:6px;padding:9px 16px;cursor:pointer;
+  }
+  #addDocCancel{background:transparent;border:1px solid var(--line);color:var(--ink-soft);}
+  #addDocSave{background:var(--wax);color:#fff;}
+
+  .color-legend{display:flex;flex-direction:column;gap:7px;}
+  .legend-item{
+    display:flex;align-items:center;gap:8px;
+    font-family:'Inter',sans-serif;font-size:11.5px;color:#e8dcc0;
+  }
+  .legend-item .dot{width:9px;height:9px;border-radius:50%;flex:0 0 9px;}
+  .legend-item .dot.hl-yellow{background:var(--hl-yellow);}
+  .legend-item .dot.hl-green{background:var(--hl-green);}
+  .legend-item .dot.hl-pink{background:var(--hl-pink);}
+
+  .notes-index{display:flex;flex-direction:column;gap:10px;flex:1;min-height:0;}
+  .notes-search{
+    width:100%;
+    background:rgba(255,255,255,.06);border:1px solid #3a2f22;border-radius:6px;
+    color:#f1e9d8;font-family:'Inter',sans-serif;font-size:12px;
+    padding:7px 9px;
+  }
+  .notes-search::placeholder{color:#8d8172;}
+  .notes-index-list{overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding-right:2px;min-height:40px;}
+  .idx-item{
+    display:flex;gap:8px;align-items:flex-start;
+    background:rgba(255,255,255,.04);border-radius:6px;padding:7px 8px;cursor:pointer;
+  }
+  .idx-item:hover{background:rgba(255,255,255,.09);}
+  .idx-item.flash{background:rgba(169,129,46,.35);}
+  .idx-dot{width:9px;height:9px;border-radius:50%;margin-top:4px;flex:0 0 9px;}
+  .idx-dot.hl-yellow{background:var(--hl-yellow);}
+  .idx-dot.hl-green{background:var(--hl-green);}
+  .idx-dot.hl-pink{background:var(--hl-pink);}
+  .idx-body{flex:1;min-width:0;}
+  .idx-meta{font-family:'Inter',sans-serif;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:#c9b98f;opacity:.75;margin-bottom:2px;}
+  .idx-text{font-family:'Inter',sans-serif;font-size:12px;line-height:1.4;color:#f1e9d8;word-wrap:break-word;}
+  .idx-del{font-size:12px;color:#8d8172;opacity:.6;flex:0 0 auto;padding:4px 6px;}
+  .idx-del:hover{opacity:1;color:var(--wax);}
+  .idx-empty{font-family:'Inter',sans-serif;font-size:11.5px;color:#8d8172;font-style:italic;line-height:1.5;}
+
+  .export-btn{
+    font-family:'Inter',sans-serif;font-size:11.5px;font-weight:600;
+    background:transparent;border:1px solid #4a3c2b;color:#e8dcc0;
+    border-radius:6px;padding:8px;cursor:pointer;
+  }
+  .export-btn:hover{border-color:var(--gold);color:var(--gold);}
+
+  .sidenav.drawer{
+    position:fixed;left:0;top:0;height:100vh;
+    transform:translateX(-105%);
+    transition:transform .28s ease;
+    z-index:70;
+    box-shadow:0 0 40px rgba(0,0,0,.4);
+  }
+  .sidenav.drawer.open{transform:translateX(0);}
+
+  .hamburger{
+    display:none;
+    position:fixed;top:16px;left:16px;z-index:71;
+    width:42px;height:42px;border-radius:9px;background:#241c14;color:#f1e9d8;
+    align-items:center;justify-content:center;border:none;cursor:pointer;font-size:17px;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+  }
+  .hamburger.show{display:flex;}
+
+  .backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:65;}
+  .backdrop.show{display:block;}
+
+  /* ---------- Top-right control cluster ---------- */
+  .top-controls{
+    position:fixed;top:16px;right:16px;z-index:71;
+    display:flex;align-items:center;gap:8px;
+  }
+  .icon-btn{
+    font-family:'Inter',sans-serif;font-size:15px;
+    background:#241c14;color:#f1e9d8;border:none;border-radius:50%;
+    width:38px;height:38px;flex:0 0 38px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+    transition:background .15s ease;
+  }
+  .icon-btn:hover{background:#332619;}
+  .icon-btn[aria-pressed="true"]{background:var(--gold);color:#241c14;}
+
+  .font-size-group{
+    display:flex;background:#241c14;border-radius:20px;overflow:hidden;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+  }
+  .font-size-group button{
+    width:32px;height:38px;border:none;background:transparent;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:11.5px;cursor:pointer;
+  }
+  .font-size-group button:hover{background:rgba(255,255,255,.14);}
+  .font-size-group button + button{border-left:1px solid rgba(255,255,255,.15);}
+
+  .present-toggle{
+    font-family:'Inter',sans-serif;font-size:12.5px;font-weight:700;
+    background:#241c14;color:#f1e9d8;border:none;border-radius:20px;
+    padding:9px 16px 9px 14px;cursor:pointer;letter-spacing:.02em;
+    box-shadow:0 6px 14px -4px rgba(0,0,0,.4);
+    display:flex;align-items:center;gap:7px;
+    transition:background .15s ease;
+  }
+  .present-toggle:hover{background:#332619;}
+  body.presentation .present-toggle{background:var(--wax);}
+  @media (max-width:720px){ .present-toggle .label{display:none;} .present-toggle{padding:9px;border-radius:50%;width:38px;height:38px;} }
+  @media (max-width:520px){ .top-controls{gap:6px;} .icon-btn, .font-size-group button{width:34px;} }
+
+  /* ---------- Search-in-text bar ---------- */
+  .search-bar{
+    position:fixed;top:62px;right:16px;z-index:71;
+    background:#241c14;border-radius:10px;padding:6px 8px 6px 12px;
+    display:flex;align-items:center;gap:7px;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,.4);
+  }
+  .search-bar input{
+    background:transparent;border:none;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-size:12.5px;width:150px;outline:none;
+  }
+  .search-bar input::placeholder{color:#8d8172;}
+  .search-count{font-family:'Inter',sans-serif;font-size:11px;color:#c9b98f;white-space:nowrap;}
+  .search-bar button{
+    width:26px;height:26px;border:none;border-radius:6px;background:transparent;
+    color:#f1e9d8;cursor:pointer;font-size:12px;
+  }
+  .search-bar button:hover{background:rgba(255,255,255,.14);}
+  @media (max-width:520px){ .search-bar input{width:100px;} }
+
+  .search-hit{background:#ffd23f;color:#1a1409;border-radius:2px;}
+  .search-hit.active{background:var(--wax);color:#fff;}
+
+  /* ================= CONTENT AREA ================= */
+  .content-area{flex:1 1 auto;min-width:0;padding-bottom:70px;}
+
+  header.masthead{
+    max-width:var(--measure);
+    margin:0 auto;
+    padding:38px 24px 18px;
+    transition:max-width .3s ease, padding .3s ease;
+  }
+  @media (max-width:1100px){ header.masthead{padding-top:76px;} }
+  body.presentation header.masthead{padding-top:70px;}
+
+  /* ================= PROJECTION MODE ================= */
+  body.presentation .hint,
+  body.presentation .subtitle,
+  body.presentation .folio{display:none;}
+  body.presentation h1.title{font-size:clamp(30px,3.6vw,46px);margin-top:0;}
+  body.presentation main.dossier{max-width:none;width:50%;}
+  body.presentation main.dossier.split{width:66%;}
+  /* On smaller screens (tablets) there's less room to spare than on a projector,
+     so the same "narrow reading column" would waste too much space — widen it
+     progressively as the viewport shrinks. */
+  @media (max-width:1400px){
+    body.presentation main.dossier{width:76%;}
+    body.presentation main.dossier.split{width:90%;}
+  }
+  @media (max-width:1100px){
+    body.presentation main.dossier{width:92%;}
+    body.presentation main.dossier.split{width:96%;}
+  }
+  body.presentation footer.controls{max-width:none;padding:0 32px;}
+  body.presentation .panel{transform:none;}
+  body.presentation .margin-col{display:none;}
+  body.presentation{--text-size:19px;}
+  body.presentation .text-col{line-height:1.9;}
+  body.presentation .panel-head{padding:26px 32px 16px;}
+  body.presentation .panel-head h2{font-size:25px;}
+  body.presentation .panel-body{padding:26px 32px 34px;}
+  @media (max-width:880px){
+    body.presentation{--text-size:17px;}
+    body.presentation .text-col{line-height:1.8;}
+  }
+
+  .folio{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--wax);
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .folio::before{content:"";width:22px;height:1px;background:var(--wax);display:inline-block;}
+  h1.title{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,42px);
+    margin:8px 0 6px;
+    line-height:1.08;
+  }
+  .subtitle{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:640px;
+    line-height:1.5;
+  }
+  .hint{
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    padding:9px 14px;
+    background:rgba(255,255,255,.35);
+    border:1px dashed var(--line);
+    border-radius:8px;
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    line-height:1.5;
+  }
+  .hint b{color:var(--ink);}
+
+  /* ---------- Dossier layout ---------- */
+  main.dossier{
+    max-width:var(--measure);
+    width:100%;
+    margin:26px auto 0;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+    transition:max-width .3s ease, width .3s ease;
+  }
+  main.dossier.split{
+    max-width:none;
+    width:80%;
+    grid-template-columns:1fr 1fr;
+    align-items:start;
+  }
+  @media (max-width:880px){
+    main.dossier.split{width:100%;grid-template-columns:1fr;}
+  }
+
+  .panel{
+    background:var(--paper);
+    border-radius:3px;
+    box-shadow:var(--shadow);
+    position:relative;
+    padding:0;
+    transform:rotate(-.35deg);
+    border:1px solid var(--paper-edge);
+  }
+  .panel.analisis-panel{
+    background:var(--paper-2);
+    transform:rotate(.3deg);
+  }
+  .panel::before{
+    content:"";
+    position:absolute;inset:8px;
+    border:1px solid rgba(42,33,24,.08);
+    pointer-events:none;
+  }
+  .panel-head{
+    padding:22px 26px 14px;
+    border-bottom:1px solid var(--line);
+  }
+  .panel-head-row{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+  }
+  .hide-analysis-btn{
+    font-family:'Inter',sans-serif;
+    font-size:11px;font-weight:700;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:5px 11px;
+    border-radius:20px;
+    cursor:pointer;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .hide-analysis-btn:hover{border-color:var(--wax);color:var(--wax);}
+  .edit-doc-btn{
+    font-family:'Inter',sans-serif;
+    font-size:11px;font-weight:700;
+    background:transparent;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:5px 11px;
+    border-radius:20px;
+    cursor:pointer;
+    white-space:nowrap;
+    flex:0 0 auto;
+  }
+  .edit-doc-btn:hover{border-color:var(--gold);color:var(--gold);}
+  .tag{
+    font-family:'Inter',sans-serif;
+    font-size:10.5px;
+    letter-spacing:.12em;
+    font-weight:700;
+    color:#fff;
+    background:var(--wax);
+    padding:3px 9px;
+    border-radius:2px;
+  }
+  .tag.tag-alt{background:var(--green);}
+  .panel-head h2{
+    font-family:'Playfair Display',serif;
+    font-size:21px;
+    margin:10px 0 0;
+    line-height:1.25;
+  }
+  .panel-body{
+    display:flex;
+    gap:14px;
+    padding:20px 22px 26px;
+    align-items:flex-start;
+  }
+  .analisis-panel .panel-body{flex-direction:row-reverse;}
+  @media (max-width:640px){
+    .panel-body, .analisis-panel .panel-body{flex-direction:column;}
+  }
+
+  .text-col{
+    flex:1 1 auto;
+    min-width:0;
+    font-size:var(--text-size);
+    line-height:1.75;
+    color:var(--ink);
+    transition:font-size .15s ease;
+  }
+  .text-col p{
+    margin:0 0 14px;
+    text-align:justify;
+    text-align-last:left;
+    hyphens:auto;
+    -webkit-hyphens:auto;
+    -ms-hyphens:auto;
+  }
+  .text-col p:first-child::first-letter{
+    font-family:'Playfair Display',serif;
+    font-size:2.5em;
+    float:left;
+    line-height:.85;
+    padding-right:6px;
+    color:var(--wax);
+    font-weight:700;
+  }
+  .text-col b, .text-col strong{color:var(--ink);}
+  .text-col .lead-in{font-weight:600;}
+  .text-col ul{margin:0 0 14px;padding-left:22px;}
+  .text-col ul ul{margin:6px 0 0;padding-left:20px;}
+  .text-col li{margin-bottom:8px;text-align:left;}
+  .text-col li:last-child{margin-bottom:0;}
+
+  /* ---------- Image-source documents (paintings) ---------- */
+  .image-card{display:flex;flex-direction:column;gap:14px;}
+  .image-frame{
+    border:1px solid var(--paper-edge);
+    background:rgba(0,0,0,.03);
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:inset 0 0 0 6px var(--paper);
+  }
+  .image-frame img{display:block;width:100%;height:auto;}
+  .image-placeholder{padding:36px 24px;text-align:center;font-family:'Inter',sans-serif;}
+  .image-placeholder-icon{font-size:34px;margin-bottom:10px;opacity:.5;}
+  .image-placeholder-text{font-size:12.5px;color:var(--ink-soft);line-height:1.6;max-width:340px;margin:0 auto 10px;}
+  .image-placeholder-path{
+    display:inline-block;background:rgba(0,0,0,.06);padding:4px 10px;border-radius:4px;
+    font-size:11.5px;color:var(--ink);
+  }
+  body.dark .image-placeholder-path{background:rgba(255,255,255,.08);}
+  .image-caption{border-top:1px solid var(--line);padding-top:12px;}
+  .image-title{font-family:'Playfair Display',serif;font-size:16.5px;margin:0 0 6px;line-height:1.3;}
+  .image-meta{font-family:'Inter',sans-serif;font-size:12px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  .margin-col{
+    flex:0 0 168px;
+    max-width:168px;
+    position:sticky;
+    top:16px;
+  }
+  @media (max-width:640px){
+    .margin-col{position:static;max-width:none;flex:1 1 auto;}
+  }
+  .margin-col .margin-title{
+    font-family:'Inter',sans-serif;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+    opacity:.75;
+  }
+  .margin-empty{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    color:var(--ink-soft);
+    opacity:.55;
+    font-style:italic;
+    line-height:1.5;
+  }
+  .note-item{
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    line-height:1.5;
+    background:rgba(255,255,255,.55);
+    border-left:3px solid var(--gold);
+    border-radius:0 4px 4px 0;
+    padding:8px 10px;
+    margin-bottom:10px;
+    cursor:pointer;
+    transition:transform .12s ease, background .12s ease;
+  }
+  .note-item:hover{background:rgba(255,255,255,.85);transform:translateX(2px);}
+  .note-item.flash{background:#fff6cf;}
+  .note-item .num{
+    display:inline-block;
+    font-weight:700;
+    color:var(--wax);
+    margin-right:5px;
+  }
+  .note-item .del{
+    float:right;
+    color:var(--ink-soft);
+    font-size:11px;
+    opacity:.5;
+  }
+  .note-item .del:hover{opacity:1;color:var(--wax);}
+
+  /* highlight marks */
+  mark.hl{
+    background:var(--hl-yellow);
+    padding:.03em .05em;
+    border-radius:2px;
+    cursor:pointer;
+    mix-blend-mode:multiply;
+    box-decoration-break:clone;
+  }
+  mark.hl-green{background:var(--hl-green);}
+  mark.hl-pink{background:var(--hl-pink);}
+  mark.hl.flash{outline:2px solid var(--wax);outline-offset:1px;}
+  sup.note-marker{
+    font-family:'Inter',sans-serif;
+    color:#fff;
+    background:var(--wax);
+    border-radius:50%;
+    width:18px;height:18px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:10px;font-weight:700;
+    cursor:pointer;
+    margin-left:1px;
+    line-height:1;
+  }
+
+  /* ---------- Seal / reveal button ---------- */
+  .seal-wrap{
+    display:flex;
+    justify-content:center;
+    margin:4px 0;
+  }
+  main.dossier.split .seal-wrap{display:none;}
+  .seal-btn{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:.04em;
+    color:#f7ecd8;
+    background:radial-gradient(circle at 35% 30%, var(--wax) 0%, var(--wax-dark) 70%);
+    border:none;
+    width:104px;height:104px;
+    border-radius:50%;
+    box-shadow:0 8px 18px -6px rgba(107,31,39,.55), inset 0 0 0 3px rgba(247,236,216,.15);
+    cursor:pointer;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:4px;
+    transition:transform .15s ease;
+    position:relative;
+  }
+  .seal-btn:hover{transform:scale(1.04);}
+  .seal-btn:active{transform:scale(.96);}
+  .seal-btn .seal-icon{font-size:20px;}
+  .seal-btn.opened{
+    background:radial-gradient(circle at 35% 30%, var(--green) 0%, #2c4030 70%);
+  }
+
+  /* ---------- Floating selection toolbar ---------- */
+  .hl-toolbar, .note-popup, .mark-menu{position:absolute;z-index:80;}
+  .hl-toolbar{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:#241c14;
+    padding:6px 8px;
+    border-radius:8px;
+    box-shadow:0 8px 20px -6px rgba(0,0,0,.45);
+  }
+  .hl-toolbar button{border:none;cursor:pointer;font-family:'Inter',sans-serif;}
+  .swatch{
+    width:20px;height:20px;
+    border-radius:50%;
+    padding:0;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);
+  }
+  .swatch.yellow{background:var(--hl-yellow);}
+  .swatch.green{background:var(--hl-green);}
+  .swatch.pink{background:var(--hl-pink);}
+  .toolbar-divider{width:1px;height:18px;background:rgba(255,255,255,.2);}
+  .hl-toolbar .txt-btn{
+    background:transparent;color:#f1e9d8;font-size:12px;font-weight:600;
+    padding:4px 8px;border-radius:5px;
+  }
+  .hl-toolbar .txt-btn:hover{background:rgba(255,255,255,.12);}
+
+  /* ---------- Note popup ---------- */
+  .note-popup{
+    width:240px;
+    background:#fffdf6;
+    border:1px solid var(--line);
+    border-radius:8px;
+    box-shadow:0 12px 26px -8px rgba(0,0,0,.35);
+    padding:10px;
+  }
+  .note-popup-title{
+    font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+    color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;
+    margin-bottom:6px;
+  }
+  .note-popup textarea{
+    width:100%;
+    min-height:64px;
+    resize:vertical;
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:7px;
+    color:var(--ink);
+  }
+  .note-popup .note-actions{
+    display:flex;justify-content:flex-end;gap:6px;margin-top:8px;
+  }
+  .note-popup button{
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;font-weight:600;
+    border:none;border-radius:5px;
+    padding:6px 10px;cursor:pointer;
+  }
+  #saveNote{background:var(--wax);color:#fff;}
+  #cancelNote{background:#eee2c9;color:var(--ink-soft);}
+
+  /* ---------- Mark context menu ---------- */
+  .mark-menu{
+    background:#241c14;border-radius:8px;
+    box-shadow:0 8px 20px -6px rgba(0,0,0,.45);
+    overflow:hidden;
+    min-width:180px;
+  }
+  .mark-menu .menu-colors{display:flex;gap:7px;padding:9px 12px 7px;}
+  .mark-menu .menu-colors button{
+    width:18px;height:18px;border-radius:50%;padding:0;border:none;cursor:pointer;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);
+  }
+  .menu-divider{height:1px;background:rgba(255,255,255,.14);margin:2px 0;}
+  .mark-menu button.menu-action{
+    display:block;width:100%;
+    background:transparent;border:none;color:#f1e9d8;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+    padding:9px 14px;text-align:left;cursor:pointer;
+  }
+  .mark-menu button.menu-action:hover{background:rgba(255,255,255,.12);}
+  .mark-menu button.menu-action.danger:hover{color:#f4a3a3;}
+
+  /* ---------- Footer controls ---------- */
+  footer.controls{
+    max-width:var(--measure);margin:30px auto 0;padding:0 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    font-family:'Inter',sans-serif;flex-wrap:wrap;gap:10px;
+  }
+  .footer-actions{display:flex;gap:8px;flex-wrap:wrap;}
+  .footer-btn{
+    font-size:12px;font-weight:600;color:var(--ink-soft);
+    background:transparent;border:1px solid var(--line);
+    padding:8px 14px;border-radius:6px;cursor:pointer;
+  }
+  .footer-btn:hover{border-color:var(--wax);color:var(--wax);}
+  .status{font-size:11.5px;color:var(--ink-soft);opacity:.75;}
+
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger" aria-label="Abrir menú">☰</button>
+
+<div class="top-controls">
+  <button class="icon-btn ui" id="searchToggle" title="Buscar en el texto" aria-label="Buscar en el texto">🔍</button>
+  <div class="font-size-group">
+    <button id="fontMinus" class="ui" title="Reducir letra" aria-label="Reducir letra">A−</button>
+    <button id="fontPlus" class="ui" title="Aumentar letra" aria-label="Aumentar letra">A+</button>
+  </div>
+  <button class="icon-btn ui" id="darkToggle" title="Modo oscuro" aria-pressed="false" aria-label="Modo oscuro">🌙</button>
+  <button class="present-toggle ui" id="presentToggle" aria-pressed="false">
+    <span class="icon">🖥</span><span class="label">Modo proyección</span>
+  </button>
+</div>
+
+<div class="search-bar ui" id="searchBar" hidden>
+  <input type="text" id="searchInput" placeholder="Buscar en el texto…" autocomplete="off">
+  <span class="search-count" id="searchCount">0/0</span>
+  <button id="searchPrev" title="Anterior">↑</button>
+  <button id="searchNext" title="Siguiente">↓</button>
+  <button id="searchClose" title="Cerrar">✕</button>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+
+<div class="app-shell">
+
+  <aside class="sidenav" id="sidenav">
+    <div class="sidenav-brand">
+      <div class="brand-mark">⚑</div>
+      <div class="brand-text">
+        <div class="brand-title">Archivo de Fuentes</div>
+        <div class="brand-sub">Historia de España</div>
+      </div>
+      <a class="home-link" href="index.html" title="Volver al inicio">🏠</a>
+    </div>
+
+    <div class="unit-label"><b>Unidad 10</b> · La Dictadura Franquista y la Posguerra (1939–1959)</div>
+
+    <nav class="doc-list" id="docList">
+      <div class="nav-label">Documentos</div>
+    </nav>
+
+    <div class="color-legend">
+      <div class="nav-label">Significado de los colores</div>
+      <div class="legend-item"><span class="dot hl-yellow"></span>Dato clave</div>
+      <div class="legend-item"><span class="dot hl-green"></span>Contexto</div>
+      <div class="legend-item"><span class="dot hl-pink"></span>Duda / pregunta</div>
+    </div>
+
+    <div class="notes-index">
+      <div class="nav-label">Notas <span class="count-badge" id="notesCount">0</span></div>
+      <input type="text" id="notesFilter" class="notes-search" placeholder="Buscar en tus notas…">
+      <div class="notes-index-list" id="notesIndexList">
+        <div class="idx-empty">Todavía no has creado notas.</div>
+      </div>
+      <div class="doc-io-row">
+        <button class="export-btn" id="exportNotes" title="Descarga tus notas y subrayados de esta unidad en un .json">⬇ Exportar notas</button>
+        <button class="export-btn" id="importNotesBtn" title="Carga un .json de notas y subrayados exportado desde otro ordenador">⬆ Importar notas</button>
+      </div>
+      <input type="file" id="importNotesInput" accept=".json,application/json" hidden>
+    </div>
+  </aside>
+
+  <div class="content-area">
+
+    <header class="masthead">
+      <div class="folio">Unidad 10 · 1939–1959</div>
+      <h1 class="title">La Dictadura Franquista y la Posguerra</h1>
+      <p class="subtitle">Selecciona un documento en el menú lateral para trabajar con su fuente y su análisis en paralelo.</p>
+      <div class="hint">✎ &nbsp;<b>Selecciona un fragmento</b> para subrayarlo o anclar una nota — atajos: <b>1</b>/<b>2</b>/<b>3</b> para color, <b>N</b> para nota. Haz clic en un subrayado ya creado para editarlo, cambiar su color o eliminarlo.</div>
+    </header>
+
+    <main class="dossier" id="dossier">
+
+      <section class="panel fuente-panel">
+        <div class="panel-head">
+          <div class="panel-head-row">
+            <span class="tag">Fuente primaria</span>
+            <button class="edit-doc-btn ui" id="editDocBtn" title="Editar este documento">✎ Editar</button>
+          </div>
+          <h2>—</h2>
+        </div>
+        <div class="panel-body">
+          <div class="text-col selectable" id="text-fuente" data-panel="fuente"></div>
+          <div class="margin-col" id="margin-fuente">
+            <div class="margin-title">Notas</div>
+            <div class="margin-empty">Aún no hay notas en este documento.</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="seal-wrap">
+        <button id="revealBtn" class="seal-btn" aria-expanded="false">
+          <span class="seal-icon">🖋</span>
+          <span class="seal-label">Revelar<br>análisis</span>
+        </button>
+      </div>
+
+      <section class="panel analisis-panel" id="analisisPanel" hidden>
+        <div class="panel-head">
+          <div class="panel-head-row">
+            <span class="tag tag-alt">Comentario</span>
+            <button class="hide-analysis-btn ui" id="hideAnalysisBtn" title="Ocultar análisis">✕ Ocultar análisis</button>
+          </div>
+          <h2>—</h2>
+        </div>
+        <div class="panel-body">
+          <div class="margin-col" id="margin-analisis">
+            <div class="margin-title">Notas</div>
+            <div class="margin-empty">Aún no hay notas en este documento.</div>
+          </div>
+          <div class="text-col selectable" id="text-analisis" data-panel="analisis"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="controls">
+      <div class="footer-actions">
+        <button id="undoBtn" class="footer-btn ui" title="Deshacer (Ctrl+Z)">↶ Deshacer</button>
+        <button id="resetBtn" class="footer-btn ui">Restablecer este documento</button>
+      </div>
+      <span class="status" id="statusMsg"></span>
+    </footer>
+
+  </div>
+</div>
+
+<!-- floating UI -->
+<div class="hl-toolbar" id="hlToolbar" hidden>
+  <button class="swatch yellow" data-color="yellow" title="Dato clave (1)"></button>
+  <button class="swatch green" data-color="green" title="Contexto (2)"></button>
+  <button class="swatch pink" data-color="pink" title="Duda / pregunta (3)"></button>
+  <div class="toolbar-divider"></div>
+  <button class="txt-btn" id="noteBtn" title="Añadir nota (N)">✎ Nota</button>
+</div>
+
+<div class="note-popup" id="notePopup" hidden>
+  <div class="note-popup-title" id="notePopupTitle">Nueva nota</div>
+  <textarea id="noteInput" placeholder="Escribe tu nota…"></textarea>
+  <div class="note-actions">
+    <button id="cancelNote">Cancelar</button>
+    <button id="saveNote">Guardar</button>
+  </div>
+</div>
+
+<div class="mark-menu" id="markMenu" hidden></div>
+
+<div class="modal-backdrop" id="addDocBackdrop" hidden></div>
+<div class="add-doc-modal ui" id="addDocModal" hidden>
+  <div class="modal-head">
+    <h3>Añadir documento</h3>
+    <button class="modal-close" id="addDocClose" title="Cerrar">✕</button>
+  </div>
+  <div class="modal-body">
+    <p class="modal-hint">Se guarda solo en este navegador — no se añade al archivo HTML. Usa "Exportar todo" para poder llevarte esto a otro equipo, o pídeme que lo incorpore de forma permanente.</p>
+
+    <div class="field-row type-toggle">
+      <label><input type="radio" name="docType" value="text" checked> Documento de texto</label>
+      <label><input type="radio" name="docType" value="image"> Documento con imagen (cuadro/foto)</label>
+    </div>
+
+    <label class="field-label" for="addNavTitle">Título para el menú</label>
+    <input type="text" id="addNavTitle" placeholder="Ej. Carta de un diputado a su familia">
+
+    <div class="field-row two-col">
+      <div>
+        <label class="field-label" for="addYear">Año</label>
+        <input type="text" id="addYear" placeholder="Ej. 1821">
+      </div>
+      <div>
+        <label class="field-label" for="addTag">Etiqueta</label>
+        <input type="text" id="addTag" placeholder="Fuente primaria" value="Fuente primaria">
+      </div>
+    </div>
+
+    <label class="field-label" for="addTitle">Título completo del documento</label>
+    <input type="text" id="addTitle" placeholder="(si lo dejas vacío, se usa el título del menú)">
+
+    <div id="addTextFields">
+      <label class="field-label" for="addFuenteText">Texto de la fuente</label>
+      <div class="ta-toolbar" data-target="addFuenteText">
+        <button type="button" class="ta-btn" data-wrap="strong" title="Negrita"><strong>B</strong></button>
+        <button type="button" class="ta-btn" data-wrap="em" title="Cursiva"><em>I</em></button>
+        <button type="button" class="ta-btn" data-wrap="small" title="Texto pequeño (para citas/referencias)">Aa</button>
+      </div>
+      <textarea id="addFuenteText" rows="5" placeholder="Pega aquí el texto de la fuente. Separa los párrafos dejando una línea en blanco entre ellos."></textarea>
+    </div>
+
+    <div id="addImageFields" hidden>
+      <label class="field-label" for="addImageInput" id="addImageLabel">Imagen (jpg/png)</label>
+      <input type="file" id="addImageInput" accept="image/*">
+      <div class="field-row two-col">
+        <div>
+          <label class="field-label" for="addArtist">Autor</label>
+          <input type="text" id="addArtist" placeholder="Ej. Vicente López">
+        </div>
+        <div>
+          <label class="field-label" for="addPaintYear">Año de la obra</label>
+          <input type="text" id="addPaintYear" placeholder="Ej. pintado en 1826">
+        </div>
+      </div>
+      <div class="field-row two-col">
+        <div>
+          <label class="field-label" for="addTechnique">Técnica</label>
+          <input type="text" id="addTechnique" placeholder="Ej. Óleo sobre lienzo">
+        </div>
+        <div>
+          <label class="field-label" for="addLocation">Ubicación</label>
+          <input type="text" id="addLocation" placeholder="Ej. Museo del Prado, Madrid">
+        </div>
+      </div>
+    </div>
+
+    <label class="field-label" for="addAnalisisText">Texto del análisis</label>
+    <div class="ta-toolbar" data-target="addAnalisisText">
+      <button type="button" class="ta-btn" data-wrap="strong" title="Negrita"><strong>B</strong></button>
+      <button type="button" class="ta-btn" data-wrap="em" title="Cursiva"><em>I</em></button>
+      <button type="button" class="ta-btn" data-wrap="small" title="Texto pequeño (para citas/referencias)">Aa</button>
+      <button type="button" class="ta-btn wide" data-wrap="bullet" title="Viñeta: aplica o quita el guion inicial de la línea">• Viñeta</button>
+      <button type="button" class="ta-btn wide" data-wrap="subbullet" title="Subviñeta: sangra la línea un nivel">◦ Subviñeta</button>
+    </div>
+    <textarea id="addAnalisisText" rows="6" placeholder="Naturaleza y tipo de fuente, idea principal, contexto…"></textarea>
+    <p class="modal-hint">Selecciona texto y pulsa B / I / Aa para darle formato — o escribe las etiquetas HTML directamente (&lt;strong&gt;, &lt;em&gt;). Dos párrafos se separan con una línea en blanco. Para una lista, sitúa el cursor en la línea (o selecciona varias) y pulsa • Viñeta; usa ◦ Subviñeta para sangrarla un nivel. Pulsar el mismo botón otra vez la quita.</p>
+  </div>
+  <div class="modal-actions">
+    <button id="addDocCancel">Cancelar</button>
+    <button id="addDocSave">Guardar documento</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ---- Respaldo local de window.storage -----------------------------------
+     Esta aplicacion se diseno para funcionar dentro de un entorno que
+     proporciona una API window.storage (get/set/delete). Cuando la pagina
+     se abre directamente en un navegador normal -como archivo descargado,
+     adjunto de correo, o alojada en un servidor web cualquiera- esa API no
+     existe, y hasta ahora eso hacia que CADA nota, subrayado y edicion se
+     descartara en silencio al recargar, y que una importacion de .json solo
+     restaurase las notas (que se guardan en memoria) pero nunca los
+     subrayados del texto (que solo se guardaban a traves de window.storage).
+     Este parche implementa la misma API usando localStorage del propio
+     navegador siempre que la real no este presente, para que todo persista
+     con normalidad en este navegador. ------------------------------------ */
+  if (typeof window.storage === 'undefined') {
+    window.storage = {
+      get: function(key){
+        try{
+          var raw = window.localStorage.getItem('archivo-fuentes:' + key);
+          return Promise.resolve(raw === null ? null : { value: raw });
+        }catch(e){ return Promise.resolve(null); }
+      },
+      set: function(key, value){
+        try{ window.localStorage.setItem('archivo-fuentes:' + key, value); }catch(e){}
+        return Promise.resolve();
+      },
+      delete: function(key){
+        try{ window.localStorage.removeItem('archivo-fuentes:' + key); }catch(e){}
+        return Promise.resolve();
+      }
+    };
+  }
+  /* ======================================================================
+     DOCUMENT DATA
+     Add a new unit document by appending an object here. num/year are
+     display-only; id must be unique within this unit (used as the storage
+     key and DOM lookup key).
+  ====================================================================== */
+  const DOCS = [
+    {
+      id: 'ideario-franquista',
+      num: '01',
+      year: '1939',
+      navTitle: 'El Ideario Franquista',
+      tag: 'Fuente primaria',
+      title: 'El Ideario Franquista, Catecismo Patriótico Español, 1939',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Ideario Franquista',
+      fuenteHTML: `
+        <p>El Estado español es la nación misma organizada en funciones de derecho y para el mejor cumplimiento de sus fines, en un régimen corporativo nacionalsindicalista, bajo la suprema autoridad del caudillo generalísimo Franco. En España no hay división de poderes, sino unidad de mando y de dirección, y bajo el orden y la jerarquía. (...) Los enemigos de España son siete: el liberalismo, la democracia, el judaísmo, la masonería, el capitalismo, el marxismo y el separatismo.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Catecismo Patriótico Español, 1939.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Se trata de una fuente primaria y pública (extracto de un catecismo o declaración doctrinal oficial). Su naturaleza es eminentemente político-ideológica.</p>
+        <p><strong>Idea principal.</strong> La definición doctrinal del Nuevo Estado franquista como un régimen totalitario, nacionalsindicalista y caudillista que rechaza frontalmente los valores democráticos.</p>
+        <p><strong>Ideas secundarias.</strong> Establece la concentración absoluta de los poderes en la persona de Franco ("unidad de mando") y define de forma dogmática y paranoica a los enemigos existenciales de la nueva España ("liberalismo, democracia, marxismo, masonería, judaísmo..."), justificando así su persecución sistemática.</p>
+        <p><strong>Contexto en España.</strong> Recién terminada la Guerra Civil (abril de 1939), el régimen franquista no pretendió en ningún momento restaurar la convivencia, sino edificar un "Nuevo Estado" cimentado sobre la victoria incondicional frente al bando republicano. El sistema se configuró como una dictadura personal y militar sumamente represiva, que asimiló toda la parafernalia y estética del fascismo a través de su partido único, la Falange Española Tradicionalista y de las JONS (cuyo líder político principal en estos años fue el cuñado de Franco, Ramón Serrano Suñer). Sin embargo, el franquismo no fue un fascismo puro, sino un aglomerado de intereses, las llamadas "familias del régimen" (falangistas, ejército, monárquicos carlistas y alfonsinos, y la Iglesia católica), a las que Franco manejaba como árbitro supremo. Este texto evidencia la justificación ideológica de la brutal purga y aniquilación de la disidencia. Para el franquismo, cualquier demócrata, republicano o sindicalista no era un mero adversario político, sino la encarnación de una conspiración "judeomasónica" o marxista, a la que había que extirpar mediante una feroz represión institucional.</p>
+        <p><strong>Contexto europeo.</strong> El texto bebe de forma directa de los fascismos totalitarios de la Europa de entreguerras (la Italia de Mussolini y la Alemania nazi de Hitler), adoptando su rechazo frontal a la división de poderes, a los sistemas parlamentarios, y copiando su estilo demagógico y agresivamente excluyente.</p>
+      `
+    },
+    {
+      id: 'ley-responsabilidades-politicas',
+      num: '02',
+      year: '1939',
+      navTitle: 'Ley de Responsabilidades Políticas',
+      tag: 'Fuente primaria',
+      title: 'Ley de Responsabilidades Políticas, 9 de febrero de 1939',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de la Ley de Responsabilidades Políticas',
+      fuenteHTML: `
+        <p><span class="lead-in">Artículo 1º.</span> Se declara la responsabilidad política de las personas, tanto jurídicas como físicas, que desde primero de octubre de mil novecientos treinta y cuatro y antes de dieciocho de julio de mil novecientos treinta y seis, contribuyeron a crear o a agravar la subversión de todo orden de que se hizo víctima a España, y de aquellas otras que, a partir de la segunda de dichas fechas, se hayan opuesto o se opongan al Movimiento Nacional con actos concretos o con pasividad grave.</p>
+        <p><span class="lead-in">Artículo 2º.</span> Como consecuencia de la anterior declaración (…) quedan fuera de la ley todos los partidos y agrupaciones políticas y sociales que, desde la convocatoria de las elecciones celebradas en dieciséis de febrero de mil novecientos treinta y seis, han integrado el llamado Frente Popular, así como los partidos y agrupaciones aliados y adheridos a éste por el solo hecho de serlo, las organizaciones separatistas y todas aquellas que se hayan opuesto al triunfo del Movimiento Nacional.</p>
+        <p><span class="lead-in">Artículo 3º.</span> Los partidos, agrupaciones y organizaciones declaradas fuera de la Ley, sufrirán la pérdida absoluta de sus derechos de toda clase y la pérdida total de sus bienes.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Ley de Responsabilidades políticas, 9 de febrero de 1939.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública. De naturaleza jurídico-penal, emanada de la Jefatura del Estado.</p>
+        <p><strong>Idea principal.</strong> La dotación de un marco legal masivo para aplicar la represión de forma institucionalizada contra todos los que apoyaron a la República o se opusieron al golpe militar.</p>
+        <p><strong>Ideas secundarias.</strong> Se castiga retrospectivamente cualquier actividad política, sindical o masónica vinculada al Frente Popular desde octubre de 1934 y a quienes colaboraron con la "zona roja", mediante penas de cárcel, destierro o incautación total de bienes.</p>
+        <p><strong>Contexto en España.</strong> Promulgada semanas antes del fin oficial de la Guerra Civil, esta ley inauguró una posguerra caracterizada por el terror de Estado. El general Franco no buscó la reconciliación, sino el castigo y la depuración exhaustiva de más de media España ("la anti-España"). Mediante esta ley y otras complementarias (como la Ley de Represión de la Masonería y el Comunismo de 1940), los tribunales militares juzgaron en juicios sumarísimos, carentes de garantías, a decenas de miles de ciudadanos. La represión presentó un fuerte sesgo de clase: recayó brutalmente sobre los obreros y jornaleros, los intelectuales, y el magisterio nacional republicano, que sufrió unas purgas devastadoras en las escuelas. Las prisiones españolas se colapsaron llegando a hacinar a unos 270.000 presos, mientras se utilizaban los campos de concentración y los batallones de trabajadores forzados (como en la construcción del Valle de los Caídos). Esta institucionalización del miedo inmovilizó a la sociedad civil e hizo inviable cualquier oposición organizada durante la década de los cuarenta.</p>
+        <p><strong>Contexto europeo.</strong> La monstruosa dimensión de las depuraciones implementadas por el franquismo se asemejó a los sistemas penales inquisitoriales de los totalitarismos nazi-fascistas o estalinistas, alejando por completo a España de los principios de derecho que pronto guiarían la reconstrucción de las democracias occidentales tras 1945.</p>
+      `
+    },
+    {
+      id: 'hendaya',
+      num: '03',
+      year: '1940',
+      navTitle: 'Encuentro de Hitler y Franco en Hendaya',
+      tag: 'Fuente artística',
+      title: 'Encuentro de Hitler y Franco en Hendaya (23 de octubre de 1940)',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Encuentro de Hendaya',
+      type: 'image',
+      artist: 'Fotografía oficial de prensa',
+      paintYear: '23 de octubre de 1940',
+      technique: 'Fotografía en blanco y negro',
+      location: 'Estación de tren de Hendaya (Francia)',
+      imageSrc: 'images/hendaya-franco-hitler.jpg',
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Nos encontramos ante una fuente de naturaleza histórico-política. Por su formato, se trata de una imagen fotográfica de carácter periodístico y oficial. Atendiendo a su origen, es una fuente primaria y directa, tomada el 23 de octubre de 1940 en la estación de tren de la localidad fronteriza francesa de Hendaya. Presenta un carácter público y una evidente finalidad propagandística e informativa, ya que fue difundida por los aparatos de prensa de ambas dictaduras para mostrar al mundo (y especialmente a los países democráticos) la supuesta sintonía y estrecha relación entre la España franquista y la Alemania nazi.</p>
+        <p><strong>Idea principal.</strong> La idea principal de la fotografía es documentar la entrevista personal entre el general Francisco Franco y el dictador alemán Adolf Hitler (acompañados de sus respectivos séquitos y ministros de Asuntos Exteriores), cuyo objetivo central era negociar las condiciones para una posible entrada de España en la Segunda Guerra Mundial a favor de las potencias del Eje.</p>
+        <p><strong>Ideas secundarias.</strong> La escenificación de la afinidad ideológica: la imagen, con los mandatarios uniformados y pasando revista a las tropas, ilustra el alineamiento del nuevo régimen franquista con los sistemas totalitarios europeos que le habían ayudado a ganar la Guerra Civil. La tensión oculta tras la diplomacia: aunque la fotografía oficial busque transmitir cordialidad, sabemos que la reunión puso de manifiesto una "difícil colaboración" entre ambos países. Bajo los apretones de manos se escondía un choque de intereses estratégicos irresoluble.</p>
+        <p><strong>Contexto europeo.</strong> En octubre de 1940, la Europa continental se encontraba bajo el dominio aplastante del Tercer Reich. Tras la rápida y humillante derrota de Francia (la llamada guerra relámpago), Alemania parecía la vencedora indiscutible del conflicto. En ese momento, Gran Bretaña resistía en solitario el asedio aéreo nazi. En este contexto, el interés de Hitler en España radicaba en su valor geoestratégico: buscaba asegurar el control del Mediterráneo, cerrar el paso del estrecho tomando Gibraltar y garantizarse el dominio del norte de África para asfixiar a los británicos.</p>
+        <p><strong>Contexto en España.</strong> En el ámbito nacional, España acababa de salir de una devastadora Guerra Civil (1936-1939) y el país se encontraba sumido en la más absoluta ruina económica, el hambre y la escasez propios de la autarquía impuesta por el régimen. Al estallar la contienda mundial en septiembre de 1939, Franco había declarado la estricta neutralidad de España. Sin embargo, deslumbrado por las arrolladoras victorias alemanas en 1940, el gobierno español (con un claro protagonismo de Ramón Serrano Suñer, cuñado de Franco y germanófilo convencido) decidió cambiar su estatus al de "no beligerancia", una fórmula que le permitía apoyar diplomática y logísticamente al Eje sin entrar directamente en combate. Es bajo esta "no beligerancia" cuando se produce la entrevista de Hendaya que vemos en la imagen. Franco estaba dispuesto a entrar en la guerra, pero a cambio exigió a Hitler unas altísimas compensaciones: el control del Marruecos francés, el territorio de Orán y el envío de suministros vitales (alimentos, armamento y productos energéticos) que la destrozada economía española no podía producir. Hitler rechazó estas "exageradas peticiones" fundamentalmente por dos motivos: primero, porque ceder el Marruecos francés a España habría destruido su política de entendimiento con la Francia colaboracionista de Vichy (liderada por el mariscal Pétain); y segundo, porque la jerarquía nazi tenía una opinión muy pobre de la capacidad militar española (el propio Goebbels anotaría en su diario que Franco era "mucho ruido, pero poca acción, sin sustancia"). Históricamente, el encuentro fracasó en su objetivo máximo y España no entró en la guerra, aunque sí se firmó un protocolo secreto de intenciones. Para compensar esta negativa y satisfacer su ferviente anticomunismo, Franco enviaría en 1941 a la División Azul, un cuerpo de voluntarios falangistas y militares, a luchar junto al ejército alemán en la invasión de la Unión Soviética. Esta fotografía es, por tanto, el testimonio visual del mayor acercamiento de España al fascismo internacional. Sin embargo, a largo plazo, este encuentro le costó muy caro a la dictadura: cuando las potencias del Eje fueron finalmente derrotadas en 1945, la imagen internacional de Franco quedó manchada por su complicidad con Hitler y Mussolini. Esto provocó que en 1946 la recién creada Organización de las Naciones Unidas (ONU) condenara duramente al régimen franquista por su origen fascista, decretando un boicot diplomático y condenando a España a un prolongado y asfixiante aislamiento internacional.</p>
+      `
+    },
+    {
+      id: 'creacion-ini',
+      num: '04',
+      year: '1941',
+      navTitle: 'Creación del INI',
+      tag: 'Fuente primaria',
+      title: 'La Creación del INI y la Política de Autarquía, Ley de 25 de septiembre de 1941',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de la Creación del INI',
+      fuenteHTML: `
+        <p>La necesidad de vigorizar nuestra economía, fuertemente afectada por una balanza de pagos tradicionalmente adversa, inspiró la política del Estado de fomento de las industrias de interés nacional. Sin embargo, es tan grande la cuantía de las inversiones que la fabricación de determinados productos requiere que muchas veces rebasa el marco en que las iniciativas particulares se desenvuelven, y para otras el margen de beneficios resulta tan moderado que no ofrece incentivo a organismos financieros, que hacen desviar el ahorro español hacia otras actividades, con perjuicio de los intereses de la Patria [...].</p>
+        <p>No existen, además, en nuestra nación las entidades aptas para financiar estos grandes programas industriales, que las actuales Sociedades de crédito, por constitución y especialización en el crédito a corto plazo, no son las indicadas para realizar estos fines [...]. En su virtud, dispongo:</p>
+        <p><span class="lead-in">Artículo 1.</span> Se crea el Instituto Nacional de Industria, entidad de Derecho público, que tiene por finalidad propulsar y financiar, en servicio de la Nación, la creación y resurgimiento de nuestras industrias, en especial de las que se propongan como fin principal la resolución de los problemas impuestos por las exigencias de la defensa del país o que se dirijan al desenvolvimiento de nuestra autarquía económica.</p>
+        <p><span class="lead-in">Artículo 2.</span> El Instituto Nacional de Industria utiliza métodos de las Sociedades Anónimas privadas para sus fines estatales, pero conservando siempre en la gestión y administración el control del gobierno [...].</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Jefatura del Estado, Ley de 25 de septiembre de 1941.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Ley del Estado). De naturaleza jurídico-económica.</p>
+        <p><strong>Idea principal.</strong> La fundación del Instituto Nacional de Industria (INI) como herramienta ejecutora del fuerte intervencionismo del Estado para promover el desarrollo y la nacionalización industrial en España.</p>
+        <p><strong>Ideas secundarias.</strong> Justifica la acción directa del Estado ante los déficits de la iniciativa privada y los problemas de abastecimiento exterior, priorizando las industrias militares o sectores estratégicos vitales para asegurar la independencia nacional económica.</p>
+        <p><strong>Contexto en España.</strong> Tras la guerra, Franco implantó en España el modelo de la autarquía, que buscaba la autosuficiencia económica del país aislando el mercado interno de las importaciones extranjeras y aplicando un intervencionismo estatal absoluto sobre la producción, los precios y el consumo. Lejos de reactivar el país, la autarquía sumió a España en el decenio más negro de su economía ("los años del hambre"). La escasez de divisas impidió importar tecnología o energía, hundiendo la producción agrícola e industrial. Para paliar la miseria se impusieron las cartillas de racionamiento, pero la intervención de precios generó un colosal mercado negro, el estraperlo, mediante el cual una selecta minoría (a menudo vinculada a las autoridades falangistas) amasó grandes fortunas especulando con el hambre ajena. La creación del INI (inspirado en el IRI de Mussolini) trató de forzar la industrialización pesada desde el sector público (creando empresas como SEAT o ENSIDESA), pero sus efectos positivos fueron mínimos durante los años 40 por la asfixiante falta de materias primas. Esta catastrófica política prolongó el subdesarrollo español casi veinte años en comparación con su entorno.</p>
+        <p><strong>Contexto europeo.</strong> La autarquía era la respuesta dogmática adoptada en los años 30 por los regímenes fascistas de Alemania e Italia para prepararse para la guerra. En la España de posguerra, este modelo fue prolongado absurdamente, agravando el estancamiento mientras el resto de Europa iniciaba, tras 1945, su portentosa reconstrucción al amparo del Plan Marshall (del cual España fue excluida por ser una dictadura).</p>
+      `
+    },
+    {
+      id: 'manifiesto-lausana',
+      num: '05',
+      year: '1945',
+      navTitle: 'Manifiesto de Lausana',
+      tag: 'Fuente primaria',
+      title: 'El Manifiesto de Lausana de Don Juan de Borbón, 19 de marzo de 1945',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Manifiesto de Lausana',
+      fuenteHTML: `
+        <p>Españoles: Conozco vuestra dolorosa desilusión y comparto vuestros temores [...]. Hoy, pasados seis años desde que finalizó la guerra civil, el régimen implantado por el general Franco, inspirado desde el principio en los sistemas totalitarios de las potencias del Eje, tan contrario al carácter y a la tradición de nuestro tiempo, es fundamentalmente incompatible con las circunstancias que la guerra presente está creando en el mundo. La política exterior, seguida por el Régimen, compromete también el porvenir de la Nación.</p>
+        <p>Corre España el riesgo de verse arrastrada a una nueva lucha fratricida y de encontrarse totalmente aislada del mundo. El Régimen actual, por muchos que sean sus esfuerzos para adaptarse, la nueva situación, provoca este doble peligro; y una nueva república, por moderada que fuera en sus comienzos e intenciones, no tardaría en desplazarse hacia unos de los extremos reforzando así al otro, para terminar en una nueva guerra civil.</p>
+        <p>Sólo la Monarquía Tradicional puede ser instrumento de paz y de concordia para reconciliar a los españoles; sólo ella puede obtener respeto en el exterior mediante un efectivo estado de derecho y realizar una armoniosa síntesis del orden y de la libertad en que se basa la concepción cristiana del Estado.</p>
+        <p>Desde que por renuncia y subsiguiente muerte del rey Don Alfonso XIII, en 1941, asumí los derechos y deberes a la Corona de España, mostré mi disconformidad con la política interior y exterior seguida por el general Franco [...]. Por estas razones, me resuelvo [...] a levantar mi voz y requerir solemnemente al general Franco para que [...] abandone el poder, y dé libre paso a la restauración del régimen tradicional de España, único capaz de garantizar la Religión, el Orden y la Libertad [...].</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Juan, Lausana, 19 de marzo de 1945.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (un manifiesto). Su naturaleza es eminentemente política.</p>
+        <p><strong>Idea principal.</strong> La exigencia formal del legítimo heredero de la Corona de España, Don Juan de Borbón, para que Franco abandone inmediatamente el poder.</p>
+        <p><strong>Ideas secundarias.</strong> Don Juan diagnostica que el régimen de Franco, por sus orígenes nazi-fascistas, es inviable y peligroso para España tras la inminente victoria aliada. Propone instaurar una monarquía constitucional y tolerante como única salida institucional pacífica para recuperar las libertades e integrar a España en la nueva Europa.</p>
+        <p><strong>Contexto en España.</strong> Los monárquicos habían apoyado a Franco durante la Guerra Civil con la expectativa de que su dictadura fuera una breve interinidad previa a la reinstauración borbónica. Sin embargo, Franco demostró rápidamente su férrea voluntad de perpetuarse en el poder vitaliciamente. A medida que la derrota de Hitler se hacía evidente, las presiones internas sobre Franco aumentaron. Don Juan de Borbón (hijo de Alfonso XIII), desde el exilio en Suiza, emitió este manifiesto intentando desvincular a la Corona del fascismo falangista y ofreciendo a los Aliados y a la oposición moderada una transición democrática y reconciliadora. Franco reaccionó airadamente: ignoró la petición, marginó a los monárquicos "intransigentes" y promulgó en 1947 la Ley de Sucesión, declarando a España un reino, pero consolidándose él mismo como regente de facto para toda la vida, humillando así al pretendiente legítimo.</p>
+        <p><strong>Contexto europeo.</strong> Escrito en marzo de 1945, el documento coincide con la agonía final del Tercer Reich. Las potencias Aliadas triunfantes imponían la democracia en Occidente. Don Juan intentó capitalizar este nuevo orden geopolítico ofreciendo una alternativa conservadora, monárquica pero no fascista, que los vencedores pudieran avalar frente a la dictadura franquista, demasiado manchada por su amistad con el Eje.</p>
+      `
+    },
+    {
+      id: 'fuero-espanoles',
+      num: '06',
+      year: '1945',
+      navTitle: 'El Fuero de los Españoles',
+      tag: 'Fuente primaria',
+      title: 'El Fuero de los Españoles, 1945',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Fuero de los Españoles',
+      fuenteHTML: `
+        <p><span class="lead-in">Art. 1.</span> El Estado español proclama como principio recto de sus actos el respeto a la dignidad, la integridad y la libertad de la persona humana, reconociendo al hombre, en cuanto portador de valores eternos y miembros de una comunidad nacional, titular de deberes y derechos, cuyo ejercicio garantiza en orden al bien común.</p>
+        <p><span class="lead-in">Art. 2.</span> Los españoles deben servicio fiel a la Patria, lealtad al Jefe del Estado y obediencia a las leyes.</p>
+        <p><span class="lead-in">Art. 3.</span> La Ley ampara por igual el derecho de todos los españoles, sin preferencia de clases ni acepción de personas. [...]</p>
+        <p><span class="lead-in">Art. 5.</span> Todos los españoles tienen derecho a recibir educación e instrucción y el deber de adquirirlas, bien en el seno de su familia o en centros privados o públicos, a su libre elección. El Estado velará para que ningún talento se malogre por falta de medios económicos.</p>
+        <p><span class="lead-in">Art. 6.</span> La profesión y práctica de la Religión Católica, que es la del Estado español, gozará de la protección oficial. El Estado asumirá la protección de la libertad religiosa, que será garantizada por una eficaz tutela jurídica que, a la vez, salvaguarde la moral y el orden público.</p>
+        <p><span class="lead-in">Art. 7.</span> Constituye título de honor para los españoles el servir a la Patria con las armas. Todos los españoles están obligados a prestar este servicio cuando sean llamados con arreglo a la Ley. [...]</p>
+        <p><span class="lead-in">Art. 10.</span> Todos los españoles tienen derecho a participar en las funciones públicas de carácter representativo, a través de la familia, el municipio y el sindicato, sin perjuicio de otras representaciones que las leyes establezcan.</p>
+        <p><span class="lead-in">Art. 11.</span> Todos los españoles podrán desempeñar cargos y funciones públicas según su mérito y capacidad.</p>
+        <p><span class="lead-in">Art. 12.</span> Todo español podrá expresar libremente sus ideas mientras no atenten a los principios fundamentales del Estado. [...]</p>
+        <p><span class="lead-in">Art. 16.</span> Los españoles podrán reunirse y asociarse libremente para fines lícitos y de acuerdo con lo establecido por las leyes. El Estado podrá crear y mantener las organizaciones que estime necesarias para el cumplimiento de sus fines. Las normas fundacionales, que revestirán forma de ley, coordinarán el ejercicio de este derecho con el reconocido en el párrafo anterior.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">El Fuero de los Españoles, 1945.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Ley Fundamental del Estado). De naturaleza jurídico-política.</p>
+        <p><strong>Idea principal.</strong> La promulgación de una carta de supuestos derechos y deberes ciudadanos que intenta encubrir la dictadura bajo un ropaje legal asimilable al mundo católico.</p>
+        <p><strong>Ideas secundarias.</strong> Se impone la confesionalidad católica del Estado y se toleran otras creencias solo en el más estricto ámbito privado. Reconoce derechos (como la libertad de expresión, reunión o asociación) pero los anula sistemáticamente en la práctica al someterlos a la condición de que no atenten contra el Estado franquista, vaciándolos de cualquier utilidad democrática.</p>
+        <p><strong>Contexto en España.</strong> Ante el inminente hundimiento de sus antiguos valedores (Hitler y Mussolini), el régimen de Franco emprendió un hábil ejercicio de "lavado de cara" estético y jurídico (institucionalización) para intentar sobrevivir al asedio de los vencedores aliados. Esta Ley Fundamental formaba parte de esa estrategia cosmética, abandonando la retórica nacionalsindicalista (falangista) para abrazar firmemente el Nacionalcatolicismo. Franco destituyó de ministerios clave a los "camisas viejas" pro-Eje, dio entrada a católicos como Martín Artajo en Exteriores y trató de vender al mundo que su régimen era una "democracia orgánica" y cristiana, no un fascismo totalitario. Pese a la palabrería del Fuero, en el interior de España los tribunales militares siguieron fusilando y torturando opositores, y este "fuero" podía ser —y fue— suspendido por decreto del Consejo de Ministros cada vez que surgía alguna huelga obrera o protesta estudiantil.</p>
+        <p><strong>Contexto europeo.</strong> Con la victoria de las democracias, los derechos humanos pasaron al centro del ordenamiento internacional (como se vería en 1948 en la ONU). El franquismo promulgó este texto intentando engañar a Londres y Washington, simulando que en España existían garantías ciudadanas para evitar una temida intervención militar internacional que acabara con la dictadura.</p>
+      `
+    },
+    {
+      id: 'condena-onu',
+      num: '07',
+      year: '1946',
+      navTitle: 'La Condena de las Naciones Unidas',
+      tag: 'Fuente primaria',
+      title: 'La Condena de las Naciones Unidas a España, 12 de diciembre de 1946',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de la Condena de la ONU',
+      fuenteHTML: `
+        <p>Por su origen, naturaleza, estructura y comportamiento general, el régimen de Franco es un régimen fascista, organizado e implantado en gran parte merced a la ayuda de la Alemania nazi y de la Italia fascista de Mussolini. Durante la larga lucha de las Naciones Unidas contra Hitler y Mussolini, Franco prestó una ayuda muy considerable a las potencias enemigas, a pesar de las continuas protestas de los aliados. [...] La Asamblea General, convencida de que el Gobierno fascista de Franco en España [...] no representa al pueblo español [...], recomienda que se prohíba al Gobierno de Franco pertenecer a los organismos internacionales creados por las Naciones Unidas o relacionados con ellas [...] hasta que se forme en España un Gobierno nuevo y adecuado [...]. Asimismo, la Asamblea recomienda que todos los Estados miembros de las Naciones Unidas retiren inmediatamente los embajadores y ministros plenipotenciarios que tienen acreditados en Madrid.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Recomendación de la Asamblea General de la ONU, Nueva York, 12 de diciembre de 1946.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública. De naturaleza política y diplomática internacional (Resolución 39 de la Asamblea General de la ONU).</p>
+        <p><strong>Idea principal.</strong> La condena oficial del régimen franquista por parte de la ONU, que veta su ingreso en los organismos internacionales y recomienda su aislamiento diplomático.</p>
+        <p><strong>Ideas secundarias.</strong> Se justifica la condena argumentando el carácter fascista de la dictadura española, nacida del auxilio militar directo de Hitler y Mussolini, y por la connivencia que Franco mostró hacia el Eje durante la II Guerra Mundial.</p>
+        <p><strong>Contexto en España.</strong> El ostracismo dictaminado por la ONU sumió a España en su etapa de mayor aislamiento diplomático (1945-1950). Francia cerró la frontera pirenaica y la casi totalidad de los embajadores abandonaron Madrid. A nivel económico, esta exclusión fue dramática, ya que dejó a la nación destrozada fuera del grifo de dólares del Plan Marshall, agravando espantosamente el hambre, el estraperlo y la miseria de las clases populares. A nivel político, Franco respondió exacerbando el nacionalismo victimista: convocó gigantescas manifestaciones en la Plaza de Oriente de Madrid (diciembre de 1946), donde acusó a la ONU de ser títere de una "conjura judeomasónica-marxista". Lejos de provocar la caída del dictador (como esperaba la oposición republicana en el exilio), el aislamiento exterior operó como un revulsivo que cohesionó al ejército y a los sectores conservadores en torno a la supervivencia del Caudillo y su régimen, sofocando las incursiones guerrilleras del maquis (como el fallido intento de invasión del Valle de Arán promovido por el PCE).</p>
+        <p><strong>Contexto europeo y mundial.</strong> Consecuencia directa de los Acuerdos de Potsdam (1945) celebrados entre Stalin, Truman y Churchill. Los vencedores estaban decididos a purgar a Europa del fascismo. Sin embargo, no optaron por intervenir militarmente en la Península para no encender otro conflicto, prefiriendo un cerco diplomático que pronto se resquebrajaría con la incipiente Guerra Fría.</p>
+      `
+    },
+    {
+      id: 'ley-sucesion',
+      num: '08',
+      year: '1947',
+      navTitle: 'Ley de Sucesión a la Jefatura del Estado',
+      tag: 'Fuente primaria',
+      title: 'Ley de Sucesión a la Jefatura del Estado, 1947',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de la Ley de Sucesión',
+      fuenteHTML: `
+        <p>De conformidad con la aprobación de las Cortes y con la expresión auténtica y directa de la voluntad de la Nación, dispongo:</p>
+        <p><span class="lead-in">Artículo 1.</span> España, como unidad política, es un Estado católico, social y representativo, que, de acuerdo con su tradición, se declara constituido en Reino.</p>
+        <p><span class="lead-in">Artículo 2.</span> La Jefatura del Estado corresponde al Caudillo de España y de la Cruzada, Generalísimo de los Ejércitos, don Francisco Franco Bahamonde.</p>
+        <p><span class="lead-in">Artículo 3.</span> Vacante la Jefatura del Estado, asumirá sus poderes un Consejo de Regencia, constituido por el Presidente de las Cortes, el Prelado de mayor jerarquía y antigüedad Consejero del Reino y el Capitán General o, en su defecto, el Teniente General, en activo y de mayor antigüedad de los Ejércitos [...].</p>
+        <p><span class="lead-in">Artículo 6.</span> En cualquier momento el Jefe del Estado podrá proponer a las Cortes la persona que estime deba ser llamada en su día a sucederle, a título de Rey o de Regente, con las condiciones exigidas por esta Ley, y podrá, asimismo, someter a la aprobación de aquéllas la revocación de la que hubiere propuesto, aunque ya hubiese sido aceptada por las Cortes.</p>
+        <p><span class="lead-in">Artículo 7.</span> Cuando, vacante la Jefatura del Estado, fuese llamado a suceder en ella el designado según el artículo anterior, el Consejo de Regencia asumirá los poderes en su nombre y convocará conjuntamente a las Cortes y al Consejo del Reino para recibir el juramento prescrito en la presente Ley y proclamarle Rey o Regente.</p>
+        <p><span class="lead-in">Artículo 8.</span> I. Ocurrida la muerte o declarada la incapacidad del Jefe del Estado sin que hubiese designado sucesor, el Consejo de Regencia asumirá los poderes, […] y convocará, en el plazo de tres días, a los miembros del Gobierno y del Consejo del Reino para que, reunidos en sesión ininterrumpida y secreta, decidan, por dos tercios de los presentes, que supongan como mínimo la mayoría absoluta, la persona de estirpe regia que, poseyendo las condiciones exigidas por la presente Ley y habida cuenta de los supremos intereses de la Patria, deban proponer a las Cortes a título de Rey. II. Cuando, a juicio de los reunidos, no existiera persona de la estirpe que posea dichas condiciones, o las propuestas no hubiesen sido aceptadas por las Cortes, propondrán a éstas, con las mismas condiciones, como Regente, la personalidad que por su prestigio, capacidad y posibles asistencias de la Nación, deba ocupar este cargo.</p>
+        <p><span class="lead-in">Artículo 9.</span> Para ejercer la Jefatura del Estado como Rey o Regente se requerirá ser varón y español, haber cumplido la edad de treinta años, profesar la religión católica, poseer las cualidades necesarias para el desempeño de su alta misión y jurar las Leyes fundamentales (…).</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Ley de Sucesión a la Jefatura del Estado, 1947.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Ley Fundamental). Su naturaleza es jurídico-política.</p>
+        <p><strong>Idea principal.</strong> La institucionalización jurídica de la forma de Estado, definiendo a España como un Reino, pero blindando legalmente el poder absoluto y vitalicio de Francisco Franco.</p>
+        <p><strong>Ideas secundarias.</strong> Instituye una extravagante "monarquía sin rey" gobernada por un Caudillo-Regente vitalicio. Además, Franco se otorga a sí mismo la potestad exclusiva y caprichosa de nombrar a su sucesor a título de rey, reservándose la prerrogativa de saltarse la legitimidad dinástica tradicional.</p>
+        <p><strong>Contexto en España.</strong> Frente al asedio diplomático internacional y al desafío frontal de los monárquicos liderados por don Juan de Borbón (Manifiesto de Lausana), Franco diseñó esta quinta Ley Fundamental para frenar cualquier conspiración interna para destituirle y legalizar su dominio a perpetuidad. Mediante esta argucia legal, dividió a la oposición monárquica y aplazó el espinoso problema de la sucesión. Para legitimarla, el régimen convocó un plebiscito en julio de 1947 (el primer referéndum del régimen, absolutamente manipulado, sin libertades políticas, ni garantías en el censo o el recuento), que arrojó resultados masivos de adhesión. La ley sería la clave que permitiría a Franco, en 1969, designar a dedo como sucesor a Juan Carlos de Borbón, puenteando y humillando los derechos dinásticos de su padre, don Juan.</p>
+        <p><strong>Contexto europeo.</strong> Mientras las naciones de Europa Occidental aprobaban constituciones democráticas plenas en la posguerra (Italia se convertía en República, Francia en su Cuarta República), el régimen español fabricaba un entramado pseudoconstitucional para fosilizar legalmente la figura irrepetible y omnímoda del dictador carismático.</p>
+      `
+    },
+    {
+      id: 'concordato-santa-sede',
+      num: '09',
+      year: '1953',
+      navTitle: 'Concordato con la Santa Sede',
+      tag: 'Fuente primaria',
+      title: 'El Concordato con la Santa Sede, 1953',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Concordato con la Santa Sede',
+      fuenteHTML: `
+        <p><span class="lead-in">Art. 1.º</span> La religión católica, apostólica, romana sigue siendo la única de la nación española y gozará de los derechos y de las prerrogativas que le corresponden en conformidad con la Ley divina y el Derecho canónico.</p>
+        <p><span class="lead-in">Art. 2.º</span> Uno. El Estado español reconoce a la Iglesia católica el carácter de sociedad perfecta, y le garantiza el libre y pleno ejercicio de su poder espiritual y de su jurisdicción, así como el libre y público ejercicio del culto [...].</p>
+        <p><span class="lead-in">Art. 4.º</span> Uno. El Estado español reconoce la personalidad jurídica y la plena capacidad de adquirir, poseer y administrar toda clase de bienes a todas las instituciones y asociaciones religiosas, existentes en España a la entrada en vigor del presente Concordato, constituidas según el Derecho Canónico [...].</p>
+        <p><span class="lead-in">Art. 5.º</span> El Estado tendrá por festivos los días establecidos como tales por la Iglesia en el Código de Derecho Canónico o en otras disposiciones particulares sobre festividades locales, y dará, a su legislación, las facilidades necesarias para que los fieles puedan cumplir en esos días sus deberes religiosos [...].</p>
+        <p><span class="lead-in">Art. 15.º</span> Los clérigos y religiosos, ya sean estos profesos o novicios, están exentos del servicio militar, conforme a los cánones 121 y 164 del Código de Derecho Canónico [...].</p>
+        <p><span class="lead-in">Art. 19.º</span> Uno. La Iglesia y el Estado estudiarán, de común acuerdo, la creación de un adecuado patrimonio eclesiástico que asegure una congrua dotación del culto y del clero. Dos. Mientras tanto, el Estado, a título de indemnización por las pasadas desamortizaciones de bienes eclesiásticos, y como contribución a la obra de la Iglesia en favor de la nación, le asignará anualmente una adecuada dotación.</p>
+        <p><span class="lead-in">Art. 20.º</span> Uno. Gozarán de exención de impuestos y contribuciones de índole estatal o local: a) Las iglesias y capillas destinadas al culto [...]. b) La residencia de los obispos, de los canónigos y de los sacerdotes con cura de almas, siempre que el inmueble sea propiedad de la Iglesia. [...] e) Las casas de las órdenes, congregaciones e institutos religiosos y seculares canónicamente establecidos en España. f) Los colegios u otros centros de enseñanza dependientes de la jerarquía eclesiástica que tengan la condición de benéfico-docentes [...].</p>
+        <p><span class="lead-in">Art. 23.º</span> El Estado español reconoce plenos efectos civiles al matrimonio celebrado según las normas del Derecho Canónico [...].</p>
+        <p><span class="lead-in">Art. 26.º</span> En todos los centros docentes de cualquier orden y grado, sean estatales o no estatales, la enseñanza se ajustará a los principios del dogma y de la Moral de la Iglesia Católica [...].</p>
+        <p><span class="lead-in">Art. 27.º</span> Uno. El Estado español garantiza la enseñanza de la religión católica como materia ordinaria y obligatoria en todos los centros docentes, sean estatales o no estatales, de cualquier orden o grado [...].</p>
+        <p style="font-size:13px;color:var(--ink-soft);">Concordato entre España y la Santa Sede, 1953.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública. De naturaleza jurídico-diplomática y religiosa.</p>
+        <p><strong>Idea principal.</strong> La consagración legal de la alianza indisoluble entre el Estado franquista y el Vaticano, elevando el nacionalcatolicismo a la categoría suprema del Estado.</p>
+        <p><strong>Ideas secundarias.</strong> Se reconoce a la Iglesia una enorme injerencia pública: monopolio educativo, censura moral, exclusividad del matrimonio canónico e inmensos beneficios económicos y exenciones fiscales a cargo del erario público español. A cambio, Franco obtiene el derecho de intervenir en el nombramiento de los obispos ("derecho de presentación") y un espaldarazo internacional.</p>
+        <p><strong>Contexto en España.</strong> El año 1953 supuso el fin definitivo del aislamiento internacional. El Concordato selló la simbiosis total entre el franquismo y la jerarquía católica, consolidando el clímax del Nacionalcatolicismo. La Iglesia española, que ya había legitimado el alzamiento militar calificándolo de "Cruzada" (Carta Colectiva de los obispos de 1937), recibía como pago a sus servicios el control casi absoluto de la educación, la moralidad ciudadana y la vida cotidiana civil (relegando por ejemplo a la mujer a la total sumisión patriarcal y suprimiendo el divorcio civil republicano). Políticamente, la firma de este documento en el Vaticano revistió al régimen de Franco de una incuestionable respetabilidad internacional ante las clases medias y altas católicas de todo el globo, sepultando definitivamente su oscuro pasado pro-nazi y consolidándolo internamente ante cualquier amago de disidencia.</p>
+        <p><strong>Contexto europeo e internacional.</strong> En el contexto de la Guerra Fría, la Santa Sede del Papa Pío XII, sumamente anticomunista tras la ocupación soviética de la Europa del Este, no tuvo escrúpulos en estrechar sus lazos con la autoritaria y reaccionaria España de Franco, viéndola como un sólido bastión o santuario católico frente al ateísmo marxista de Moscú.</p>
+      `
+    },
+    {
+      id: 'convenio-defensivo-eeuu',
+      num: '10',
+      year: '1953',
+      navTitle: 'Convenio Defensivo con EE. UU.',
+      tag: 'Fuente primaria',
+      title: 'El Convenio Defensivo entre Estados Unidos y España (Pactos de Madrid), 26 de septiembre de 1953',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis del Convenio Defensivo con EE. UU.',
+      fuenteHTML: `
+        <p>Frente al peligro que amenaza al Mundo Occidental, los gobiernos de los Estados Unidos y de España, deseosos de contribuir al mantenimiento de la Paz y de la Seguridad Internacional con medidas de previsión que aumenten su capacidad y la de las demás naciones que dedican sus esfuerzos a los mismos altos fines, para poder participar eficazmente en acuerdos sobre la propia defensa, han convenido lo siguiente:</p>
+        <p><span class="lead-in">Art. 1°.</span> [...] Esta política comprenderá lo siguiente: 1. Por parte de los Estados Unidos, el apoyo del esfuerzo defensivo español, para los fines convenidos, mediante la concesión de asistencia a España en forma de suministro de material de guerra y a través de un período de varios años, a fin de contribuir, con la posible cooperación de la industria española, a la eficaz defensa aérea de España y para mejorar el material de sus fuerzas militares y navales en la medida que se convenga en conversaciones técnicas a la vista de las circunstancias. Tal apoyo estará condicionado, como en el caso de las demás naciones amigas, por las prioridades y limitaciones derivadas de los compromisos internacionales de los Estados Unidos y de las exigencias de la situación internacional, y supeditado a las concesiones de crédito por el Congreso. 2. Como consecuencia de las premisas que anteceden, y a los mismos fines convenidos, el Gobierno de España autoriza al Gobierno de los Estados Unidos, con sujeción a los términos y condiciones que se acuerden, a desarrollar, mantener y utilizar para fines militares, juntamente con el Gobierno de España, aquellas zonas e instalaciones en territorio bajo jurisdicción española que se convenga por las Autoridades competentes de ambos Gobiernos como necesarias para los fines de este Convenio. [...]</p>
+        <p><span class="lead-in">Art. 2°.</span> A los fines de este Convenio, y de conformidad con los acuerdos técnicos que sean concertados entre las autoridades competentes de ambos Gobiernos, se autoriza a los Estados Unidos a preparar y mejorar las zonas e instalaciones convenidas para uso militar y realizar, en cooperación con el Gobierno de España, las construcciones necesarias a tal fin, para acuartelar y alojar el personal civil y militar indispensable en las mismas y atender a su seguridad, disciplina y bienestar; a almacenar y custodiar provisiones, abastecimientos, equipo y material y a mantener las instalaciones y servicios necesarios en apoyo de dichas zonas y de su personal.</p>
+        <p><span class="lead-in">Art. 3°.</span> Las zonas que en virtud de este Convenio se preparen para su utilización conjunta, quedarán siempre bajo pabellón y mando español [...]. Sin embargo, los Estados Unidos podrán, en todo caso, ejercer la necesaria vigilancia sobre el personal, instalaciones y equipo estadounidenses.</p>
+        <p>Hecho en Madrid el día 26 de septiembre de 1953, en doble ejemplar, en lengua inglesa y española, siendo ambos textos fehacientes.</p>
+        <p style="font-size:13px;color:var(--ink-soft);">ABC, 29 de septiembre de 1953.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Acuerdo bilateral/Tratado). De naturaleza diplomática y militar.</p>
+        <p><strong>Idea principal.</strong> El acuerdo estratégico por el que España autorizaba a los Estados Unidos a establecer y utilizar bases militares conjuntas en su territorio soberano.</p>
+        <p><strong>Ideas secundarias.</strong> Se intentan camuflar las drásticas cesiones de soberanía afirmando que el mando y la bandera serán españoles, aunque en la práctica las instalaciones (como Torrejón de Ardoz, Morón, Zaragoza o Rota) operarían bajo la estricta vigilancia, jurisdicción operativa y necesidades estratégicas de la fuerza aérea y naval estadounidense.</p>
+        <p><strong>Contexto en España.</strong> Junto con el Concordato, los Pactos de Madrid de septiembre de 1953 marcaron la salvación definitiva del general Franco. A cambio de ceder trozos del territorio nacional al ejército norteamericano (que usaría España como portaviones insumergible ante un eventual ataque atómico), la dictadura recibió la entrada masiva de material militar de desecho, créditos comerciales e inversiones financieras. Esta ayuda económica fue vital: impidió la bancarrota que amenazaba a las exhaustas arcas del Estado debido a la ruinosa política autárquica de los falangistas, inyectando oxígeno a la economía hasta la llegada del Plan de Estabilización. A nivel diplomático, los pactos rehabilitaron por completo al franquismo en el mundo libre: en 1955, España ingresaba como miembro de pleno derecho en la ONU. A cambio, Franco se resignaba a no ingresar en la OTAN por el veto de los países democráticos europeos y vinculaba irremediablemente la supervivencia de su régimen al paraguas protector de Washington.</p>
+        <p><strong>Contexto internacional (Guerra Fría).</strong> La Doctrina Truman (1947) y la guerra de Corea (1950) reorientaron la política exterior de EE. UU. El anticomunismo visceral de Franco se volvió repentinamente útil para el Pentágono. La geoestrategia y el pragmatismo militar pesaron más que el purismo democrático, transformando al antiguo aliado de Hitler en el "Centinela de Occidente".</p>
+      `
+    },
+    {
+      id: 'ley-principios-movimiento',
+      num: '11',
+      year: '1958',
+      navTitle: 'Ley de Principios del Movimiento Nacional',
+      tag: 'Fuente primaria',
+      title: 'La Ley de Principios del Movimiento Nacional, 17 de mayo de 1958',
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de la Ley de Principios del Movimiento Nacional',
+      fuenteHTML: `
+        <p>Yo, Francisco Franco Bahamonde, Caudillo de España, consciente de mi responsabilidad ante Dios y ante la Historia, en presencia de las Cortes del Reino, promulgo como Principios del Movimiento Nacional, entendido como comunión de los españoles en los ideales que dieron vida a la Cruzada, los siguientes:</p>
+        <p><span class="lead-in">I.</span> España es una unidad de destino en lo universal. El servicio a la unidad, grandeza y libertad de la Patria es deber sagrado y tarea colectiva de todos los españoles.</p>
+        <p><span class="lead-in">II.</span> La Nación española considera como timbre de honor el acatamiento a la Ley de Dios, según la doctrina de la Santa Iglesia Católica, Apostólica y Romana, única verdadera y fe inseparable de la conciencia nacional, que inspirará su legislación.</p>
+        <p><span class="lead-in">III.</span> España, raíz de una gran familia de pueblos, con los que se siente indisolublemente hermanada, aspira a la instauración de la justicia y de la paz entre las naciones.</p>
+        <p><span class="lead-in">IV.</span> La unidad entre los hombres y las tierras de España es intangible. La integridad de la Patria y su independencia son exigencias supremas de la comunidad nacional. Los Ejércitos de España, garantía de su seguridad y expresión de las virtudes heroicas de nuestro pueblo, deberán poseer la fortaleza necesaria para el mejor servicio de la Patria. […]</p>
+        <p><span class="lead-in">VI.</span> Las entidades naturales de la vida social: familia, municipio y sindicato, son estructuras básicas de la comunidad nacional. […]</p>
+        <p><span class="lead-in">VII.</span> El pueblo español, unido en un orden de Derecho, informado por los postulados de autoridad, libertad y servicio, constituye el Estado Nacional. Su forma política es, dentro de los principios inmutables del Movimiento Nacional y de cuanto determinan la Ley de Sucesión y demás Leyes fundamentales, la Monarquía tradicional, católica, social y representativa. […].</p>
+        <p><span class="lead-in">IX.</span> Todos los españoles tienen derecho: 1. A una justicia independiente, que será gratuita para aquellos que carezcan de medios económicos; 2. A una educación general y profesional, que nunca podrá dejar de recibirse por falta de medios materiales; 3. A los beneficios de la asistencia y seguridad sociales; y 4. A una equitativa distribución de la renta nacional y de las cargas fiscales. El ideal cristiano de la justicia social, reflejado en el Fuero del Trabajo, inspirará la política y las leyes. […].</p>
+        <p style="font-size:13px;color:var(--ink-soft);">17 de mayo de 1958.</p>
+      `,
+      analisisHTML: `
+        <p><strong>Naturaleza y tipo de fuente.</strong> Fuente primaria y pública (Sexta Ley Fundamental). De naturaleza jurídico-política y doctrinaria.</p>
+        <p><strong>Idea principal.</strong> La codificación legal inamovible de los preceptos ideológicos supremos del franquismo, que todo cargo público debía jurar acatar bajo pena de destitución.</p>
+        <p><strong>Ideas secundarias.</strong> Reitera con lenguaje altisonante ("unidad de destino en lo universal", Dios, Historia, Cruzada) la sacralización de la unidad de la Patria, el catolicismo de Estado y la esencia monárquica del régimen. Fusiona legalmente a las familias en un solo paraguas, el Movimiento, anulando todo rastro de disidencia política.</p>
+        <p><strong>Contexto en España.</strong> En 1956 y 1957, el régimen franquista superó una aguda crisis. Las tensiones internas entre falangistas (liderados por José Luis de Arrese) que querían acaparar todo el poder y los sectores católicos llegaron a su límite tras los pioneros y violentos enfrentamientos universitarios de Madrid (1956). Como respuesta, Franco apartó a la vieja guardia fascista y formó el trascendental gobierno de 1957 introduciendo a los tecnócratas del Opus Dei (López Rodó, Navarro Rubio, Ullastres), encargados de liberalizar la economía. La aprobación de esta Ley de Principios en 1958 actuó como un cerrojo ideológico conservador: antes de acometer la inminente e irreversible apertura al mercado capitalista internacional (Plan de Estabilización de 1959), Franco tranquilizó a la clase dirigente blindando políticamente su autocracia de cualquier veleidad liberal. El "Movimiento Nacional" sepultó las aspiraciones falangistas de partido hegemónico, convirtiéndolo en un ente burocrático de lealtad absoluta y dogmática a Franco.</p>
+        <p><strong>Contexto europeo.</strong> Contrastaba la ceguera y paralización política del régimen español con el dinamismo institucional que experimentaban sus vecinos de la Europa Occidental, que justo un año antes, en 1957, habían firmado el Tratado de Roma dando a luz a la Comunidad Económica Europea, apostando en firme por el estado de bienestar y las libertades democráticas que Franco negaba.</p>
+      `
+    }
+  ];
+
+  const UNIT_KEY = 'unidad10';
+  function storageKey(docId, part){ return UNIT_KEY + ':' + docId + ':' + part; }
+
+  const dossier = document.getElementById('dossier');
+  const revealBtn = document.getElementById('revealBtn');
+  const hideAnalysisBtn = document.getElementById('hideAnalysisBtn');
+  const editDocBtn = document.getElementById('editDocBtn');
+  const analisisPanel = document.getElementById('analisisPanel');
+  const hlToolbar = document.getElementById('hlToolbar');
+  const notePopup = document.getElementById('notePopup');
+  const notePopupTitle = document.getElementById('notePopupTitle');
+  const noteInput = document.getElementById('noteInput');
+  const markMenu = document.getElementById('markMenu');
+  const statusMsg = document.getElementById('statusMsg');
+  const resetBtn = document.getElementById('resetBtn');
+  const notesCountEl = document.getElementById('notesCount');
+  const notesIndexList = document.getElementById('notesIndexList');
+  const notesFilterInput = document.getElementById('notesFilter');
+  const exportBtn = document.getElementById('exportNotes');
+  const sidenav = document.getElementById('sidenav');
+  const hamburger = document.getElementById('hamburger');
+  const backdrop = document.getElementById('backdrop');
+  const presentToggle = document.getElementById('presentToggle');
+  const darkToggle = document.getElementById('darkToggle');
+  const fontMinus = document.getElementById('fontMinus');
+  const fontPlus = document.getElementById('fontPlus');
+  const undoBtn = document.getElementById('undoBtn');
+  const searchToggle = document.getElementById('searchToggle');
+  const searchBar = document.getElementById('searchBar');
+  const searchInput = document.getElementById('searchInput');
+  const searchCount = document.getElementById('searchCount');
+  const searchPrev = document.getElementById('searchPrev');
+  const searchNext = document.getElementById('searchNext');
+  const searchClose = document.getElementById('searchClose');
+  const docListEl = document.getElementById('docList');
+  const textFuenteEl = document.getElementById('text-fuente');
+  const textAnalisisEl = document.getElementById('text-analisis');
+
+  const COLOR_HEX = { yellow:'#f3d34a', green:'#a8cba0', pink:'#e8a9b8' };
+  const COLOR_LABEL = { yellow:'Dato clave', green:'Contexto', pink:'Duda/pregunta' };
+
+  function escapeHtml(str){
+    return str.replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+  function truncate(str, n){ return str.length > n ? str.slice(0,n).trim() + '…' : str; }
+
+  function buildImageCardHTML(doc){
+    const frameInner = doc.imageSrc
+      ? '<img src="'+doc.imageSrc+'" alt="'+escapeHtml(doc.title)+'">'
+      : '<div class="image-placeholder">' +
+          '<div class="image-placeholder-icon">🖼</div>' +
+          '<p class="image-placeholder-text">'+escapeHtml(doc.imageNote||'')+'</p>' +
+          '<code class="image-placeholder-path">images/'+doc.id+'.jpg</code>' +
+        '</div>';
+    return '<div class="image-card">' +
+      '<div class="image-frame">'+frameInner+'</div>' +
+      '<div class="image-caption">' +
+        '<p class="image-title">'+escapeHtml(doc.title)+'</p>' +
+        '<p class="image-meta">'+escapeHtml(doc.artist||'')+' · '+escapeHtml(doc.paintYear||'')+'<br>'+escapeHtml(doc.technique||'')+'<br>'+escapeHtml(doc.location||'')+'</p>' +
+      '</div>' +
+    '</div>';
+  }
+
+  /* ---- per-document state, keyed by doc id ---- */
+  const ORIGINAL = {};        // { [id]: {fuente, analisis} } pristine content
+  const notesByDoc = {};      // { [id]: [ {id,panel,number,text,color,created} ] }
+  const counterByDoc = {};    // { [id]: number }
+  const undoStackByDoc = {};  // { [id]: [snapshot,...] }
+  let customDocs = [];        // documents added from within the app (browser-local only)
+  let deletedDefaultDocs = []; // ids of built-in (PDF) documents removed from the menu
+
+  function registerDoc(d){
+    ORIGINAL[d.id] = { fuente: d.type==='image' ? buildImageCardHTML(d) : d.fuenteHTML, analisis: d.analisisHTML };
+    if(!notesByDoc[d.id]) notesByDoc[d.id] = [];
+    if(counterByDoc[d.id] === undefined) counterByDoc[d.id] = 0;
+    if(!undoStackByDoc[d.id]) undoStackByDoc[d.id] = [];
+  }
+  DOCS.forEach(registerDoc);
+
+  function allDocs(){ return DOCS.filter(d=>!deletedDefaultDocs.includes(d.id)).concat(customDocs); }
+
+  let activeDocId = null;
+  let notes = [];      // pointer into notesByDoc[activeDocId]
+  let counter = 0;      // mirror of counterByDoc[activeDocId]
+  let undoStack = [];   // pointer into undoStackByDoc[activeDocId]
+
+  let pendingRange = null;
+  let pendingMarkForNote = null;
+  let editingNoteId = null;
+  let activeMarkForMenu = null;
+
+  const hasStorage = typeof window.storage !== 'undefined';
+
+  function getDoc(id){ return DOCS.find(d=>d.id===id) || customDocs.find(d=>d.id===id); }
+
+  function setStatus(msg){
+    statusMsg.textContent = msg || '';
+    if(msg){ setTimeout(()=>{ if(statusMsg.textContent === msg) statusMsg.textContent=''; }, 2200); }
+  }
+
+  /* ================= Persistence (per active document) ================= */
+  async function persist(){
+    if(!hasStorage || !activeDocId) return;
+    clearSearchHighlights();
+    try{
+      await window.storage.set(storageKey(activeDocId,'fuente'), textFuenteEl.innerHTML, false);
+      await window.storage.set(storageKey(activeDocId,'analisis'), textAnalisisEl.innerHTML, false);
+      await window.storage.set(storageKey(activeDocId,'notes'), JSON.stringify(notes), false);
+      await window.storage.set(storageKey(activeDocId,'counter'), String(counter), false);
+      setStatus('Guardado');
+    }catch(e){ /* storage optional */ }
+  }
+
+  async function loadDocumentContent(id){
+    const orig = ORIGINAL[id];
+    let fuenteHTML = orig.fuente;
+    let analisisHTML = orig.analisis;
+    if(hasStorage){
+      try{
+        const f = await window.storage.get(storageKey(id,'fuente'), false);
+        const a = await window.storage.get(storageKey(id,'analisis'), false);
+        const n = await window.storage.get(storageKey(id,'notes'), false);
+        const c = await window.storage.get(storageKey(id,'counter'), false);
+        if(f && f.value) fuenteHTML = f.value;
+        if(a && a.value) analisisHTML = a.value;
+        if(n && n.value) notesByDoc[id] = JSON.parse(n.value);
+        if(c && c.value) counterByDoc[id] = parseInt(c.value,10) || 0;
+      }catch(e){ /* no saved state for this document yet */ }
+    }
+    textFuenteEl.innerHTML = fuenteHTML;
+    textAnalisisEl.innerHTML = analisisHTML;
+  }
+
+  /* ================= Document switching ================= */
+  function buildDocList(){
+    docListEl.innerHTML = '<div class="nav-label">Documentos</div>' +
+      allDocs().map(d =>
+        '<div class="doc-item-wrap">' +
+          '<button class="doc-item'+(d.custom?' custom':'')+'" data-doc="'+d.id+'">' +
+            '<span class="doc-num">'+d.num+'</span>' +
+            '<span class="doc-info"><span class="doc-name">'+escapeHtml(d.navTitle)+'</span><span class="doc-year">'+escapeHtml(d.year||'')+(d.custom?' · personal':'')+'</span></span>' +
+          '</button>' +
+          '<button class="doc-edit" data-edit-doc="'+d.id+'" title="Editar documento">✎</button>' +
+          '<button class="doc-del" data-del-doc="'+d.id+'" title="Eliminar documento">✕</button>' +
+        '</div>'
+      ).join('') +
+      '<button class="add-doc-btn ui" id="addDocBtn">+ Añadir documento</button>' +
+      '<div class="doc-io-row">' +
+        '<button class="doc-io-btn ui" id="exportDocsBtn" title="Descarga TODO (documentos, subrayados y notas) en un .json">⬇ Exportar todo</button>' +
+        '<button class="doc-io-btn ui" id="importDocsBtn" title="Carga un .json exportado desde otro navegador">⬆ Importar</button>' +
+      '</div>' +
+      '<button class="add-doc-btn ui" id="exportHtmlBtn" title="Descarga una copia HTML independiente con tu estado actual ya incluido">⬇ Copia HTML completa</button>' +
+      '<input type="file" id="importDocsInput" accept=".json,application/json" hidden>';
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(btn=>{
+      btn.addEventListener('click', ()=> switchDocument(btn.dataset.doc));
+    });
+    docListEl.querySelectorAll('.doc-edit').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); const doc = getDoc(btn.dataset.editDoc); if(doc) openEditDocForm(doc); });
+    });
+    docListEl.querySelectorAll('.doc-del').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); deleteDoc(btn.dataset.delDoc); });
+    });
+    document.getElementById('addDocBtn').addEventListener('click', openAddDocForm);
+    document.getElementById('exportDocsBtn').addEventListener('click', exportFullState);
+    document.getElementById('importDocsBtn').addEventListener('click', ()=> document.getElementById('importDocsInput').click());
+    document.getElementById('importDocsInput').addEventListener('change', importFullState);
+    document.getElementById('exportHtmlBtn').addEventListener('click', exportFullHtmlCopy);
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(b=>b.classList.toggle('active', b.dataset.doc===activeDocId));
+    publishDocCount();
+  }
+
+  /* Writes this unit's current document count to a storage key that
+     index.html (hosted on the same origin, e.g. GitHub Pages) reads when it
+     loads, so the "N documentos" label on the home page reflects documents
+     you add, edit or remove here without having to edit index.html by hand.
+     Best-effort: if storage isn't available the home page simply keeps
+     showing whatever was last published, or its built-in default count. */
+  async function publishDocCount(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(UNIT_KEY + ':doc-count', String(allDocs().length), false); }catch(e){}
+  }
+
+  async function switchDocument(id){
+    if(id === activeDocId) { if(sidenav.classList.contains('drawer')) closeSidenav(); return; }
+    hideToolbar(); hideNotePopup(); hideMarkMenu();
+    if(!searchBar.hidden) closeSearch();
+
+    activeDocId = id;
+    undoStack = undoStackByDoc[id];
+
+    const doc = getDoc(id);
+    document.querySelector('.fuente-panel .tag').textContent = doc.tag;
+    document.querySelector('.fuente-panel h2').textContent = doc.title;
+    document.querySelector('.analisis-panel .tag').textContent = doc.analisisTag;
+    document.querySelector('.analisis-panel h2').textContent = doc.analisisTitle;
+
+    const marginFuenteEl = document.getElementById('margin-fuente');
+    if(doc.type === 'image'){
+      textFuenteEl.classList.remove('selectable');
+      marginFuenteEl.style.display = 'none';
+    }else{
+      textFuenteEl.classList.add('selectable');
+      marginFuenteEl.style.display = '';
+    }
+
+    await loadDocumentContent(id);
+    /* Re-point AFTER loading: loadDocumentContent() may have just replaced
+       notesByDoc[id]/counterByDoc[id] with fresh data read from storage, and
+       "notes"/"counter" must reference that same, current array/value from
+       here on. Capturing them earlier (before the load) left "notes" pointed
+       at a now-stale array while notesByDoc[id] moved on to a new one -
+       every later add/edit/delete touched the stale copy while the sidebar
+       index (which always reads notesByDoc directly) kept showing the old
+       one, so deletions looked like they silently did nothing. */
+    notes = notesByDoc[id];
+    counter = counterByDoc[id];
+    renderMargins();
+    renderNotesIndex();
+
+    docListEl.querySelectorAll('.doc-item[data-doc]').forEach(b=>b.classList.toggle('active', b.dataset.doc===id));
+    if(sidenav.classList.contains('drawer')) closeSidenav();
+  }
+
+  /* ================= Undo ================= */
+  function pushUndo(){
+    undoStack.push({
+      fuente: textFuenteEl.innerHTML,
+      analisis: textAnalisisEl.innerHTML,
+      notes: JSON.stringify(notes),
+      counter
+    });
+    if(undoStack.length > 15) undoStack.shift();
+  }
+  function undoLast(){
+    if(undoStack.length === 0){ setStatus('Nada que deshacer'); return; }
+    const snap = undoStack.pop();
+    textFuenteEl.innerHTML = snap.fuente;
+    textAnalisisEl.innerHTML = snap.analisis;
+    notes = JSON.parse(snap.notes);
+    notesByDoc[activeDocId] = notes;
+    counter = snap.counter;
+    counterByDoc[activeDocId] = counter;
+    renderMargins();
+    renderNotesIndex();
+    persist();
+    setStatus('Deshecho');
+  }
+
+  /* ================= UI prefs (dark mode) — shared across the whole unit ================= */
+  const UI_KEY_DARK = 'ui:dark-mode';
+  async function loadUIPrefs(){
+    if(!hasStorage) return;
+    try{
+      const d = await window.storage.get(UI_KEY_DARK, false);
+      if(d && d.value === '1'){
+        document.body.classList.add('dark');
+        darkToggle.textContent = '☀️';
+        darkToggle.setAttribute('aria-pressed','true');
+      }
+    }catch(e){ /* no saved preference yet */ }
+  }
+
+  /* ================= Sidebar / drawer mode ================= */
+  let presentationMode = false;
+
+  function updateDrawerMode(){
+    const shouldDrawer = presentationMode || window.innerWidth < 1100;
+    sidenav.classList.toggle('drawer', shouldDrawer);
+    hamburger.classList.toggle('show', shouldDrawer);
+    if(!shouldDrawer){
+      sidenav.classList.remove('open');
+      backdrop.classList.remove('show');
+    }
+  }
+  function openSidenav(){ sidenav.classList.add('open'); backdrop.classList.add('show'); }
+  function closeSidenav(){ sidenav.classList.remove('open'); backdrop.classList.remove('show'); }
+  hamburger.addEventListener('click', ()=> sidenav.classList.contains('open') ? closeSidenav() : openSidenav());
+  backdrop.addEventListener('click', closeSidenav);
+  window.addEventListener('resize', updateDrawerMode);
+
+  presentToggle.addEventListener('click', ()=>{
+    presentationMode = !presentationMode;
+    document.body.classList.toggle('presentation', presentationMode);
+    presentToggle.setAttribute('aria-pressed', String(presentationMode));
+    presentToggle.querySelector('.icon').textContent = presentationMode ? '✕' : '🖥';
+    presentToggle.querySelector('.label').textContent = presentationMode ? 'Salir de proyección' : 'Modo proyección';
+    updateDrawerMode();
+    if(presentationMode){ hideToolbar(); hideNotePopup(); hideMarkMenu(); closeSidenav(); closeSearch(); }
+  });
+
+  darkToggle.addEventListener('click', async ()=>{
+    const isDark = document.body.classList.toggle('dark');
+    darkToggle.textContent = isDark ? '☀️' : '🌙';
+    darkToggle.setAttribute('aria-pressed', String(isDark));
+    if(hasStorage){
+      try{ await window.storage.set(UI_KEY_DARK, isDark ? '1' : '0', false); }catch(e){}
+    }
+  });
+
+  function getCurrentTextSizePx(){
+    return parseFloat(getComputedStyle(document.querySelector('.text-col')).fontSize) || 16;
+  }
+  function adjustTextSize(delta){
+    const next = Math.min(28, Math.max(13, Math.round(getCurrentTextSizePx() + delta)));
+    document.body.style.setProperty('--text-size', next + 'px');
+  }
+  fontMinus.addEventListener('click', ()=>adjustTextSize(-1));
+  fontPlus.addEventListener('click', ()=>adjustTextSize(1));
+
+  undoBtn.addEventListener('click', undoLast);
+  notesFilterInput.addEventListener('input', renderNotesIndex);
+
+  /* ---- Export / import NOTES + HIGHLIGHTS only (all documents of this
+     unit), as a portable .json — lighter than "Exportar todo": it does not
+     carry personal documents you added or edits to the built-in text, only
+     your notes and your underlined/highlighted passages. Export here,
+     import on any other computer running this same HTML file. ---- */
+  async function exportNotesAndHighlights(){
+    setStatus('Generando…');
+    const payload = {
+      unit: UNIT_KEY, kind: 'notes-and-highlights', exportedAt: new Date().toISOString(),
+      perDoc: {}
+    };
+    for(const d of allDocs()){
+      let fuente = null, analisis = null;
+      if(d.id === activeDocId){
+        fuente = textFuenteEl.innerHTML;
+        analisis = textAnalisisEl.innerHTML;
+      }else if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      const docNotes = notesByDoc[d.id] || [];
+      if(!docNotes.length && !fuente && !analisis) continue;
+      payload.perDoc[d.id] = {
+        docTitle: d.navTitle,
+        fuenteHTML: fuente, analisisHTML: analisis,
+        notes: docNotes, counter: counterByDoc[d.id] || 0
+      };
+    }
+    if(Object.keys(payload.perDoc).length === 0){ setStatus('No hay notas ni subrayados para exportar'); return; }
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'notas-subrayados-' + UNIT_KEY + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Exportado');
+  }
+  exportBtn.addEventListener('click', exportNotesAndHighlights);
+
+  async function importNotesAndHighlights(e){
+    const file = e.target.files[0];
+    if(!file) return;
+    try{
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      if(!payload || typeof payload.perDoc !== 'object') throw new Error('el archivo no tiene el formato esperado');
+
+      let restoredCount = 0;
+      const skipped = [];
+      for(const id of Object.keys(payload.perDoc)){
+        const entry = payload.perDoc[id];
+        const doc = getDoc(id);
+        if(!doc){ skipped.push(entry.docTitle || id); continue; }
+
+        const importedNotes = (entry.notes || []).map(n => Object.assign({}, n, { docId: id }));
+        notesByDoc[id] = importedNotes;
+        counterByDoc[id] = entry.counter || 0;
+
+        if(hasStorage){
+          try{
+            if(entry.fuenteHTML != null) await window.storage.set(storageKey(id,'fuente'), entry.fuenteHTML, false);
+            if(entry.analisisHTML != null) await window.storage.set(storageKey(id,'analisis'), entry.analisisHTML, false);
+            await window.storage.set(storageKey(id,'notes'), JSON.stringify(importedNotes), false);
+            await window.storage.set(storageKey(id,'counter'), String(counterByDoc[id]), false);
+          }catch(err){}
+        }
+        restoredCount++;
+      }
+
+      await refreshActiveDocument();
+      renderNotesIndex();
+      setStatus(restoredCount + ' documento(s) con notas y subrayados restaurados');
+      if(skipped.length){
+        alert('Se importaron las notas y subrayados de ' + restoredCount + ' documento(s) de esta unidad.\n\nEstos documentos del archivo no existen aquí, así que se omitieron:\n' + skipped.join('\n'));
+      }
+    }catch(err){
+      alert('No se pudo importar el archivo: ' + err.message);
+    }
+    e.target.value = '';
+  }
+  const importNotesBtn = document.getElementById('importNotesBtn');
+  const importNotesInput = document.getElementById('importNotesInput');
+  importNotesBtn.addEventListener('click', ()=> importNotesInput.click());
+  importNotesInput.addEventListener('change', importNotesAndHighlights);
+
+  /* ================= Search inside the text ================= */
+  let searchMatches = [];
+  let searchIndex = -1;
+
+  function openSearch(){ searchBar.hidden = false; searchToggle.setAttribute('aria-pressed','true'); searchInput.focus(); }
+  function closeSearch(){
+    searchBar.hidden = true;
+    searchToggle.setAttribute('aria-pressed','false');
+    clearSearchHighlights();
+    searchInput.value = '';
+    searchMatches = []; searchIndex = -1;
+    updateSearchCount();
+  }
+  searchToggle.addEventListener('click', ()=> searchBar.hidden ? openSearch() : closeSearch());
+  searchClose.addEventListener('click', closeSearch);
+
+  function escapeRegex(str){ return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+  function clearSearchHighlights(){
+    document.querySelectorAll('.search-hit').forEach(span=>{
+      const parent = span.parentNode;
+      if(!parent) return;
+      parent.replaceChild(document.createTextNode(span.textContent), span);
+      parent.normalize();
+    });
+  }
+
+  function highlightTextNodes(root, regex){
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const textNodes = [];
+    let n;
+    while(n = walker.nextNode()) textNodes.push(n);
+    textNodes.forEach(node=>{
+      const text = node.nodeValue;
+      regex.lastIndex = 0;
+      if(!regex.test(text)) return;
+      regex.lastIndex = 0;
+      const frag = document.createDocumentFragment();
+      let lastIndex = 0, m;
+      while((m = regex.exec(text))){
+        if(m.index > lastIndex) frag.appendChild(document.createTextNode(text.slice(lastIndex, m.index)));
+        const span = document.createElement('span');
+        span.className = 'search-hit';
+        span.textContent = m[0];
+        frag.appendChild(span);
+        lastIndex = m.index + m[0].length;
+        if(m[0].length === 0) regex.lastIndex++;
+      }
+      if(lastIndex < text.length) frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  function updateSearchCount(){
+    const total = searchMatches.length;
+    searchCount.textContent = total ? (searchIndex+1) + '/' + total : '0/0';
+  }
+  function focusMatch(i){
+    if(!searchMatches.length) return;
+    searchMatches.forEach(el=>el.classList.remove('active'));
+    searchIndex = ((i % searchMatches.length) + searchMatches.length) % searchMatches.length;
+    const el = searchMatches[searchIndex];
+    el.classList.add('active');
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+    updateSearchCount();
+  }
+  function performSearch(){
+    clearSearchHighlights();
+    const term = searchInput.value.trim();
+    if(!term){ searchMatches = []; searchIndex = -1; updateSearchCount(); return; }
+    const regex = new RegExp(escapeRegex(term), 'gi');
+    highlightTextNodes(textFuenteEl, regex);
+    highlightTextNodes(textAnalisisEl, regex);
+    searchMatches = Array.from(document.querySelectorAll('.search-hit'));
+    if(searchMatches.length){ focusMatch(0); } else { searchIndex = -1; updateSearchCount(); }
+  }
+  searchInput.addEventListener('input', performSearch);
+  searchInput.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter'){ e.preventDefault(); focusMatch(e.shiftKey ? searchIndex-1 : searchIndex+1); }
+  });
+  searchPrev.addEventListener('click', ()=>focusMatch(searchIndex-1));
+  searchNext.addEventListener('click', ()=>focusMatch(searchIndex+1));
+
+  /* ================= Reveal / hide analysis panel ================= */
+  function openAnalysis(){
+    analisisPanel.removeAttribute('hidden');
+    dossier.classList.add('split');
+    revealBtn.classList.add('opened');
+    revealBtn.querySelector('.seal-label').innerHTML = 'Ocultar<br>análisis';
+    revealBtn.setAttribute('aria-expanded','true');
+  }
+  function closeAnalysis(){
+    analisisPanel.setAttribute('hidden','');
+    dossier.classList.remove('split');
+    revealBtn.classList.remove('opened');
+    revealBtn.querySelector('.seal-label').innerHTML = 'Revelar<br>análisis';
+    revealBtn.setAttribute('aria-expanded','false');
+  }
+  revealBtn.addEventListener('click', ()=>{
+    if(analisisPanel.hasAttribute('hidden')) openAnalysis(); else closeAnalysis();
+  });
+  hideAnalysisBtn.addEventListener('click', closeAnalysis);
+
+  /* ================= Selection -> floating toolbar ================= */
+  document.addEventListener('mouseup', onSelectionMaybe);
+  document.addEventListener('touchend', onSelectionMaybe);
+
+  function onSelectionMaybe(e){
+    if(e.target.closest('.hl-toolbar, .note-popup, .mark-menu')) return;
+    setTimeout(()=>{
+      const sel = window.getSelection();
+      if(!sel || sel.isCollapsed || sel.rangeCount===0){ hideToolbar(); return; }
+      const range = sel.getRangeAt(0);
+      const container = range.commonAncestorContainer;
+      const el = container.nodeType===1 ? container : container.parentElement;
+      const panelEl = el ? el.closest('.selectable') : null;
+      if(!panelEl || range.toString().trim().length===0){ hideToolbar(); return; }
+      pendingRange = range.cloneRange();
+      hideMarkMenu();
+      hideNotePopup();
+      showFloating(hlToolbar, range.getBoundingClientRect());
+    }, 5);
+  }
+
+  function showFloating(node, rect){
+    node.hidden = false;
+    node.style.visibility = 'hidden';
+    const w = node.offsetWidth || 200;
+    let top = rect.bottom + window.scrollY + 10;
+    let left = rect.left + window.scrollX + rect.width/2;
+    left = Math.min(Math.max(left, w/2 + 8), window.scrollX + window.innerWidth - w/2 - 8);
+    node.style.top = top + 'px';
+    node.style.left = left + 'px';
+    node.style.transform = 'translateX(-50%)';
+    node.style.visibility = '';
+  }
+
+  function hideToolbar(){ hlToolbar.hidden = true; }
+  function hideNotePopup(){
+    notePopup.hidden = true;
+    noteInput.value = '';
+    pendingMarkForNote = null;
+    editingNoteId = null;
+  }
+  function hideMarkMenu(){ markMenu.hidden = true; activeMarkForMenu = null; }
+
+  function applyColorAndClose(color){
+    if(!pendingRange) return;
+    pushUndo();
+    applyHighlight(pendingRange, color);
+    window.getSelection().removeAllRanges();
+    pendingRange = null;
+    hideToolbar();
+    persist();
+  }
+  hlToolbar.querySelectorAll('.swatch').forEach(btn=>{
+    btn.addEventListener('click', ()=>applyColorAndClose(btn.dataset.color));
+  });
+
+  document.getElementById('noteBtn').addEventListener('click', ()=>{
+    if(!pendingRange) return;
+    notePopupTitle.textContent = 'Nueva nota';
+    showFloating(notePopup, pendingRange.getBoundingClientRect());
+    hlToolbar.hidden = true;
+    noteInput.value = '';
+    noteInput.focus();
+  });
+
+  document.getElementById('cancelNote').addEventListener('click', ()=>{
+    hideNotePopup();
+    window.getSelection().removeAllRanges();
+  });
+
+  document.getElementById('saveNote').addEventListener('click', async ()=>{
+    const text = noteInput.value.trim();
+    if(!text){ hideNotePopup(); return; }
+    pushUndo();
+
+    if(editingNoteId){
+      const note = notes.find(n=>n.id===editingNoteId);
+      if(note) note.text = text;
+    }else if(pendingMarkForNote){
+      counter += 1;
+      counterByDoc[activeDocId] = counter;
+      const id = 'n' + counter;
+      pendingMarkForNote.dataset.noteId = id;
+      const marker = document.createElement('sup');
+      marker.className = 'note-marker';
+      marker.textContent = counter;
+      marker.dataset.noteId = id;
+      pendingMarkForNote.after(marker);
+      const panel = pendingMarkForNote.closest('.selectable').dataset.panel;
+      const colorClass = [...pendingMarkForNote.classList].find(c=>c.indexOf('hl-')===0);
+      const color = colorClass ? colorClass.replace('hl-','') : 'yellow';
+      notes.push({ id, docId: activeDocId, panel, number: counter, text, color, created: Date.now() });
+    }else if(pendingRange){
+      const panel = getPanelFromRange(pendingRange);
+      const mark = applyHighlight(pendingRange, 'yellow');
+      counter += 1;
+      counterByDoc[activeDocId] = counter;
+      const id = 'n' + counter;
+      mark.dataset.noteId = id;
+      const marker = document.createElement('sup');
+      marker.className = 'note-marker';
+      marker.textContent = counter;
+      marker.dataset.noteId = id;
+      mark.after(marker);
+      notes.push({ id, docId: activeDocId, panel, number: counter, text, color:'yellow', created: Date.now() });
+    }
+
+    pendingRange = null;
+    renderMargins();
+    renderNotesIndex();
+    hideNotePopup();
+    window.getSelection().removeAllRanges();
+    await persist();
+  });
+
+  function getPanelFromRange(range){
+    const el = range.commonAncestorContainer.nodeType===1 ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
+    const panelEl = el.closest('.selectable');
+    return panelEl ? panelEl.dataset.panel : 'fuente';
+  }
+
+  function applyHighlight(range, color){
+    const mark = document.createElement('mark');
+    mark.className = 'hl hl-' + color;
+    try{
+      const content = range.extractContents();
+      mark.appendChild(content);
+      range.insertNode(mark);
+    }catch(e){ /* skip edge-case ranges silently */ }
+    return mark;
+  }
+
+  /* ================= Click on existing highlight ================= */
+  document.addEventListener('click', (e)=>{
+    const mark = e.target.closest('mark.hl');
+    const marker = e.target.closest('.note-marker');
+    if(marker){ goToNote(marker.dataset.noteId); return; }
+    if(mark){ openMarkMenu(mark); return; }
+    if(!e.target.closest('.mark-menu, .hl-toolbar, .note-popup')){
+      hideMarkMenu();
+    }
+  });
+
+  function openMarkMenu(mark){
+    activeMarkForMenu = mark;
+    const hasNote = !!mark.dataset.noteId;
+    markMenu.innerHTML =
+      '<div class="menu-colors">' +
+        '<button data-recolor="yellow" title="Dato clave" style="background:'+COLOR_HEX.yellow+'"></button>' +
+        '<button data-recolor="green" title="Contexto" style="background:'+COLOR_HEX.green+'"></button>' +
+        '<button data-recolor="pink" title="Duda / pregunta" style="background:'+COLOR_HEX.pink+'"></button>' +
+      '</div>' +
+      '<div class="menu-divider"></div>' +
+      '<button class="menu-action" data-action="'+(hasNote?'edit':'add')+'-note">'+(hasNote?'✎ Editar nota':'✎ Añadir nota')+'</button>' +
+      '<button class="menu-action danger" data-action="remove">'+(hasNote?'✕ Eliminar nota y subrayado':'✕ Quitar subrayado')+'</button>';
+    hlToolbar.hidden = true;
+    notePopup.hidden = true;
+    showFloating(markMenu, mark.getBoundingClientRect());
+  }
+
+  markMenu.addEventListener('click', (e)=>{
+    const recolor = e.target.closest('[data-recolor]');
+    const actionBtn = e.target.closest('[data-action]');
+    if(recolor && activeMarkForMenu){
+      pushUndo();
+      const color = recolor.dataset.recolor;
+      activeMarkForMenu.classList.remove('hl-yellow','hl-green','hl-pink');
+      activeMarkForMenu.classList.add('hl-' + color);
+      const id = activeMarkForMenu.dataset.noteId;
+      if(id){
+        const note = notes.find(n=>n.id===id);
+        if(note){ note.color = color; renderMargins(); renderNotesIndex(); }
+      }
+      hideMarkMenu();
+      persist();
+      return;
+    }
+    if(actionBtn){
+      const action = actionBtn.dataset.action;
+      const mark = activeMarkForMenu;
+      if(!mark) return;
+      if(action === 'add-note'){
+        pendingMarkForNote = mark;
+        notePopupTitle.textContent = 'Añadir nota';
+        noteInput.value = '';
+        hideMarkMenu();
+        showFloating(notePopup, mark.getBoundingClientRect());
+        noteInput.focus();
+      }else if(action === 'edit-note'){
+        const id = mark.dataset.noteId;
+        const note = notes.find(n=>n.id===id);
+        editingNoteId = id;
+        notePopupTitle.textContent = 'Editar nota';
+        noteInput.value = note ? note.text : '';
+        hideMarkMenu();
+        showFloating(notePopup, mark.getBoundingClientRect());
+        noteInput.focus();
+      }else if(action === 'remove'){
+        pushUndo();
+        removeMark(mark);
+        hideMarkMenu();
+      }
+    }
+  });
+
+  function removeMark(mark){
+    const noteId = mark.dataset.noteId;
+    const parent = mark.parentNode;
+    while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+    parent.removeChild(mark);
+    if(noteId){
+      const markerEl = document.querySelector('.note-marker[data-note-id="'+noteId+'"]');
+      if(markerEl) markerEl.remove();
+      const idx = notes.findIndex(n=>n.id===noteId);
+      if(idx !== -1) notes.splice(idx,1);
+      renderMargins();
+      renderNotesIndex();
+    }
+    persist();
+  }
+
+  /* ================= Margins (per document, current doc only) ================= */
+  function renderMargins(){
+    renderMarginFor('fuente');
+    renderMarginFor('analisis');
+  }
+  function renderMarginFor(panel){
+    const col = document.getElementById('margin-'+panel);
+    const title = '<div class="margin-title">Notas</div>';
+    const list = notes.filter(n=>n.panel===panel).sort((a,b)=>a.number-b.number);
+    if(list.length===0){
+      col.innerHTML = title + '<div class="margin-empty">Aún no hay notas en este documento.</div>';
+      return;
+    }
+    col.innerHTML = title + list.map(n=>
+      '<div class="note-item" data-note-id="'+n.id+'" style="border-left-color:'+ (COLOR_HEX[n.color]||COLOR_HEX.yellow) +'">' +
+        '<span class="num">'+n.number+'</span>'+escapeHtml(n.text)+
+        '<span class="del" data-del="'+n.id+'">✕</span>' +
+      '</div>'
+    ).join('');
+    col.querySelectorAll('.note-item').forEach(item=>{
+      item.addEventListener('click', (e)=>{
+        if(e.target.dataset.del){ removeNoteById(activeDocId, e.target.dataset.del); return; }
+        goToMark(activeDocId, item.dataset.noteId);
+      });
+    });
+  }
+
+  /* ================= Sidebar notes index (whole unit, all documents) ================= */
+  function renderNotesIndex(){
+    const all = [];
+    allDocs().forEach(d => (notesByDoc[d.id]||[]).forEach(n => all.push(n)));
+    notesCountEl.textContent = all.length;
+    const q = (notesFilterInput.value || '').toLowerCase().trim();
+    const list = all
+      .filter(n => !q || n.text.toLowerCase().indexOf(q) !== -1)
+      .sort((a,b)=>{
+        const ad = allDocs(), da = ad.findIndex(d=>d.id===a.docId), db = ad.findIndex(d=>d.id===b.docId);
+        return da === db ? a.number-b.number : da-db;
+      });
+    if(all.length===0){
+      notesIndexList.innerHTML = '<div class="idx-empty">Todavía no has creado notas.</div>';
+      return;
+    }
+    if(list.length===0){
+      notesIndexList.innerHTML = '<div class="idx-empty">Sin coincidencias.</div>';
+      return;
+    }
+    notesIndexList.innerHTML = list.map(n => {
+      const doc = getDoc(n.docId);
+      return '<div class="idx-item" data-doc-id="'+n.docId+'" data-note-id="'+n.id+'">' +
+        '<span class="idx-dot hl-'+n.color+'"></span>' +
+        '<div class="idx-body">' +
+          '<div class="idx-meta">'+escapeHtml(doc?doc.navTitle:'')+' · '+(n.panel==='fuente'?'Fuente':'Análisis')+' · #'+n.number+' · '+(COLOR_LABEL[n.color]||'')+'</div>' +
+          '<div class="idx-text">'+escapeHtml(truncate(n.text,90))+'</div>' +
+        '</div>' +
+        '<span class="idx-del" data-del="'+n.id+'">✕</span>' +
+      '</div>';
+    }).join('');
+    notesIndexList.querySelectorAll('.idx-item').forEach(item=>{
+      item.addEventListener('click', (e)=>{
+        const docId = item.dataset.docId, id = item.dataset.noteId;
+        if(e.target.dataset.del){ deleteNoteAnywhere(docId, id); return; }
+        goToMark(docId, id);
+      });
+    });
+  }
+
+  function removeNoteById(docId, id){
+    // only ever called while docId === activeDocId, so the mark is live in the DOM
+    pushUndo();
+    const mark = document.querySelector('mark.hl[data-note-id="'+id+'"]');
+    if(mark){
+      const parent = mark.parentNode;
+      while(mark.firstChild) parent.insertBefore(mark.firstChild, mark);
+      parent.removeChild(mark);
+    }
+    const markerEl = document.querySelector('.note-marker[data-note-id="'+id+'"]');
+    if(markerEl) markerEl.remove();
+    const idx = notes.findIndex(n=>n.id===id);
+    if(idx !== -1) notes.splice(idx,1);
+    renderMargins();
+    renderNotesIndex();
+    persist();
+  }
+
+  async function deleteNoteAnywhere(docId, id){
+    if(docId !== activeDocId) await switchDocument(docId);
+    removeNoteById(docId, id);
+  }
+
+  /* ================= Navigation helpers ================= */
+  function flashEl(el, scroll){
+    if(!el) return;
+    if(scroll) el.scrollIntoView({behavior:'smooth', block:'center'});
+    el.classList.add('flash');
+    setTimeout(()=>el.classList.remove('flash'), 900);
+  }
+  async function goToMark(docId, id){
+    if(docId !== activeDocId) await switchDocument(docId);
+    flashEl(document.querySelector('mark.hl[data-note-id="'+id+'"]'), true);
+    flashEl(document.querySelector('.note-item[data-note-id="'+id+'"]'));
+    flashEl(document.querySelector('.idx-item[data-note-id="'+id+'"]'));
+  }
+  function goToNote(id){
+    flashEl(document.querySelector('.note-item[data-note-id="'+id+'"]'), true);
+    flashEl(document.querySelector('.idx-item[data-note-id="'+id+'"]'));
+  }
+
+  /* ================= Reset (current document only) ================= */
+  resetBtn.addEventListener('click', async ()=>{
+    const doc = getDoc(activeDocId);
+    if(!confirm('¿Restablecer los subrayados y notas de "'+doc.navTitle+'"?')) return;
+    pushUndo();
+    textFuenteEl.innerHTML = ORIGINAL[activeDocId].fuente;
+    textAnalisisEl.innerHTML = ORIGINAL[activeDocId].analisis;
+    notes.length = 0;
+    counter = 0;
+    counterByDoc[activeDocId] = 0;
+    renderMargins();
+    renderNotesIndex();
+    if(hasStorage){
+      try{
+        await window.storage.delete(storageKey(activeDocId,'fuente'), false);
+        await window.storage.delete(storageKey(activeDocId,'analisis'), false);
+        await window.storage.delete(storageKey(activeDocId,'notes'), false);
+        await window.storage.delete(storageKey(activeDocId,'counter'), false);
+      }catch(e){}
+    }
+    setStatus('Restablecido');
+  });
+
+  /* ================= Custom documents & document editing ================= */
+  const CUSTOM_DOCS_KEY = UNIT_KEY + ':custom-docs';
+  const DOC_OVERRIDES_KEY = UNIT_KEY + ':doc-overrides';
+  let docOverrides = {}; // { [builtInDocId]: {navTitle,year,tag,title,...} } — edits to the 12 built-in documents
+
+  async function persistCustomDocs(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(CUSTOM_DOCS_KEY, JSON.stringify(customDocs), false); }catch(e){}
+  }
+  async function loadCustomDocs(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(CUSTOM_DOCS_KEY, false);
+      if(r && r.value){
+        customDocs = JSON.parse(r.value);
+        customDocs.forEach(registerDoc);
+      }
+    }catch(e){ /* none saved yet */ }
+  }
+  async function persistDocOverrides(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(DOC_OVERRIDES_KEY, JSON.stringify(docOverrides), false); }catch(e){}
+  }
+  async function loadDocOverrides(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(DOC_OVERRIDES_KEY, false);
+      if(r && r.value){
+        docOverrides = JSON.parse(r.value);
+        Object.keys(docOverrides).forEach(id=>{
+          const doc = DOCS.find(d=>d.id===id);
+          if(doc) Object.assign(doc, docOverrides[id]);
+        });
+      }
+    }catch(e){ /* none saved yet */ }
+  }
+  const DELETED_DOCS_KEY = UNIT_KEY + ':deleted-docs';
+  async function persistDeletedDefaultDocs(){
+    if(!hasStorage) return;
+    try{ await window.storage.set(DELETED_DOCS_KEY, JSON.stringify(deletedDefaultDocs), false); }catch(e){}
+  }
+  async function loadDeletedDefaultDocs(){
+    if(!hasStorage) return;
+    try{
+      const r = await window.storage.get(DELETED_DOCS_KEY, false);
+      if(r && r.value) deletedDefaultDocs = JSON.parse(r.value);
+    }catch(e){ /* none saved yet */ }
+  }
+
+  /* Plain text (with optional inline <strong>/<em>/<span> tags typed or inserted
+     via the toolbar) -> paragraphs. Deliberately NOT html-escaped, since the point
+     is to let the user's own formatting tags through. This is a personal, local
+     editing tool — there is no "other people's input" being rendered here. */
+  /* A block (separated from the rest by a blank line) becomes a bullet list
+     when at least one of its lines starts with "- " (or is indented with 2+
+     spaces before the "-", for a sub-bullet). Anything else is still a plain
+     <p> paragraph, exactly as before. */
+  function textToParagraphsRaw(text){
+    const clean = (text||'').trim();
+    if(!clean) return '<p></p>';
+    return clean.split(/\n{2,}/).map(block=>{
+      const lines = block.split('\n');
+      const isList = lines.some(l=>/^\s*-\s+/.test(l));
+      return isList ? bulletLinesToHTML(lines) : '<p>' + block.trim().replace(/\n/g,'<br>') + '</p>';
+    }).join('\n');
+  }
+  /* Turns "- top" / "  - sub" lines into a nested <ul><li> (one level of
+     sub-bullets, matching the toolbar's Viñeta/Subviñeta buttons). A line
+     with no marker is treated as a soft line-break continuing the previous
+     item, so accidental stray newlines don't create empty bullets. */
+  function bulletLinesToHTML(lines){
+    const items = [];
+    lines.forEach(line=>{
+      if(!line.trim()) return;
+      const sub = /^\s{2,}-\s+(.*)$/.exec(line);
+      const top = /^-\s+(.*)$/.exec(line);
+      if(sub && items.length){
+        items[items.length-1].subs.push(sub[1].trim());
+      }else if(top){
+        items.push({ text: top[1].trim(), subs: [] });
+      }else if(items.length){
+        const subs = items[items.length-1].subs;
+        if(subs.length) subs[subs.length-1] += '<br>' + line.trim();
+        else items[items.length-1].text += '<br>' + line.trim();
+      }else{
+        items.push({ text: line.trim(), subs: [] });
+      }
+    });
+    return '<ul>' + items.map(it=>
+      '<li>' + it.text + (it.subs.length ? '<ul>' + it.subs.map(s=>'<li>'+s+'</li>').join('') + '</ul>' : '') + '</li>'
+    ).join('') + '</ul>';
+  }
+  /* Reverse conversion, used to prefill the edit form from existing HTML.
+     Walks the top-level <p> and <ul> blocks in document order; <ul><li>
+     items become "- " lines and one level of nested <ul><li> becomes
+     "  - " lines — the same plain-text syntax the toolbar buttons write,
+     so a saved list can be re-opened and edited losslessly. */
+  function paragraphsToText(html){
+    if(!html) return '';
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    const topNodes = Array.from(div.childNodes).filter(n=> n.nodeType===1 || (n.nodeType===3 && n.textContent.trim()));
+    if(topNodes.length === 0) return div.innerHTML.replace(/<br\s*\/?>/gi,'\n');
+    const blocks = topNodes.map(node=>{
+      if(node.nodeType===3) return node.textContent.trim();
+      if(node.tagName==='UL') return listNodeToText(node);
+      return node.innerHTML.replace(/<br\s*\/?>/gi,'\n');
+    });
+    return blocks.join('\n\n');
+  }
+  function listNodeToText(ul){
+    const lines = [];
+    Array.from(ul.children).forEach(li=>{
+      if(li.tagName !== 'LI') return;
+      const clone = li.cloneNode(true);
+      const nestedUl = clone.querySelector('ul');
+      let nestedLis = [];
+      if(nestedUl){ nestedLis = Array.from(nestedUl.querySelectorAll('li')); nestedUl.remove(); }
+      lines.push('- ' + clone.innerHTML.replace(/<br\s*\/?>/gi,'\n').trim());
+      nestedLis.forEach(sub=> lines.push('  - ' + sub.innerHTML.replace(/<br\s*\/?>/gi,'\n').trim()));
+    });
+    return lines.join('\n');
+  }
+
+  function readAndCompressImage(file, maxDim, quality){
+    return new Promise((resolve, reject)=>{
+      const reader = new FileReader();
+      reader.onload = ()=>{
+        const img = new Image();
+        img.onload = ()=>{
+          let w = img.width, h = img.height;
+          if(Math.max(w,h) > maxDim){
+            const scale = maxDim / Math.max(w,h);
+            w = Math.round(w*scale); h = Math.round(h*scale);
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          resolve(canvas.toDataURL('image/jpeg', quality));
+        };
+        img.onerror = ()=>reject(new Error('No se pudo leer la imagen'));
+        img.src = reader.result;
+      };
+      reader.onerror = ()=>reject(new Error('No se pudo leer el archivo'));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /* ---- rich-text mini toolbar: wraps the current textarea selection in a tag ---- */
+  function wrapTextareaSelection(textarea, before, after){
+    const start = textarea.selectionStart, end = textarea.selectionEnd;
+    const value = textarea.value;
+    const selected = value.slice(start, end) || 'texto';
+    textarea.value = value.slice(0,start) + before + selected + after + value.slice(end);
+    const newStart = start + before.length;
+    textarea.focus();
+    textarea.setSelectionRange(newStart, newStart + selected.length);
+  }
+  /* Toggles a bullet marker ("- ", level 1) or a sub-bullet marker ("  - ",
+     level 2) on every line touched by the current selection — so selecting
+     several lines and clicking once turns all of them into a list in one go.
+     Clicking the same level again on an already-marked line removes it;
+     clicking the other level swaps it. textToParagraphsRaw() below turns
+     these plain-text markers into a real <ul>/<li> list on save. */
+  function toggleLineBullet(textarea, level){
+    const value = textarea.value;
+    const start = textarea.selectionStart, end = textarea.selectionEnd;
+    const lineStart = value.lastIndexOf('\n', start-1) + 1;
+    const nextBreak = value.indexOf('\n', end > start ? end - 1 : end);
+    const lineEnd = nextBreak === -1 ? value.length : nextBreak;
+    const segment = value.slice(lineStart, lineEnd);
+    const prefix = level===2 ? '  - ' : '- ';
+    const newLines = segment.split('\n').map(line=>{
+      const bare = line.replace(/^\s*-\s+/, '');
+      const isSameLevel = level===2 ? /^\s{2,}-\s+/.test(line) : (/^-\s+/.test(line) && !/^\s{2,}-\s+/.test(line));
+      return isSameLevel ? bare : prefix + bare;
+    });
+    const newSegment = newLines.join('\n');
+    textarea.value = value.slice(0,lineStart) + newSegment + value.slice(lineEnd);
+    textarea.focus();
+    textarea.setSelectionRange(lineStart, lineStart + newSegment.length);
+  }
+  document.querySelectorAll('.ta-toolbar').forEach(bar=>{
+    bar.querySelectorAll('.ta-btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const ta = document.getElementById(bar.dataset.target);
+        const kind = btn.dataset.wrap;
+        if(kind==='bullet'){ toggleLineBullet(ta, 1); return; }
+        if(kind==='subbullet'){ toggleLineBullet(ta, 2); return; }
+        let before='', after='';
+        if(kind==='strong'){ before='<strong>'; after='</strong>'; }
+        else if(kind==='em'){ before='<em>'; after='</em>'; }
+        else if(kind==='small'){ before='<span style="font-size:13px;color:var(--ink-soft);">'; after='</span>'; }
+        wrapTextareaSelection(ta, before, after);
+      });
+    });
+  });
+
+  const addDocBackdrop = document.getElementById('addDocBackdrop');
+  const addDocModal = document.getElementById('addDocModal');
+  const addTextFields = document.getElementById('addTextFields');
+  const addImageFields = document.getElementById('addImageFields');
+  const addDocSaveBtn = document.getElementById('addDocSave');
+  const addDocModalTitle = addDocModal.querySelector('.modal-head h3');
+  const addImageLabel = document.getElementById('addImageLabel');
+  const typeToggleRow = addDocModal.querySelector('.type-toggle');
+  let editingDocId = null; // null = "add" mode; a doc id = "edit" mode
+
+  function openAddDocForm(){
+    addDocModal.hidden = false;
+    addDocBackdrop.hidden = false;
+    if(sidenav.classList.contains('drawer')) closeSidenav();
+  }
+  function closeAddDocForm(){
+    addDocModal.hidden = true;
+    addDocBackdrop.hidden = true;
+    editingDocId = null;
+    addDocModalTitle.textContent = 'Añadir documento';
+    addDocSaveBtn.textContent = 'Guardar documento';
+    typeToggleRow.hidden = false;
+    addImageLabel.textContent = 'Imagen (jpg/png)';
+    addDocModal.querySelectorAll('input[type=text], textarea').forEach(el=>el.value='');
+    document.getElementById('addImageInput').value = '';
+    document.getElementById('addTag').value = 'Fuente primaria';
+    addDocModal.querySelector('input[name=docType][value=text]').checked = true;
+    addTextFields.hidden = false;
+    addImageFields.hidden = true;
+  }
+  document.getElementById('addDocClose').addEventListener('click', closeAddDocForm);
+  document.getElementById('addDocCancel').addEventListener('click', closeAddDocForm);
+  addDocBackdrop.addEventListener('click', closeAddDocForm);
+
+  addDocModal.querySelectorAll('input[name=docType]').forEach(radio=>{
+    radio.addEventListener('change', ()=>{
+      const isImage = addDocModal.querySelector('input[name=docType]:checked').value === 'image';
+      addTextFields.hidden = isImage;
+      addImageFields.hidden = !isImage;
+    });
+  });
+
+  function openEditDocForm(doc){
+    editingDocId = doc.id;
+    addDocModalTitle.textContent = 'Editar documento';
+    addDocSaveBtn.textContent = 'Guardar cambios';
+    typeToggleRow.hidden = true;
+
+    document.getElementById('addNavTitle').value = doc.navTitle || '';
+    document.getElementById('addYear').value = doc.year || '';
+    document.getElementById('addTag').value = doc.tag || '';
+    document.getElementById('addTitle').value = doc.title || '';
+    document.getElementById('addAnalisisText').value = paragraphsToText(doc.analisisHTML);
+
+    const isImage = doc.type === 'image';
+    addTextFields.hidden = isImage;
+    addImageFields.hidden = !isImage;
+    if(isImage){
+      document.getElementById('addArtist').value = doc.artist || '';
+      document.getElementById('addPaintYear').value = doc.paintYear || '';
+      document.getElementById('addTechnique').value = doc.technique || '';
+      document.getElementById('addLocation').value = doc.location || '';
+      addImageLabel.textContent = 'Reemplazar imagen (opcional — déjalo vacío para conservar la actual)';
+    }else{
+      document.getElementById('addFuenteText').value = paragraphsToText(doc.fuenteHTML);
+    }
+    openAddDocForm();
+  }
+
+  editDocBtn.addEventListener('click', ()=>{
+    const doc = getDoc(activeDocId);
+    if(doc) openEditDocForm(doc);
+  });
+
+  /* Applies edited fields to a live doc object, refreshes the on-screen baseline,
+     and — since the underlying text changed — clears highlights/notes only for the
+     panel(s) whose content actually changed (a Ctrl+Z right after undoes this). */
+  function applyDocEdit(doc, updates){
+    const oldOriginal = ORIGINAL[doc.id] || { fuente:'', analisis:'' };
+    if(doc.id === activeDocId) pushUndo();
+    Object.assign(doc, updates);
+    const newOriginal = { fuente: doc.type==='image' ? buildImageCardHTML(doc) : doc.fuenteHTML, analisis: doc.analisisHTML };
+    const fuenteChanged = oldOriginal.fuente !== newOriginal.fuente;
+    const analisisChanged = oldOriginal.analisis !== newOriginal.analisis;
+    ORIGINAL[doc.id] = newOriginal;
+
+    if(doc.id === activeDocId){
+      document.querySelector('.fuente-panel .tag').textContent = doc.tag;
+      document.querySelector('.fuente-panel h2').textContent = doc.title;
+      document.querySelector('.analisis-panel .tag').textContent = doc.analisisTag;
+      document.querySelector('.analisis-panel h2').textContent = doc.analisisTitle;
+      if(fuenteChanged){
+        textFuenteEl.innerHTML = newOriginal.fuente;
+        for(let i=notes.length-1;i>=0;i--){ if(notes[i].panel==='fuente') notes.splice(i,1); }
+      }
+      if(analisisChanged){
+        textAnalisisEl.innerHTML = newOriginal.analisis;
+        for(let i=notes.length-1;i>=0;i--){ if(notes[i].panel==='analisis') notes.splice(i,1); }
+      }
+      renderMargins();
+      renderNotesIndex();
+      persist();
+    }
+  }
+
+  async function saveNewDoc(){
+    const type = addDocModal.querySelector('input[name=docType]:checked').value;
+    const navTitle = document.getElementById('addNavTitle').value.trim();
+    if(!navTitle){ alert('Ponle un título al documento.'); return; }
+    const year = document.getElementById('addYear').value.trim();
+    const tag = document.getElementById('addTag').value.trim() || 'Fuente primaria';
+    const title = document.getElementById('addTitle').value.trim() || navTitle;
+    const analisisText = document.getElementById('addAnalisisText').value.trim();
+
+    const id = 'custom-' + Date.now();
+    const num = String(allDocs().length + 1).padStart(2,'0');
+    const doc = {
+      id, num, year, navTitle, tag, title,
+      analisisTag: 'Comentario',
+      analisisTitle: 'Análisis de ' + navTitle,
+      analisisHTML: textToParagraphsRaw(analisisText),
+      custom: true
+    };
+
+    if(type === 'image'){
+      const file = document.getElementById('addImageInput').files[0];
+      if(!file){ alert('Selecciona una imagen.'); return; }
+      let dataUrl;
+      try{ dataUrl = await readAndCompressImage(file, 1400, 0.82); }
+      catch(e){ alert('No se pudo procesar la imagen.'); return; }
+      doc.type = 'image';
+      doc.imageSrc = dataUrl;
+      doc.artist = document.getElementById('addArtist').value.trim();
+      doc.paintYear = document.getElementById('addPaintYear').value.trim();
+      doc.technique = document.getElementById('addTechnique').value.trim();
+      doc.location = document.getElementById('addLocation').value.trim();
+    }else{
+      doc.fuenteHTML = textToParagraphsRaw(document.getElementById('addFuenteText').value);
+    }
+
+    customDocs.push(doc);
+    registerDoc(doc);
+    await persistCustomDocs();
+    buildDocList();
+    closeAddDocForm();
+    switchDocument(id);
+    setStatus('Documento añadido');
+  }
+
+  async function saveDocEdit(){
+    const doc = getDoc(editingDocId);
+    if(!doc){ closeAddDocForm(); return; }
+    const navTitle = document.getElementById('addNavTitle').value.trim();
+    if(!navTitle){ alert('Ponle un título al documento.'); return; }
+    const updates = {
+      navTitle,
+      year: document.getElementById('addYear').value.trim(),
+      tag: document.getElementById('addTag').value.trim() || 'Fuente primaria',
+      title: document.getElementById('addTitle').value.trim() || navTitle,
+      analisisHTML: textToParagraphsRaw(document.getElementById('addAnalisisText').value)
+    };
+    if(doc.type === 'image'){
+      const file = document.getElementById('addImageInput').files[0];
+      if(file){
+        try{ updates.imageSrc = await readAndCompressImage(file, 1400, 0.82); }
+        catch(e){ alert('No se pudo procesar la imagen.'); return; }
+      }
+      updates.artist = document.getElementById('addArtist').value.trim();
+      updates.paintYear = document.getElementById('addPaintYear').value.trim();
+      updates.technique = document.getElementById('addTechnique').value.trim();
+      updates.location = document.getElementById('addLocation').value.trim();
+    }else{
+      updates.fuenteHTML = textToParagraphsRaw(document.getElementById('addFuenteText').value);
+    }
+
+    applyDocEdit(doc, updates);
+
+    if(doc.custom){
+      await persistCustomDocs();
+    }else{
+      docOverrides[doc.id] = {
+        navTitle: doc.navTitle, year: doc.year, tag: doc.tag, title: doc.title,
+        analisisTag: doc.analisisTag, analisisTitle: doc.analisisTitle,
+        fuenteHTML: doc.fuenteHTML, analisisHTML: doc.analisisHTML,
+        artist: doc.artist, paintYear: doc.paintYear, technique: doc.technique,
+        location: doc.location, imageSrc: doc.imageSrc
+      };
+      await persistDocOverrides();
+    }
+    buildDocList();
+    closeAddDocForm();
+    setStatus('Documento actualizado');
+  }
+
+  addDocSaveBtn.addEventListener('click', ()=>{
+    if(editingDocId) saveDocEdit(); else saveNewDoc();
+  });
+
+  /* Deletes ANY document from the menu: a personal one is removed for good;
+     a built-in one (from the PDF) is hidden from now on via deletedDefaultDocs
+     — its original data stays in DOCS, so clearing this browser's storage, or
+     importing a full-state export from before the deletion, brings it back. */
+  async function deleteDoc(id){
+    const doc = getDoc(id);
+    if(!doc) return;
+    if(allDocs().length <= 1){ alert('No puedes eliminar el último documento que queda.'); return; }
+    const label = doc.custom ? 'personal' : 'del temario';
+    if(!confirm('¿Eliminar el documento '+label+' "'+doc.navTitle+'"? Se perderán sus subrayados y notas.')) return;
+
+    if(doc.custom){
+      customDocs = customDocs.filter(d=>d.id!==id);
+    }else if(!deletedDefaultDocs.includes(id)){
+      deletedDefaultDocs.push(id);
+    }
+    delete docOverrides[id];
+    delete ORIGINAL[id]; delete notesByDoc[id]; delete counterByDoc[id]; delete undoStackByDoc[id];
+    if(hasStorage){
+      try{
+        await window.storage.delete(storageKey(id,'fuente'), false);
+        await window.storage.delete(storageKey(id,'analisis'), false);
+        await window.storage.delete(storageKey(id,'notes'), false);
+        await window.storage.delete(storageKey(id,'counter'), false);
+      }catch(e){}
+    }
+    if(doc.custom){ await persistCustomDocs(); }
+    else{ await persistDeletedDefaultDocs(); await persistDocOverrides(); }
+    buildDocList();
+    if(activeDocId === id){
+      activeDocId = null;
+      await switchDocument(allDocs()[0].id);
+    }
+    renderNotesIndex();
+    setStatus('Documento eliminado');
+  }
+
+  /* ---- Export / import the FULL state (every document's text, highlights and
+     notes, plus your personal documents) as a portable .json — export here,
+     import there, on any browser/computer running this same HTML file. ---- */
+  async function exportFullState(){
+    setStatus('Generando…');
+    const payload = {
+      unit: UNIT_KEY, kind: 'full-state', exportedAt: new Date().toISOString(),
+      docOverrides: docOverrides, customDocs: customDocs, deletedDefaultDocs: deletedDefaultDocs, perDoc: {}
+    };
+    for(const d of allDocs()){
+      let fuente = null, analisis = null;
+      if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      payload.perDoc[d.id] = {
+        fuenteHTML: fuente, analisisHTML: analisis,
+        notes: notesByDoc[d.id] || [], counter: counterByDoc[d.id] || 0
+      };
+    }
+    const blob = new Blob([JSON.stringify(payload)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'estado-completo-' + UNIT_KEY + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Exportado');
+  }
+
+  async function refreshActiveDocument(){
+    const id = activeDocId;
+    activeDocId = null; // forces switchDocument to actually reload, not early-return
+    await switchDocument(id);
+  }
+
+  async function importFullState(e){
+    const file = e.target.files[0];
+    if(!file) return;
+    try{
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      if(!payload || typeof payload.perDoc !== 'object') throw new Error('el archivo no tiene el formato esperado');
+
+      if(payload.docOverrides){
+        Object.keys(payload.docOverrides).forEach(id=>{
+          const doc = DOCS.find(d=>d.id===id);
+          if(doc){ Object.assign(doc, payload.docOverrides[id]); docOverrides[id] = payload.docOverrides[id]; }
+        });
+        await persistDocOverrides();
+      }
+
+      if(Array.isArray(payload.deletedDefaultDocs)){
+        payload.deletedDefaultDocs.forEach(id=>{ if(!deletedDefaultDocs.includes(id)) deletedDefaultDocs.push(id); });
+        await persistDeletedDefaultDocs();
+      }
+
+      const idMap = {};
+      (payload.customDocs || []).forEach(src=>{
+        let newId = src.id;
+        const collides = DOCS.some(d=>d.id===newId) || customDocs.some(d=>d.id===newId);
+        if(collides) newId = 'custom-' + Date.now() + '-' + Math.random().toString(36).slice(2,7);
+        idMap[src.id] = newId;
+        const doc = Object.assign({}, src, { id:newId, num:String(allDocs().length+1).padStart(2,'0') });
+        customDocs.push(doc);
+        registerDoc(doc);
+      });
+      if((payload.customDocs||[]).length) await persistCustomDocs();
+
+      let restoredCount = 0;
+      for(const oldId of Object.keys(payload.perDoc)){
+        const targetId = idMap[oldId] || oldId;
+        if(!getDoc(targetId)) continue;
+        const entry = payload.perDoc[oldId];
+        const importedNotes = (entry.notes || []).map(n => Object.assign({}, n, { docId: targetId }));
+        notesByDoc[targetId] = importedNotes;
+        counterByDoc[targetId] = entry.counter || 0;
+        if(hasStorage){
+          try{
+            if(entry.fuenteHTML) await window.storage.set(storageKey(targetId,'fuente'), entry.fuenteHTML, false);
+            if(entry.analisisHTML) await window.storage.set(storageKey(targetId,'analisis'), entry.analisisHTML, false);
+            await window.storage.set(storageKey(targetId,'notes'), JSON.stringify(importedNotes), false);
+            await window.storage.set(storageKey(targetId,'counter'), String(counterByDoc[targetId]), false);
+          }catch(err){}
+        }
+        restoredCount++;
+      }
+
+      buildDocList();
+      await refreshActiveDocument();
+      renderNotesIndex();
+      setStatus(restoredCount + ' documento(s) restaurados');
+    }catch(err){
+      alert('No se pudo importar el archivo: ' + err.message);
+    }
+    e.target.value = '';
+  }
+
+  /* ---- Download a fully standalone copy of this app, with the current state
+     (highlights, notes, edits, added documents) baked in as the new starting
+     point. Works by taking this page's own live <script> source and appending
+     a small snapshot right before boot() runs. ---- */
+  function safeJsonForScript(obj){
+    return JSON.stringify(obj).replace(/<\/script/gi, '<\\/script');
+  }
+  async function inlineImageIfPossible(src){
+    if(!src || src.indexOf('data:') === 0) return src;
+    try{
+      const resp = await fetch(src);
+      if(!resp.ok) return src;
+      const blob = await resp.blob();
+      return await new Promise((resolve, reject)=>{
+        const reader = new FileReader();
+        reader.onload = ()=>resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }catch(e){
+      return src; // e.g. opened via file:// without a local server — keep the relative path
+    }
+  }
+  async function exportFullHtmlCopy(){
+    setStatus('Generando copia…');
+    async function buildSnapshotEntry(d){
+      let fuente = null, analisis = null;
+      if(hasStorage){
+        try{
+          const f = await window.storage.get(storageKey(d.id,'fuente'), false);
+          const a = await window.storage.get(storageKey(d.id,'analisis'), false);
+          if(f && f.value) fuente = f.value;
+          if(a && a.value) analisis = a.value;
+        }catch(e){}
+      }
+      const merged = Object.assign({}, d);
+      delete merged.custom;
+      merged.analisisHTML = analisis || merged.analisisHTML;
+      if(merged.type === 'image') merged.imageSrc = await inlineImageIfPossible(merged.imageSrc);
+      else merged.fuenteHTML = fuente || merged.fuenteHTML;
+      return merged;
+    }
+
+    const snapshotDocs = [];
+    for(const d of DOCS){
+      if(deletedDefaultDocs.includes(d.id)) continue;
+      const base = Object.assign({}, d, docOverrides[d.id] || {});
+      snapshotDocs.push(await buildSnapshotEntry(base));
+    }
+    for(const d of customDocs){
+      snapshotDocs.push(await buildSnapshotEntry(d));
+    }
+    snapshotDocs.forEach((d,i)=>{ d.num = String(i+1).padStart(2,'0'); });
+
+    const notesSnapshot = {}, counterSnapshot = {};
+    snapshotDocs.forEach(d=>{
+      notesSnapshot[d.id] = notesByDoc[d.id] || [];
+      counterSnapshot[d.id] = counterByDoc[d.id] || 0;
+    });
+
+    const originalScript = document.querySelector('script').textContent;
+    const bootCallIdx = originalScript.lastIndexOf('boot();');
+    if(bootCallIdx === -1){ alert('No se pudo generar la copia (no se encontró el punto de arranque).'); return; }
+
+    const overrideSnippet =
+      '\n  /* ---- snapshot baked in by "Copia HTML completa" ---- */\n' +
+      '  document.body.classList.remove("dark","presentation");\n' +
+      '  document.getElementById("addDocModal").hidden = true;\n' +
+      '  document.getElementById("addDocBackdrop").hidden = true;\n' +
+      '  document.getElementById("sidenav").classList.remove("open","drawer");\n' +
+      '  document.getElementById("backdrop").classList.remove("show");\n' +
+      '  DOCS.length = 0;\n' +
+      '  DOCS.push.apply(DOCS, ' + safeJsonForScript(snapshotDocs) + ');\n' +
+      '  customDocs = [];\n' +
+      '  docOverrides = {};\n' +
+      '  deletedDefaultDocs = [];\n' +
+      '  Object.keys(notesByDoc).forEach(function(k){ delete notesByDoc[k]; });\n' +
+      '  Object.assign(notesByDoc, ' + safeJsonForScript(notesSnapshot) + ');\n' +
+      '  Object.keys(counterByDoc).forEach(function(k){ delete counterByDoc[k]; });\n' +
+      '  Object.assign(counterByDoc, ' + safeJsonForScript(counterSnapshot) + ');\n\n  ';
+
+    const newScript = originalScript.slice(0, bootCallIdx) + overrideSnippet + originalScript.slice(bootCallIdx);
+
+    let fullHtml = document.documentElement.outerHTML;
+    const closeTag = '<' + '/script>';
+    const sOpen = fullHtml.indexOf('<script>');
+    const sClose = fullHtml.indexOf(closeTag, sOpen);
+    if(sOpen === -1 || sClose === -1){ alert('No se pudo generar la copia (no se encontró el script).'); return; }
+    fullHtml = fullHtml.slice(0, sOpen + '<script>'.length) + newScript + fullHtml.slice(sClose);
+    fullHtml = '<!DOCTYPE html>\n' + fullHtml;
+
+    const blob = new Blob([fullHtml], {type:'text/html;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = UNIT_KEY + '-copia-completa.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setStatus('Copia HTML descargada');
+  }
+
+  /* ================= Keyboard shortcuts ================= */
+  document.addEventListener('keydown', (e)=>{
+    const tag = (e.target.tagName || '').toLowerCase();
+    const typing = tag === 'textarea' || tag === 'input';
+
+    if(e.key === 'Escape'){
+      hideToolbar(); hideNotePopup(); hideMarkMenu(); closeSidenav();
+      if(!searchBar.hidden) closeSearch();
+      if(!addDocModal.hidden) closeAddDocForm();
+      return;
+    }
+    if((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') && !typing){
+      e.preventDefault();
+      undoLast();
+      return;
+    }
+    if(typing) return;
+    if(!hlToolbar.hidden && pendingRange){
+      if(e.key === '1'){ applyColorAndClose('yellow'); }
+      else if(e.key === '2'){ applyColorAndClose('green'); }
+      else if(e.key === '3'){ applyColorAndClose('pink'); }
+      else if(e.key === 'n' || e.key === 'N'){ document.getElementById('noteBtn').click(); }
+    }
+  });
+  window.addEventListener('scroll', ()=>{ hideToolbar(); hideMarkMenu(); }, {passive:true});
+
+  /* ================= Boot ================= */
+  async function boot(){
+    await loadDocOverrides();
+    DOCS.forEach(registerDoc); // re-register so ORIGINAL reflects any saved edits
+    await loadCustomDocs();
+    await loadDeletedDefaultDocs();
+    buildDocList();
+    updateDrawerMode();
+    loadUIPrefs();
+    const firstDoc = allDocs()[0] || DOCS[0];
+    await switchDocument(firstDoc.id);
+  }
+  boot();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archivo de Fuentes · Historia de España Contemporánea</title>
+<meta name="description" content="Archivo de fuentes primarias y secundarias de Historia de España Contemporánea: doce expedientes, de los Decretos de Nueva Planta (1707) a la Transición democrática (1982).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --measure: 860px;
+    --paper: #f1e9d8;
+    --paper-2: #eee1c4;
+    --paper-edge: #ddc99a;
+    --ink: #2a2118;
+    --ink-soft: #5c4f3f;
+    --wax: #8c2f39;
+    --wax-dark: #6b1f27;
+    --green: #3f5b44;
+    --gold: #a9812e;
+    --line: #c9b98f;
+    --hl-yellow: #f3d34a;
+    --hl-green: #a8cba0;
+    --hl-pink: #e8a9b8;
+    --shadow: 0 10px 30px -12px rgba(42,33,24,.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #fbf6e8 0%, transparent 60%),
+      radial-gradient(1200px 700px at 100% 10%, #e9dcbd 0%, transparent 55%),
+      #e5d8b8;
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .ui{font-family:'Inter',sans-serif;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ================= DARK MODE ================= */
+  body.dark{
+    --paper: #2a2118;
+    --paper-2: #241d15;
+    --paper-edge: #4a3c2b;
+    --ink: #f1e9d8;
+    --ink-soft: #c9b98f;
+    --line: #4a3c2b;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #2f261a 0%, transparent 60%),
+      radial-gradient(1200px 700px at 100% 10%, #241d15 0%, transparent 55%),
+      #1b150f;
+  }
+  body.dark .legend-strip{background:var(--paper-2);}
+  body.dark .card-photo.no-photo{background:radial-gradient(circle at 30% 30%, #2a2118 0%, #201911 100%);}
+  body.dark .no-photo-mark{opacity:.5;}
+
+  :focus-visible{outline:2px solid var(--wax);outline-offset:2px;}
+
+  /* ================= COVER ================= */
+  .cover{
+    position:relative;
+    background:linear-gradient(180deg,#241c14,#1b150f);
+    color:#f1e9d8;
+    padding:56px 24px 70px;
+    text-align:center;
+    overflow:hidden;
+    border-bottom:1px solid #3a2f22;
+  }
+  .cover::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(900px 420px at 15% 0%, rgba(247,236,216,.06) 0%, transparent 60%),
+      radial-gradient(700px 380px at 100% 100%, rgba(140,47,57,.14) 0%, transparent 55%);
+    pointer-events:none;
+  }
+  .cover-inner{position:relative;max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;}
+
+  .portal-link{
+    align-self:flex-start;
+    font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:.02em;
+    color:#c9b98f;text-decoration:none;opacity:.85;
+    display:inline-flex;align-items:center;gap:6px;
+    margin-bottom:26px;
+    transition:opacity .15s ease,color .15s ease;
+  }
+  .portal-link:hover{opacity:1;color:#f7ecd8;}
+
+  .cover-brand{display:flex;align-items:center;gap:10px;margin-bottom:30px;}
+  .brand-mark{
+    width:32px;height:32px;border-radius:7px;flex:0 0 32px;
+    background:var(--wax);
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;
+  }
+  .brand-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;line-height:1.2;text-align:left;}
+  .brand-sub{font-family:'Inter',sans-serif;font-size:10px;color:#c9b98f;opacity:.85;margin-top:1px;text-align:left;letter-spacing:.03em;}
+
+  .cover-seal{
+    width:118px;height:118px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--wax) 0%, var(--wax-dark) 70%);
+    box-shadow:0 10px 24px -8px rgba(0,0,0,.55), inset 0 0 0 3px rgba(247,236,216,.15);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;margin-bottom:26px;
+  }
+  .cover-seal-icon{font-size:26px;line-height:1;}
+  .cover-seal-label{font-family:'Inter',sans-serif;font-weight:700;font-size:10px;letter-spacing:.06em;color:#f7ecd8;text-transform:uppercase;line-height:1.4;text-align:center;}
+
+  .eyebrow{
+    font-family:'Inter',sans-serif;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:#cbb37c;margin:0 0 14px;font-weight:600;
+  }
+  .cover-title{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:clamp(28px,4.6vw,44px);line-height:1.18;margin:0 0 18px;color:#f7ecd8;
+  }
+  .cover-title em{font-style:italic;color:#d9b65b;}
+  .cover-sub{
+    font-family:'Source Serif 4',serif;font-size:16.5px;line-height:1.65;color:#d9cba3;
+    max-width:56ch;margin:0 0 30px;
+  }
+
+  .cover-stats{display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;}
+  .stat{display:flex;flex-direction:column;align-items:center;gap:2px;}
+  .stat-num{font-family:'Playfair Display',serif;font-weight:700;font-size:22px;color:#d9b65b;}
+  .stat-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#a99a75;}
+  .stat-div{width:1px;height:30px;background:rgba(247,236,216,.16);}
+
+  .cover-cta{
+    font-family:'Inter',sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;
+    color:#f7ecd8;text-decoration:none;
+    padding:11px 26px;border:1px solid rgba(247,236,216,.35);border-radius:999px;
+    transition:background .18s ease, border-color .18s ease;
+  }
+  .cover-cta:hover{background:rgba(247,236,216,.1);border-color:rgba(247,236,216,.55);}
+
+  /* ================= LEGEND STRIP ================= */
+  .legend-strip{
+    display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px;
+    padding:16px 24px;background:var(--paper-2);border-bottom:1px solid var(--line);
+    font-size:12.5px;color:var(--ink-soft);
+  }
+  .legend-title{font-weight:600;color:var(--ink);}
+  .legend-item{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:0 0 9px;}
+  .hl-yellow{background:var(--hl-yellow);}
+  .hl-green{background:var(--hl-green);}
+  .hl-pink{background:var(--hl-pink);}
+
+  /* ================= BLOQUES ================= */
+  .bloque{max-width:1180px;margin:0 auto;padding:46px 24px 6px;}
+  .bloque-head{
+    display:flex;align-items:baseline;gap:16px;margin-bottom:24px;
+    padding-bottom:14px;border-bottom:1px solid var(--line);
+  }
+  .bloque-num{
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+    font-size:32px;color:var(--wax);line-height:1;flex:0 0 auto;
+  }
+  .bloque-head h2{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;margin:0 0 5px;color:var(--ink);}
+  .bloque-range{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(252px,1fr));gap:22px;}
+
+  /* ================= CARD ================= */
+  .card{
+    position:relative;display:flex;flex-direction:column;
+    background:var(--paper-2);border:1px solid var(--paper-edge);border-radius:11px;
+    overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover, .card:focus-visible{transform:translateY(-4px);box-shadow:0 18px 36px -14px rgba(42,33,24,.5);}
+
+  .card-photo{position:relative;height:148px;background:var(--paper-edge);overflow:hidden;}
+  .card-photo img{
+    width:100%;height:100%;object-fit:cover;
+    filter:sepia(.7) saturate(1.15) contrast(1.03) brightness(.94);
+    transform:scale(1.02);
+    transition:filter .5s ease, transform .5s ease;
+  }
+  .card:hover .card-photo img, .card:focus-visible .card-photo img{filter:none;transform:scale(1.06);}
+  .card-photo.no-photo{
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 30% 25%, var(--paper) 0%, var(--paper-edge) 100%);
+  }
+  .no-photo-mark{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--wax);opacity:.4;letter-spacing:.03em;}
+
+  .card-seal{
+    position:absolute;top:12px;left:12px;width:38px;height:38px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--wax) 0%, var(--wax-dark) 70%);
+    color:#f7ecd8;font-family:'Playfair Display',serif;font-weight:700;font-size:13px;
+    display:flex;align-items:center;justify-content:center;z-index:2;
+    box-shadow:0 4px 10px -3px rgba(0,0,0,.5), inset 0 0 0 2px rgba(247,236,216,.18);
+  }
+
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1;}
+  .card-period{font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--wax);font-weight:700;}
+  body.dark .card-period{color:#d98a94;}
+  .card-title{font-family:'Playfair Display',serif;font-weight:700;font-size:16.5px;line-height:1.32;margin:0;color:var(--ink);}
+  .card-meta{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--ink-soft);margin-top:auto;padding-top:10px;}
+  .card-cta{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--wax-dark);display:inline-flex;align-items:center;gap:5px;margin-top:4px;}
+  body.dark .card-cta{color:#d98a94;}
+  .arrow{transition:transform .2s ease;}
+  .card:hover .arrow{transform:translateX(3px);}
+
+  /* ================= FOOTER ================= */
+  .site-footer{
+    max-width:1180px;margin:46px auto 0;padding:26px 24px 60px;
+    display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;
+    border-top:1px solid var(--line);font-family:'Inter',sans-serif;font-size:12px;color:var(--ink-soft);
+  }
+  .dark-toggle{
+    background:var(--paper-2);border:1px solid var(--paper-edge);color:var(--ink);
+    padding:8px 15px;border-radius:999px;cursor:pointer;font-size:12px;font-family:'Inter',sans-serif;
+    transition:background .15s ease;
+  }
+  .dark-toggle:hover{background:var(--paper-edge);}
+
+  @media (max-width:520px){
+    .cover{padding:44px 18px 54px;}
+    .cover-stats{gap:16px;}
+    .bloque{padding:36px 16px 4px;}
+    .grid{gap:16px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="cover-inner">
+    <a class="portal-link" href="../index.html">← Todos los recursos de Geografía e Historia</a>
+    <div class="cover-brand">
+      <div class="brand-mark">⚑</div>
+      <div>
+        <div class="brand-title">Archivo de Fuentes</div>
+        <div class="brand-sub">Historia de España</div>
+      </div>
+    </div>
+
+    <div class="cover-seal" aria-hidden="true">
+      <span class="cover-seal-icon">🖋</span>
+      <span class="cover-seal-label">Archivo<br>Histórico</span>
+    </div>
+
+    <p class="eyebrow ui">Historia de España Contemporánea</p>
+    <h1 class="cover-title">Del ocaso del Antiguo Régimen<br>a la <em>España democrática</em></h1>
+    <p class="cover-sub">Doce expedientes con fuentes primarias y secundarias comentadas documento a documento, para recorrer casi tres siglos de historia de España: de los Decretos de Nueva Planta de 1707 a los primeros años de la Constitución de 1978.</p>
+
+    <div class="cover-stats">
+      <div class="stat"><span class="stat-num">12</span><span class="stat-label ui">Expedientes</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num" id="statDocs">135</span><span class="stat-label ui">Documentos</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-num">1707–1982</span><span class="stat-label ui">Periodo</span></div>
+    </div>
+
+    <a class="cover-cta" href="#bloque-0">Abrir el archivo ↓</a>
+  </div>
+</header>
+
+<section class="legend-strip ui">
+  <span class="legend-title">Dentro de cada expediente puedes</span>
+  <span class="legend-item"><span class="dot hl-yellow"></span>marcar un dato clave</span>
+  <span class="legend-item"><span class="dot hl-green"></span>marcar contexto</span>
+  <span class="legend-item"><span class="dot hl-pink"></span>anotar una duda</span>
+</section>
+
+<main>
+
+  <section class="bloque" id="bloque-0">
+    <div class="bloque-head">
+      <span class="bloque-num">0</span>
+      <div>
+        <h2>El Antiguo Régimen</h2>
+        <span class="bloque-range">1707 – 1808</span>
+      </div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="unidad-01-siglo-xviii.html" data-unit="1">
+        <div class="card-photo">
+          <img src="images/decreto-nueva-planta.jpg" alt="Felipe V, artífice de los Decretos de Nueva Planta" loading="lazy">
+        </div>
+        <div class="card-seal">01</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 1 · 1707–1808</span>
+          <h3 class="card-title">El Siglo XVIII</h3>
+          <span class="card-meta">4 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="bloque" id="bloque-I">
+    <div class="bloque-head">
+      <span class="bloque-num">I</span>
+      <div>
+        <h2>Crisis del Antiguo Régimen y construcción del Estado liberal</h2>
+        <span class="bloque-range">1808 – 1902</span>
+      </div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="unidad-02-fin-antiguo-regimen.html" data-unit="2">
+        <div class="card-photo">
+          <img src="images/fusilamiento-torrijos.jpg" alt="Fusilamiento de Torrijos y sus compañeros, Antonio Gisbert" loading="lazy">
+        </div>
+        <div class="card-seal">02</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 2 · 1808–1833</span>
+          <h3 class="card-title">El Fin del Antiguo Régimen</h3>
+          <span class="card-meta">12 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="unidad-03-reinado-isabel-ii.html" data-unit="3">
+        <div class="card-photo">
+          <img src="images/reinado-isabel-ii.jpg" alt="Retrato de la reina Isabel II" loading="lazy">
+        </div>
+        <div class="card-seal">03</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 3 · 1833–1868</span>
+          <h3 class="card-title">El Reinado de Isabel II</h3>
+          <span class="card-meta">10 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="unidad-04-sexenio-restauracion.html" data-unit="4">
+        <div class="card-photo">
+          <img src="images/caricatura-martinez-campos.jpg" alt="Caricatura satírica sobre el pronunciamiento de Martínez Campos" loading="lazy">
+        </div>
+        <div class="card-seal">04</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 4 · 1868–1902</span>
+          <h3 class="card-title">Sexenio Revolucionario y Restauración</h3>
+          <span class="card-meta">12 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="unidad-05-transformaciones-siglo-xix.html" data-unit="5">
+        <div class="card-photo">
+          <img src="images/transformaciones-siglo-xix.jpg" alt="Locomotora de vapor de RENFE en una estación" loading="lazy">
+        </div>
+        <div class="card-seal">05</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 5 · Siglo XIX</span>
+          <h3 class="card-title">Transformaciones Económicas y Sociales</h3>
+          <span class="card-meta">8 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="bloque" id="bloque-II">
+    <div class="bloque-head">
+      <span class="bloque-num">II</span>
+      <div>
+        <h2>La Restauración en crisis: el reinado de Alfonso XIII</h2>
+        <span class="bloque-range">1898 – 1931</span>
+      </div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="unidad-06-alfonso-xiii.html" data-unit="6">
+        <div class="card-photo">
+          <img src="images/primo-rivera-alfonso-xiii.png" alt="Primo de Rivera junto a Alfonso XIII" loading="lazy">
+        </div>
+        <div class="card-seal">06</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 6 · 1902–1931</span>
+          <h3 class="card-title">El Reinado de Alfonso XIII</h3>
+          <span class="card-meta">11 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="unidad-07-cambios-economicos.html" data-unit="7">
+        <div class="card-photo">
+          <img src="images/transformaciones-primer-tercio-xx.jpg" alt="Manifestación obrera en Barcelona junto al Arco de Triunfo" loading="lazy">
+        </div>
+        <div class="card-seal">07</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 7 · 1898–1930</span>
+          <h3 class="card-title">Cambios Económicos y Sociales del Primer Tercio del s. XX</h3>
+          <span class="card-meta">16 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="bloque" id="bloque-III">
+    <div class="bloque-head">
+      <span class="bloque-num">III</span>
+      <div>
+        <h2>República, Guerra Civil y dictadura franquista</h2>
+        <span class="bloque-range">1931 – 1975</span>
+      </div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="unidad-08-segunda-republica.html" data-unit="8">
+        <div class="card-photo">
+          <img src="images/proclamacion-ii-republica-madrid.jpg" alt="Proclamación de la Segunda República en Madrid, 1931" loading="lazy">
+        </div>
+        <div class="card-seal">08</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 8 · 1931–1936</span>
+          <h3 class="card-title">La Segunda República</h3>
+          <span class="card-meta">11 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="unidad-09-golpe-guerra-civil.html" data-unit="9">
+        <div class="card-photo">
+          <img src="images/cartel-josep-renau-1937.jpg" alt="Cartel de propaganda republicano, Josep Renau, 1937" loading="lazy">
+        </div>
+        <div class="card-seal">09</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 9 · 1936–1939</span>
+          <h3 class="card-title">Golpe de Estado, Revolución y Guerra Civil</h3>
+          <span class="card-meta">11 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="unidad-10-dictadura-franquista.html" data-unit="10">
+        <div class="card-photo">
+          <img src="images/hendaya-franco-hitler.jpg" alt="Encuentro de Franco y Hitler en Hendaya, 1940" loading="lazy">
+        </div>
+        <div class="card-seal">10</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 10 · 1939–1959</span>
+          <h3 class="card-title">La Dictadura Franquista y la Posguerra</h3>
+          <span class="card-meta">11 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+      <a class="card" href="unidad-11-consolidacion-final-franquismo.html" data-unit="11">
+        <div class="card-photo">
+          <img src="images/designacion-juan-carlos-rey.jpg" alt="Designación de Juan Carlos como sucesor a título de rey, 1969" loading="lazy">
+        </div>
+        <div class="card-seal">11</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 11 · 1959–1975</span>
+          <h3 class="card-title">De la Consolidación al Final del Franquismo</h3>
+          <span class="card-meta">16 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="bloque" id="bloque-IV">
+    <div class="bloque-head">
+      <span class="bloque-num">IV</span>
+      <div>
+        <h2>La Transición a la democracia</h2>
+        <span class="bloque-range">1975 – 1982</span>
+      </div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="unidad-12-transicion-democracia.html" data-unit="12">
+        <div class="card-photo">
+          <img src="images/golpe-23f.png" alt="Intervención militar en el Congreso de los Diputados, 23 de febrero de 1981" loading="lazy">
+        </div>
+        <div class="card-seal">12</div>
+        <div class="card-body">
+          <span class="card-period">Unidad 12 · 1975–1982</span>
+          <h3 class="card-title">Transición y Democracia</h3>
+          <span class="card-meta">13 documentos</span>
+          <span class="card-cta">Abrir expediente <span class="arrow">→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p style="margin:0;">Archivo de Fuentes — material didáctico de Historia de España Contemporánea.</p>
+  <button id="darkToggle" class="dark-toggle ui" type="button" aria-pressed="false">🌙 Modo oscuro</button>
+</footer>
+
+<script>
+    (function(){
+    /* ---- Respaldo local de window.storage -----------------------------------
+       Esta aplicacion se diseno para funcionar dentro de un entorno que
+       proporciona una API window.storage (get/set/delete). Cuando la pagina
+       se abre directamente en un navegador normal -como archivo descargado,
+       adjunto de correo, o alojada en un servidor web cualquiera- esa API no
+       existe, y hasta ahora eso hacia que CADA nota, subrayado y edicion se
+       descartara en silencio al recargar, y que una importacion de .json solo
+       restaurase las notas (que se guardan en memoria) pero nunca los
+       subrayados del texto (que solo se guardaban a traves de window.storage).
+       Este parche implementa la misma API usando localStorage del propio
+       navegador siempre que la real no este presente, para que todo persista
+       con normalidad en este navegador. ------------------------------------ */
+    if (typeof window.storage === 'undefined') {
+      window.storage = {
+        get: function(key){
+          try{
+            var raw = window.localStorage.getItem('archivo-fuentes:' + key);
+            return Promise.resolve(raw === null ? null : { value: raw });
+          }catch(e){ return Promise.resolve(null); }
+        },
+        set: function(key, value){
+          try{ window.localStorage.setItem('archivo-fuentes:' + key, value); }catch(e){}
+          return Promise.resolve();
+        },
+        delete: function(key){
+          try{ window.localStorage.removeItem('archivo-fuentes:' + key); }catch(e){}
+          return Promise.resolve();
+        }
+      };
+    }
+    const btn = document.getElementById('darkToggle');
+    const hasStorage = typeof window.storage !== 'undefined';
+    const UI_KEY_DARK = 'ui:dark-mode';
+
+    function applyDark(isDark){
+      document.body.classList.toggle('dark', isDark);
+      btn.setAttribute('aria-pressed', String(isDark));
+      btn.textContent = isDark ? '☀️ Modo claro' : '🌙 Modo oscuro';
+    }
+
+    (async function init(){
+      if(hasStorage){
+        try{
+          const d = await window.storage.get(UI_KEY_DARK, false);
+          applyDark(!!d && d.value === '1');
+        }catch(e){ /* no preference saved yet */ }
+      }
+    })();
+
+    btn.addEventListener('click', async function(){
+      const isDark = !document.body.classList.contains('dark');
+      applyDark(isDark);
+      if(hasStorage){
+        try{ await window.storage.set(UI_KEY_DARK, isDark ? '1' : '0', false); }catch(e){}
+      }
+    });
+  })();
+</script>
+
+
+<script>
+  /* ---- Recuento de documentos en vivo ------------------------------------
+     Cada archivo de unidad publica (en cuanto abres esta pagina) su numero
+     actual de documentos en un almacenamiento compartido del mismo origen
+     (localStorage, vía window.storage). Como este index.html se aloja en el
+     mismo sitio de GitHub Pages, puede leer esos valores y actualizar la
+     etiqueta "N documentos" de cada tarjeta y el total de la portada sin
+     que haya que editar este archivo a mano cada vez que añades o borras
+     documentos dentro de una unidad. Si una unidad todavia no ha publicado
+     ningún valor (por ejemplo, porque nunca se ha abierto en este
+     navegador), se deja el número de partida que ya trae la tarjeta. ---- */
+  (function(){
+    if (typeof window.storage === 'undefined') {
+      window.storage = {
+        get: function(key){
+          try{
+            var raw = window.localStorage.getItem('archivo-fuentes:' + key);
+            return Promise.resolve(raw === null ? null : { value: raw });
+          }catch(e){ return Promise.resolve(null); }
+        },
+        set: function(key, value){
+          try{ window.localStorage.setItem('archivo-fuentes:' + key, value); }catch(e){}
+          return Promise.resolve();
+        },
+        delete: function(key){
+          try{ window.localStorage.removeItem('archivo-fuentes:' + key); }catch(e){}
+          return Promise.resolve();
+        }
+      };
+    }
+
+    async function refreshDocCounts(){
+      const cards = document.querySelectorAll('.card[data-unit]');
+      let total = 0;
+      for (const card of cards) {
+        const metaEl = card.querySelector('.card-meta');
+        const fallbackMatch = (metaEl.textContent || '').match(/\d+/);
+        let count = fallbackMatch ? parseInt(fallbackMatch[0], 10) : 0;
+        try{
+          const r = await window.storage.get('unidad' + card.dataset.unit + ':doc-count', false);
+          if (r && r.value) {
+            const live = parseInt(r.value, 10);
+            if (!isNaN(live)) count = live;
+          }
+        }catch(e){ /* keep the card's built-in default */ }
+        metaEl.textContent = count + (count === 1 ? ' documento' : ' documentos');
+        total += count;
+      }
+      const statDocs = document.getElementById('statDocs');
+      if (statDocs && total > 0) statDocs.textContent = String(total);
+    }
+
+    refreshDocCounts();
+  })();
+</script>
+
+</body>
+</html>
